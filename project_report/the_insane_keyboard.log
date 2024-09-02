@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.7.4)  1 SEP 2024 14:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.7.4)  1 SEP 2024 20:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -493,7 +493,11 @@ Package: scalerel 2016/12/29 v1.8 Routines for constrained scaling and stretchin
 \mnxsrwidth=\skip87
 \LMex=\skip88
 \LMpt=\skip89
-) (./the_insane_keyboard.aux)
+) (./the_insane_keyboard.aux
+
+LaTeX Warning: Label `filterspecs' multiply defined.
+
+)
 \openout1 = `the_insane_keyboard.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
@@ -593,21 +597,26 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )) (./content/title_page.tex
-<figures/cu.png, id=92, 562.1pt x 401.5pt>
+<figures/cu.png, id=116, 562.1pt x 401.5pt>
 File: figures/cu.png Graphic file (type png)
 <use figures/cu.png>
 Package pdftex.def Info: figures/cu.png  used on input line 10.
 (pdftex.def)             Requested size: 153.64644pt x 109.74812pt.
+<figures/qr_download.png, id=118, 501.875pt x 501.875pt>
+File: figures/qr_download.png Graphic file (type png)
+<use figures/qr_download.png>
+Package pdftex.def Info: figures/qr_download.png  used on input line 22.
+(pdftex.def)             Requested size: 100.37321pt x 100.37321pt.
  [1
 Non-PDF special ignored!
 <special> header=psfrag.pro
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./figures/cu.png>]) (./the_insane_keyboard.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./figures/cu.png> <./figures/qr_download.png>]) (./the_insane_keyboard.toc
+LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ))
@@ -648,166 +657,208 @@ Underfull \hbox (badness 10000) in paragraph at lines 78--80
  []
 
 [2{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Underfull \hbox (badness 2894) in paragraph at lines 107--108
-[]\OT1/cmr/bx/n/10.95 Programmable RGB Il-lu-mi-na-tion: \OT1/cmr/m/n/10.95 Im-ple-ment user-configurable light-ing sys-tems us-ing
- []
-
-
-Underfull \hbox (badness 1817) in paragraph at lines 111--112
-[]\OT1/cmr/bx/n/10.95 Advanced Power Man-age-ment: \OT1/cmr/m/n/10.95 Im-ple-ment so-phis-ti-cated power con-ser-va-tion al-go-rithms,
- []
-
-[3] [4
-pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.227 
-      
+<figures/split_keyboard.jpg, id=181, 897.3525pt x 630.355pt>
+File: figures/split_keyboard.jpg Graphic file (type jpg)
+<use figures/split_keyboard.jpg>
+Package pdftex.def Info: figures/split_keyboard.jpg  used on input line 155.
+(pdftex.def)             Requested size: 493.5454pt x 346.69632pt.
+ [3]
+<figures/nomad.jpg, id=186, 2055.68pt x 1370.11874pt>
+File: figures/nomad.jpg Graphic file (type jpg)
+<use figures/nomad.jpg>
+Package pdftex.def Info: figures/nomad.jpg  used on input line 162.
+(pdftex.def)             Requested size: 411.12872pt x 274.01889pt.
+<figures/concept.png, id=187, 1339.0025pt x 255.95625pt>
+File: figures/concept.png Graphic file (type png)
+<use figures/concept.png>
+Package pdftex.def Info: figures/concept.png  used on input line 170.
+(pdftex.def)             Requested size: 508.82625pt x 97.26437pt.
+ [4
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.227 
-      ] [5]
-Underfull \hbox (badness 2253) in paragraph at lines 413--416
+l.175 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.175 
+       <./figures/split_keyboard.jpg> <./figures/nomad.jpg>]
+<figures/Timeline.png, id=192, 1570.86874pt x 425.59pt>
+File: figures/Timeline.png Graphic file (type png)
+<use figures/Timeline.png>
+Package pdftex.def Info: figures/Timeline.png  used on input line 180.
+(pdftex.def)             Requested size: 534.08832pt x 144.69867pt.
+
+Overfull \hbox (21.93869pt too wide) in paragraph at lines 180--181
+ [][] 
+ []
+
+[5
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.248 \subsection
+                 {Components}
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.248 \subsection
+                 {Components} <./figures/concept.png> <./figures/Timeline.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 251--252
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 251--252
+
+ []
+
+[6
+pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.332 2
+       .1.7 Anti-Ghosting and Anti-Aliasing] [7]
+Underfull \hbox (badness 2253) in paragraph at lines 517--520
 []\OT1/cmr/m/n/10.95 PWM-based RGB LED con-trol Sup-ports var-i-ous light-ing ef-fects (static, breath-ing, wave, etc.)
  []
 
-[6]
-Underfull \hbox (badness 1014) in paragraph at lines 501--503
+[8]
+Underfull \hbox (badness 1014) in paragraph at lines 605--607
 []\OT1/cmr/m/n/10.95 Provides key-board health in-for-ma-tion (e.g., switch ac-tu-a-tion counts, tem-per-a-ture read-ings) Of-fers
  []
 
-[7] [8]
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 743.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 760--768
+[9] [10]
+Underfull \hbox (badness 10000) in paragraph at lines 864--872
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 768--776
+Underfull \hbox (badness 10000) in paragraph at lines 872--880
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 776--784
+Underfull \hbox (badness 10000) in paragraph at lines 880--888
 
  []
 
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 816--824
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 824--832
-
- []
-
-[10] [11] [12]
-Underfull \hbox (badness 10000) in paragraph at lines 965--966
-
- []
-
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 967--968
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 920--928
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 969--970
+Underfull \hbox (badness 10000) in paragraph at lines 928--936
+
+ []
+
+[12] [13] [14]
+Underfull \hbox (badness 10000) in paragraph at lines 1069--1070
+
+ []
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 1071--1072
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 971--972
+Underfull \hbox (badness 10000) in paragraph at lines 1073--1074
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 973--974
+Underfull \hbox (badness 10000) in paragraph at lines 1075--1076
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 975--976
+Underfull \hbox (badness 10000) in paragraph at lines 1077--1078
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 977--978
+Underfull \hbox (badness 10000) in paragraph at lines 1079--1080
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 983--984
+Underfull \hbox (badness 10000) in paragraph at lines 1081--1082
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 983--984
-
- []
-
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 1015--1016
+Underfull \hbox (badness 10000) in paragraph at lines 1087--1088
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1015--1016
+Underfull \hbox (badness 10000) in paragraph at lines 1087--1088
+
+ []
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 1119--1120
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1017--1018
+Underfull \hbox (badness 10000) in paragraph at lines 1119--1120
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1019--1020
+Underfull \hbox (badness 10000) in paragraph at lines 1121--1122
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1021--1022
+Underfull \hbox (badness 10000) in paragraph at lines 1123--1124
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1023--1024
+Underfull \hbox (badness 10000) in paragraph at lines 1125--1126
 
  []
 
-[15
+
+Underfull \hbox (badness 10000) in paragraph at lines 1127--1128
+
+ []
+
+[17
 pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1029 
-       ] [16] (./the_insane_keyboard.aux)
+l.1133 
+       ] [18] (./the_insane_keyboard.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `the_insane_keyboard.out' has not changed.
-(rerunfilecheck)             Checksum: 6075BBB226F51B331FE87DE453ECF696;3464.
+(rerunfilecheck)             Checksum: 3871F51F87A2A647B05A13447E01368B;4501.
  ) 
 Here is how much of TeX's memory you used:
- 15686 strings out of 474222
- 237864 string characters out of 5748734
- 1935975 words of memory out of 5000000
- 37582 multiletter control sequences out of 15000+600000
+ 15739 strings out of 474222
+ 239067 string characters out of 5748734
+ 1938975 words of memory out of 5000000
+ 37624 multiletter control sequences out of 15000+600000
  566777 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  80i,8n,93p,1221b,605s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on the_insane_keyboard.pdf (17 pages, 165047 bytes).
+Output written on the_insane_keyboard.pdf (19 pages, 455702 bytes).
 PDF statistics:
- 291 PDF objects out of 1000 (max. 8388607)
- 251 compressed objects within 3 object streams
- 73 named destinations out of 1000 (max. 500000)
- 182 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 343 PDF objects out of 1000 (max. 8388607)
+ 295 compressed objects within 3 object streams
+ 84 named destinations out of 1000 (max. 500000)
+ 255 words of extra memory for PDF output out of 10000 (max. 10000000)
 

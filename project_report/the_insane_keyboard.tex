@@ -59,7 +59,7 @@
 \listoftables
 \vfill
 \begin{center}
-	\textbf{\textit{*PDF is clickable}}
+    \textbf{\textit{*PDF is clickable}}
 \end{center}
 
 \pagebreak
@@ -73,110 +73,214 @@ Parth Rajeshkumar Thakkar\\
 ParthRajeshkumar.Thakkar@colorado.edu\\
 
 Anagha Aditya\\
-ParthRajeshkumar.Thakkar@colorado.edu\\
+Anagha.Aditya@colorado.edu\\
 
 Akash Karoshi\\
-ParthRajeshkumar.Thakkar@colorado.edu\\
+Akash.Karoshi@colorado.edu\\
 
-\section{Project Overview}
-\section{Project Overview}
-\author{Parth Thakkar}
 
-In the context of ECEN 5XXX Low Power Embedded System Design techniques, our team, "Low Esteem Team," aims to develop an advanced mechanical keyboard. This project, designated "The Insane Keyboard," seeks to integrate ergonomic principles, customization capabilities, and sophisticated technology into a cohesive input device optimized for user interaction.
-
-\subsection{Background and Context}
-Mechanical keyboards have gained popularity due to their tactile feedback, durability, and modifiability. However, the current market exhibits fragmentation, with premium features often distributed across various products, forcing consumers to prioritize between ergonomics, wireless functionality, customization, or auxiliary features.
-
-\subsection{Motivation}
-The project's inception is based on systematic observations and analysis of the existing mechanical keyboard market:
-
+\section{Project Overview: The Insane Keyboard}
+For the ECEN 5833 Low Power Embedded System Design course, our team is developing an advanced mechanical keyboard called "The Insane Keyboard". This project aims to create a high-performance input device that combines ergonomic design, customization options, and advanced technology.
+\subsection{Project Context}
+Mechanical keyboards are popular for their tactile feedback and durability. However, the current market often requires users to choose between ergonomics, wireless functionality, customization, or additional features. Our project seeks to address this limitation by integrating these features into a single device.
+\subsection{Project Rationale}
+Our analysis of the mechanical keyboard market revealed several issues:
 \begin{itemize}
-    \item \textbf{Ergonomic Limitations:} Keyboards designed with ergonomic considerations often lack additional desirable functionalities or are cost-prohibitive.
-    \item \textbf{Wireless Constraints:} Many ergonomic or feature-rich keyboards rely on wired connections, limiting mobility and workspace flexibility.
-    \item \textbf{Customization Barriers:} Cost-effective keyboards typically offer limited customization options, while fully modifiable alternatives can be financially and technically inaccessible to average users.
-    \item \textbf{Feature Dispersion:} The market lacks keyboards that simultaneously incorporate ergonomic design, wireless capability, programmable illumination, and additional intelligent functions.
-    \item \textbf{Power Inefficiency:} Keyboards with integrated displays or supplementary features often exhibit suboptimal power management, limiting their practicality in mobile applications.
+    \item Ergonomic keyboards often lack additional features or are expensive
+    \item Many feature-rich keyboards are wired, limiting mobility
+    \item Affordable keyboards offer limited customization
+    \item Few keyboards combine ergonomic design, wireless capability, programmable lighting, and smart functions
+    \item Keyboards with displays or extra features often have poor power efficiency
+\end{itemize}
+\subsection{Project Goals}
+We aim to create a mechanical keyboard with the following features:
+\begin{itemize}
+    \item Split ergonomic design to reduce physical strain
+    \item Wireless connectivity using Bluetooth Low Energy.
+    \item Programmable RGB lighting with addressable LEDs
+    \item Hot-swappable key switches for easy customization
+    \item Low-power E-ink display for additional information
+    \item Multi-device compatibility
+    \item Advanced power management techniques
+    \item Environment temperature and pressure sensing.
+    \item Real Time clock module for timer, stopwatch and time features.
+    \item Potential energy harvesting from typing (Yet to be seen)
+    \item Open-source firmware for extensive customization
+    \item Cost-effective design for market accessibility
 \end{itemize}
 
-\subsection{Project Objectives}
-Our primary goal is to engineer a mechanical keyboard that addresses these issues by integrating the following features:
-
+\subsection{Technical Specifications}
 \begin{itemize}
-    \item \textbf{Split Ergonomic Configuration:} Implement a bifurcated keyboard layout to minimize physical strain and enhance typing ergonomics through optimized wrist positioning and reduced ulnar deviation.
-    \item \textbf{Wireless Connectivity:} Develop robust wireless communication protocols, potentially utilizing Bluetooth Low Energy (BLE) or 2.4 GHz proprietary protocols, to ensure a cable-free setup and enhanced portability.
-    \item \textbf{Programmable RGB Illumination:} Implement user-configurable lighting systems using addressable RGB LEDs (e.g., WS2812B) to accommodate individual preferences and enhance the user interface.
-    \item \textbf{Hot-swappable Key Switch Design:} Engineer a system utilizing hot-swap sockets (e.g., Kailh or Gateron) allowing users to interchange key switches without soldering, facilitating customization and maintenance.
-    \item \textbf{E-ink Display Integration:} Incorporate a low-power E-ink display (e.g., 2.13" 250x122 pixel module) for temporal and auxiliary information presentation without significantly impacting power consumption.
-    \item \textbf{Multi-Device Compatibility:} Develop functionality for seamless transition between multiple host devices using a dedicated microcontroller (e.g., STM32L4 series) for device management.
-    \item \textbf{Advanced Power Management:} Implement sophisticated power conservation algorithms, potentially utilizing deep sleep modes and wake-on-input techniques to maximize operational duration.
-    \item \textbf{Energy Harvesting:} Investigate the feasibility of piezoelectric or electromagnetic kinetic energy harvesting to supplement battery power during typing.
-    \item \textbf{Open-Source Firmware Development:} Create accessible, open-source firmware based on QMK or ZMK frameworks for extensive keyboard customization.
-    \item \textbf{Cost-Effective Design:} Optimize the balance between advanced features and production costs to enhance market accessibility.
+    \item Microcontroller: EFR32BG13 series for low-power operation, with BLE 4/5 Stack.
+    \item E-ink Display: 4.3" 800x400 E-Ink display module
+    \item LED: WS2812B addressable RGB LEDs
+    \item Key Switches: Compatible with Cherry MX-style switches
+    \item Hot-swap Sockets: Gateron Black V2 Pro sockets
+    \item Power Source: Rechargeable Li-ion battery (capacity TBD)
+    \item Firmware: Based on SiLabs EFR32BG13 open-source API
+\end{itemize}
+\subsection{Unique Features}
+"The Insane Keyboard" stands out due to its:
+\begin{itemize}
+    \item Integration of multiple desirable features in one device
+    \item Optimized power management for extended use
+    \item Potential energy harvesting from typing motions
+    \item Open-source firmware for community-driven development
+    \item Adaptable design for future upgrades
+\end{itemize}
+\subsection{Target Users}
+Our keyboard is designed for:
+\begin{itemize}
+    \item Professionals who type for long periods
+    \item Technology enthusiasts interested in customization
+    \item Gamers requiring responsive keys and custom lighting
+    \item Remote workers needing portable, feature-rich input devices
+    \item Users seeking a versatile, high-quality keyboard
+\end{itemize}
+\subsection{Expected Outcomes}
+Upon completion, this project could:
+\begin{itemize}
+    \item Set new standards for feature integration in keyboard design
+    \item Improve ergonomics in daily computer use
+    \item Advance keyboard power management and energy harvesting
+    \item Foster a community of keyboard enthusiasts and developers
+    \item Demonstrate practical applications of low-power embedded design
 \end{itemize}
 
-\subsection{Innovation and Unique Attributes}
-"The Insane Keyboard" distinguishes itself through the following characteristics:
+\subsection{Existing Products and Ideas from products}
 
-\begin{itemize}
-    \item \textbf{Comprehensive Solution:} The integration of ergonomic design, wireless functionality, customization options, and intelligent features eliminates the need for multiple specialized products.
-    \item \textbf{Power Optimization:} Utilization of E-ink display technology and advanced power management algorithms ensures extended operational duration compared to competing products.
-    \item \textbf{Energy Harvesting Integration:} Exploration of kinetic energy harvesting represents a novel approach in keyboard design, potentially extending intervals between charging cycles.
-    \item \textbf{Open-Source Customization:} Development of open-source firmware will foster a community-driven ecosystem for sharing layouts, illumination profiles, and feature development.
-    \item \textbf{Adaptable Design:} The hot-swappable key switch system and programmable nature of the keyboard ensure compatibility with future developments in switch technology and evolving user requirements.
-\end{itemize}
-
-\subsection{Target Demographic}
-Our product is engineered to address the needs of diverse user groups, including:
-
-\begin{itemize}
-    \item Professionals requiring extended typing sessions with emphasis on ergonomics
-    \item Technology enthusiasts valuing customization and cutting-edge functionalities
-    \item Gaming enthusiasts requiring responsive key actuation and personalized illumination
-    \item Remote workers and digital nomads necessitating portable, feature-rich input solutions
-    \item Individuals seeking a high-quality, versatile keyboard capable of adapting to evolving requirements
-\end{itemize}
-
-\subsection{Potential Impact}
-Upon successful implementation, "The Insane Keyboard" has the potential to:
-
-\begin{itemize}
-    \item Establish new standards for feature integration in mechanical keyboard design
-    \item Promote enhanced ergonomics and user comfort in daily computer interactions
-    \item Stimulate innovation in keyboard power management and energy harvesting technologies
-    \item Cultivate a community of keyboard enthusiasts and developers around our open-source platform
-    \item Demonstrate practical applications of low-power embedded system design in consumer electronics
-\end{itemize}
-
-By addressing multiple deficiencies in the current keyboard market and introducing innovative features, "The Insane Keyboard" aims to redefine user expectations for input devices.
-
-% Placeholder for a table comparing features of The Insane Keyboard with existing products
-\begin{table}[h]
+% Placeholder for a diagram of the keyboard design
+\begin{figure}[!h]
     \centering
-    \caption{Feature Comparison: The Insane Keyboard vs. Existing Products}
-    \label{tab:feature-comparison}
-    % Table content to be added
-\end{table}
-
-% Placeholder for an image showing the conceptual design of The Insane Keyboard
-\begin{figure}[h]
-    \centering
-    \caption{Conceptual Design of The Insane Keyboard}
-    \label{fig:keyboard-design}
+    \includegraphics[scale=0.55]{figures/split_keyboard.jpg}
+    \caption{Split Keyboard without display(Wired)}
     % Figure content to be added
 \end{figure}
+\vspace{0.2cm}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.2]{figures/nomad.jpg}
+    \caption{Keyboard which is expensive and have a Display}
+    % Figure content to be added
+\end{figure}
+\vspace{0.2cm}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.38]{figures/concept.png}
+    \caption{Conceptual Design of The Insane Keyboard}
+    % Figure content to be added
+\end{figure}
+\vspace{0.2cm}
+
+\subsection{Project Phases}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.34]{figures/Timeline.png}
+    \caption{Conceptual Design of The Insane Keyboard}
+    % Figure content to be added
+\end{figure}
+\vspace{0.2cm}
+
+
+
+\subsection{Challenges and Considerations}
+
+Managing state machines with complex softwares like eink Display
+Making drivers inegrate with BLE firmware
+RTC driver and tempurature control driver 
+Ensuring reliable wireless Connectivity
+Multi-host communication, multi-host switching
+HID Profile in BLE stack 
+Anti ghosting 
+making scan rate of keyboard fast enough for low latency
+N-Key rollover/ 6-key rollover
+
+
 
 \section{High Level Requirements}
 
+\subsection{SubModules}
 
-\section{Components}
+the board will have these modules which we will refer through out the Report
 
--> EFM32PG13  https://www.silabs.com/mcu/32-bit-microcontrollers/efm32pg23-series-2
+1) Main board (will have one EFR32BG13 , one display, keys )
+main board will have following keys 
+- (esc ~,`), (f1, 1, !), (f2, 2, @), (f3, 3, \#), (f4, 4, \$), (f5, 5, \%), (f6, 6, \^)
+- Tab, Q, W, E, R, T,
+- Cap, A, S, D, F, G
+- Shift, Z, X, C, V, B
+- CTRL, Option, Win/Mac, ALT, SPACE
+- Two knobs, 3 extra buttons 
+- one e ink display
+
+Battery, Battery charging unit.
+
+2) Secondary module will have one EFM32BG13, one display, and secondary board will have following things
+- F7, F8, F9, F10, F11, F12, backspace, home
+- Y, U, I , P, {[, ]}, |\\, Del
+- H, j, K, L, ;:, "', enter, pageup
+- N, M, , ,<, .>, /?, shift up arrow, page down
+- space, alt/mac, fn, ctrl, left, down, right arrow
+- Two knobs, 3 extra buttons
+- one eink display
+
+\subsection{Requirements}
+
+-> whole product will have two EFR32BG13 Boards
+-> Server will be our keyboard
+-> it will be 75\% layout
+-> It will have io expander for each mcu
+-> It should have tempureature sensor 
+-> it should have pressure sensor
+-> it should have RTC
+-> it should connect to three host
+-> it should have one computer software to customize LED
+-> each led will be individually Customizable
+-> each part of the keyboard will have an e ink display
+-> each part of keayboard will have energy harvesring 
+-> each part of keyboard will have charging circuit and to charge both the device we will plug in type c cable to one device and other device will be conectted to chargin device via some + and - pins to bridge both the device 
+-> it should have chargin indicator
+-> it should have battery indicator 
+-> it should have atlease 6key rollover 
+-> Both EFR32BG13 board will comminicate via HID protocol one board will be connected to main board via some protocol and main board will 
+\subsection{Components}
+
+\subsection{Requirements Completion}
+Section Author: Parth Thakkar\\\\
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{| l | c |   }
+        \hline
+        \textbf{Requirements}                                                         & \textbf{Completion} \\\hline
+        The system shall comprise a pair of EFR32BG13                                 & \ding{52}           \\
+        \hline
+        Server shall host an MFRC522 RFID reader module and a rotary encoder.         & \ding{52}           \\
+        \hline
+        The server shall employ Huffman encoding for data compression.                & \ding{52}           \\\hline
+        The server shall establish a secure connection through bonding.               & \ding{52}           \\\hline
+        The server code shall be optimized for low energy consumption.                & \ding{52}           \\\hline
+        The client shall receive the compressed authentication data from the server.  & \ding{52}           \\\hline
+        The Server shall display the authentication and other information on the LCD. & \ding{52}           \\\hline
+        client decompress the received data using Huffman decoding                    & \ding{55}           \\\hline
+        \hline\hline
+    \end{tabular}
+    \caption{Requirements}
+    \label{filterspecs}
+\end{table}
+
+-> EFR32BG13  https://www.silabs.com/mcu/32-bit-microcontrollers/efm32pg23-series-2
 -> ds3231 - RTC module - https://www.analog.com/media/en/technical-documentation/data-sheets/ds3231.pdf - I2C
 -> ds3231 - RTC module breakout board - https://www.adafruit.com/product/3013
-
+-> IO expander - I2C
 -> Wave share e-ink display - https://www.waveshare.com/4.2inch-e-paper-module.htm - SPI
 -> TMP117 - Tempurature and Humidity sensor - https://www.ti.com/lit/ds/symlink/tmp117.pdf?ts=1725195107763 - I2C
-
+-> Diodes
+-> Gateron Black keys
+-> cherry mx key caps
+-> che
 
 
 2. Features and Specifications
@@ -747,88 +851,88 @@ This comprehensive hardware design ensures that the Insane Keyboard not only mee
 \textbf{Object Transfer Service for RFID}
 \begin{enumerate}
     \item Object Transfer Service (OTS) for RFID Data:\\
-    Service UUID: 1825\\
-    Service Name: "Object Transfer Service"
+          Service UUID: 1825\\
+          Service Name: "Object Transfer Service"
     \item Characteristics for Object Transfer Service: a. OTS Feature Characteristic:\\
-    Characteristic UUID: 2ABD\\
-    Characteristic Name: "OTS Feature"\\
-    Characteristic Properties: Read\\
-    Characteristic Value:\\
-    Data Type: Unsigned Integer (32-bit)\\
-    Length: 4 bytes\\
-    Description: This characteristic indicates the features supported by the OTS server.
+          Characteristic UUID: 2ABD\\
+          Characteristic Name: "OTS Feature"\\
+          Characteristic Properties: Read\\
+          Characteristic Value:\\
+          Data Type: Unsigned Integer (32-bit)\\
+          Length: 4 bytes\\
+          Description: This characteristic indicates the features supported by the OTS server.
     \item Object Name Characteristic:\\
-    Characteristic UUID: 2ABE\\
-    Characteristic Name: "Object Name"\\
-    Characteristic Properties: Read\\
-    Characteristic Value:\\
-    Data Type: UTF-8 String\\
-    Length: Variable\\
-    Description: This characteristic holds the name of the RFID object being transferred.\\
+          Characteristic UUID: 2ABE\\
+          Characteristic Name: "Object Name"\\
+          Characteristic Properties: Read\\
+          Characteristic Value:\\
+          Data Type: UTF-8 String\\
+          Length: Variable\\
+          Description: This characteristic holds the name of the RFID object being transferred.\\
     \item Object Type Characteristic:\\
-    Characteristic UUID: 2ABF\\
-    Characteristic Name: "Object Type"\\
-    Characteristic Properties: Read\\
-    Characteristic Value:\\
-    Data Type: UUID (128-bit)\\
-    Length: 16 bytes\\
-    Description: This characteristic indicates the type of the RFID object being transferred.\\
+          Characteristic UUID: 2ABF\\
+          Characteristic Name: "Object Type"\\
+          Characteristic Properties: Read\\
+          Characteristic Value:\\
+          Data Type: UUID (128-bit)\\
+          Length: 16 bytes\\
+          Description: This characteristic indicates the type of the RFID object being transferred.\\
     \item Object Size Characteristic:\\
-    Characteristic UUID: 2AC0\\
-    Characteristic Name: "Object Size"\\
-    Characteristic Properties: Read\\
-    Characteristic Value:\\
-    Data Type: Unsigned Integer (32-bit)\\
-    Length: 4 bytes\\
-    Description: This characteristic holds the size of the RFID object being transferred.\\
+          Characteristic UUID: 2AC0\\
+          Characteristic Name: "Object Size"\\
+          Characteristic Properties: Read\\
+          Characteristic Value:\\
+          Data Type: Unsigned Integer (32-bit)\\
+          Length: 4 bytes\\
+          Description: This characteristic holds the size of the RFID object being transferred.\\
     \item Object Properties Characteristic:\\
-    Characteristic UUID: 2AC1\\
-    Characteristic Name: "Object Properties"\\
-    Characteristic Properties: Read\\
-    Characteristic Value:\\
-    Data Type: Unsigned Integer (32-bit)\\
-    Length: 4 bytes\\
-    Description: This characteristic indicates the properties of the RFID object being transferred.
+          Characteristic UUID: 2AC1\\
+          Characteristic Name: "Object Properties"\\
+          Characteristic Properties: Read\\
+          Characteristic Value:\\
+          Data Type: Unsigned Integer (32-bit)\\
+          Length: 4 bytes\\
+          Description: This characteristic indicates the properties of the RFID object being transferred.
     \item Object Action Control Point Characteristic:
-    Characteristic UUID: 2AC2\\
-    Characteristic Name: "Object Action Control Point"\\
-    Characteristic Properties: Write\\
-    Characteristic Value:\\
-    Data Type: Unsigned Integer (8-bit)\\
-    Length: 1 byte\\
-    Description: This characteristic is used to control the transfer of the RFID object.
+          Characteristic UUID: 2AC2\\
+          Characteristic Name: "Object Action Control Point"\\
+          Characteristic Properties: Write\\
+          Characteristic Value:\\
+          Data Type: Unsigned Integer (8-bit)\\
+          Length: 1 byte\\
+          Description: This characteristic is used to control the transfer of the RFID object.
     \item Object Action Control Point Response Characteristic:\\
-    Characteristic UUID: 2AC3\\
-    Characteristic Name: "Object Action Control Point Response"\\
-    Characteristic Properties: Notify\\
-    Characteristic Value:\\
-    Data Type: Unsigned Integer (8-bit)\\
-    Length: 1 byte\\
-    Description: This characteristic provides the response to the Object Action Control Point commands.
+          Characteristic UUID: 2AC3\\
+          Characteristic Name: "Object Action Control Point Response"\\
+          Characteristic Properties: Notify\\
+          Characteristic Value:\\
+          Data Type: Unsigned Integer (8-bit)\\
+          Length: 1 byte\\
+          Description: This characteristic provides the response to the Object Action Control Point commands.
     \item Object List Control Point Characteristic:\\
-    Characteristic UUID: 2AC4\\
-    Characteristic Name: "Object List Control Point"\\
-    Characteristic Properties: Write\\
-    Characteristic Value:\\
-    Data Type: Unsigned Integer (8-bit)\\
-    Length: 1 byte\\
-    Description: This characteristic is used to control the listing of RFID objects.
+          Characteristic UUID: 2AC4\\
+          Characteristic Name: "Object List Control Point"\\
+          Characteristic Properties: Write\\
+          Characteristic Value:\\
+          Data Type: Unsigned Integer (8-bit)\\
+          Length: 1 byte\\
+          Description: This characteristic is used to control the listing of RFID objects.
     \item Object List Control Point Response Characteristic:
-    Characteristic UUID: 2AC5\\
-    Characteristic Name: "Object List Control Point Response"\\
-    Characteristic Properties: Notify\\
-    Characteristic Value:\\
-    Data Type: Unsigned Integer (8-bit)\\
-    Length: 1 byte\\
-    Description: This characteristic provides the response to the Object List Control Point commands.\\
+          Characteristic UUID: 2AC5\\
+          Characteristic Name: "Object List Control Point Response"\\
+          Characteristic Properties: Notify\\
+          Characteristic Value:\\
+          Data Type: Unsigned Integer (8-bit)\\
+          Length: 1 byte\\
+          Description: This characteristic provides the response to the Object List Control Point commands.\\
     \item Object Changed Characteristic:\\
-    Characteristic UUID: 2AC6\\
-    Characteristic Name: "Object Changed"\\
-    Characteristic Properties: Indicate\\
-    Characteristic Value:\\
-    Data Type: Boolean\\
-    Length: 1 byte\\
-    Description: This characteristic indicates whether the RFID object has changed.\\
+          Characteristic UUID: 2AC6\\
+          Characteristic Name: "Object Changed"\\
+          Characteristic Properties: Indicate\\
+          Characteristic Value:\\
+          Data Type: Boolean\\
+          Length: 1 byte\\
+          Description: This characteristic indicates whether the RFID object has changed.\\
 \end{enumerate}
 
 
@@ -880,30 +984,30 @@ Gecko remains in EM3 (Sleep Mode) until an RFID tag is detected or the rotary en
 Buttons:
 \begin{enumerate}
     \item PB1 Button (Bonding Initiation):
-    \begin{itemize}
-        \item The PB1 button is used to initiate the bonding process between the server and the client.
-        \item When the user presses the PB1 button on the server, it triggers the bonding request to the client.
-    \end{itemize}
+          \begin{itemize}
+              \item The PB1 button is used to initiate the bonding process between the server and the client.
+              \item When the user presses the PB1 button on the server, it triggers the bonding request to the client.
+          \end{itemize}
     \item PB0 Button (Bonding Confirmation):
-    \begin{itemize}
-        \item The PB0 button is used to confirm the bonding process on the client side
-        \item After the server/client initiates the bonding request, the client receives a notification.
-    \end{itemize}
+          \begin{itemize}
+              \item The PB0 button is used to confirm the bonding process on the client side
+              \item After the server/client initiates the bonding request, the client receives a notification.
+          \end{itemize}
     \item The servo motor is used to provide a physical indication of the authentication status.
-    \begin{itemize}
-        \item If the received data matches the predefined values for a valid authentication, the servo motor is activated.
-    \end{itemize}
+          \begin{itemize}
+              \item If the received data matches the predefined values for a valid authentication, the servo motor is activated.
+          \end{itemize}
     \item LED (Light-Emitting Diode):
-    \begin{itemize}
-        \item After the client processes the received RFID data and encoder value, it determines the authentication result.
-        If the authentication is successful, the LED is turned on
-    \end{itemize}
+          \begin{itemize}
+              \item After the client processes the received RFID data and encoder value, it determines the authentication result.
+                    If the authentication is successful, the LED is turned on
+          \end{itemize}
     \item The LCD is used to display detailed information and messages to the user.
-    \begin{itemize}
-        \item It can show the current status of the system, such as "Ready for Authentication," "Bonding in Progress," or "Authentication Successful."
-        \item The LCD can also display the received RFID data and encoder value for reference or debugging purposes.
-        \item In case of an authentication failure, the LCD can display an appropriate error message, such as "Wrong Card or Encoder Value."
-    \end{itemize}
+          \begin{itemize}
+              \item It can show the current status of the system, such as "Ready for Authentication," "Bonding in Progress," or "Authentication Successful."
+              \item The LCD can also display the received RFID data and encoder value for reference or debugging purposes.
+              \item In case of an authentication failure, the LCD can display an appropriate error message, such as "Wrong Card or Encoder Value."
+          \end{itemize}
 \end{enumerate}
 
 
@@ -937,9 +1041,9 @@ Interaction Flow:
     \item The RFID subsystem consists of an MFRC522 RFID reader module that reads RFID tag data when a tag is presented. It communicates with the server microcontroller using SPI interface and generates an interrupt to wake up the server from sleep mode when a tag is detected.
 
     \item The Rotary Encoder Subsystem (hardware) captures user input by measuring the rotation and direction of the encoder. It generates an interrupt to wake up the server from sleep mode when rotated and provides values from -255 to 255 for authentication purposes.
-    
+
     \item The BLE Communication Subsystem (software) uses Silicon Labs EFR32BG13 Gecko Boards to securely connect between the server and client. It establishes a secure connection using bonding and encryption, and utilizes the Object Transfer Service (OTS) for transmitting RFID tag data. A custom Rotary Encoder Service is used for transmitting rotary encoder values.
-    
+
     \item The Data Compression Subsystem (software) compresses the RFID tag data and rotary encoder values before transmission. It reduces data sent over BLE while optimizing bandwidth and power consumption. Decompression is done on the receiving side to determine authentication status based on comparison results.
 \end{enumerate}
 
@@ -983,24 +1087,24 @@ Resolving the integration challenge between the display and the RFID module is a
 Section Author: Parth Thakkar\\\\
 
 \begin{table}[H]
-	\centering 
-	\begin{tabular}{| l | c |   }
-		\hline
-		\textbf{Requirements}&\textbf{Completion}\\\hline
-        The system shall comprise a pair of EFR32BG13&\ding{52}\\
+    \centering
+    \begin{tabular}{| l | c |   }
         \hline
-        Server shall host an MFRC522 RFID reader module and a rotary encoder.&\ding{52}\\
+        \textbf{Requirements}                                                         & \textbf{Completion} \\\hline
+        The system shall comprise a pair of EFR32BG13                                 & \ding{52}           \\
         \hline
-        The server shall employ Huffman encoding for data compression.&\ding{52}\\\hline
-        The server shall establish a secure connection through bonding.&\ding{52}\\\hline
-        The server code shall be optimized for low energy consumption.&\ding{52}\\\hline
-        The client shall receive the compressed authentication data from the server.&\ding{52}\\\hline
-        The Server shall display the authentication and other information on the LCD.&\ding{52}\\\hline
-        client decompress the received data using Huffman decoding &\ding{55}\\\hline
-\hline\hline
-	\end{tabular}
-	\caption{Requirements Completion}
-	\label{filterspecs}
+        Server shall host an MFRC522 RFID reader module and a rotary encoder.         & \ding{52}           \\
+        \hline
+        The server shall employ Huffman encoding for data compression.                & \ding{52}           \\\hline
+        The server shall establish a secure connection through bonding.               & \ding{52}           \\\hline
+        The server code shall be optimized for low energy consumption.                & \ding{52}           \\\hline
+        The client shall receive the compressed authentication data from the server.  & \ding{52}           \\\hline
+        The Server shall display the authentication and other information on the LCD. & \ding{52}           \\\hline
+        client decompress the received data using Huffman decoding                    & \ding{55}           \\\hline
+        \hline\hline
+    \end{tabular}
+    \caption{Requirements Completion}
+    \label{filterspecs}
 \end{table}
 
 
