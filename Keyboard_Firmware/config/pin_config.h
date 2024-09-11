@@ -109,6 +109,50 @@
 // [TIMER1]$
 
 // $[USART0]
+// USART0 CTS on PA2
+#ifndef USART0_CTS_PORT                         
+#define USART0_CTS_PORT                          gpioPortA
+#endif
+#ifndef USART0_CTS_PIN                          
+#define USART0_CTS_PIN                           2
+#endif
+#ifndef USART0_CTS_LOC                          
+#define USART0_CTS_LOC                           30
+#endif
+
+// USART0 RTS on PA3
+#ifndef USART0_RTS_PORT                         
+#define USART0_RTS_PORT                          gpioPortA
+#endif
+#ifndef USART0_RTS_PIN                          
+#define USART0_RTS_PIN                           3
+#endif
+#ifndef USART0_RTS_LOC                          
+#define USART0_RTS_LOC                           30
+#endif
+
+// USART0 RX on PA1
+#ifndef USART0_RX_PORT                          
+#define USART0_RX_PORT                           gpioPortA
+#endif
+#ifndef USART0_RX_PIN                           
+#define USART0_RX_PIN                            1
+#endif
+#ifndef USART0_RX_LOC                           
+#define USART0_RX_LOC                            0
+#endif
+
+// USART0 TX on PA0
+#ifndef USART0_TX_PORT                          
+#define USART0_TX_PORT                           gpioPortA
+#endif
+#ifndef USART0_TX_PIN                           
+#define USART0_TX_PIN                            0
+#endif
+#ifndef USART0_TX_LOC                           
+#define USART0_TX_LOC                            0
+#endif
+
 // [USART0]$
 
 // $[USART1]
