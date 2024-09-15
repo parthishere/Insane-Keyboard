@@ -40,6 +40,28 @@
 // [GPIO]$
 
 // $[I2C0]
+// I2C0 SCL on PC10
+#ifndef I2C0_SCL_PORT                           
+#define I2C0_SCL_PORT                            gpioPortC
+#endif
+#ifndef I2C0_SCL_PIN                            
+#define I2C0_SCL_PIN                             10
+#endif
+#ifndef I2C0_SCL_LOC                            
+#define I2C0_SCL_LOC                             14
+#endif
+
+// I2C0 SDA on PC11
+#ifndef I2C0_SDA_PORT                           
+#define I2C0_SDA_PORT                            gpioPortC
+#endif
+#ifndef I2C0_SDA_PIN                            
+#define I2C0_SDA_PIN                             11
+#endif
+#ifndef I2C0_SDA_LOC                            
+#define I2C0_SDA_LOC                             16
+#endif
+
 // [I2C0]$
 
 // $[I2C1]

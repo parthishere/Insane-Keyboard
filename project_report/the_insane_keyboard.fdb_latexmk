@@ -1,13 +1,13 @@
 # Fdb version 4
-["makeindex the_insane_keyboard.idx"] 1725304629.12323 "the_insane_keyboard.idx" "the_insane_keyboard.ind" "the_insane_keyboard" 1725750685.89827 0
-  "the_insane_keyboard.idx" 1725750684.3023 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex the_insane_keyboard.idx"] 1726375737.19976 "the_insane_keyboard.idx" "the_insane_keyboard.ind" "the_insane_keyboard" 1726375762.77708 0
+  "the_insane_keyboard.idx" 1726375761.70398 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "the_insane_keyboard.ilg"
   "the_insane_keyboard.ind"
   (rewritten before read)
-["pdflatex"] 1725750683.63192 "/home/parth/Work/All_data/university/Low_Power/Project/project_report/the_insane_keyboard.tex" "the_insane_keyboard.pdf" "the_insane_keyboard" 1725750685.89857 0
+["pdflatex"] 1726375761.30451 "/home/parth/Work/All_data/university/Low_Power/Project/project_report/the_insane_keyboard.tex" "the_insane_keyboard.pdf" "the_insane_keyboard" 1726375762.77725 0
   "/etc/texmf/web2c/texmf.cnf" 1720120495.47412 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/parth/Work/All_data/university/Low_Power/Project/project_report/the_insane_keyboard.tex" 1725305280.54233 28508 b3db1b7cb8ad7e731cac401632c8c96f ""
+  "/home/parth/Work/All_data/university/Low_Power/Project/project_report/the_insane_keyboard.tex" 1726375761.07797 28914 2f4cd3e33f4e786f804fbbe9b32bb061 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -143,14 +143,15 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1720122751.56216 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1720122869 8213406 a7265f2d03257fee063b724b37638a48 ""
-  "content/title_page.tex" 1725750685.16028 1752 953aef2a7e37e3cf0b13abca440d7e91 ""
+  "content/title_page.tex" 1726374332.75654 1752 953aef2a7e37e3cf0b13abca440d7e91 ""
   "figures/NKRO-EX.png" 1725257692.14739 118557 d42bb51cce3f946770582ec9207cf7b6 ""
   "figures/NKRO.png" 1725257335.36363 111056 3b8ff18413295e6e1aa3ebee497be566 ""
   "figures/NRO.png" 1725257093.16186 51116 95d413ca9434e3d5d19b14227f96bec7 ""
   "figures/Timeline.png" 1725219575.20914 76091 2e35e1e4e6bd2bf7c552c6e1e1dd9b6f ""
+  "figures/blockdiagram.png" 1726374959.63836 125023 5c89e0166192930ab036c95333dc2b5a ""
   "figures/concept.png" 1725068913.0728 37456 672705d6fb32ee53ec8ca633694451fa ""
   "figures/cu.png" 1702737230 13278 348d09e2845880695c00d3c741eb88cb ""
-  "figures/hw.png" 1725256232.92318 91897 3a2c1c2731500f35ea7c24447078294f ""
+  "figures/kanban.png" 1726374598.241 131858 1682191a53184f77bbfd73c033e0cd31 ""
   "figures/nkr-EX.png" 1725257668.3476 62744 80ba0326b642db178dd1a9b6f5319621 ""
   "figures/nomad.jpg" 1725234878.73131 117946 a135bbb4396e090d321b2c6fb87a9e49 ""
   "figures/software_diagram.png" 1725177201.62989 60703 1d8311e2666c12d2373fcd3e81214617 ""
@@ -158,13 +159,13 @@
   "settings/macros.tex" 1677508426 866 698fb2c3d01b320df27e4b93711dcb0c ""
   "settings/packages.tex" 1677508426 1613 40337528d3cda32322797ae21375329f ""
   "settings/page.tex" 1677508426 460 29330b44c69a3f078aa639d592e547f3 ""
-  "the_insane_keyboard.aux" 1725750685.73527 4820 725206b68580e0fbe86a0e1bad2c97f1 "pdflatex"
-  "the_insane_keyboard.ind" 1725304629.23175 0 d41d8cd98f00b204e9800998ecf8427e "makeindex the_insane_keyboard.idx"
-  "the_insane_keyboard.lof" 1725750685.73727 1008 34055e4e182de4901f2893e4b39d8b43 "pdflatex"
-  "the_insane_keyboard.lot" 1725750685.73727 201 37c20b78edd0df9312debe360cf8c8ec "pdflatex"
-  "the_insane_keyboard.out" 1725750685.73627 3825 1edad39dc3cf726af65575fa3ba1a5a0 "pdflatex"
-  "the_insane_keyboard.tex" 1725305280.54233 28508 b3db1b7cb8ad7e731cac401632c8c96f ""
-  "the_insane_keyboard.toc" 1725750685.73727 1833 7578c8cb786643644f460185df699890 "pdflatex"
+  "the_insane_keyboard.aux" 1726375762.68199 4975 449a93947323ef8e9696c0fd1192c4e6 "pdflatex"
+  "the_insane_keyboard.ind" 1726375737.3026 0 d41d8cd98f00b204e9800998ecf8427e "makeindex the_insane_keyboard.idx"
+  "the_insane_keyboard.lof" 1726375762.68299 1093 b37d86cddf6fcd1f3ef9075117639d6b "pdflatex"
+  "the_insane_keyboard.lot" 1726375762.68299 201 48dfa7eff45a68edaf7184ae89cb1e4d "pdflatex"
+  "the_insane_keyboard.out" 1726375762.68199 3825 1edad39dc3cf726af65575fa3ba1a5a0 "pdflatex"
+  "the_insane_keyboard.tex" 1726375761.07797 28914 2f4cd3e33f4e786f804fbbe9b32bb061 ""
+  "the_insane_keyboard.toc" 1726375762.68299 1833 1f9f5c1565c7d83591267cd42d0dcee8 "pdflatex"
   (generated)
   "the_insane_keyboard.aux"
   "the_insane_keyboard.idx"

@@ -12,6 +12,7 @@ sl_device_init_emu_config.h=1414330218
 sl_device_init_hfxo_config.h=551330309
 sl_device_init_lfxo_config.h=-1335833621
 sl_i2cspm_Sensors_config.h=-1906621285
+sl_i2cspm_sensor_config.h=-413295531
 sl_iostream_usart_vcom_config.h=-1649518391
 sl_mbedtls_config.h=-887671824
 sl_mbedtls_device_config.h=-1083250924

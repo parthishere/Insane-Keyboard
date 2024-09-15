@@ -113,6 +113,14 @@
             <file name="sl_debug_swo.h" uri="studio:/sdk/platform/driver/debug/inc/sl_debug_swo.h"/>
           </folder>
         </folder>
+        <folder name="i2cspm">
+          <folder name="src">
+            <file name="sl_i2cspm.c" uri="studio:/sdk/platform/driver/i2cspm/src/sl_i2cspm.c"/>
+          </folder>
+          <folder name="inc">
+            <file name="sl_i2cspm.h" uri="studio:/sdk/platform/driver/i2cspm/inc/sl_i2cspm.h"/>
+          </folder>
+        </folder>
       </folder>
       <folder name="service">
         <folder name="device_init">
@@ -710,6 +718,7 @@
   <includePath uri="studio:/sdk/platform/emdrv/dmadrv/inc"/>
   <includePath uri="studio:/sdk/platform/emdrv/common/inc"/>
   <includePath uri="studio:/sdk/platform/emlib/inc"/>
+  <includePath uri="studio:/sdk/platform/driver/i2cspm/inc"/>
   <includePath uri="studio:/sdk/platform/service/iostream/inc"/>
   <includePath uri="studio:/sdk/platform/security/sl_component/sl_mbedtls_support/config"/>
   <includePath uri="studio:/sdk/platform/security/sl_component/sl_mbedtls_support/config/preset"/>

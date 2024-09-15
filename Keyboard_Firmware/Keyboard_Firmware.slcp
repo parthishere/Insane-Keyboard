@@ -33,6 +33,8 @@ component:
 - {id: brd4104a}
 - {id: device_init}
 - {id: gatt_configuration}
+- instance: [sensor]
+  id: i2cspm
 - instance: [vcom]
   id: iostream_usart
 - {id: iostream_usart_core}
