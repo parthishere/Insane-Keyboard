@@ -1,22 +1,23 @@
 \contentsline {section}{List of Figures}{1}{section*.2}%
 \contentsline {section}{List of Tables}{1}{section*.3}%
-\contentsline {section}{\numberline {1}Project Proposal}{2}{section.1}%
-\contentsline {section}{\numberline {2}Project Rationale and Goals}{2}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Project Rationale}{2}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Project Goals}{2}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Unique Features}{3}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Expected Outcomes}{3}{subsection.2.4}%
-\contentsline {section}{\numberline {3}Existing Products and Ideas from products}{3}{section.3}%
-\contentsline {section}{\numberline {4}Project Timeline}{5}{section.4}%
-\contentsline {section}{\numberline {5}High Level Requirements}{5}{section.5}%
-\contentsline {subsection}{\numberline {5.1}General Requirements}{5}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Components}{6}{subsection.5.2}%
-\contentsline {section}{\numberline {6}Keyboard Layout and Design}{7}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Main Board Key Layout}{7}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Secondary Module Key Layout}{7}{subsection.6.2}%
-\contentsline {section}{\numberline {7}Technical Considerations}{8}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Functional hardware block diagram}{8}{subsection.7.1}%
-\contentsline {section}{\numberline {8}Wireless Communication and Software Architecture}{14}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Wireless Communication Details}{14}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Functional software block diagram}{15}{subsection.8.2}%
-\contentsline {section}{\numberline {9}Challenges and Considerations}{15}{section.9}%
+\contentsline {section}{\numberline {1}Project Proposal}{3}{section.1}%
+\contentsline {section}{\numberline {2}Project Rationale and Goals}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Project Rationale}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Project Goals}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Unique Features}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Expected Outcomes}{4}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Existing Products and Ideas from products}{4}{section.3}%
+\contentsline {section}{\numberline {4}Project Timeline}{6}{section.4}%
+\contentsline {section}{\numberline {5}High Level Requirements}{6}{section.5}%
+\contentsline {subsection}{\numberline {5.1}General Requirements}{6}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Components}{7}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Keyboard Layout and Design}{8}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Main Board Key Layout}{8}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Secondary Module Key Layout}{8}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Technical Considerations}{9}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Functional hardware block diagram}{9}{subsection.7.1}%
+\contentsline {section}{\numberline {8}Wireless Communication and Software Architecture}{15}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Wireless Communication Details}{15}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Functional software block diagram}{16}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Calculation}{17}{subsection.8.3}%
+\contentsline {section}{\numberline {9}Challenges and Considerations}{17}{section.9}%
