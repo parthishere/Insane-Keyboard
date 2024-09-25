@@ -307,16 +307,6 @@ INPUT ./figures/concept.png
 INPUT ./figures/concept.png
 INPUT ./figures/concept.png
 INPUT ./figures/concept.png
-INPUT ./figures/Timeline.png
-INPUT ./figures/Timeline.png
-INPUT ./figures/Timeline.png
-INPUT ./figures/Timeline.png
-INPUT ./figures/Timeline.png
-INPUT ./figures/kanban.png
-INPUT ./figures/kanban.png
-INPUT ./figures/kanban.png
-INPUT ./figures/kanban.png
-INPUT ./figures/kanban.png
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
@@ -350,18 +340,76 @@ INPUT ./figures/software_diagram.png
 INPUT ./figures/software_diagram.png
 INPUT ./figures/software_diagram.png
 INPUT ./figures/software_diagram.png
+INPUT ./figures/Timeline.png
+INPUT ./figures/Timeline.png
+INPUT ./figures/Timeline.png
+INPUT ./figures/Timeline.png
+INPUT ./figures/Timeline.png
+INPUT ./figures/kanban.png
+INPUT ./figures/kanban.png
+INPUT ./figures/kanban.png
+INPUT ./figures/kanban.png
+INPUT ./figures/kanban.png
 INPUT ./figures/calc.jpeg
 INPUT ./figures/calc.jpeg
 INPUT ./figures/calc.jpeg
 INPUT ./figures/calc.jpeg
 INPUT ./figures/calc.jpeg
+INPUT ./figures/BlueGecko.jpg
+INPUT ./figures/BlueGecko.jpg
+INPUT ./figures/BlueGecko.jpg
+INPUT ./figures/BlueGecko.jpg
+INPUT ./figures/BlueGecko.jpg
+INPUT ./figures/IO expander.jpg
+INPUT ./figures/IO expander.jpg
+INPUT ./figures/IO expander.jpg
+INPUT ./figures/IO expander.jpg
+INPUT ./figures/IO expander.jpg
+INPUT ./figures/Loadswitch.jpg
+INPUT ./figures/Loadswitch.jpg
+INPUT ./figures/Loadswitch.jpg
+INPUT ./figures/Loadswitch.jpg
+INPUT ./figures/Loadswitch.jpg
+INPUT ./figures/Mechanical Switch.jpg
+INPUT ./figures/Mechanical Switch.jpg
+INPUT ./figures/Mechanical Switch.jpg
+INPUT ./figures/Mechanical Switch.jpg
+INPUT ./figures/Mechanical Switch.jpg
+INPUT ./figures/PMIC.jpg
+INPUT ./figures/PMIC.jpg
+INPUT ./figures/PMIC.jpg
+INPUT ./figures/PMIC.jpg
+INPUT ./figures/PMIC.jpg
+INPUT ./figures/Temperature sensor.jpg
+INPUT ./figures/Temperature sensor.jpg
+INPUT ./figures/Temperature sensor.jpg
+INPUT ./figures/Temperature sensor.jpg
+INPUT ./figures/Temperature sensor.jpg
+INPUT ./figures/vr.png
+INPUT ./figures/vr.png
+INPUT ./figures/vr.png
+INPUT ./figures/vr.png
+INPUT ./figures/kanban_2.png
+INPUT ./figures/kanban_2.png
+INPUT ./figures/kanban_2.png
+INPUT ./figures/kanban_2.png
+INPUT ./figures/kanban_2.png
+INPUT ./figures/3d_print_fusion.png
+INPUT ./figures/3d_print_fusion.png
+INPUT ./figures/3d_print_fusion.png
+INPUT ./figures/3d_print_fusion.png
+INPUT ./figures/3d_print_fusion.png
 INPUT the_insane_keyboard.aux
 INPUT ./the_insane_keyboard.out
 INPUT ./the_insane_keyboard.out
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 INPUT /usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb
