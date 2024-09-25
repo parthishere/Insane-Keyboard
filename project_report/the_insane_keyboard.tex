@@ -809,75 +809,109 @@ Since the PMIC can't provide 500mA, it will charge at its maximum rate of 230mA.
 \end{equation}
 
 
-\subsection{Supercapacitor vs Battery Comparison}
+\subsection{Supercapacitor vs Battery Comparison: Mathematical Analysis}
 
-In considering energy storage options for our keyboard, we evaluated a 4F Vishay supercapacitor against our chosen 1000mAh Li-ion battery. This analysis is crucial for optimizing the keyboard's performance and longevity.
+We'll compare a 4F Vishay supercapacitor with our 1000mAh Li-ion battery, focusing on quantitative aspects.
 
-\subsubsection{Energy and Power Density}
+\subsubsection{Energy Storage}
+
+\paragraph{Battery:}
+Energy stored in the battery:
+\begin{equation}
+    E_{\text{battery}} = \text{Capacity} \times \text{Voltage} = 1000 \text{ mAh} \times 3.7 \text{ V} = 3700 \text{ mWh} = 13320 \text{ J}
+\end{equation}
+
+\paragraph{Supercapacitor:}
+Energy stored in the supercapacitor (assuming 2.7V max voltage):
+\begin{equation}
+    E_{\text{supercap}} = \frac{1}{2} C V^2 = \frac{1}{2} \times 4 \text{ F} \times (2.7 \text{ V})^2 = 14.58 \text{ J} = 0.00405 \text{ Wh}
+\end{equation}
+
+\subsubsection{Power Density}
+
+\paragraph{Battery:}
+Assuming a discharge time of 1 hour at maximum current (1.05A):
+\begin{equation}
+    P_{\text{battery}} = 3.7 \text{ V} \times 1.05 \text{ A} = 3.885 \text{ W}
+\end{equation}
+
+\paragraph{Supercapacitor:}
+Assuming a discharge time of 1 second (typical for supercapacitors):
+\begin{equation}
+    P_{\text{supercap}} = \frac{E_{\text{supercap}}}{\text{time}} = \frac{14.58 \text{ J}}{1 \text{ s}} = 14.58 \text{ W}
+\end{equation}
+
+\subsubsection{Current Handling}
+
+\paragraph{Battery:}
+Maximum discharge current: 1.05A
+
+\paragraph{Supercapacitor:}
+Maximum current can be calculated using the ESR (Equivalent Series Resistance). Assuming an ESR of 0.1 Ohm:
+\begin{equation}
+    I_{\text{max,supercap}} = \frac{V_{\text{max}}}{ESR} = \frac{2.7 \text{ V}}{0.1 \text{ \ohm}} = 27 \text{ A}
+\end{equation}
+
+\subsubsection{Self-Discharge}
+
+\paragraph{Battery:}
+Assuming 5\% self-discharge per month:
+\begin{equation}
+    E_{\text{loss,battery}} = 0.05 \times 3700 \text{ mWh} = 185 \text{ mWh/month}
+\end{equation}
+
+\paragraph{Supercapacitor:}
+Self-discharge in supercapacitors can be modeled as:
+\begin{equation}
+    V(t) = V_0 e^{-t/\tau}
+\end{equation}
+Where $\tau = RC$, R is the leakage resistance (assume 100 kOhm), and C is 4F:
+\begin{equation}
+    \tau = 100 \text{ k\ohm} \times 4 \text{ F} = 400000 \text{ s} \approx 4.63 \text{ days}
+\end{equation}
+
+After one month (2,592,000 seconds):
+\begin{equation}
+    V(1 \text{ month}) = 2.7 \text{ V} \times e^{-2592000/400000} \approx 0.48 \text{ V}
+\end{equation}
+
+Energy remaining:
+\begin{equation}
+    E_{\text{remaining}} = \frac{1}{2} \times 4 \text{ F} \times (0.48 \text{ V})^2 = 0.4608 \text{ J}
+\end{equation}
+
+Energy lost:
+\begin{equation}
+    E_{\text{loss,supercap}} = 14.58 \text{ J} - 0.4608 \text{ J} = 14.1192 \text{ J} = 0.003922 \text{ Wh/month}
+\end{equation}
+
+\subsubsection{Charging Time}
+
+\paragraph{Battery:}
+With a charging current of 525mA:
+\begin{equation}
+    t_{\text{charge,battery}} = \frac{1000 \text{ mAh}}{525 \text{ mA}} = 1.90 \text{ hours}
+\end{equation}
+
+\paragraph{Supercapacitor:}
+Assuming a charging current of 1A:
+\begin{equation}
+    t_{\text{charge,supercap}} = \frac{C \times V}{I} = \frac{4 \text{ F} \times 2.7 \text{ V}}{1 \text{ A}} = 10.8 \text{ seconds}
+\end{equation}
+
+\subsubsection{Conclusion}
+
+This mathematical analysis confirms our previous conclusions:
 
 \begin{itemize}
-    \item \textbf{Battery:} Our 1000mAh Li-ion battery at 3.7V stores approximately 3.7Wh of energy.
-    \item \textbf{Supercapacitor:} The 4F Vishay supercapacitor, assuming a 2.7V rating, stores about 0.004Wh.
+    \item The battery stores $\frac{3700}{0.00405} \approx 914$ times more energy than the supercapacitor.
+    \item The supercapacitor can deliver $\frac{14.58}{3.885} \approx 3.75$ times more power in short bursts.
+    \item The supercapacitor can handle much higher peak currents (27A vs 1.05A).
+    \item The battery retains charge much better, losing only 5\% per month compared to the supercapacitor's 96.8% loss.
+    \item The supercapacitor charges $\frac{1.90 \times 3600}{10.8} \approx 633$ times faster than the battery.
 \end{itemize}
 
-The battery clearly outperforms in energy density, crucial for our keyboard's long-term operation between charges.
-
-\subsubsection{Peak Current Handling}
-
-\begin{itemize}
-    \item \textbf{Battery:} Our battery can handle discharge currents up to 1.05A.
-    \item \textbf{Supercapacitor:} Supercapacitors generally excel in delivering high peak currents.
-\end{itemize}
-
-While both can meet our peak current requirement of 39.0296560 mA, the supercapacitor might provide better performance for rapid, high-current events.
-
-\subsubsection{Temperature Range}
-
-\begin{itemize}
-    \item \textbf{Battery:} Typical Li-ion batteries operate effectively between 0°C and 45°C.
-    \item \textbf{Supercapacitor:} Vishay supercapacitors often have a wider operating range, potentially from -40°C to 65°C.
-\end{itemize}
-
-The supercapacitor's wider temperature range could be advantageous, but our keyboard's expected operating range (0°C to 50°C) is well within the battery's capabilities.
-
-\subsubsection{Cycle Life and Longevity}
-
-\begin{itemize}
-    \item \textbf{Battery:} Li-ion batteries typically last for 500-1000 charge cycles.
-    \item \textbf{Supercapacitor:} Supercapacitors can often withstand 100,000+ charge cycles.
-\end{itemize}
-
-The supercapacitor significantly outperforms in cycle life, which could be beneficial for frequent charge-discharge scenarios.
-
-\subsubsection{Self-Discharge and Shelf Life}
-
-\begin{itemize}
-    \item \textbf{Battery:} Li-ion batteries have a relatively low self-discharge rate, losing about 5-10\% of their charge per month.
-    \item \textbf{Supercapacitor:} Supercapacitors typically have higher self-discharge rates, potentially losing significant charge within days or weeks.
-\end{itemize}
-
-The battery's lower self-discharge rate is preferable for our keyboard, which may have periods of inactivity.
-
-\subsubsection{Charging Characteristics}
-
-\begin{itemize}
-    \item \textbf{Battery:} Our battery charges at 525mA, taking about 2 hours for a full charge.
-    \item \textbf{Supercapacitor:} Supercapacitors can be charged much faster, potentially in seconds or minutes.
-\end{itemize}
-
-The supercapacitor's rapid charging could be beneficial for quick top-ups, but may not be necessary given our solar charging setup.
-
-\subsubsection{Size and Weight}
-
-\begin{itemize}
-    \item \textbf{Battery:} Our battery measures 2.09" x 1.89" x 0.16".
-    \item \textbf{Supercapacitor:} The 4F Vishay supercapacitor is likely smaller and lighter.
-\end{itemize}
-
-While the supercapacitor might offer space savings, our chosen battery fits well within our keyboard's design constraints.
-For our keyboard application, the Li-ion battery remains the preferred choice.
-
-
+These calculations support using the battery as the main power source,
 
 \subsection{PCB Design Progress}
 We've completed footprint creation for most components, with the following exceptions:
