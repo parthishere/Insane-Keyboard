@@ -1,23 +1,70 @@
-\contentsline {section}{List of Figures}{1}{section*.2}%
-\contentsline {section}{List of Tables}{1}{section*.3}%
-\contentsline {section}{\numberline {1}Project Proposal}{3}{section.1}%
-\contentsline {section}{\numberline {2}Project Rationale and Goals}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Project Rationale}{3}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Project Goals}{3}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Unique Features}{4}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Expected Outcomes}{4}{subsection.2.4}%
-\contentsline {section}{\numberline {3}Existing Products and Ideas from products}{4}{section.3}%
-\contentsline {section}{\numberline {4}Project Timeline}{6}{section.4}%
-\contentsline {section}{\numberline {5}High Level Requirements}{6}{section.5}%
-\contentsline {subsection}{\numberline {5.1}General Requirements}{6}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Components}{7}{subsection.5.2}%
-\contentsline {section}{\numberline {6}Keyboard Layout and Design}{8}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Main Board Key Layout}{8}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Secondary Module Key Layout}{8}{subsection.6.2}%
-\contentsline {section}{\numberline {7}Technical Considerations}{9}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Functional hardware block diagram}{9}{subsection.7.1}%
-\contentsline {section}{\numberline {8}Wireless Communication and Software Architecture}{15}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Wireless Communication Details}{15}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Functional software block diagram}{16}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}Calculation}{17}{subsection.8.3}%
-\contentsline {section}{\numberline {9}Challenges and Considerations}{17}{section.9}%
+\contentsline {section}{List of Figures}{2}{section*.2}%
+\contentsline {section}{List of Tables}{2}{section*.3}%
+\contentsline {section}{\numberline {1}\color {red}Project Proposal}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Project Rationale and Goals}{3}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Project Rationale}{3}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Project Goals}{3}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}Unique Features}{4}{subsubsection.1.1.3}%
+\contentsline {subsubsection}{\numberline {1.1.4}Expected Outcomes}{4}{subsubsection.1.1.4}%
+\contentsline {subsection}{\numberline {1.2}Existing Products and Ideas from products}{4}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}High Level Requirements}{5}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}General Requirements}{5}{subsubsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.4}Keyboard Layout and Design}{6}{subsection.1.4}%
+\contentsline {subsubsection}{\numberline {1.4.1}Main Board Key Layout}{6}{subsubsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.5}Secondary Module Key Layout}{7}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Challenges and Considerations}{7}{subsection.1.6}%
+\contentsline {section}{\numberline {2}\color {red}Project Update: Week 1}{8}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Technical Considerations}{8}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Functional hardware block diagram}{8}{subsubsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.2}Wireless Communication and Software Architecture}{14}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}HID Profile Characteristics}{14}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Software Architecture}{14}{subsubsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.3}Project Management}{15}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Energy Analysis and Power Management}{15}{subsection.2.4}%
+\contentsline {section}{\numberline {3}\color {red}Project Update: Week 2}{17}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Selection Criteria}{17}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Chosen Components}{17}{subsubsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.2}Justification for Each Component}{18}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}EFR32BG13 Microcontroller}{18}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}TCA6408A I/O Expander}{18}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Waveshare E-ink Display}{18}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}TPS22919 Load Switch}{18}{subsubsection.3.2.4}%
+\contentsline {subsubsection}{\numberline {3.2.5}BQ25570 Power Management IC}{18}{subsubsection.3.2.5}%
+\contentsline {subsubsection}{\numberline {3.2.6}SI7021 Temperature and Humidity Sensor}{19}{subsubsection.3.2.6}%
+\contentsline {subsubsection}{\numberline {3.2.7}Solar Panel (SM141K06L)}{19}{subsubsection.3.2.7}%
+\contentsline {subsubsection}{\numberline {3.2.8}Battery (1000mAh)}{19}{subsubsection.3.2.8}%
+\contentsline {section}{\numberline {4}Energy Analysis}{19}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Overall Energy Efficiency}{19}{subsection.4.1}%
+\contentsline {paragraph}{Energy Consumption Breakdown}{19}{section*.4}%
+\contentsline {paragraph}{Average Power Consumption}{19}{section*.5}%
+\contentsline {paragraph}{Daily Energy Requirement}{20}{section*.6}%
+\contentsline {paragraph}{Battery Capacity Calculation}{20}{section*.7}%
+\contentsline {paragraph}{Energy Harvesting Efficiency}{20}{section*.8}%
+\contentsline {paragraph}{Power Budget Analysis}{20}{section*.9}%
+\contentsline {paragraph}{Capacitor Sizing}{20}{section*.10}%
+\contentsline {subsection}{\numberline {4.2}Battery and Power Management}{20}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Power Management IC (PMIC) Selection}{20}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Energy Storage Element Selection}{21}{subsubsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.3}Energy Requirements Analysis}{21}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Unregulated Supply Performance}{21}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Peak and Average Current Use Cases}{21}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Total Energy Required Between Charging}{22}{subsubsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.4}Recharge Time Calculation}{22}{subsubsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.4}Supercapacitor vs Battery Comparison}{22}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Energy and Power Density}{22}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Peak Current Handling}{22}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.3}Temperature Range}{23}{subsubsection.4.4.3}%
+\contentsline {subsubsection}{\numberline {4.4.4}Cycle Life and Longevity}{23}{subsubsection.4.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.5}Self-Discharge and Shelf Life}{23}{subsubsection.4.4.5}%
+\contentsline {subsubsection}{\numberline {4.4.6}Charging Characteristics}{23}{subsubsection.4.4.6}%
+\contentsline {subsubsection}{\numberline {4.4.7}Size and Weight}{23}{subsubsection.4.4.7}%
+\contentsline {subsection}{\numberline {4.5}PCB Design Progress}{23}{subsection.4.5}%
+\contentsline {subsubsection}{\numberline {4.5.1}Footprint Generation}{24}{subsubsection.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.2}Power Supply Considerations}{24}{subsubsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.6}Mechanical Design}{25}{subsection.4.6}%
+\contentsline {subsubsection}{\numberline {4.6.1}Dimensions}{25}{subsubsection.4.6.1}%
+\contentsline {subsubsection}{\numberline {4.6.2}Material}{25}{subsubsection.4.6.2}%
+\contentsline {subsubsection}{\numberline {4.6.3}Operating Conditions}{25}{subsubsection.4.6.3}%
+\contentsline {subsection}{\numberline {4.7}Project Progress and Future Plans}{25}{subsection.4.7}%
+\contentsline {subsubsection}{\numberline {4.7.1}Recent Updates}{25}{subsubsection.4.7.1}%
+\contentsline {subsubsection}{\numberline {4.7.2}Upcoming Tasks}{26}{subsubsection.4.7.2}%

@@ -64,7 +64,12 @@
 
 \pagebreak
 
-\section{Project Proposal}
+% \section{}
+
+\section{\color{red}Project Proposal}
+
+
+
 \textbf{Team name:}\\
 Low Self Esteem Team\\
 
@@ -79,11 +84,11 @@ Akash Karoshi\\
 Akash.Karoshi@colorado.edu\\
 
 
-\section{Project Rationale and Goals}
+\subsection{Project Rationale and Goals}
 For the ECEN 5833 Low Power Embedded System Design course, our team is developing an advanced mechanical keyboard called "The Insane Keyboard". This project aims to create a high-performance input device that combines ergonomic design, customization options, and some cool features.
 
 
-\subsection{Project Rationale}
+\subsubsection{Project Rationale}
 Our analysis of the mechanical keyboard market revealed several issues:
 \begin{itemize}
     \item Ergonomic keyboards often lack additional features or are expensive
@@ -92,7 +97,7 @@ Our analysis of the mechanical keyboard market revealed several issues:
     \item Few keyboards combine ergonomic design, wireless capability, programmable lighting, and smart functions
     \item Keyboards with displays or extra features often have poor power efficiency
 \end{itemize}
-\subsection{Project Goals}
+\subsubsection{Project Goals}
 We aim to create a mechanical keyboard with the following features:
 \begin{itemize}
     \item Split ergonomic design to reduce physical strain
@@ -109,7 +114,7 @@ We aim to create a mechanical keyboard with the following features:
     \item Cost-effective design for market accessibility
 \end{itemize}
 
-\subsection{Unique Features}
+\subsubsection{Unique Features}
 "The Insane Keyboard" has unique features like:
 \begin{itemize}
     \item Integration of multiple desirable features in one device
@@ -119,7 +124,7 @@ We aim to create a mechanical keyboard with the following features:
     \item Adaptable design for future upgrades
 \end{itemize}
 
-\subsection{Expected Outcomes}
+\subsubsection{Expected Outcomes}
 Upon completion, this project could:
 \begin{itemize}
     \item Improve ergonomics in daily computer use
@@ -128,7 +133,7 @@ Upon completion, this project could:
     \item Demonstrate practical applications of low-power embedded design
 \end{itemize}
 
-\section{Existing Products and Ideas from products}
+\subsection{Existing Products and Ideas from products}
 
 % Placeholder for a diagram of the keyboard design
 \begin{figure}[H]
@@ -154,33 +159,14 @@ Upon completion, this project could:
 \end{figure}
 \vspace{0.2cm}
 
-\section{Project Timeline}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.34]{figures/Timeline.png}
-    \caption{Conceptual Design of The Insane Keyboard}
-    % Figure content to be added
-\end{figure}
-\vspace{0.2cm}
-
-\textbf{Kanban chart for project management, link for github :} \\
-\href{https://github.com/users/parthishere/projects/2}{GITHUB Project}\\
-\href{https://github.com/parthishere/Insane-Keyboard}{GITHUB Code link}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.26]{figures/kanban.png}
-    \caption{Kanban Board}
-    % Figure content to be added
-\end{figure}
 
 
 
 
-\section{High Level Requirements}
+\subsection{High Level Requirements}
 
 
-\subsection{General Requirements}
+\subsubsection{General Requirements}
 \begin{itemize}
 \item Two EFR32BG13 boards (one per module)
 \item Should be Ergonomic
@@ -207,45 +193,11 @@ Upon completion, this project could:
 \item Spotify integration for music control and now-playing information(yet to be seen)
 \end{itemize}
 
-\subsection{Components}
-\begin{longtable}{|p{3cm}|p{2cm}|p{4cm}|p{2cm}|p{5cm}|}
-    \hline
-    \textbf{Component} & \textbf{Quantity} & \textbf{Function} & \textbf{Interface} & \textbf{URL} \\
-    \hline
-    EFR32BG13 & 2 & Microcontroller & - & \href{https://www.silabs.com/mcu/32-bit-microcontrollers/efm32pg23-series-2}{EFR32BG13 Series 1} \\
-    \hline
-    TCA6408A & 2 & IO Expander & I2C & \href{https://www.ti.com/lit/ds/symlink/tca6408a.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&ts=1726372582102&ref_url=https%253A%252F%252Fwww.ti.com%252Fgeneral%252Fdocs%252Fsuppproductinfo.tsp%253FdistId%253D10%2526gotoUrl%253Dhttps%253A%252F%252Fwww.ti.com%252Flit%252Fgpn%252Ftca6408a}{TCA6408A Expander} \\
-    \hline
-    % TLC5947 & PWM Driver for LED & SPI & \href{https://www.ti.com/product/TLC5947}{TLC5947 Driver} \\
-    % \hline
-    % WS2815 & RGB LED (Individually Addressable) & - & - \\
-    % \hline
-    Waveshare E-ink Display & 1 &Display & SPI & \href{https://www.waveshare.com/1.54inch-e-Paper-Module.htm}{Waveshare E-ink display} \\
-    \hline
-    Load Switch (TPS22919) & 1 &Load power management & SPI & \href{https://www.ti.com/lit/ds/symlink/tps22919.pdf?ts=1726372241358&ref_url=https%253A%252F%252Fwww.google.com%252F}{Load Switch} \\
-    \hline
-    PMIC & 2 &Power management & - & \href{https://www.ti.com/lit/ds/symlink/bq25570.pdf?ts=1726357797862&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FBQ25570}{BQ25570} \\
-    Super Cap Vishay 4F 3 Cell& 2 &  & Energy harverstor & \href{https://www.vishay.com/docs/28409/196hvc.pdf}{196hvc} \\
-    \hline
-    SI7021 & 1 &Temperature and Humidity Sensor & I2C & \href{https://www.silabs.com/documents/public/data-sheets/Si7021-A20.pdf}{SI7021 Sensor} \\
-    \hline
-    Schottky Diodes & 1 &Power Management & - & - \\
-    \hline
-    Gateron G Black Pro 2.0 & 68 & Key Switches & - & \href{https://www.amazon.com/Pre-lubed-Switches-Mechanical-Keyboard-Switches/dp/B0BH1BZ787/ref=sr_1_3?dib=eyJ2IjoiMSJ9.Znh8d8tPJSWiImgJJpmm-QaZyTnVNKNJ_kJO8F-VsBufwkYWPE22tiWw0cJ-akUZp0mCPOwwRMy-WRHf2F9g0Dvac17T6EuiT9uTNjLg1UvHb6A5IJ-fiwz_bSpWSV10Awtk7U7hSs_WaEn9z6pZjk1Ua2gutyyzVToMb1ntQ8q7pWGvrrvOeiEwpwiIWQBDviCxxIlD7fl0UUH_JJ9kOp_C_17x0PXvYOHWw8FYhn8.gS8VP-4QbafCra1X6UlUj1E0eMfB4ogbHozN37MjJ1Q&dib_tag=se&keywords=gateron%2Bblack&qid=1725254581&sr=8-3&th=1}{Gateron G black Pro 2.0} \\
-    \hline
-    Mechanical Key hotswap & 68 &Hot swap  & - & \href{https://www.amazon.com/dp/B0CZ79GGDF?ref=ppx_yo2ov_dt_b_fed_asin_title}{hotswap} \\
-    \hline
-    Cherry MX Key Caps & 68 &Key Caps & - & \href{https://www.aliexpress.com/item/3256801599125271.html?spm=a2g0o.order_list.order_list_main.5.43b918023cg2lz}{Cherry MX Key Caps} \\
-    \hline
-    Rotary Encoders & 2 &Input Device & - & \href{https://www.adafruit.com/product/377}{Rotary Encoders} \\
-    \hline
-    \caption{Component List for The Insane Keyboard}
-    \label{tab:components}
-    \end{longtable}
-    
-\section{Keyboard Layout and Design}
 
-\subsection{Main Board Key Layout}
+    
+\subsection{Keyboard Layout and Design}
+
+\subsubsection{Main Board Key Layout}
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
@@ -328,12 +280,29 @@ N & M & \begin{tabular}[c]{@{}c@{}}, <\end{tabular} & \begin{tabular}[c]{@{}c@{}
     \item Power Management Unit
 \end{itemize}
 
-\section{Technical Considerations}
+
+\subsection{Challenges and Considerations}
+\begin{itemize}
+\item Managing state machines with complex software like e-ink display drivers
+\item Integrating drivers with BLE firmware
+\item Implementing RTC driver and temperature control driver
+\item Ensuring reliable wireless connectivity
+\item Implementing multi-host communication and switching
+\item Developing HID profile in BLE stack
+\item Implementing anti-ghosting techniques
+\item Optimizing keyboard scan rate for low latency
+\item Achieving N-key rollover or 6-key rollover
+\end{itemize}
+
+\pagebreak
+\section{\color{red}Project Update: Week 1}
 
 
-\subsection{Functional hardware block diagram}
+
+\subsection{Technical Considerations}
 
 
+\subsubsection{Functional hardware block diagram}
 
 \begin{figure}[H]
     \centering
@@ -446,239 +415,573 @@ Main Module with  all sensors and charging capabilities.\\
 Simplified Secondary Module without temperature, humidity, RTC, and LiPo charger.\\
 
 
-\section{Wireless Communication and Software Architecture}
-\subsection{Wireless Communication Details}
+\subsection{Wireless Communication and Software Architecture}
 
+We have made significant progress in defining our wireless communication protocol and software architecture:
 
-\begin{table}[H]
-    \centering
-    
-    \begin{tabular}{|p{2.5cm}|p{2cm}|p{2cm}|p{1.2cm}|p{6cm}|}
-    \hline
-    \textbf{Char} & \textbf{Properties} & \textbf{Data Type} & \textbf{Length} & \textbf{Description} \\
-    \hline
-    Keyboard Input Report & Read, Notify & Uint8Array & 8 bytes & 
-    \begin{itemize}
-        \item Byte 0: Modifier keys
-        \item Byte 1: Reserved
-        \item Bytes 2-7: Pressed key codes
-    \end{itemize} \\
-    \hline
-    Keyboard Output Report & Read, Write & Uint8Array & 1 byte & 
-    \begin{itemize}
-        \item Bit 0: Num Lock
-        \item Bit 1: Caps Lock
-        \item Bit 2: Scroll Lock
-        \item Bit 3: Compose
-        \item Bit 4: Kana
-        \item Bits 5-7: Reserved
-    \end{itemize} \\
-    \hline
-    Protocol Mode & Read, Write & Uint8 & 1 byte & 
-    \begin{itemize}
-        \item 0x00: Boot Protocol
-        \item 0x01: Report Protocol
-    \end{itemize} \\
-    \hline
-    HID Information & Read & Uint16, Uint8, Uint8 & 4 bytes & 
-    \begin{itemize}
-        \item Bytes 0-1: bcdHID
-        \item Byte 2: bCountryCode
-        \item Byte 3: Flags
-    \end{itemize} \\
-    \hline
-    HID Control Point & Write & Uint8 & 1 byte & 
-    \begin{itemize}
-        \item 0x00: Suspend
-        \item 0x01: Exit Suspend
-    \end{itemize} \\
-    \hline
-    Report Map & Read & Uint8Array & Variable & Defines the format of Input and Output reports \\
-    \hline
-    \end{tabular}
-    \caption{HID Profile Characteristics for Keyboard}
-    \end{table}
+\subsubsection{HID Profile Characteristics}
+We've detailed the HID (Human Interface Device) profile for our keyboard, including:
+\begin{itemize}
+    \item Keyboard Input Report: 8-byte structure for key presses
+    \item Keyboard Output Report: 1-byte for LED status
+    \item Protocol Mode: Supports both Boot and Report protocols
+    \item HID Information and Control Point: For device management
+    \item Report Map: Defines input/output report formats
+\end{itemize}
 
+\subsubsection{Software Architecture}
+We've developed a functional software block diagram (Figure \ref{fig:software_diagram}) that outlines the interaction between various software components, including the BLE stack, keyboard matrix scanning, and power management modules.
 
-\pagebreak
-\subsection{Functional software block diagram}
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.44]{figures/software_diagram.png}
-    \caption{Software block diagram}
-    % Figure content to be added
+    \caption{Software Block Diagram}
+    \label{fig:software_diagram}
 \end{figure}
-\vspace{0.2cm}
 
+\subsection{Project Management}
 
-\subsection{Calculation}
+We've set up a robust project management system:
+
+\begin{enumerate}
+    \item Timeline: We've created a detailed project timeline (Figure \ref{fig:timeline}) to track our progress and milestones.
+    
+    \item Version Control: Our project is now on GitHub, allowing for better collaboration and code management.
+    \begin{itemize}
+        \item Project Board: \href{https://github.com/users/parthishere/projects/2}{GitHub Project}
+        \item Code Repository: \href{https://github.com/parthishere/Insane-Keyboard}{GitHub Code Repository}
+    \end{itemize}
+    
+    \item Task Tracking: We're using a Kanban board (Figure \ref{fig:kanban}) to manage our tasks and workflow efficiently.
+\end{enumerate}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.34]{figures/Timeline.png}
+    \caption{Project Timeline}
+    \label{fig:timeline}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.26]{figures/kanban.png}
+    \caption{Kanban Board for Task Management}
+    \label{fig:kanban}
+\end{figure}
+
+\subsection{Energy Analysis and Power Management}
+
+We've conducted initial energy mode analysis and made decisions on power management:
+
+\begin{enumerate}
+    \item Energy Calculations: We've performed preliminary calculations (Figure \ref{fig:energy_calc}) to estimate power consumption in various modes.
+
+    \item Energy Harvesting: We've chosen to incorporate a solar panel for energy harvesting, enhancing the keyboard's power autonomy.
+
+    \item Interface Selections:
+    \begin{itemize}
+        \item Display: SPI interface chosen for faster data transfer
+        \item Temperature Sensor and IO Expander: I2C interface for power efficiency
+    \end{itemize}
+
+    \item Load Power Management: Implemented a load switch to disable the temperature sensor and display when not in use, reducing standby power consumption.
+
+    \item Multiple Energy Modes: Our design now supports various energy modes to optimize power usage based on the keyboard's current state.
+\end{enumerate}
+
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.63]{figures/calc.jpeg}
-    \caption{Calculations}
-    % Figure content to be added
+    \caption{Energy Calculations}
+    \label{fig:energy_calc}
 \end{figure}
-\vspace{0.2cm}
 
 
+\pagebreak
 
-\section{Challenges and Considerations}
+\section{\color{red}Project Update: Week 2}
+
+\subsection{Selection Criteria}
+We chose components based on:
+
+\begin{enumerate}
+    \item Availability: Multiple suppliers to ensure steady supply.
+    \item Power efficiency: Low standby and active currents, multiple power-saving modes.
+    \item Documentation: Comprehensive datasheets, application notes, and support.
+    \item Sleep modes: Various low-power states with quick wake-up capabilities.
+    \item Temperature range: Suitable for varied environments.
+    \item EMC/EMI: Built-in interference mitigation.
+    \item ongevity: Components not near end-of-life.
+    \item Cost: Balanced features and performance with price.
+\end{enumerate}
+
+
+\subsubsection{Chosen Components}
+
+
+\begin{longtable}{|p{2cm}|p{1.5cm}|p{3cm}|p{1.5cm}|p{6cm}|}
+    \hline
+    \textbf{Component} & \textbf{Quantity} & \textbf{Function} & \textbf{Interface} & \textbf{DigiKey Part Number} \\
+    \hline
+    EFR32BG13 & 2 & Microcontroller & - & 
+    \href{https://www.digikey.com/en/products/detail/silicon-labs/EFR32BG13P632F512GM32-D/10135852}{EFR32BG13P632F512GM32-D-ND} \\
+    \hline
+    TCA6408A & 2 & IO Expander & I2C  & 
+    \href{https://www.digikey.com/en/products/detail/texas-instruments/TCA6408ARSVR/2044045}{296-24328-1-ND} \\
+    \hline
+    Waveshare E-ink Display & 1 & Display & SPI  & 
+    \href{https://www.waveshare.com/1.54inch-e-paper-module.htm}{External Link} \\
+    \hline
+    TPS22919 & 1 & Load Switch & -  & 
+    \href{https://www.digikey.com/en/products/detail/texas-instruments/TPS22919DCKT/9953066}{296-53421-1-ND} \\
+    \hline
+    BQ25570 & 2 & PMIC & - & 
+    \href{https://www.digikey.com/en/products/detail/texas-instruments/BQ25570RGRT/4430487}{296-37014-1-ND} \\
+    \hline
+    Battery 1000mAh & 2 & Energy Storage & -  & 
+    \href{https://www.digikey.com/en/products/detail/globtek-inc/BL1200P4054481S1PCAC/11201333}{1939-BL1200P4054481S1PCAC-ND} \\
+    \hline
+    SI7021 & 1 & Temperature and Humidity Sensor & I2C  & 
+    \href{https://www.digikey.com/en/products/detail/silicon-labs/SI7021-A20-GMR/5048936}{336-4379-1-ND} \\
+    \hline
+    Schottky Diodes & 1 & Power Management & -  & 
+    \href{-}{Have not decided yet} \\
+    \hline
+    Gateron G Black Pro 2.0 & 68 & Key Switches & - & 
+    \href{https://www.gateron.co/products/gateron-g-pro-2-0-switch-set}{External link} \\
+    \hline
+    Mechanical Key Hotswap & 68 & Hotswap Sockets & - & 
+    \href{https://www.gateron.co/products/gateron-hot-swap-pcb-socket}{External Link} \\
+    \hline
+    Cherry MX Key Caps & 68 & Key Caps & - & 
+    \href{https://www.aliexpress.com/i/3256802573932641.html?gatewayAdapt=4itemAdapt}{External link} \\
+    \hline
+    Rotary Encoders & 2 & Input Device & - & 
+    \href{https://www.digikey.com/en/products/detail/bourns-inc/PEC12R-4222F-S0024/4699283}{PEC12R-4222F-S0024-ND} \\
+    \hline
+    Solar Panel SM141K06L & 1 & Energy Harvesting & - & 
+    \href{https://www.digikey.com/en/products/detail/anysolar-ltd/SM141K06L/9990462}{SM141K06L-ND} \\
+    \hline
+    \caption{Component List for The Insane Keyboard with DigiKey Part Numbers}
+    \label{tab:components}
+\end{longtable}
+
+
+\subsection{Justification for Each Component}
+
+\subsubsection{EFR32BG13 Microcontroller}
 \begin{itemize}
-\item Managing state machines with complex software like e-ink display drivers
-\item Integrating drivers with BLE firmware
-\item Implementing RTC driver and temperature control driver
-\item Ensuring reliable wireless connectivity
-\item Implementing multi-host communication and switching
-\item Developing HID profile in BLE stack
-\item Implementing anti-ghosting techniques
-\item Optimizing keyboard scan rate for low latency
-\item Achieving N-key rollover or 6-key rollover
+    \item Bluetooth 5.0 capable
+    \item Energy-efficient: 60 uA/MHz at 40 MHz
+    \item Five power modes: 1.4 uA in deep sleep, 20 nA in shutoff
+    \item Low-energy peripherals for efficient keyboard scanning
+    \item Comprehensive development tools
 \end{itemize}
 
 
-
-% \subsubsection{User interface}
-
-% Buttons:
-% \begin{enumerate}
-%     \item PB1 Button (Bonding Initiation):
-%           \begin{itemize}
-%               \item The PB1 button is used to initiate the bonding process between the server and the client.
-%               \item When the user presses the PB1 button on the server, it triggers the bonding request to the client.
-%           \end{itemize}
-%     \item PB0 Button (Bonding Confirmation):
-%           \begin{itemize}
-%               \item The PB0 button is used to confirm the bonding process on the client side
-%               \item After the server/client initiates the bonding request, the client receives a notification.
-%           \end{itemize}
-%     \item The servo motor is used to provide a physical indication of the authentication status.
-%           \begin{itemize}
-%               \item If the received data matches the predefined values for a valid authentication, the servo motor is activated.
-%           \end{itemize}
-%     \item LED (Light-Emitting Diode):
-%           \begin{itemize}
-%               \item After the client processes the received RFID data and encoder value, it determines the authentication result.
-%                     If the authentication is successful, the LED is turned on
-%           \end{itemize}
-%     \item The LCD is used to display detailed information and messages to the user.
-%           \begin{itemize}
-%               \item It can show the current status of the system, such as "Ready for Authentication," "Bonding in Progress," or "Authentication Successful."
-%               \item The LCD can also display the received RFID data and encoder value for reference or debugging purposes.
-%               \item In case of an authentication failure, the LCD can display an appropriate error message, such as "Wrong Card or Encoder Value."
-%           \end{itemize}
-% \end{enumerate}
+\subsubsection{TCA6408A I/O Expander}
+\begin{itemize}
+    \item 0.1 uA standby current
+    \item 400 kHz I2C interface for quick I/O updates
+    \item 8 programmable I/O pins, each sinking 25 mA
+    \item Interrupt output for event-driven operation
+    \item Chosen over PCA9538 and SX1509 for lower power and simpler programming
+\end{itemize}
 
 
-% Interaction Flow:
-% \begin{enumerate}
-%     \item The user initiates the bonding process by pressing the PB1 button on the client.
-%     \item The client sends a bonding request to the client, which is indicated on the LCD.
-%     \item The user confirms the bonding by pressing the PB0 button on the server.
-%     \item Once the bonding is established, the user can proceed with the authentication process.
-%     \item The user presents the RFID card to the reader and adjusts the rotary encoder to the correct value.
-%     \item The server detects the RFID card, reads the data, and sends it along with the encoder value to the client.
-%     \item The client receives the data, processes it, and determines the authentication result.
-%     \item If the authentication is successful, the LCD displays a success message, the LED turns on, and the servo motor performs a predefined movement.
-%     \item If the authentication fails, the LCD displays an error message, the LED remains off, and the servo motor does not activate.
-%     \item The user can retry the authentication process or take appropriate actions based on the feedback provided by the LCD, LED, and servo motor.
-% \end{enumerate}
+\subsubsection{Waveshare E-ink Display}
+\begin{itemize}
+    \item Power used only during updates
+    \item Enables dynamic key labeling
+    \item SPI interface for fast updates
+    \item 200x200 pixel resolution
+    \item Preferred over OLED for lower power consumption
+\end{itemize}
+
+
+\subsubsection{TPS22919 Load Switch}
+\begin{itemize}
+    \item 12 nA quiescent current
+    \item 15 us response time
+    \item 2A current capacity
+    \item 1.5V to 5.5V input range
+    \item Built-in protection features
+    \item Chosen over TPS22860 and SiP32431 for balanced performance
+\end{itemize}
+
+
+\subsubsection{BQ25570 Power Management IC}
+\begin{itemize}
+    \item 100 mV to 5.1 V input range
+    \item Integrated Maximum Power Point Tracking
+    \item 488 nA quiescent current
+    \item Built-in boost charger and buck converter
+    \item Programmable voltage thresholds
+    \item Selected over SPV1050 and ADP5090 for solar power optimization
+\end{itemize}
+
+
+\subsubsection{SI7021 Temperature and Humidity Sensor}
+\begin{itemize}
+    \item ±0.4°C and ±3\%RH accuracy
+    \item 150 nA standby current
+    \item I2C interface
+    \item 3x3 mm package
+    \item 1.9V to 3.6V supply range
+    \item Chosen over HDC1080 and BME280 for accuracy and power efficiency
+\end{itemize}
+
+
+\subsubsection{Solar Panel (SM141K06L)}
+\begin{itemize}
+    \item 42mm x 23mm size
+    \item 184 mW maximum output
+    \item 3.35V at maximum power point
+\end{itemize}
+
+
+\subsubsection{Battery (1000mAh)}
+\begin{itemize}
+    \item Size: 2.09" x 1.89" x 0.16"
+    \item 525mA charge current, 1.05A discharge current
+    \item 3.7V nominal voltage
+\end{itemize}
+
+
+\section{Energy Analysis}
+\subsection{Overall Energy Efficiency}
+We have made the following assumption for our energy calculations:
+The keyboard will be operational 24/7, with the following daily usage pattern:\
+8 hours of active use per day
+\begin{itemize}
+\item 4 hours in active mode
+\item 4 hours in sleep mode
+\end{itemize}
+16 hours in deep sleep mode
+\paragraph{Energy Consumption Breakdown}
+Based on our calculations, the energy consumption for different operational states is as follows:
+\begin{itemize}
+\item Start-up: 0.000101970 W
+\item Active: 0.0166035556 W
+\item Transmit: 0.129140610 W
+\item Sleep: 0.000122760 W
+\item Deep Sleep: 0.00011187 W
+\end{itemize}
+\paragraph{Average Power Consumption}
+The weighted average power consumption, considering the time spent in each mode, is calculated to be:
+\begin{equation}
+P_{avg} = 0.003976168 \text{ W}
+\end{equation}
+This remarkably low average power consumption is achieved through intelligent power management and efficient component selection.
+\paragraph{Daily Energy Requirement}
+Based on our average power consumption, the total energy required for 24 hours of operation is:
+\begin{equation}
+E_{daily} = 343.5409345 \text{ J} = 0.095428 \text{ Wh}
+\end{equation}
+\paragraph{Battery Capacity Calculation}
+For sustained operation over a week, we calculated the required battery capacity:
+\begin{align*}
+E_{weekly} &= 2404.786542 \text{ J} = 0.667996262 \text{ Wh} \
+\text{Adjusted Energy} &= \frac{0.667996262}{0.85 \times 0.8} = 0.982347443 \text{ Wh} \
+\text{Battery Capacity} &= \frac{0.982347443 \text{ Wh}}{3.7 \text{ V}} \times 1000 = 265.499309 \text{ mAh}
+\end{align*}
+This calculation takes into account a battery efficiency of 85\% and a maximum depth of discharge of 80\% to ensure long-term battery health.
+\paragraph{Energy Harvesting Efficiency}
+Our solar panel and power management system are designed to harvest energy efficiently even in low-light indoor conditions. The BQ25570 PMIC, with its Maximum Power Point Tracking (MPPT) capability, ensures optimal energy extraction from the solar panel.
+\paragraph{Power Budget Analysis}
+\begin{itemize}
+\item Average current draw: 1.07464 mA
+\item Peak current (during transmission): 39.0296560 mA
+\item Quiescent current (deep sleep): 33.9 uA
+\end{itemize}
+The significant difference between peak and quiescent current underscores the effectiveness of our power-saving modes.
+\paragraph{Capacitor Sizing}
+To support peak current demands, we calculated a minimum capacitance of:
+\begin{equation}
+C_{min} = 0.049702103 \text{ F}
+\end{equation}
+This capacitance ensures stable operation during high-current events while allowing the solar harvesting system to replenish energy during low-power periods.
+With an average power consumption of just 3.976 mW and a weekly energy requirement of less than 1 Wh, our keyboard is well-positioned for long-term, self-sustained operation using solar energy harvesting, even in typical indoor environments.
+\subsection{Battery and Power Management}
+\subsubsection{Power Management IC (PMIC) Selection}
+We have selected the BQ25570 PMIC as it provides the necessary features for efficient solar harvesting and battery management. Key features include:
+\begin{itemize}
+\item Wide input range: 100 mV to 5.1 V, ideal for solar harvesting
+\item Integrated Maximum Power Point Tracking (MPPT)
+\item Ultra-low quiescent current: 488 nA typical
+\item Integrated boost charger and buck converter
+\item Programmable voltage thresholds for optimal battery management
+\end{itemize}
+\subsubsection{Energy Storage Element Selection}
+\textbf{Choice: SM141K06L Solar panel}
+\begin{itemize}
+\item Power Output: 184 mW
+\item Voltage at Maximum Power Point (Vmpp): 3.35 V
+\item Current at Maximum Power Point (Impp): 55.1 mA
+\item Open Circuit Voltage (Voc): 4.15 V
+\item Short Circuit Current (Isc): 58.6 mA
+\item Size: 42.00mm x 23.00mm x 2.10mm (1.654" x 0.906" x 0.083")
+\end{itemize}
+Reasons for selection:
+\begin{itemize}
+\item Significantly higher power output compared to previous options
+\item Larger but still manageable size for a keyboard design
+\item Higher voltage output, beneficial for power management
+\item Good power-to-size ratio
+\end{itemize}
+Energy Calculations (assuming 8 hours of typical indoor lighting per day):
+\begin{flalign*}
+&\text{Energy per day} = Power * Time &&\
+&\text{Energy per day} = 184 mW * 8 hours  &&\
+&\boxed{\text{Energy per day} = 1,472 mWh }&&
+\end{flalign*}
+Power Density:
+\begin{equation*}
+\text{Power Density} = \frac{\text{Power Output}}{\text{Area}} = \frac{184 \text{ mW}}{42\text{ mm} \times 23\text{ mm}} = \boxed{0.191 \text{ mW/mm²}}
+\end{equation*}
+\subsection{Energy Requirements Analysis}
+\subsubsection{Unregulated Supply Performance}
+Constant Power Case:
+\begin{itemize}
+\item Regulated power supply providing power for microcontroller and sensors which require input voltage kept in limited range.
+\item As voltage out of energy source drops from Vworking to Vmin, current increases to keep power through supply constant.
+\end{itemize}
+\subsubsection{Peak and Average Current Use Cases}
+We have analyzed the current requirements for each component in our system under both peak and average use conditions. Table \ref{tab:current_requirements} summarizes these findings:
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Component} & \textbf{Peak Current (A)} & \textbf{Average Current (A)} \\
+\hline
+Temperature Sensor & 0.004 & 0.00071424 \\
+\hline
+E-ink Display & 0.008 & 8.05558E-05 \\
+\hline
+MCU & 0.0393152 & 0.000115536 \\
+\hline
+PMIC & 0.0000009 & 0.0000009 \\
+\hline
+Load Switch & 0.0000201 & 0.0000201 \\
+\hline
+IO Expander & 0.0000015 & 0.0000015 \\
+\hline
+\textbf{Total} & 0.0513377 & 0.000932832 \\
+\hline
+\end{tabular}
+\caption{Component Current Requirements}
+\label{tab:current_requirements}
+\end{table}
+\subsubsection{Total Energy Required Between Charging}
+Given:
+\begin{itemize}
+\item Battery Capacity: 1000 mAh
+\item Assumed Battery Voltage: 3.7 V (typical for Li-ion)
+\item Daily Energy Consumption: 343.5409345 J
+\end{itemize}
+Calculations:
+\begin{enumerate}
+\item \textbf{Convert Battery Capacity to Joules:}
+\begin{equation}
+\text{Energy (J)} = \text{Capacity (mAh)} \times \text{Voltage (V)} \times 3.6
+= 1000 \times 3.7 \times 3.6 = 13,320 \text{ J}
+\end{equation}
+\item \textbf{Calculate Number of Days:}
+\begin{equation}
+\text{Days} = \frac{\text{Total battery energy}}{\text{Daily energy consumption}}
+= \frac{13,320 \text{ J}}{343 \text{ J/day}} \approx 38.83 \text{ days}
+\end{equation}
+\item \textbf{Convert to Weeks:}
+\begin{equation}
+38.83 \text{ days} \approx 5.55 \text{ weeks}
+\end{equation}
+\end{enumerate}
+\subsubsection{Recharge Time Calculation}
+We are using a 1000mAh battery with a 0.5C charging rate:
+\begin{itemize}
+\item Theoretical charging current: 0.5C = 500mA
+\item BQ25570 PMIC maximum charging current: 230mA (typical)
+\end{itemize}
+Since the PMIC can't provide 500mA, it will charge at its maximum rate of 230mA.
+\begin{equation}
+\text{Estimated charging time} = \frac{\text{Battery Capacity}}{\text{Charging Current}}
+= \frac{1000\text{mAh}}{230\text{mA}} \approx 4.35 \text{ hours}
+\end{equation}
+
+
+\subsection{Supercapacitor vs Battery Comparison}
+
+In considering energy storage options for our keyboard, we evaluated a 4F Vishay supercapacitor against our chosen 1000mAh Li-ion battery. This analysis is crucial for optimizing the keyboard's performance and longevity.
+
+\subsubsection{Energy and Power Density}
+
+\begin{itemize}
+    \item \textbf{Battery:} Our 1000mAh Li-ion battery at 3.7V stores approximately 3.7Wh of energy.
+    \item \textbf{Supercapacitor:} The 4F Vishay supercapacitor, assuming a 2.7V rating, stores about 0.004Wh.
+\end{itemize}
+
+The battery clearly outperforms in energy density, crucial for our keyboard's long-term operation between charges.
+
+\subsubsection{Peak Current Handling}
+
+\begin{itemize}
+    \item \textbf{Battery:} Our battery can handle discharge currents up to 1.05A.
+    \item \textbf{Supercapacitor:} Supercapacitors generally excel in delivering high peak currents.
+\end{itemize}
+
+While both can meet our peak current requirement of 39.0296560 mA, the supercapacitor might provide better performance for rapid, high-current events.
+
+\subsubsection{Temperature Range}
+
+\begin{itemize}
+    \item \textbf{Battery:} Typical Li-ion batteries operate effectively between 0°C and 45°C.
+    \item \textbf{Supercapacitor:} Vishay supercapacitors often have a wider operating range, potentially from -40°C to 65°C.
+\end{itemize}
+
+The supercapacitor's wider temperature range could be advantageous, but our keyboard's expected operating range (0°C to 50°C) is well within the battery's capabilities.
+
+\subsubsection{Cycle Life and Longevity}
+
+\begin{itemize}
+    \item \textbf{Battery:} Li-ion batteries typically last for 500-1000 charge cycles.
+    \item \textbf{Supercapacitor:} Supercapacitors can often withstand 100,000+ charge cycles.
+\end{itemize}
+
+The supercapacitor significantly outperforms in cycle life, which could be beneficial for frequent charge-discharge scenarios.
+
+\subsubsection{Self-Discharge and Shelf Life}
+
+\begin{itemize}
+    \item \textbf{Battery:} Li-ion batteries have a relatively low self-discharge rate, losing about 5-10\% of their charge per month.
+    \item \textbf{Supercapacitor:} Supercapacitors typically have higher self-discharge rates, potentially losing significant charge within days or weeks.
+\end{itemize}
+
+The battery's lower self-discharge rate is preferable for our keyboard, which may have periods of inactivity.
+
+\subsubsection{Charging Characteristics}
+
+\begin{itemize}
+    \item \textbf{Battery:} Our battery charges at 525mA, taking about 2 hours for a full charge.
+    \item \textbf{Supercapacitor:} Supercapacitors can be charged much faster, potentially in seconds or minutes.
+\end{itemize}
+
+The supercapacitor's rapid charging could be beneficial for quick top-ups, but may not be necessary given our solar charging setup.
+
+\subsubsection{Size and Weight}
+
+\begin{itemize}
+    \item \textbf{Battery:} Our battery measures 2.09" x 1.89" x 0.16".
+    \item \textbf{Supercapacitor:} The 4F Vishay supercapacitor is likely smaller and lighter.
+\end{itemize}
+
+While the supercapacitor might offer space savings, our chosen battery fits well within our keyboard's design constraints.
+For our keyboard application, the Li-ion battery remains the preferred choice.
+
+
+
+\subsection{PCB Design Progress}
+We've completed footprint creation for most components, with the following exceptions:
+
+Solar Panel: Recently added, footprint pending
+0603 components: Footprints for resistors and MLCC capacitors still needed
+
+\subsubsection{Footprint Generation}
+Footprints:
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{cc}
+        \includegraphics[width=0.40\linewidth]{figures/BlueGecko.jpg} &
+        \includegraphics[width=0.40\linewidth]{figures/IO expander.jpg} \\
+        BlueGecko EFR32BG13 QFN48 package & IO expander \\
+        
+        \includegraphics[width=0.40\linewidth]{figures/Loadswitch.jpg} &
+        \includegraphics[width=0.40\linewidth]{figures/Mechanical Switch.jpg} \\
+        Loadswitch & Mechanical switch \\
+        
+        \includegraphics[width=0.40\linewidth]{figures/PMIC.jpg} &
+        \includegraphics[width=0.40\linewidth]{figures/Temperature sensor.jpg} \\
+        PMIC & Temperature Sensor
+    \end{tabular}
+    \caption{Component Footprints}
+    \label{fig:component_footprints}
+\end{figure}
+
+\subsubsection{Power Supply Considerations}
+For components requiring a stable input voltage:
+
+A regulated power supply will be used
+As the energy source voltage decreases, current will increase to maintain constant power
+
+\subsection{Mechanical Design}
+\subsubsection{Dimensions}
+
+Left unit: 165mm x 120mm x 35mm\\
+Right unit: 175mm x 120mm x 35mm
+
+\subsubsection{Material}
+Carbon fiber-filled Nylon selected for construction
+\subsubsection{Operating Conditions}
+
+Temperature range: 0°C to 50°C\\
+Voltage range: 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{figures/vr}
+	\caption{Voltage Range}
+\end{figure}
 
 
 
 
-% \subsubsection{Subsystem}
-
-% \begin{enumerate}
-%     \item The RFID subsystem consists of an MFRC522 RFID reader module that reads RFID tag data when a tag is presented. It communicates with the server microcontroller using SPI interface and generates an interrupt to wake up the server from sleep mode when a tag is detected.
-
-%     \item The Rotary Encoder Subsystem (hardware) captures user input by measuring the rotation and direction of the encoder. It generates an interrupt to wake up the server from sleep mode when rotated and provides values from -255 to 255 for authentication purposes.
-
-%     \item The BLE Communication Subsystem (software) uses Silicon Labs EFR32BG13 Gecko Boards to securely connect between the server and client. It establishes a secure connection using bonding and encryption, and utilizes the Object Transfer Service (OTS) for transmitting RFID tag data. A custom Rotary Encoder Service is used for transmitting rotary encoder values.
-
-%     \item The Data Compression Subsystem (software) compresses the RFID tag data and rotary encoder values before transmission. It reduces data sent over BLE while optimizing bandwidth and power consumption. Decompression is done on the receiving side to determine authentication status based on comparison results.
-% \end{enumerate}
-
-% % \begin{figure}[H]
-% % 	\centering
-% % 	\includegraphics[scale=0.42]{figures/subsystem.png}
-% % 	\caption{User Interface}
-% % 	\label{idealbpfilter}
-% % \end{figure}
-
-
-% \subsubsection{Test Plan}
 
 
 
 
-% \textbf{GitHub repository URL:} \href{https://github.com/CU-ECEN-5823/ecen5823-courseproject-parthishere}{https://github.com/CU-ECEN-5823/ecen5823-courseproject-parthishere}
 
 
 
-% \subsection{Challenges}
-
-% One of the major challenges I encountered during the development process was the integration of the display and the RFID module. Despite having functional drivers for both components individually, combining them proved to be a complex task.\\
-
-% The issue manifests when I initialize the display. As soon as the display is initialized, the RFID module stops responding and fails to read any RFID cards. This behavior suggests a potential conflict between the display and the RFID module, likely related to the SPI driver.\\
-
-% I extensively investigated the problem and tried various approaches to resolve it. One of my initial attempts involved setting the chip select line high to deselect the RFID module when communicating with the display. However, even with this modification, the RFID module remained unresponsive, consistently returning a value of 0xFF when attempting to read any register.\\
-
-% To further troubleshoot the issue, I explored the possibility of explicitly disabling the \texttt{sensor\_enable} pin, which controls the power supply to the display. By toggling this pin, I aimed to isolate the display and prevent any interference with the RFID module. Unfortunately, this approach did not yield the desired results, and the RFID module continued to exhibit the same unresponsive behavior.\\
-
-% The complexity of the problem is compounded by the fact that the display driver is already implemented in the provided API, and modifying it is not a viable option. This limitation leads me to make certain assumptions about the API's functionality. One possibility is that the API does not properly handle the chip select line, as there is no explicit mention of it in the project configuration or generated files. It is unclear whether the chip select line is unused, not configured, held high by software, or managed internally by the API without being exposed in the configuration interface.\\
-
-% To overcome this challenge, I am considering two potential solutions. The first approach involves explicitly disabling the \texttt{sensor\_enable} pin, deselecting the display's slave select line, and enabling the slave select line of the RFID module's SPI interface. By carefully managing these control signals, I aim to establish a clear separation between the display and the RFID module, preventing any conflicts during communication.\\
-
-% The second approach entails modifying the USART pins used for the SPI interface. By using a different set of USART pins for the RFID module, such as USART2, I can avoid any clashes with the display's SPI interface. This solution would require reconfiguring the SPI driver and ensuring that the new pin assignments are compatible with the overall system design.\\
-
-% Resolving the integration challenge between the display and the RFID module is a top priority. I will continue to investigate the issue, gather more information about the API's behavior, and explore the proposed solutions. By carefully analyzing the problem and methodically testing different approaches, I am confident that I will find a suitable workaround to ensure seamless integration of these critical components.
-
-
-% \subsection{Requirements Completion}
-% Section Author: Parth Thakkar\\\\
-
-% \begin{table}[H]
-%     \centering
-%     \begin{tabular}{| l | c |   }
-%         \hline
-%         \textbf{Requirements}                                                         & \textbf{Completion} \\\hline
-%         The system shall comprise a pair of EFR32BG13                                 & \ding{52}           \\
-%         \hline
-%         Server shall host an MFRC522 RFID reader module and a rotary encoder.         & \ding{52}           \\
-%         \hline
-%         The server shall employ Huffman encoding for data compression.                & \ding{52}           \\\hline
-%         The server shall establish a secure connection through bonding.               & \ding{52}           \\\hline
-%         The server code shall be optimized for low energy consumption.                & \ding{52}           \\\hline
-%         The client shall receive the compressed authentication data from the server.  & \ding{52}           \\\hline
-%         The Server shall display the authentication and other information on the LCD. & \ding{52}           \\\hline
-%         client decompress the received data using Huffman decoding                    & \ding{55}           \\\hline
-%         \hline\hline
-%     \end{tabular}
-%     \caption{Requirements Completion}
-%     \label{filterspecs}
-% \end{table}
 
 
 
-% https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/bmp280/
-
-% https://www.adafruit.com/product/3013
-
-% https://www.waveshare.com/product/4.3inch-e-Paper.htm
-
-% \subsection{Low power performance}
-% Section Author: Parth Thakkar\\\\
-
-% The rotary encoder was configured to generate an interrupt whenever a rotation was detected. Similarly, the RFID reader module was set up to trigger an interrupt when an RFID tag was detected. By utilizing interrupts, the system could remain in a low-power state until an event of interest occurred, eliminating unnecessary wake-ups and conserving energy.\\
-
-% specifically for RFID I have used Hard reset instead of soft sleep inbuilt in the MFRC522, Why? Well making MFRC522 go in to hard sleep takes time to wake up but it is more efficient than soft sleep inbuilt in th MFRC522 to wake up the MFRC522 we need to send pulse on reset pin of the MFRC522.\\
-
-% To validate the low power performance of the authentication system, extensive testing and measurements were conducted. The average current consumption of the system was measured under different operating conditions, including when not connected to BLE and during active RFID detection and data transmission. The results showed that the system achieved an average current consumption of around 240 uA in the EM3 sleep mode, with peak currents of 6.8 mA during RFID data processing in the EM0 mode.\\
-
-% Based on these measurements, it was estimated that the authentication system could operate on a 1000 mAh battery for approximately 4200 hours, or roughly 5 months, without requiring a battery replacement. This longevity demonstrates the effectiveness of the low power optimizations implemented in the project.\\
+\subsection{Project Progress and Future Plans}
+\subsubsection{Recent Updates}
+\begin{itemize}
+    \item Added solar panel for energy harvesting
+    \item removed Supercapacitor
+    \item Added links to components
+    \item created Libraries
+\end{itemize}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.22]{figures/kanban_2.png}
+	\caption{Kanban for update 2}
+\end{figure}
 
 
-% \textbf{GitHub repository URL:} \href{https://github.com/CU-ECEN-5823/ecen5823-courseproject-parthishere}{https://github.com/CU-ECEN-5823/ecen5823-courseproject-parthishere}
+\subsubsection{Upcoming Tasks}
+\begin{enumerate}
+    \item Component Selection:
+    \begin{itemize}
+        \item Choose appropriate decoupling capacitors
+    \end{itemize}
+    \item Design Refinement:
+    \begin{itemize}
+        \item Optimize key size and spacing for ergonomics
+        \item Finalize keyboard layout
+    \end{itemize}
+    \item Prototyping Preparation:
+    \begin{itemize}
+        \item Design 3D case model using Fusion 360
+        \item 3D print prototype case
+    \end{itemize}
+\end{enumerate}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.17]{figures/3d_print_fusion.png}
+	\caption{Design a Case and PCB}
+\end{figure}
 
 \pagebreak
 
