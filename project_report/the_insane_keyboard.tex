@@ -1012,25 +1012,32 @@ Voltage range:
 
 \section{\color{red}{Update 3}}
 
+\subsection{Energy Storage Analysis and Charging Characteristics}
 
+\subsubsection{Battery Specifications and Usage Profile}
 
-\subsection{Storage Sizing Based on Recharge Requirements}
-
-\begin{itemize}
-    \item Internal Resistance (RDS): 0.18 $\ohm$
-    \item Capacity: 1.2 Ah
-    \item C-rate: 0.2
-    \item Discharge Current at 0.2C: 0.24 A
-    \item Discharge Time at 0.2C: 5 hours
-    \item Charge Cycles: 300
-\end{itemize}
-
-\textbf{Current Draw in Different Modes}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Parameter} & \textbf{Value} \\
+\hline
+Internal Resistance (RDS) & 0.18 $\Omega$ \\
+Capacity & 1.2 Ah \\
+C-rate & 0.2 \\
+Discharge Current at 0.2C & 0.24 A \\
+Discharge Time at 0.2C & 5 hours \\
+Charge Cycles & 300 \\
+\hline
+\end{tabular}
+\caption{Battery Specifications}
+\label{tab:battery_specs}
+\end{table}
 
 \begin{table}[h]
 \centering
 \begin{tabular}{|l|c|c|}
-    \hline
+\hline
 \textbf{Mode} & \textbf{Current (A)} & \textbf{Time Fraction} \\
 \hline
 Start-up & 0.00003240 & 0.0001808911 \\
@@ -1041,9 +1048,13 @@ Deep Sleep & 0.0000354 & 0.694622704 \\
 \hline
 \end{tabular}
 \caption{Current Draw and Time Distribution in Different Modes}
+\label{tab:current_distribution}
 \end{table}
 
-\textbf{Power Loss Calculations}
+\subsubsection{Power Consumption Analysis}
+
+Based on our usage profile and battery characteristics:
+
 \begin{itemize}
     \item Average Current: 1.07618 mA
     \item Sleep Current: 38.7824 µA
@@ -1054,12 +1065,45 @@ Deep Sleep & 0.0000354 & 0.694622704 \\
     \item Peak Current ESR Loss: 401.424 µW
 \end{itemize}
 
-\textbf{Battery Performance Analysis}
-The peak current requirement of 47.2 mA is significantly less than the battery's discharge current of 240 mA at 0.2C. This indicates that the battery can comfortably handle the peak current demands of the system.
+The peak current requirement (47.2 mA) is well below the battery's discharge current capability (240 mA at 0.2C), the battery can comfortably handle peak demands.
 
-\subsubsection{Tolerance Analysis}
-\subsubsection{C-rate Verification}
-\subsection{Maximum Discharge Rate Calculation}
+\subsubsection{Charging Characteristics}
+
+We are using the BQ25570 Power Management IC for battery charging. Key charging parameters include:
+
+\begin{itemize}
+    \item Battery Capacity: 1000 mAh
+    \item Theoretical Charging Rate: 0.5C (500 mA)
+    \item BQ25570 PMIC Maximum Charging Current: 230 mA (typical)
+\end{itemize}
+
+\paragraph{Charging Current and Time Calculations}
+
+Theoretical charging current:
+\begin{equation}
+    I_{charge} = 1000 \text{ mAh} \times 0.5 = 500 \text{ mA}
+\end{equation}
+
+Actual charging current (limited by PMIC):
+\begin{equation}
+    I_{actual} = 230 \text{ mA}
+\end{equation}
+
+Estimated charging time:
+\begin{equation}
+    t_{charge} = \frac{1000 \text{ mAh}}{230 \text{ mA}} \approx 4.35 \text{ hours}
+\end{equation}
+
+\subsubsection{Conclusion}
+
+
+\begin{itemize}
+    \item The chosen battery meets the peak current demands of our system.
+    \item While capable of 0.5C charging, the actual charging rate is limited to 230 mA by the BQ25570 PMIC.
+    \item A full charge from a depleted state takes approximately 4.35 hours.
+    \item This charging configuration prioritizes battery longevity and safety over fast charging speeds, aligning with our low-power design goals.
+\end{itemize}
+
 
 
 
