@@ -1,13 +1,13 @@
 # Fdb version 4
-["makeindex the_insane_keyboard.idx"] 1727565385.66203 "the_insane_keyboard.idx" "the_insane_keyboard.ind" "the_insane_keyboard" 1727566689.08825 0
-  "the_insane_keyboard.idx" 1727566687.56262 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex the_insane_keyboard.idx"] 1727565385.66203 "the_insane_keyboard.idx" "the_insane_keyboard.ind" "the_insane_keyboard" 1727566740.1382 0
+  "the_insane_keyboard.idx" 1727566738.6063 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "the_insane_keyboard.ilg"
   "the_insane_keyboard.ind"
   (rewritten before read)
-["pdflatex"] 1727566687.18455 "/home/parth/Work/All_data/university/Low_Power/Project/project_report/the_insane_keyboard.tex" "the_insane_keyboard.pdf" "the_insane_keyboard" 1727566689.08841 0
+["pdflatex"] 1727566738.20226 "/home/parth/Work/All_data/university/Low_Power/Project/project_report/the_insane_keyboard.tex" "the_insane_keyboard.pdf" "the_insane_keyboard" 1727566740.13837 0
   "/etc/texmf/web2c/texmf.cnf" 1720120495.47412 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/parth/Work/All_data/university/Low_Power/Project/project_report/the_insane_keyboard.tex" 1727566686.50856 45675 2ae967f8eb477d8584ef92f2d34ec700 ""
+  "/home/parth/Work/All_data/university/Low_Power/Project/project_report/the_insane_keyboard.tex" 1727566738.98932 45649 570f1548020934d139171e3b03be79bc ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -174,13 +174,13 @@
   "settings/macros.tex" 1677508426 866 698fb2c3d01b320df27e4b93711dcb0c ""
   "settings/packages.tex" 1677508426 1613 40337528d3cda32322797ae21375329f ""
   "settings/page.tex" 1677508426 460 29330b44c69a3f078aa639d592e547f3 ""
-  "the_insane_keyboard.aux" 1727566688.97969 17289 bc3ac9827c6ebede4c478103044ce103 "pdflatex"
+  "the_insane_keyboard.aux" 1727566740.02638 17289 bc3ac9827c6ebede4c478103044ce103 "pdflatex"
   "the_insane_keyboard.ind" 1727565385.76476 0 d41d8cd98f00b204e9800998ecf8427e "makeindex the_insane_keyboard.idx"
-  "the_insane_keyboard.lof" 1727566688.98269 1649 3a07206951ca425cf58a0483f0044f8d "pdflatex"
-  "the_insane_keyboard.lot" 1727566688.98269 740 91daf5546cbe40a1f3f4b6468e56e727 "pdflatex"
-  "the_insane_keyboard.out" 1727566688.98169 14270 cb3175cc81d29a3aa7a9646ad32fe0ca "pdflatex"
-  "the_insane_keyboard.tex" 1727566686.50856 45675 2ae967f8eb477d8584ef92f2d34ec700 ""
-  "the_insane_keyboard.toc" 1727566688.98269 8554 9026dbf69d65bd90f574e2fc5c806797 "pdflatex"
+  "the_insane_keyboard.lof" 1727566740.02838 1649 3a07206951ca425cf58a0483f0044f8d "pdflatex"
+  "the_insane_keyboard.lot" 1727566740.02838 740 91daf5546cbe40a1f3f4b6468e56e727 "pdflatex"
+  "the_insane_keyboard.out" 1727566740.02838 14270 cb3175cc81d29a3aa7a9646ad32fe0ca "pdflatex"
+  "the_insane_keyboard.tex" 1727566738.98932 45649 570f1548020934d139171e3b03be79bc ""
+  "the_insane_keyboard.toc" 1727566740.02838 8554 9026dbf69d65bd90f574e2fc5c806797 "pdflatex"
   (generated)
   "the_insane_keyboard.aux"
   "the_insane_keyboard.idx"
