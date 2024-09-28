@@ -26,6 +26,7 @@ gecko_sdk_4.4.4/platform/Device/SiliconLabs/EFR32BG13P/Source \
 gecko_sdk_4.4.4/platform/common/src \
 gecko_sdk_4.4.4/platform/common/toolchain/src \
 gecko_sdk_4.4.4/platform/driver/debug/src \
+gecko_sdk_4.4.4/platform/driver/i2cspm/src \
 gecko_sdk_4.4.4/platform/emdrv/dmadrv/src \
 gecko_sdk_4.4.4/platform/emlib/src \
 gecko_sdk_4.4.4/platform/radio/rail_lib/plugin/pa-conversions \
@@ -44,4 +45,5 @@ gecko_sdk_4.4.4/protocol/bluetooth/bgcommon/src \
 gecko_sdk_4.4.4/protocol/bluetooth/src \
 gecko_sdk_4.4.4/util/silicon_labs/silabs_core/memory_manager \
 gecko_sdk_4.4.4/util/third_party/mbedtls/library \
+src \
 

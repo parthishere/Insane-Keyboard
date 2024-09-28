@@ -18,6 +18,29 @@
 #ifndef APP_H
 #define APP_H
 
+#include "sl_power_manager.h"
+
+
+#define EM3_MODE 3
+#define EM1_MODE 1
+// 0 = highest energy mode, 3 = lowest energy mode
+// #define LOWEST_ENERGY_MODE 0
+// #define LOWEST_ENERGY_MODE 1
+#define LOWEST_ENERGY_MODE 2
+// #define LOWEST_ENERGY_MODE 3
+
+// If PRINT_LOG_STATEMENTS is set to 1, PRINT_LOG macro will use LOG_INFO for logging.
+#define PRINT_LOG_STATEMENTS 0
+
+// If PRINT_LOG_STATEMENTS is set to 1, PRINT_LOG macro will use LOG_INFO for logging.
+// Otherwise, PRINT_LOG is defined as an empty macro, effectively disabling logging.
+#if (PRINT_LOG_STATEMENTS == 1)
+#define PRINT_LOG LOG_INFO
+#else
+#define PRINT_LOG(...)
+#endif
+
+
 /***************************************************************************//**
  * Initialize application.
  ******************************************************************************/

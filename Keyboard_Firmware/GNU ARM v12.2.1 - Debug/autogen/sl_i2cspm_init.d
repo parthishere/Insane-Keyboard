@@ -72,7 +72,7 @@ autogen/sl_i2cspm_init.o: ../autogen/sl_i2cspm_init.c \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_gpio.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_status.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/sli_em_cmu.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/sl_i2cspm_Sensors_config.h
+ /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/sl_i2cspm_sensor_config.h
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/toolchain/inc/sl_gcc_preinclude.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/driver/i2cspm/inc/sl_i2cspm.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_gpio.h:
@@ -146,4 +146,4 @@ autogen/sl_i2cspm_init.o: ../autogen/sl_i2cspm_init.c \
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_gpio.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_status.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/sli_em_cmu.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/sl_i2cspm_Sensors_config.h:
+/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/sl_i2cspm_sensor_config.h:
