@@ -111,6 +111,10 @@ autogen/sl_event_handler.o: ../autogen/sl_event_handler.c \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bgapi.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_api_compatibility.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/driver/debug/inc/sl_debug_swo.h \
+ ../autogen/sl_i2cspm_instances.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/driver/i2cspm/inc/sl_i2cspm.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_gpio.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_i2c.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/iostream/inc/sl_iostream_stdlib_config.h \
  ../autogen/sl_iostream_init_usart_instances.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/security/sl_component/sl_mbedtls_support/inc/sl_mbedtls.h \
@@ -228,6 +232,10 @@ autogen/sl_event_handler.o: ../autogen/sl_event_handler.c \
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bgapi.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_api_compatibility.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/driver/debug/inc/sl_debug_swo.h:
+../autogen/sl_i2cspm_instances.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/driver/i2cspm/inc/sl_i2cspm.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_gpio.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_i2c.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/iostream/inc/sl_iostream_stdlib_config.h:
 ../autogen/sl_iostream_init_usart_instances.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/security/sl_component/sl_mbedtls_support/inc/sl_mbedtls.h:

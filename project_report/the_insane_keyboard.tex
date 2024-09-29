@@ -648,8 +648,8 @@ We chose components based on:
 \end{itemize}
 
 
-\section{Energy Analysis}
-\subsection{Overall Energy Efficiency}
+\subsection{Energy Analysis}
+\subsubsection{Overall Energy Efficiency}
 We have made the following assumption for our energy calculations:
 The keyboard will be operational 24/7, with the following daily usage pattern:\
 8 hours of active use per day
@@ -966,18 +966,6 @@ Voltage range:
 \end{figure}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 \subsection{Project Progress and Future Plans}
 \subsubsection{Recent Updates}
 \begin{itemize}
@@ -1019,6 +1007,302 @@ Voltage range:
 
 \pagebreak
 
+
+
+
+\section{\color{red}{Update 3}}
+
+
+\subsection{Battery Specifications and Usage Profile}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Parameter} & \textbf{Value} \\
+\hline
+Internal Resistance (RDS) & 0.18 $\Omega$ \\
+Capacity & 1.2 Ah \\
+C-rate & 0.2 \\
+Discharge Current at 0.2C & 0.24 A \\
+Discharge Time at 0.2C & 5 hours \\
+Charge Cycles & 300 \\
+\hline
+\end{tabular}
+\caption{Battery Specifications}
+\label{tab:battery_specs}
+\end{table}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Mode} & \textbf{Current (A)} & \textbf{Time Fraction} \\
+\hline
+Start-up & 0.00003240 & 0.0001808911 \\
+Active & 0.0050311560 & 0.1488477220 \\
+Transmit & 0.0390311560 & 0.007500960 \\
+Sleep & 0.00003870 & 0.1488477220 \\
+Deep Sleep & 0.0000354 & 0.694622704 \\
+\hline
+\end{tabular}
+\caption{Current Draw and Time Distribution in Different Modes}
+\label{tab:current_distribution}
+\end{table}
+
+\subsubsection{Power Consumption Analysis}
+
+Based on our usage profile and battery characteristics:
+
+\begin{itemize}
+    \item Average Current: 1.07618 mA
+    \item Sleep Current: 38.7824 µA
+    \item Peak Current: 47.224281 mA
+    \item Weighted Average ESR Loss: 2.73528 µW
+    \item On-mode ESR Loss: 0.208469 µW
+    \item Off-mode ESR Loss: 0.270733 nW
+    \item Peak Current ESR Loss: 401.424 µW
+\end{itemize}
+
+The peak current requirement (47.2 mA) is well below the battery's discharge current capability (240 mA at 0.2C), the battery can comfortably handle peak demands.
+
+\subsubsection{Charging Characteristics}
+
+We are using the BQ25570 Power Management IC for battery charging. Key charging parameters include:
+
+\begin{itemize}
+    \item Battery Capacity: 1000 mAh
+    \item Theoretical Charging Rate: 0.5C (500 mA)
+    \item BQ25570 PMIC Maximum Charging Current: 230 mA (typical)
+\end{itemize}
+
+\paragraph{Charging Current and Time Calculations}
+
+Theoretical charging current:
+\begin{equation}
+    I_{charge} = 1000 \text{ mAh} \times 0.5 = 500 \text{ mA}
+\end{equation}
+
+Actual charging current (limited by PMIC):
+\begin{equation}
+    I_{actual} = 230 \text{ mA}
+\end{equation}
+
+Estimated charging time:
+\begin{equation}
+    t_{charge} = \frac{1000 \text{ mAh}}{230 \text{ mA}} \approx 4.35 \text{ hours}
+\end{equation}
+
+\subsubsection{Conclusion}
+
+
+\begin{itemize}
+    \item The chosen battery meets the peak current demands of our system.
+    \item While capable of 0.5C charging, the actual charging rate is limited to 230 mA by the BQ25570 PMIC.
+    \item A full charge from a depleted state takes approximately 4.35 hours.
+    \item This charging configuration prioritizes battery longevity and safety over fast charging speeds, aligning with our low-power design goals.
+\end{itemize}
+
+
+\pagebreak
+
+\subsection{Worst-Case Communication Bus Timing}
+
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|l|c|c|c|c|}
+        \hline
+    \textbf{Parameter} & \textbf{IO Expander} & \textbf{Temperature Sensor} & \textbf{Blue Gecko} & \textbf{Worst Case} \\
+    \hline
+    SCL frequency & 400 kHz & 400 kHz & 400 kHz & 400 kHz \\
+    \hline
+    SCL high & 0.6 µs & 0.6 µs & 0.6 µs & 0.6 µs \\
+    \hline
+    SCL low & 1.3 µs & 1.3 µs & 1.3 µs & 1.3 µs \\
+    \hline
+    Spike time / Suppressed pulse width & 50 ns & 50 ns & - & 50 ns \\
+    \hline
+    SDA setup & 100 ns & 0.1 µs & 100 ns & 0.1 µs \\
+    \hline
+    SDA hold & 0 ns & 0.1 µs & 100-900 ns & 0.1-0.9 µs \\
+    \hline
+    Input rise time & 300 ns & - & - & 300 ns \\
+    \hline
+    Input fall time & 300 ns & - & - & 300 ns \\
+    \hline
+    Output fall time (10pF - 400pF load) & 300 ns & - & - & 300 ns \\
+    \hline
+    Bus free time & 1.3 µs & 1.3 µs & 1.3 µs & 1.3 µs \\
+    \hline
+    Start setup time & 0.6 µs & 0.6 µs & 0.6 µs & 0.6 µs \\
+    \hline
+    Start hold time & 0.6 µs & 0.6 µs & 0.6 µs & 0.6 µs \\
+    \hline
+    Stop setup time & 0.6 µs & 0.6 µs & - & 0.6 µs \\
+    \hline
+    Data valid time & 1 µs & 0.9 µs & - & 1 µs \\
+    \hline
+    ACK valid time & 1 µs & 0.9 µs & - & 1 µs \\
+    \hline
+\end{tabular}%
+}
+\caption{I2C Fast Mode (400 kHz) Bus Timings}
+\label{tab:i2c_fast_mode}
+\end{table}
+
+\begin{table}[H]
+        \centering
+        \resizebox{\textwidth}{!}{%
+        \begin{tabular}{|l|c|c|c|}
+            \hline
+            \textbf{Parameter} & \textbf{IO Expander} & \textbf{Blue Gecko} & \textbf{Worst Case} \\
+        \hline
+        SCL frequency & 100 kHz & 100 kHz & 100 kHz \\
+        \hline
+        SCL high & 4 µs & 4 µs & 4 µs \\
+        \hline
+        SCL low & 4.7 µs & 4.7 µs & 4.7 µs \\
+        \hline
+        Spike time & 50 ns & - & 0 ns \\
+        \hline
+        SDA setup & 250 ns & 250 µs & 250 µs \\
+        \hline
+        SDA hold & 0 ns & 100 µs & 100 µs \\
+        \hline
+        Input rise time & 1000 ns & - & - \\
+        \hline
+        Input fall time & 300 ns & - & - \\
+        \hline
+        Output fall time (10pF - 400pF load) & 300 ns & - & - \\
+        \hline
+        Bus free time & 4.7 µs & 4.7 µs & 4.7 µs \\
+        \hline
+        Start setup time & 4.7 µs & 4 µs & 4.7 µs \\
+        \hline
+        Start hold time & 4 µs & 4 µs & 4 µs \\
+        \hline
+        Stop setup time & 4 µs & - & 4 µs \\
+        \hline
+        Data valid time & 1 µs & - & 1 µs \\
+        \hline
+        ACK valid time & 1 µs & - & 1 µs \\
+        \hline
+    \end{tabular}%
+    }
+    \caption{I2C Standard Mode (100 kHz) Bus Timings}
+        \label{tab:i2c_standard_mode}
+        \end{table}
+        \begin{table}[H]
+            \centering
+    \caption{SPI Communication Parameters}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+        \hline
+        \multirow{2}{*}{\textbf{Parameter}} & \multicolumn{4}{c|}{\textbf{E-Ink Display}} & \multicolumn{4}{c|}{\textbf{Blue Gecko}} \\
+    \cline{2-9}
+    & \textbf{Condition} & \textbf{Min} & \textbf{Typ} & \textbf{Max} & \textbf{Condition} & \textbf{Min} & \textbf{Typ} & \textbf{Max} \\
+    \hline
+    \multirow{2}{*}{SCL freq} & Write & - & - & 20 MHz & Write & - & - & 31.25 MHz \\
+    & Read & - & - & 2.5 MHz & Read & \multicolumn{3}{c|}{6*tHFPERCLK} \\
+    \hline
+    \multirow{2}{*}{CS\_setup} & Write & 20 ns & - & - & Write & 12.5 ns & - & - \\
+    & Read & 100 ns & - & - & Read & 4 ns & - & 70 ns \\
+    \hline
+    \multirow{2}{*}{CS\_hold} & Write & 20 ns & - & - & Write & 12.5 ns & - & - \\
+    & Read & 50 ns & - & - & Read & 4 ns & - & 70 ns \\
+    \hline
+    CS\_high & Both & 100 ns & - & - & Both & \multicolumn{3}{c|}{-} \\
+    \hline
+    \multirow{2}{*}{SCL\_high} & Write & 25 ns & - & - & Write & \multicolumn{3}{c|}{2*tHFPERCLK} \\
+     & Read & 180 ns & - & - & Read & \multicolumn{3}{c|}{2.5*tHFPERCLK} \\
+     \hline
+    \multirow{2}{*}{SCL\_low} & Write & 25 ns & - & - & Write & \multicolumn{3}{c|}{2*tHFPERCLK} \\
+    & Read & 180 ns & - & - & Read & \multicolumn{3}{c|}{2.5*tHFPERCLK} \\
+    \hline
+    \multirow{2}{*}{SDA\_setup} & Write & 10 ns & - & - & Write & 9 ns & - & - \\
+    & Read & - & 50 ns & - & Read & 12.5 ns & - & - \\
+    \hline
+    \multirow{2}{*}{SDA\_hold} & Write & 40 ns & - & - & Write & 9 ns & - & - \\
+    & Read & - & 0 ns & - & Read & 13 ns & - & - \\
+    \hline
+\end{tabular}%
+    }
+    \subsubsection{SPI Bus Timing}
+    \label{tab:spi_params}
+\end{table}
+
+\subsection{High-Risk Development Items}
+\subsubsection{Hardware Challenges}
+\begin{itemize}
+    \item \textbf{PCB Design for Key Matrix:} Creating an accurate PCB layout for the keyboard matrix is significant challenge, as our design is based only on datasheet specifications without physical prototyping.
+    
+    \item \textbf{Ergonomic Key Spacing:} Determining the ergonomic spacing between keys is importanant. We are considering a 19.05 mm center-to-center distance, but the ergonomic efficacy of this choice remains uncertain.
+    
+    \item \textbf{Key Mounting Mechanism:} Developing a precise gasket or mounting system for the keys, whether PCB-based or 3D-printed, requires exact dimensional accuracy to ensure proper key fit and function.
+\end{itemize}
+
+\subsubsection{Software Challenges}
+\begin{itemize}
+    \item \textbf{E-Ink Display Driver:} Development of a custom driver for the E-ink display is expected to be time-intensive.
+    
+    \item \textbf{Multi-Host Connectivity:} Implementing firmware to support seamless multi-host connections presents significant complexity.
+\end{itemize}
+
+
+\subsection{Mitigation Plans}
+To address the identified risks and challenges, we have developed the following mitigation strategies:
+
+\subsubsection{Prototyping and Manufacturing}
+\begin{itemize}
+    \item We have access to the ITLL 3D printing facility,
+    \begin{itemize}
+        \item Prototype cases and gaskets using PLA
+        \item Iterate designs rapidly and cost-efficiently.
+        \item Produce final components using high-quality materials once designs are finalized.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Hardware Development}
+\begin{itemize}
+    \item Initially utilize development boards, modules, and breadboards for proof-of-concept.
+    \item Test and validate circuit functionality before proceeding to schematic design.
+    \item Implement incremental improvements based on prototype performance.
+\end{itemize}
+
+\subsubsection{Software Development}
+\begin{itemize}
+   
+    \item Develop initial drivers for more commonly used platforms (e.g., STM32 or Arduino).
+    \item Validate display functionality on these platforms.
+    \item Port the verified code to our target EFR32BG13 platform.
+
+\end{itemize}
+
+
+\subsection{Update}
+Our project is progressing as scheduled. Key developments include:
+\begin{itemize}
+    \item Firmware development is on track.
+    \item Hardware integration is proceeding as planned.
+    \item Schematic design is nearing completion.
+\end{itemize}
+
+\subsection{gnatt chart}
+Figure \ref{fig:gantt_chart} presents our updated Gantt chart, reflecting the current project timeline and milestones.\\
+{\center
+\href{https://github.com/users/parthishere/projects/2/views/1}
+{GITHUB}}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{figures/update3}
+    \caption{Updated Project Gantt Chart}
+    \label{fig:gantt_chart}
+\end{figure}
+
+
+\pagebreak
 
 \hrule
 
