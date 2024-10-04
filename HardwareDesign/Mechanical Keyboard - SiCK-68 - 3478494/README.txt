@@ -1,0 +1,1 @@
+Mechanical Keyboard - SiCK-68 by FedorSosnin on Thingiverse: https://www.thingiverse.com/thing:3478494
