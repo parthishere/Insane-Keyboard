@@ -1,0 +1,4 @@
+1) Application > Utility > Log
+2) Bluetooth > Application > GATT Services > Static GATT Services
+3) Platform > Driver > I2CDRV
+4) Platform > Driver > SPIDRV
