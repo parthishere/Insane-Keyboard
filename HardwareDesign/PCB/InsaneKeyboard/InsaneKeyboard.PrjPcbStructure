@@ -1,2 +1,6 @@
-Record=TopLevelDocument|FileName=Keyboard.SchDoc|SheetNumber=1
-Record=NoMainPathDocument|SourceDocument=Keyboard.SchDoc|FileName=Keyboard_Mechanical.SchDoc|SheetNumber=2
+Record=TopLevelDocument|FileName=EFR32_IO_connection.SchDoc|SheetNumber=4
+Record=NoMainPathDocument|SourceDocument=EFR32_IO_connection.SchDoc|FileName=Keyboard.SchDoc|SheetNumber=1
+Record=NoMainPathDocument|SourceDocument=EFR32_IO_connection.SchDoc|FileName=Keyboard_Mechanical.SchDoc|SheetNumber=2
+Record=NoMainPathDocument|SourceDocument=EFR32_IO_connection.SchDoc|FileName=Power.SchDoc|SheetNumber=5
+Record=NoMainPathDocument|SourceDocument=EFR32_IO_connection.SchDoc|FileName=RF_Antenna_Power.SchDoc|SheetNumber=3
+Record=NoMainPathDocument|SourceDocument=EFR32_IO_connection.SchDoc|FileName=Switches.SchDoc|SheetNumber=6
