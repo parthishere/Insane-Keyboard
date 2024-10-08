@@ -219,23 +219,6 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=ZFNBETHH
 
-[Document11]
-DocumentPath=Test_points.SchDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=JKCSQWBY
-
 [Configuration1]
 Name=Sources
 ParameterCount=0
