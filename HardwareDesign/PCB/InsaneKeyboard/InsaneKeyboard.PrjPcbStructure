@@ -1,6 +1,6 @@
-Record=TopLevelDocument|FileName=EFR32_IO_connection.SchDoc|SheetNumber=4
-Record=NoMainPathDocument|SourceDocument=EFR32_IO_connection.SchDoc|FileName=Keyboard.SchDoc|SheetNumber=1
-Record=NoMainPathDocument|SourceDocument=EFR32_IO_connection.SchDoc|FileName=Keyboard_Mechanical.SchDoc|SheetNumber=2
-Record=NoMainPathDocument|SourceDocument=EFR32_IO_connection.SchDoc|FileName=Power.SchDoc|SheetNumber=5
-Record=NoMainPathDocument|SourceDocument=EFR32_IO_connection.SchDoc|FileName=RF_Antenna_Power.SchDoc|SheetNumber=3
-Record=NoMainPathDocument|SourceDocument=EFR32_IO_connection.SchDoc|FileName=Switches.SchDoc|SheetNumber=6
+Record=TopLevelDocument|FileName=Keyboard.SchDoc|SheetNumber=1
+Record=SheetSymbol|SourceDocument=Keyboard.SchDoc|Designator=U_EFR32_IO_connection|SchDesignator=U_EFR32_IO_connection|FileName=EFR32_IO_connection.SchDoc|SheetNumber=3|SymbolType=Normal|RawFileName=EFR32_IO_connection.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=Keyboard.SchDoc|Designator=U_Power|SchDesignator=U_Power|FileName=Power.SchDoc|SheetNumber=4|SymbolType=Normal|RawFileName=Power.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=Keyboard.SchDoc|Designator=U_RF_Antenna_Power|SchDesignator=U_RF_Antenna_Power|FileName=RF_Antenna_Power.SchDoc|SheetNumber=2|SymbolType=Normal|RawFileName=RF_Antenna_Power.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=Keyboard.SchDoc|Designator=U_Switches|SchDesignator=U_Switches|FileName=Switches.SchDoc|SheetNumber=5|SymbolType=Normal|RawFileName=Switches.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=Switches.SchDoc|Designator=U_Keyboard_Mechanical|SchDesignator=U_Keyboard_Mechanical|FileName=Keyboard_Mechanical.SchDoc|SheetNumber=6|SymbolType=Normal|RawFileName=Keyboard_Mechanical.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
