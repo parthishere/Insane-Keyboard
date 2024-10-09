@@ -1,0 +1,4 @@
+Layer Pairs Export File for PCB: C:\Users\path1691\Insane-Keyboard\HardwareDesign\PCB\InsaneKeyboard\Keyboard.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=keyboard-roundholes.txt|DrillLayers=gtl,gbl
+LayersSetName=Top_Bot_Slot_Holes|DrillFile=keyboard-slotholes.txt|DrillLayers=gtl,gbl
+LayersSetName=Top_Bot_Rect_Holes|DrillFile=keyboard-rectholes.txt|DrillLayers=gtl,gbl
