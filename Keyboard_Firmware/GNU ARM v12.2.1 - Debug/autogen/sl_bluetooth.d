@@ -6,14 +6,14 @@ autogen/sl_bluetooth.o: ../autogen/sl_bluetooth.c \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/CMSIS/Core/Include/cmsis_gcc.h \
  ../autogen/sl_bluetooth.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/power_manager/inc/sl_power_manager.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/sl_power_manager_config.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_power_manager_config.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_slist.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_status.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/sleeptimer/inc/sl_sleeptimer.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_enum.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_core_generic.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/sl_bluetooth_config.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/autogen/sl_component_catalog.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_bluetooth_config.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sl_component_catalog.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_stack_config.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_ll_config.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_api.h \
@@ -83,14 +83,14 @@ autogen/sl_bluetooth.o: ../autogen/sl_bluetooth.c \
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/CMSIS/Core/Include/cmsis_gcc.h:
 ../autogen/sl_bluetooth.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/power_manager/inc/sl_power_manager.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/sl_power_manager_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_power_manager_config.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_slist.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_status.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/sleeptimer/inc/sl_sleeptimer.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_enum.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_core_generic.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/sl_bluetooth_config.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/autogen/sl_component_catalog.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_bluetooth_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sl_component_catalog.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_stack_config.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_ll_config.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_api.h:

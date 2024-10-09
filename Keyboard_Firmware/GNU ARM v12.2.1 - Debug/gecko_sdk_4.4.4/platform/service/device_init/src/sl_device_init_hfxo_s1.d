@@ -3,7 +3,7 @@ gecko_sdk_4.4.4/platform/service/device_init/src/sl_device_init_hfxo_s1.o: \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/toolchain/inc/sl_gcc_preinclude.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/device_init/inc/sl_device_init_hfxo.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_status.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/sl_device_init_hfxo_config.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_device_init_hfxo_config.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_cmu.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32BG13P/Include/em_device.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32BG13P/Include/efr32bg13p632f512gm48.h \
@@ -66,8 +66,8 @@ gecko_sdk_4.4.4/platform/service/device_init/src/sl_device_init_hfxo_s1.o: \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_core_generic.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_common.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_assert.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/autogen/sl_component_catalog.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/emlib_core_debug_config.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sl_component_catalog.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/emlib_core_debug_config.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_cmu_compat.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_gpio.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_enum.h \
@@ -75,7 +75,7 @@ gecko_sdk_4.4.4/platform/service/device_init/src/sl_device_init_hfxo_s1.o: \
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/toolchain/inc/sl_gcc_preinclude.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/device_init/inc/sl_device_init_hfxo.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_status.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/sl_device_init_hfxo_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_device_init_hfxo_config.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_cmu.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32BG13P/Include/em_device.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32BG13P/Include/efr32bg13p632f512gm48.h:
@@ -138,8 +138,8 @@ gecko_sdk_4.4.4/platform/service/device_init/src/sl_device_init_hfxo_s1.o: \
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_core_generic.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_common.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_assert.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/autogen/sl_component_catalog.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/emlib_core_debug_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sl_component_catalog.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/emlib_core_debug_config.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_cmu_compat.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_gpio.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_enum.h:

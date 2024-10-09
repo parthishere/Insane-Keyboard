@@ -63,11 +63,11 @@ gecko_sdk_4.4.4/platform/service/sleeptimer/src/sl_sleeptimer.o: \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_assert.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk/platform/service/sleeptimer/src/sli_sleeptimer_hal.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/sleeptimer/inc/sli_sleeptimer.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/sl_sleeptimer_config.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_sleeptimer_config.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_atomic.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/autogen/sl_component_catalog.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sl_component_catalog.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/power_manager/inc/sl_power_manager.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/sl_power_manager_config.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_power_manager_config.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_slist.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_enum.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/power_manager/inc/sli_power_manager.h \
@@ -135,11 +135,11 @@ gecko_sdk_4.4.4/platform/service/sleeptimer/src/sl_sleeptimer.o: \
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_assert.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk/platform/service/sleeptimer/src/sli_sleeptimer_hal.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/sleeptimer/inc/sli_sleeptimer.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/sl_sleeptimer_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_sleeptimer_config.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_atomic.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/autogen/sl_component_catalog.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sl_component_catalog.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/power_manager/inc/sl_power_manager.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/sl_power_manager_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_power_manager_config.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_slist.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_enum.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/power_manager/inc/sli_power_manager.h:

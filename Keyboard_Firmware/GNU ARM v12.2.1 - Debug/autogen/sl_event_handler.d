@@ -65,8 +65,8 @@ autogen/sl_event_handler.o: ../autogen/sl_event_handler.c \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_assert.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_core.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_core_generic.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/autogen/sl_component_catalog.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/emlib_core_debug_config.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sl_component_catalog.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/emlib_core_debug_config.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/device_init/inc/sl_device_init_nvic.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_status.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//hardware/board/inc/sl_board_init.h \
@@ -79,7 +79,7 @@ autogen/sl_event_handler.o: ../autogen/sl_event_handler.c \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/radio/rail_lib/common/rail_types.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/radio/rail_lib/chip/efr32/efr32xg1x/rail_chip_specific.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/radio/rail_lib/common/rail_features.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/sl_rail_util_pa_config.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_rail_util_pa_config.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/radio/rail_lib/plugin/pa-conversions/pa_curves_efr32.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/radio/rail_lib/plugin/pa-conversions/efr32xg1x/sl_rail_util_pa_curves.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/radio/rail_lib/plugin/pa-conversions/pa_curve_types_efr32.h \
@@ -89,11 +89,11 @@ autogen/sl_event_handler.o: ../autogen/sl_event_handler.c \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/sleeptimer/inc/sl_sleeptimer.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//app/common/util/app_log/app_log.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/iostream/inc/sl_iostream.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/autogen/sl_iostream_handles.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/autogen/sl_iostream_init_usart_instances.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/autogen/sl_component_catalog.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sl_iostream_handles.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sl_iostream_init_usart_instances.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sl_component_catalog.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/power_manager/inc/sl_power_manager.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/sl_power_manager_config.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_power_manager_config.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_slist.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_core_generic.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/iostream/inc/sl_iostream_uart.h \
@@ -101,10 +101,10 @@ autogen/sl_event_handler.o: ../autogen/sl_event_handler.c \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emdrv/dmadrv/inc/dmadrv.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emdrv/common/inc/ecode.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_ldma.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/dmadrv_config.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/app_log_config.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/dmadrv_config.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/app_log_config.h \
  ../autogen/sl_bluetooth.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/sl_bluetooth_config.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_bluetooth_config.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_stack_config.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_ll_config.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_api.h \
@@ -186,8 +186,8 @@ autogen/sl_event_handler.o: ../autogen/sl_event_handler.c \
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_assert.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_core.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_core_generic.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/autogen/sl_component_catalog.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/emlib_core_debug_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sl_component_catalog.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/emlib_core_debug_config.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/device_init/inc/sl_device_init_nvic.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_status.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//hardware/board/inc/sl_board_init.h:
@@ -200,7 +200,7 @@ autogen/sl_event_handler.o: ../autogen/sl_event_handler.c \
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/radio/rail_lib/common/rail_types.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/radio/rail_lib/chip/efr32/efr32xg1x/rail_chip_specific.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/radio/rail_lib/common/rail_features.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/sl_rail_util_pa_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_rail_util_pa_config.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/radio/rail_lib/plugin/pa-conversions/pa_curves_efr32.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/radio/rail_lib/plugin/pa-conversions/efr32xg1x/sl_rail_util_pa_curves.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/radio/rail_lib/plugin/pa-conversions/pa_curve_types_efr32.h:
@@ -210,11 +210,11 @@ autogen/sl_event_handler.o: ../autogen/sl_event_handler.c \
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/sleeptimer/inc/sl_sleeptimer.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//app/common/util/app_log/app_log.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/iostream/inc/sl_iostream.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/autogen/sl_iostream_handles.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/autogen/sl_iostream_init_usart_instances.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/autogen/sl_component_catalog.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sl_iostream_handles.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sl_iostream_init_usart_instances.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sl_component_catalog.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/power_manager/inc/sl_power_manager.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/sl_power_manager_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_power_manager_config.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_slist.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_core_generic.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/iostream/inc/sl_iostream_uart.h:
@@ -222,10 +222,10 @@ autogen/sl_event_handler.o: ../autogen/sl_event_handler.c \
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emdrv/dmadrv/inc/dmadrv.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emdrv/common/inc/ecode.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_ldma.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/dmadrv_config.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/app_log_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/dmadrv_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/app_log_config.h:
 ../autogen/sl_bluetooth.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/sl_bluetooth_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_bluetooth_config.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_stack_config.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_ll_config.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_api.h:

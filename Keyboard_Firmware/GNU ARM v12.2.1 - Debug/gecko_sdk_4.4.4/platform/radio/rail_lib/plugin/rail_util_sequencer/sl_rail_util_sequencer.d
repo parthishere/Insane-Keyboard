@@ -1,7 +1,7 @@
 gecko_sdk_4.4.4/platform/radio/rail_lib/plugin/rail_util_sequencer/sl_rail_util_sequencer.o: \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk/platform/radio/rail_lib/plugin/rail_util_sequencer/sl_rail_util_sequencer.c \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/toolchain/inc/sl_gcc_preinclude.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/sl_rail_util_sequencer_config.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_rail_util_sequencer_config.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/radio/rail_lib/common/rail.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/radio/rail_lib/common/rail_types.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/radio/rail_lib/chip/efr32/efr32xg1x/rail_chip_specific.h \
@@ -62,9 +62,9 @@ gecko_sdk_4.4.4/platform/radio/rail_lib/plugin/rail_util_sequencer/sl_rail_util_
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32BG13P/Include/efr32bg13p_af_ports.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32BG13P/Include/efr32bg13p_af_pins.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/radio/rail_lib/common/rail_assert_error_codes.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/autogen/sl_component_catalog.h
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sl_component_catalog.h
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/toolchain/inc/sl_gcc_preinclude.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/sl_rail_util_sequencer_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_rail_util_sequencer_config.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/radio/rail_lib/common/rail.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/radio/rail_lib/common/rail_types.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/radio/rail_lib/chip/efr32/efr32xg1x/rail_chip_specific.h:
@@ -125,4 +125,4 @@ gecko_sdk_4.4.4/platform/radio/rail_lib/plugin/rail_util_sequencer/sl_rail_util_
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32BG13P/Include/efr32bg13p_af_ports.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32BG13P/Include/efr32bg13p_af_pins.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/radio/rail_lib/common/rail_assert_error_codes.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/autogen/sl_component_catalog.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sl_component_catalog.h:

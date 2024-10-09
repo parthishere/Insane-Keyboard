@@ -62,7 +62,7 @@ gecko_sdk_4.4.4/platform/radio/rail_lib/plugin/rail_util_power_manager_init/sl_r
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32BG13P/Include/efr32bg13p_af_pins.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/radio/rail_lib/common/rail_assert_error_codes.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk/platform/radio/rail_lib/plugin/rail_util_power_manager_init/sl_rail_util_power_manager_init.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/sl_rail_util_power_manager_init_config.h
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_rail_util_power_manager_init_config.h
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/toolchain/inc/sl_gcc_preinclude.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/radio/rail_lib/common/rail.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/radio/rail_lib/common/rail_types.h:
@@ -125,4 +125,4 @@ gecko_sdk_4.4.4/platform/radio/rail_lib/plugin/rail_util_power_manager_init/sl_r
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32BG13P/Include/efr32bg13p_af_pins.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/radio/rail_lib/common/rail_assert_error_codes.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk/platform/radio/rail_lib/plugin/rail_util_power_manager_init/sl_rail_util_power_manager_init.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/sl_rail_util_power_manager_init_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_rail_util_power_manager_init_config.h:

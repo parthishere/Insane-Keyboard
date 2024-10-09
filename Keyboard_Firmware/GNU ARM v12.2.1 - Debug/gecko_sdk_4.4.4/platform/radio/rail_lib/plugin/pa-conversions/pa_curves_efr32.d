@@ -60,7 +60,7 @@ gecko_sdk_4.4.4/platform/radio/rail_lib/plugin/pa-conversions/pa_curves_efr32.o:
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/radio/rail_lib/common/rail_types.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/radio/rail_lib/chip/efr32/efr32xg1x/rail_chip_specific.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/radio/rail_lib/common/rail_features.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/sl_rail_util_pa_config.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_rail_util_pa_config.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk/platform/radio/rail_lib/plugin/pa-conversions/pa_curves_efr32.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk/platform/radio/rail_lib/plugin/pa-conversions/efr32xg1x/sl_rail_util_pa_curves.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk/platform/radio/rail_lib/plugin/pa-conversions/pa_curve_types_efr32.h
@@ -124,7 +124,7 @@ gecko_sdk_4.4.4/platform/radio/rail_lib/plugin/pa-conversions/pa_curves_efr32.o:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/radio/rail_lib/common/rail_types.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/radio/rail_lib/chip/efr32/efr32xg1x/rail_chip_specific.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/radio/rail_lib/common/rail_features.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/sl_rail_util_pa_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_rail_util_pa_config.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk/platform/radio/rail_lib/plugin/pa-conversions/pa_curves_efr32.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk/platform/radio/rail_lib/plugin/pa-conversions/efr32xg1x/sl_rail_util_pa_curves.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk/platform/radio/rail_lib/plugin/pa-conversions/pa_curve_types_efr32.h:

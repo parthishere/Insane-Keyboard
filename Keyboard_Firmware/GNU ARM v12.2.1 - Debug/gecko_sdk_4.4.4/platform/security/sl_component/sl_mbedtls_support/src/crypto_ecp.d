@@ -59,17 +59,17 @@ gecko_sdk_4.4.4/platform/security/sl_component/sl_mbedtls_support/src/crypto_ecp
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//util/third_party/mbedtls/include/mbedtls/ecp.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//util/third_party/mbedtls/include/mbedtls/private_access.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//util/third_party/mbedtls/include/mbedtls/build_info.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/sl_mbedtls_config.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/autogen/sli_mbedtls_config_autogen.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_mbedtls_config.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sli_mbedtls_config_autogen.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/security/sl_component/sl_mbedtls_support/config/sli_mbedtls_omnipresent.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/autogen/sl_component_catalog.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sl_component_catalog.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/security/sl_component/sl_mbedtls_support/config/sli_mbedtls_acceleration.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/sl_mbedtls_device_config.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/autogen/sli_mbedtls_config_transform_autogen.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/psa_crypto_config.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/autogen/sli_psa_config_autogen.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_mbedtls_device_config.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sli_mbedtls_config_transform_autogen.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/psa_crypto_config.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sli_psa_config_autogen.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/security/sl_component/sl_mbedtls_support/config/sli_psa_acceleration.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/autogen/sli_psa_builtin_config_autogen.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sli_psa_builtin_config_autogen.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//util/third_party/mbedtls/include/mbedtls/config_psa.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//util/third_party/mbedtls/include/psa/crypto_legacy.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//util/third_party/mbedtls/include/psa/crypto_adjust_config_synonyms.h \
@@ -92,7 +92,7 @@ gecko_sdk_4.4.4/platform/security/sl_component/sl_mbedtls_support/src/crypto_ecp
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_core_generic.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_common.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_assert.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/emlib_core_debug_config.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/emlib_core_debug_config.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_crypto_compat.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_core.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/security/sl_component/sl_psa_driver/inc/crypto_management.h
@@ -155,17 +155,17 @@ gecko_sdk_4.4.4/platform/security/sl_component/sl_mbedtls_support/src/crypto_ecp
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//util/third_party/mbedtls/include/mbedtls/ecp.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//util/third_party/mbedtls/include/mbedtls/private_access.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//util/third_party/mbedtls/include/mbedtls/build_info.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/sl_mbedtls_config.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/autogen/sli_mbedtls_config_autogen.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_mbedtls_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sli_mbedtls_config_autogen.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/security/sl_component/sl_mbedtls_support/config/sli_mbedtls_omnipresent.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/autogen/sl_component_catalog.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sl_component_catalog.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/security/sl_component/sl_mbedtls_support/config/sli_mbedtls_acceleration.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/sl_mbedtls_device_config.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/autogen/sli_mbedtls_config_transform_autogen.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/psa_crypto_config.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/autogen/sli_psa_config_autogen.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_mbedtls_device_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sli_mbedtls_config_transform_autogen.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/psa_crypto_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sli_psa_config_autogen.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/security/sl_component/sl_mbedtls_support/config/sli_psa_acceleration.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/autogen/sli_psa_builtin_config_autogen.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sli_psa_builtin_config_autogen.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//util/third_party/mbedtls/include/mbedtls/config_psa.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//util/third_party/mbedtls/include/psa/crypto_legacy.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//util/third_party/mbedtls/include/psa/crypto_adjust_config_synonyms.h:
@@ -188,7 +188,7 @@ gecko_sdk_4.4.4/platform/security/sl_component/sl_mbedtls_support/src/crypto_ecp
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_core_generic.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_common.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_assert.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/emlib_core_debug_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/emlib_core_debug_config.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_crypto_compat.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_core.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/security/sl_component/sl_psa_driver/inc/crypto_management.h:
