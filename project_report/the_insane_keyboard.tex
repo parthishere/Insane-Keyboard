@@ -430,13 +430,12 @@ We've detailed the HID (Human Interface Device) profile for our keyboard, includ
 \end{itemize}
 
 \subsubsection{Software Architecture}
-We've developed a functional software block diagram (Figure \ref{fig:software_diagram}) that outlines the interaction between various software components, including the BLE stack, keyboard matrix scanning, and power management modules.
+We've developed a functional software block diagram that outlines the interaction between various software components, including the BLE stack, keyboard matrix scanning, and power management modules.
 
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.44]{figures/software_diagram.png}
     \caption{Software Block Diagram}
-    \label{fig:software_diagram}
 \end{figure}
 
 \subsection{Project Management}
@@ -1296,7 +1295,7 @@ Figure \ref{fig:gantt_chart} presents our updated Gantt chart, reflecting the cu
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\textwidth]{figures/update3}
+    \includegraphics[width=\textwidth]{figures/update3.png}
     \caption{Updated Project Gantt Chart}
     \label{fig:gantt_chart}
 \end{figure}
@@ -1305,6 +1304,227 @@ Figure \ref{fig:gantt_chart} presents our updated Gantt chart, reflecting the cu
 \pagebreak
 
 \hrule
+
+\section{\color{red}{Update 4}}
+
+\subsection{Microcontroller Programming}
+
+The EFR32BG13 microcontroller will be programmed using the Mini Serial Wire Debug (SWD) interface. This method is described in Silicon Labs application note AN0062. The SWD interface uses two signals:
+
+\begin{itemize}
+    \item SWDIO: A bidirectional data line
+    \item SWCLK: A clock line controlled by the host device
+\end{itemize}
+
+The Mini SWD connector has a 5x2 header. This header connects to the Blue Gecko development board using a female SWD ribbon cable.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/serial_wire.png}
+    \caption{Serial Wire Debug Interface}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/miniSWD.png}
+    \caption{Mini SWD (5 x 2 header)}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/defaultPCefm.png}
+    \caption{Default Programmer Connection EFM32GG-STK3700}
+\end{figure}
+
+\subsection{Test Points}
+
+We have added test points to various signals on the board. Table \ref{tab:test_points} lists these test points.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        \textbf{Module} & \textbf{Designator} & \textbf{Signal} \\
+        \hline
+        Interrupts & TP1 & IO\_ROW\_INT \\
+        & TP2 & IO\_COL\_INT \\
+        \hline
+        Temperature sensor & TP3 & TEMP\_LOAD\_SW \\
+        \hline
+        Mini SWD connector & TP4 & RESET \\
+        & TP5 & SWDIO \\
+        & TP6-TP11 & Various SWD signals \\
+        \hline
+        eInk display & TP12-TP15 & Display control signals \\
+        \hline
+        I2C communication & TP16 & SCL \\
+        & TP17 & SDA \\
+        \hline
+        Power supply & TP18-TP25 & Various power signals \\
+        \hline
+        Crystals & TP26-TP29 & Crystal connections \\
+        \hline
+    \end{tabular}
+    \caption{Test Points}
+    \label{tab:test_points}
+\end{table}
+
+\subsection{Reset Circuit}
+
+The reset input of the EFR32BG13 is active low. It is internally connected to AVDD through a pull-up resistor. Our reset circuit consists of:
+
+\begin{itemize}
+    \item A 100 $\Omega$ resistor connected to ground
+    \item A 1 $\mu$F capacitor for debouncing
+\end{itemize}
+
+This circuit prevents unwanted resets due to electrical noise.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/reset_circuit.png}
+    \caption{Reset Circuit}
+\end{figure}
+
+
+\subsection{Clock Generation}
+
+We use two crystals for clock generation:
+
+\begin{itemize}
+    \item High-frequency crystal: 38.4 MHz
+    \begin{itemize}
+        \item Connected to HFXTAL\_N and HFXTAL\_P
+        \item Internal capacitor range: 9 - 25 pF
+    \end{itemize}
+    \item Low-frequency crystal: 32.768 kHz
+    \begin{itemize}
+        \item Connected to LFXTAL\_N and HFXTAL\_P
+        \item Internal capacitor range: 8 - 40 pF
+    \end{itemize}
+\end{itemize}
+
+These crystals provide accurate timing for the microcontroller's operations.
+
+\subsection{Power Management and Energy Sources}
+
+\subsubsection{Energy Sources}
+
+The keyboard can be powered by:
+
+\begin{itemize}
+    \item Solar panel with energy harvesting circuit
+    \item USB-C power
+    \item AEM pin on the Mini SWD connector (for jumpstart)
+\end{itemize}
+
+We added a 0 $\Omega$ resistor between the PMU output and the MCU power supply. This allows isolation during jumpstart.
+
+\subsubsection{Power Specifications}
+
+\begin{itemize}
+    \item PMU maximum current: 240 mA
+    \item Jumpstart source maximum current: 300 mA
+    \item Energy storage maximum current: 240 mA
+    \item Simulated maximum battery current: 58 mA
+    \item Simulated maximum inductor current: 165 mA
+\end{itemize}
+
+\subsubsection{Battery Management}
+
+\begin{itemize}
+    \item Minimum battery voltage: 3 V
+    \item Voltage regulation: Boost converter
+    \item Output voltage: 3.3 V
+    \item Battery cutoff voltage: 3 V
+\end{itemize}
+
+We use a boost converter to maintain 3.3 V output as the battery voltage decreases to 3 V.
+
+\subsection{Power Analysis}
+
+Our simulations show:
+
+\begin{equation}
+    I_{battery,max} = 58 \text{ mA}
+\end{equation}
+\begin{equation}
+    I_{inductor,max} = 165 \text{ mA}
+\end{equation}
+
+The PMIC can supply 230 mA peak current. This gives us a margin of:
+
+\begin{equation}
+    \text{Current Margin} = 230 \text{ mA} - 165 \text{ mA} = 65 \text{ mA}
+\end{equation}
+
+\begin{equation}
+    \text{Margin Percentage} = \frac{65 \text{ mA}}{230 \text{ mA}} \times 100\% = 28.3\%
+\end{equation}
+
+This margin ensures the power system can handle varying loads.
+
+
+\subsection{3D Printed Keyboard Case}
+
+We have made significant progress on the mechanical design of our keyboard. Using 3D printing technology, we have successfully produced the left side of the keyboard case. This prototype has provided valuable insights into the physical dimensions and ergonomics of our design.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/Update_4/3d1}
+    \caption{3D printed left side of the keyboard case}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/Update_4/3d1}
+    \caption{3D printed left side of the keyboard case}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/Update_4/3d1}
+    \caption{3D printed left side of the keyboard case}
+\end{figure}
+
+The 3D printed case fits our components very well, confirming the accuracy of our 3D model. This success validates our approach to the mechanical design and provides a solid foundation for further refinements.
+
+Our next steps in the case design process include:
+
+\begin{itemize}
+    \item Modifying the 3D model to include precise cutouts for the display and rotary encoder knobs
+    \item Refining the internal structure to accommodate the PCB and other electronic components
+    \item 3D printing the right side of the keyboard case
+    \item Iterating on the design based on assembly and usability tests
+\end{itemize}
+
+
+\subsection{Progress Update}
+
+\subsubsection{Completed Tasks}
+\begin{itemize}
+    \item Created schematic
+    \item Generated component footprints
+    \item Developed board programming plan
+    \item Assigned test points
+    \item Planned alternate power sources
+    \item Created 3D model of keyboard case
+    \item Acquired components for breadboard prototype
+    \item Simulated PMU and verified power requirements
+\end{itemize}
+
+\subsubsection{Upcoming Tasks}
+\begin{itemize}
+    \item Start firmware development
+    \item Finalize schematic
+    \item Create initial PCB layout
+    \item Assemble breadboard prototype
+\end{itemize}
+
+\subsection{Conclusion}
+
+Our project is on schedule. We have not encountered any major problems. We have completed the power system design and validated it through simulation. Our next steps focus on firmware development and building a physical prototype to test our design.
+
 
 
 
