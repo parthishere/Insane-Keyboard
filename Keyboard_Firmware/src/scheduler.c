@@ -475,7 +475,6 @@ void discovery_State_Machine(sl_bt_msg_t *bt_event)
     {
       PRINT_LOG("BTN Indication Enabled : from state machine\n\r");
       ble_data_ptr->ok_to_send_button_indications = true;
-      displayPrintf(DISPLAY_ROW_CONNECTION, "Handling Indications");
       current_discovery_state = stateEndState;
     }
 

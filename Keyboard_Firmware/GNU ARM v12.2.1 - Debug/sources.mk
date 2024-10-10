@@ -28,6 +28,7 @@ gecko_sdk_4.4.4/platform/common/toolchain/src \
 gecko_sdk_4.4.4/platform/driver/debug/src \
 gecko_sdk_4.4.4/platform/driver/i2cspm/src \
 gecko_sdk_4.4.4/platform/emdrv/dmadrv/src \
+gecko_sdk_4.4.4/platform/emdrv/spidrv/src \
 gecko_sdk_4.4.4/platform/emlib/src \
 gecko_sdk_4.4.4/platform/radio/rail_lib/plugin/pa-conversions \
 gecko_sdk_4.4.4/platform/radio/rail_lib/plugin/rail_util_power_manager_init \

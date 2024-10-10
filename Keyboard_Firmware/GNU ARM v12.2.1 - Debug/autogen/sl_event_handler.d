@@ -118,6 +118,13 @@ autogen/sl_event_handler.o: ../autogen/sl_event_handler.c \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/iostream/inc/sl_iostream_stdlib_config.h \
  ../autogen/sl_iostream_init_usart_instances.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/security/sl_component/sl_mbedtls_support/inc/sl_mbedtls.h \
+ ../autogen/sl_spidrv_instances.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emdrv/spidrv/inc/spidrv.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_cmu.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_cmu_compat.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_gpio.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/sli_em_cmu.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/spidrv_config.h \
  ../autogen/sl_iostream_init_instances.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//hardware/driver/configuration_over_swo/inc/sl_cos.h
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/toolchain/inc/sl_gcc_preinclude.h:
@@ -239,5 +246,12 @@ autogen/sl_event_handler.o: ../autogen/sl_event_handler.c \
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/iostream/inc/sl_iostream_stdlib_config.h:
 ../autogen/sl_iostream_init_usart_instances.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/security/sl_component/sl_mbedtls_support/inc/sl_mbedtls.h:
+../autogen/sl_spidrv_instances.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emdrv/spidrv/inc/spidrv.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_cmu.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_cmu_compat.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_gpio.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/sli_em_cmu.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/spidrv_config.h:
 ../autogen/sl_iostream_init_instances.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//hardware/driver/configuration_over_swo/inc/sl_cos.h:

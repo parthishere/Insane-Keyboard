@@ -181,7 +181,7 @@ uint16_t read_SI7021()
 
   // Write to server's gattdb
   sl_status_t sc = sl_bt_gatt_server_write_attribute_value(
-      gattdb_temperature_measurement, // handle from gatt_db.h
+      gattdb_report_map, // handle from gatt_db.h
       0,                              // offset
       TEMPERATURE_BUFFER_SIZE,        // length
       &htm_temperature_buffer[0]      // in IEEE-11073 format
@@ -202,7 +202,7 @@ uint16_t read_SI7021()
   else
   {
     // Queue the temperature indication if another indication is in flight
-    status = write_queue(gattdb_temperature_measurement, TEMPERATURE_BUFFER_SIZE, htm_temperature_buffer);
+    status = write_queue(gattdb_report_map, TEMPERATURE_BUFFER_SIZE, htm_temperature_buffer);
     // Check for errors in queuing the indication
     if (status)
     {
@@ -249,12 +249,12 @@ void attemptToSendOrQueueIndication(uint8_t *htm_temperature_buffer, bool is_but
     if (is_button && ble_data->ok_to_send_button_indications)
     {
       // Attempt to enqueue button state indication
-      status = write_queue(gattdb_button_state, 1, &ble_data->buttonState);
+      status = write_queue(gattdb_report_map, 1, &ble_data->buttonState);
     }
     else
     {
       // Attempt to enqueue temperature data for later transmission
-      status = write_queue(gattdb_temperature_measurement, TEMPERATURE_BUFFER_SIZE, htm_temperature_buffer);
+      status = write_queue(gattdb_report_map, TEMPERATURE_BUFFER_SIZE, htm_temperature_buffer);
     }
 
     // Check if the queue operation was unsuccessful
@@ -289,12 +289,12 @@ void send_from_queue()
   if (!status)
   {
     // Determine the type of indication to send based on the characteristic handle
-    if (handle == gattdb_button_state && ble_data->ok_to_send_button_indications)
+    if (handle == gattdb_report_map && ble_data->ok_to_send_button_indications)
     {
       // Send button indication if applicable
       send_Button_Indication(buffer);
     }
-    else if (handle == gattdb_temperature_measurement && ble_data->ok_to_send_htm_indications)
+    else if (handle == gattdb_report_map && ble_data->ok_to_send_htm_indications)
     {
       // Send temperature indication if applicable
       send_HTM_Indication(buffer, bufferlength);

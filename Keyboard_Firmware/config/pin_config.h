@@ -178,6 +178,50 @@
 // [USART0]$
 
 // $[USART1]
+// USART1 CLK on PC8
+#ifndef USART1_CLK_PORT                         
+#define USART1_CLK_PORT                          gpioPortC
+#endif
+#ifndef USART1_CLK_PIN                          
+#define USART1_CLK_PIN                           8
+#endif
+#ifndef USART1_CLK_LOC                          
+#define USART1_CLK_LOC                           11
+#endif
+
+// USART1 CS on PC9
+#ifndef USART1_CS_PORT                          
+#define USART1_CS_PORT                           gpioPortC
+#endif
+#ifndef USART1_CS_PIN                           
+#define USART1_CS_PIN                            9
+#endif
+#ifndef USART1_CS_LOC                           
+#define USART1_CS_LOC                            11
+#endif
+
+// USART1 RX on PC7
+#ifndef USART1_RX_PORT                          
+#define USART1_RX_PORT                           gpioPortC
+#endif
+#ifndef USART1_RX_PIN                           
+#define USART1_RX_PIN                            7
+#endif
+#ifndef USART1_RX_LOC                           
+#define USART1_RX_LOC                            11
+#endif
+
+// USART1 TX on PC6
+#ifndef USART1_TX_PORT                          
+#define USART1_TX_PORT                           gpioPortC
+#endif
+#ifndef USART1_TX_PIN                           
+#define USART1_TX_PIN                            6
+#endif
+#ifndef USART1_TX_LOC                           
+#define USART1_TX_LOC                            11
+#endif
+
 // [USART1]$
 
 // $[USART2]

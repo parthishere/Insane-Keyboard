@@ -24,4 +24,6 @@ sl_rail_util_power_manager_init_config.h=-234538768
 sl_rail_util_sequencer_config.h=1762009507
 sl_sleeptimer_config.h=847044378
 sl_spidrv_Display_config.h=-241540029
+sl_spidrv_display_config.h=-241540029
+sl_spidrv_usart_displayy_config.h=549881668
 spidrv_config.h=1282557349

@@ -63,8 +63,8 @@ autogen/sl_spidrv_init.o: ../autogen/sl_spidrv_init.c \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_core_generic.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_common.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_assert.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/autogen/sl_component_catalog.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/emlib_core_debug_config.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sl_component_catalog.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/emlib_core_debug_config.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_cmu_compat.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_gpio.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_enum.h \
@@ -73,12 +73,12 @@ autogen/sl_spidrv_init.o: ../autogen/sl_spidrv_init.c \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emdrv/dmadrv/inc/dmadrv.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emdrv/common/inc/ecode.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_ldma.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/dmadrv_config.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/spidrv_config.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/dmadrv_config.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/spidrv_config.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/sleeptimer/inc/sl_sleeptimer.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_slist.h \
  ../autogen/sl_spidrv_instances.h \
- /home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/sl_spidrv_Display_config.h
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_spidrv_usart_displayy_config.h
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/toolchain/inc/sl_gcc_preinclude.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emdrv/spidrv/inc/spidrv.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32BG13P/Include/em_device.h:
@@ -143,8 +143,8 @@ autogen/sl_spidrv_init.o: ../autogen/sl_spidrv_init.c \
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_core_generic.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_common.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_assert.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/autogen/sl_component_catalog.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/emlib_core_debug_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sl_component_catalog.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/emlib_core_debug_config.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_cmu_compat.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_gpio.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_enum.h:
@@ -153,9 +153,9 @@ autogen/sl_spidrv_init.o: ../autogen/sl_spidrv_init.c \
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emdrv/dmadrv/inc/dmadrv.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emdrv/common/inc/ecode.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_ldma.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/dmadrv_config.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/spidrv_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/dmadrv_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/spidrv_config.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/sleeptimer/inc/sl_sleeptimer.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_slist.h:
 ../autogen/sl_spidrv_instances.h:
-/home/parth/Work/All_data/university/Low_Power/Project/Keyboard_Firmware/config/sl_spidrv_Display_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_spidrv_usart_displayy_config.h:

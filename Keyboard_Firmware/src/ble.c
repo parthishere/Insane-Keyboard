@@ -261,7 +261,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
 
         // Delete the bondings , and configure the stack for bonding.
         sl_bt_sm_delete_bondings();
-        sl_bt_sm_configure(FLAGS, sm_io_capability_displayyesno);
+        sl_bt_sm_configure(FLAGS, sl_bt_sm_io_capability_noinputnooutput);
 
 #if (DEVICE_IS_BLE_SERVER == 1)
 
@@ -485,11 +485,8 @@ void handle_ble_event(sl_bt_msg_t *evt)
             // ble_data.buttonState = !ble_data.buttonState;
             ble_data.buttonState = !GPIO_PinInGet(SW_PORT, SW0_pin); //  cause of pull up
 
-            // Update the display to show the current button state.
-            displayPrintf(DISPLAY_ROW_9, (ble_data.buttonState ? "Button Pressed" : "Button Released"));
-
             // Write the new button state to the corresponding GATT characteristic.
-            sl_bt_gatt_server_write_attribute_value(gattdb_button_state, 0, sizeof(ble_data.buttonState), &ble_data.buttonState);
+            sl_bt_gatt_server_write_attribute_value(gattdb_report_map, 0, sizeof(ble_data.buttonState), &ble_data.buttonState);
 
             // Log the current queue depth for debugging purposes.
             PRINT_LOG("Current Queue Length (EXT event): %d\n\r", get_queue_depth());
@@ -551,22 +548,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
     // Soft timer event: Handles periodic tasks, such as updating display or sensor readings
     case sl_bt_evt_system_soft_timer_id:
 
-        // Check if the triggered soft timer corresponds to the DISPLAY_EXT_COM_IN_TIMER_HANDLE.
-        if (evt->data.evt_system_soft_timer.handle == DISPLAY_EXT_COM_IN_TIMER_HANDLE)
-        {
-            // A static boolean variable is declared to keep track of the EXT COM IN pin's state.
-            // Being static, its value is preserved across function calls, initializing only once.
-            static bool ext_com_in_state = false;
 
-            // Call a function (gpioSetDisplayExtcomin) to set the EXT COM IN pin.
-            // The current value of ext_com_in_state is passed, determining the pin's state (high or low).
-            gpioSetDisplayExtcomin(ext_com_in_state);
-
-            // Toggle the state of the ext_com_in_state variable.
-            // If it was false, it becomes true, and if it was true, it becomes false.
-            // This is prepared for the next time this timer event occurs, ensuring the pin's state alternates.
-            ext_com_in_state = !ext_com_in_state;
-        }
         break;
 
     // Indicates a user request to display that the new bonding request is received and for the user to confirm the request
@@ -653,61 +635,33 @@ void handle_ble_event(sl_bt_msg_t *evt)
             send_from_queue();
         }
 
-        // Check if the event is related to the temperature measurement characteristic by comparing the characteristic handle.
-        if (evt->data.evt_gatt_server_characteristic_status.characteristic == gattdb_temperature_measurement)
-        {
-            // Check if the status change was due to a change in the Client Characteristic Configuration Descriptor (CCCD).
-            if (evt->data.evt_gatt_server_characteristic_status.status_flags == gatt_server_client_config)
-            {
-                // Check if indications have been enabled for the characteristic by inspecting the client configuration flags.
-                // The gatt_indication flag is set if indications are enabled.
-                if (evt->data.evt_gatt_server_characteristic_status.client_config_flags & gatt_indication)
-                {
-                    PRINT_LOG("Indication for Temprature has been enabled by Client\n");
-                    // Indications have been enabled by the client.
-                    ble_data.ok_to_send_htm_indications = true;
-                    gpioLed0SetOn();
-                }
-                else
-                {
-                    PRINT_LOG("Indication for Temprature has been disabled by Client\n");
-                    // Resetting the queue as we are not sending indication
-                    reset_queue();
-                    // Indications have been disabled by the client.
-                    ble_data.ok_to_send_htm_indications = false;
-                    displayPrintf(DISPLAY_ROW_TEMPVALUE, "");
-                    gpioLed0SetOff();
-                }
-            }
-        }
+//        // Check if the event is related to the temperature measurement characteristic by comparing the characteristic handle.
+//        if (evt->data.evt_gatt_server_characteristic_status.characteristic == gattdb_temperature_measurement)
+//        {
+//            // Check if the status change was due to a change in the Client Characteristic Configuration Descriptor (CCCD).
+//            if (evt->data.evt_gatt_server_characteristic_status.status_flags == gatt_server_client_config)
+//            {
+//                // Check if indications have been enabled for the characteristic by inspecting the client configuration flags.
+//                // The gatt_indication flag is set if indications are enabled.
+//                if (evt->data.evt_gatt_server_characteristic_status.client_config_flags & gatt_indication)
+//                {
+//                    PRINT_LOG("Indication for Temprature has been enabled by Client\n");
+//                    // Indications have been enabled by the client.
+//                    ble_data.ok_to_send_htm_indications = true;
+//                    gpioLed0SetOn();
+//                }
+//                else
+//                {
+//                    PRINT_LOG("Indication for Temprature has been disabled by Client\n");
+//                    // Resetting the queue as we are not sending indication
+//                    reset_queue();
+//                    // Indications have been disabled by the client.
+//                    ble_data.ok_to_send_htm_indications = false;
+//                    gpioLed0SetOff();
+//                }
+//            }
+//        }
 
-        // Check if the event is related to the temperature measurement characteristic by comparing the characteristic handle.
-        if (evt->data.evt_gatt_server_characteristic_status.characteristic == gattdb_button_state)
-        {
-            // Check if the status change was due to a change in the Client Characteristic Configuration Descriptor (CCCD).
-            if (evt->data.evt_gatt_server_characteristic_status.status_flags == gatt_server_client_config)
-            {
-                // Check if indications have been enabled for the characteristic by inspecting the client configuration flags.
-                // The gatt_indication flag is set if indications are enabled.
-                if (evt->data.evt_gatt_server_characteristic_status.client_config_flags & gatt_indication)
-                {
-                    PRINT_LOG("Indication for Button has been enabled by Client\n");
-                    // Indications have been enabled by the client.
-                    ble_data.ok_to_send_button_indications = true;
-                    gpioLed1SetOn();
-                }
-                else
-                {
-                    // Resetting the queue as we are not sending indication
-                    reset_queue();
-                    PRINT_LOG("Indication for Button has been disabled by Client\n");
-                    // Indications have been disabled by the client.
-                    ble_data.ok_to_send_button_indications = false;
-                    displayPrintf(DISPLAY_ROW_TEMPVALUE, "");
-                    gpioLed1SetOff();
-                }
-            }
-        }
 
         break;
 
@@ -885,8 +839,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
             int32_t server_temperature = float_to_int32(char_value);
             // printing value on console
             PRINT_LOG("Temperature Data from Server: %d\n\r", server_temperature);
-            // print on display
-            displayPrintf(DISPLAY_ROW_TEMPVALUE, "Temp:%d", server_temperature);
+
         }
 
         // Check if the event is for the button characteristic and if sending button indications is allowed and the device is bonded.
@@ -898,9 +851,6 @@ void handle_ble_event(sl_bt_msg_t *evt)
             uint8_t char_value = evt->data.evt_gatt_characteristic_value.value.data[0];
             // Update the local button state based on the received value.
             ble_data.buttonState = char_value;
-
-            // Update the display to reflect the current state of the button ("Pressed" or "Released").
-            displayPrintf(DISPLAY_ROW_9, (ble_data.buttonState ? "Button Pressed" : "Button Released"));
 
             // Log the received button state value for debugging purposes.
             PRINT_LOG("Button Data from Server: %d\n\r", char_value);
@@ -943,7 +893,7 @@ void send_HTM_Indication(uint8_t htm_temperature_buffer[], uint8_t size)
     // Send the temperature data over BLE as an indication
     sc = sl_bt_gatt_server_send_indication(
         ble_data.appConnectionHandle,
-        gattdb_temperature_measurement,
+        gattdb_report_map,
         size,
         htm_temperature_buffer);
     // Check for errors in sending the indication
@@ -976,7 +926,7 @@ void send_Button_Indication(uint8_t buffer[])
 {
     sc = sl_bt_gatt_server_send_indication(
         ble_data.appConnectionHandle,
-        gattdb_button_state,
+        gattdb_report_map,
         1,
         buffer);
     if (sc != SL_STATUS_OK)

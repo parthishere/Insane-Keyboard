@@ -716,6 +716,16 @@
 			<locationURI>STUDIO_SDK_LOC/platform/emdrv/dmadrv/src/dmadrv.c</locationURI>
 		</link>
 		<link>
+			<name>gecko_sdk_4.4.4/platform/emdrv/spidrv/inc/spidrv.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/emdrv/spidrv/inc/spidrv.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.4.4/platform/emdrv/spidrv/src/spidrv.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/emdrv/spidrv/src/spidrv.c</locationURI>
+		</link>
+		<link>
 			<name>gecko_sdk_4.4.4/platform/radio/rail_lib/common/rail.h</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/platform/radio/rail_lib/common/rail.h</locationURI>
