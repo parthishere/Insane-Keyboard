@@ -1,0 +1,131 @@
+Removed Pin From Net: NetName=NetBT2A_P Pin=D1A-2
+Removed Pin From Net: NetName=NetBT2B_P Pin=D1B-2
+Removed Pin From Net: NetName=NetBT2A_P Pin=TP15A-1
+Removed Pin From Net: NetName=NetBT2B_P Pin=TP15B-1
+Change Component Designator: OldDesignator=BT4 NewDesignator=BT3
+Change Component Designator: OldDesignator=Q8 NewDesignator=Q7
+Change Component Designator: OldDesignator=R31A NewDesignator=R30A
+Change Component Designator: OldDesignator=R31B NewDesignator=R30B
+Change Component Designator: OldDesignator=R32A NewDesignator=R31A
+Change Component Designator: OldDesignator=R32B NewDesignator=R31B
+Change Component Designator: OldDesignator=R33A NewDesignator=R32A
+Change Component Designator: OldDesignator=R33B NewDesignator=R32B
+Change Component Designator: OldDesignator=R34 NewDesignator=R33
+Change Component Designator: OldDesignator=TP28A NewDesignator=TP27A
+Change Component Designator: OldDesignator=TP28B NewDesignator=TP27B
+Change Component Designator: OldDesignator=TP29A NewDesignator=TP28A
+Change Component Designator: OldDesignator=TP29B NewDesignator=TP28B
+Change Component Designator: OldDesignator=TP30A NewDesignator=TP29A
+Change Component Designator: OldDesignator=TP30B NewDesignator=TP29B
+Change Component Designator: OldDesignator=TP31A NewDesignator=TP30A
+Change Component Designator: OldDesignator=TP31B NewDesignator=TP30B
+Change Component Designator: OldDesignator=TP32A NewDesignator=TP31A
+Change Component Designator: OldDesignator=TP32B NewDesignator=TP31B
+Change Component Designator: OldDesignator=TP38A NewDesignator=TP32A
+Change Component Designator: OldDesignator=TP38B NewDesignator=TP32B
+Change Component Designator: OldDesignator=TP39A NewDesignator=TP33A
+Change Component Designator: OldDesignator=TP39B NewDesignator=TP33B
+Change Component Designator: OldDesignator=TP40A NewDesignator=TP34A
+Change Component Designator: OldDesignator=TP40B NewDesignator=TP34B
+Change Component Designator: OldDesignator=TP41 NewDesignator=TP35
+Change Component Designator: OldDesignator=TP42 NewDesignator=TP36
+Change Component Designator: OldDesignator=TP43 NewDesignator=TP37
+Change Component Designator: OldDesignator=TP44 NewDesignator=TP38
+Change Component Designator: OldDesignator=TP45 NewDesignator=TP39
+Added Component: Designator=C23A(CAPACITOR 0805)
+Add component (AddParameter): Name = "Case Code (Imperial)"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case Code (Metric)"; Value = "2012"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case/Package"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "Ceramic Capacitors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.mouser.com/ds/2/281/c02e-2905.pdf?src-supplier=Mouser"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.mouser.com/ds/2/281/c02e-2905.pdf?src-supplier=Mouser"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "https://www.murata.com/~/media/webrenewal/support/library/catalog/products/capacitor/mlcc/c02e.ashx?la=en-us&src-supplier=Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.murata.com/~/media/webrenewal/support/library/catalog/products/capacitor/mlcc/c02e.ashx?la=en-us&src-supplier=Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3Description"; Value = "http://psearch.en.murata.com/capacitor/product/GRM21BR61A476ME15%23.pdf?src-supplier=Avnet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3URL"; Value = "http://psearch.en.murata.com/capacitor/product/GRM21BR61A476ME15%23.pdf?src-supplier=Avnet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink4Description"; Value = "https://datasheet.octopart.com/GRM21BR61A476ME15K-Murata-datasheet-155345080.pdf?src-supplier=Newark"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink4URL"; Value = "https://datasheet.octopart.com/GRM21BR61A476ME15K-Murata-datasheet-155345080.pdf?src-supplier=Newark"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink5Description"; Value = "https://datasheet.octopart.com/GRM21BR61A476ME15K-Murata-datasheet-141278181.pdf?src-supplier=Future+Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink5URL"; Value = "https://datasheet.octopart.com/GRM21BR61A476ME15K-Murata-datasheet-141278181.pdf?src-supplier=Future+Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink6Description"; Value = "https://datasheet.octopart.com/GRM21BR61A476ME15K-Murata-datasheet-155345080.pdf?src-supplier=Element14"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink6URL"; Value = "https://datasheet.octopart.com/GRM21BR61A476ME15K-Murata-datasheet-155345080.pdf?src-supplier=Element14"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink7Description"; Value = "https://datasheet.octopart.com/GRM21BR61A476ME15K-Murata-datasheet-165579666.pdf?src-supplier=TME"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink7URL"; Value = "https://datasheet.octopart.com/GRM21BR61A476ME15K-Murata-datasheet-165579666.pdf?src-supplier=TME"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Dielectric"; Value = "X5R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "1.45mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Murata"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "GRM21BR61A476ME15K"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Material"; Value = "Ceramic"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "85°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-55°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Quantity"; Value = "10000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing"; Value = "1=0.72, 10=0.435, 50=0.3216, 100=0.2864, 500=0.22636, 1000=0.20762, 2500=0.18771, 5000=0.17563 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Series"; Value = "GRM"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock"; Value = "143272"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number"; Value = "490-GRM21BR61A476ME15KCT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Termination"; Value = "SMD/SMT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "20%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "47uF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating"; Value = "10V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating (DC)"; Value = "10V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Weight"; Value = "0.000335oz"; VariantName = "[No Variations]"
+Added Component: Designator=C23B(CAPACITOR 0805)
+Add component (AddParameter): Name = "Case Code (Imperial)"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case Code (Metric)"; Value = "2012"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case/Package"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "Ceramic Capacitors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.mouser.com/ds/2/281/c02e-2905.pdf?src-supplier=Mouser"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.mouser.com/ds/2/281/c02e-2905.pdf?src-supplier=Mouser"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "https://www.murata.com/~/media/webrenewal/support/library/catalog/products/capacitor/mlcc/c02e.ashx?la=en-us&src-supplier=Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.murata.com/~/media/webrenewal/support/library/catalog/products/capacitor/mlcc/c02e.ashx?la=en-us&src-supplier=Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3Description"; Value = "http://psearch.en.murata.com/capacitor/product/GRM21BR61A476ME15%23.pdf?src-supplier=Avnet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3URL"; Value = "http://psearch.en.murata.com/capacitor/product/GRM21BR61A476ME15%23.pdf?src-supplier=Avnet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink4Description"; Value = "https://datasheet.octopart.com/GRM21BR61A476ME15K-Murata-datasheet-155345080.pdf?src-supplier=Newark"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink4URL"; Value = "https://datasheet.octopart.com/GRM21BR61A476ME15K-Murata-datasheet-155345080.pdf?src-supplier=Newark"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink5Description"; Value = "https://datasheet.octopart.com/GRM21BR61A476ME15K-Murata-datasheet-141278181.pdf?src-supplier=Future+Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink5URL"; Value = "https://datasheet.octopart.com/GRM21BR61A476ME15K-Murata-datasheet-141278181.pdf?src-supplier=Future+Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink6Description"; Value = "https://datasheet.octopart.com/GRM21BR61A476ME15K-Murata-datasheet-155345080.pdf?src-supplier=Element14"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink6URL"; Value = "https://datasheet.octopart.com/GRM21BR61A476ME15K-Murata-datasheet-155345080.pdf?src-supplier=Element14"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink7Description"; Value = "https://datasheet.octopart.com/GRM21BR61A476ME15K-Murata-datasheet-165579666.pdf?src-supplier=TME"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink7URL"; Value = "https://datasheet.octopart.com/GRM21BR61A476ME15K-Murata-datasheet-165579666.pdf?src-supplier=TME"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Dielectric"; Value = "X5R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "1.45mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Murata"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "GRM21BR61A476ME15K"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Material"; Value = "Ceramic"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "85°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-55°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Quantity"; Value = "10000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing"; Value = "1=0.72, 10=0.435, 50=0.3216, 100=0.2864, 500=0.22636, 1000=0.20762, 2500=0.18771, 5000=0.17563 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Series"; Value = "GRM"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock"; Value = "143272"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number"; Value = "490-GRM21BR61A476ME15KCT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Termination"; Value = "SMD/SMT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "20%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "47uF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating"; Value = "10V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating (DC)"; Value = "10V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Weight"; Value = "0.000335oz"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetBT2A_P Pin=C23A-2
+Added Pin To Net: NetName=NetBT2B_P Pin=C23B-2
+Change Net Name : Old Net Name=NetQ8_3 New Net Name=NetQ7_3
+Added Pin To Net: NetName=NetC23A_1 Pin=C23A-1
+Added Pin To Net: NetName=NetC23A_1 Pin=D1A-2
+Added Pin To Net: NetName=NetC23A_1 Pin=TP15A-1
+Added Net: Name=NetC23A_1
+Added Pin To Net: NetName=NetC23B_1 Pin=C23B-1
+Added Pin To Net: NetName=NetC23B_1 Pin=D1B-2
+Added Pin To Net: NetName=NetC23B_1 Pin=TP15B-1
+Added Net: Name=NetC23B_1
+Added Member To Class: ClassName=U_Power1 Member=Component C23A (C23) CAP 47uF 10V 0805
+Added Member To Class: ClassName=U_Power2 Member=Component C23B (C23) CAP 47uF 10V 0805
