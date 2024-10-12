@@ -1,111 +1,126 @@
-\contentsline {section}{List of Figures}{2}{section*.2}%
+\contentsline {section}{List of Figures}{3}{section*.2}%
 \contentsline {section}{List of Tables}{3}{section*.3}%
-\contentsline {section}{\numberline {1}\color {red}Project Proposal}{4}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Project Rationale and Goals}{4}{subsection.1.1}%
-\contentsline {subsubsection}{\numberline {1.1.1}Project Rationale}{4}{subsubsection.1.1.1}%
-\contentsline {subsubsection}{\numberline {1.1.2}Project Goals}{4}{subsubsection.1.1.2}%
-\contentsline {subsubsection}{\numberline {1.1.3}Unique Features}{5}{subsubsection.1.1.3}%
-\contentsline {subsubsection}{\numberline {1.1.4}Expected Outcomes}{5}{subsubsection.1.1.4}%
-\contentsline {subsection}{\numberline {1.2}Existing Products and Ideas from products}{5}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}High Level Requirements}{6}{subsection.1.3}%
-\contentsline {subsubsection}{\numberline {1.3.1}General Requirements}{6}{subsubsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.4}Keyboard Layout and Design}{7}{subsection.1.4}%
-\contentsline {subsubsection}{\numberline {1.4.1}Main Board Key Layout}{7}{subsubsection.1.4.1}%
-\contentsline {subsection}{\numberline {1.5}Secondary Module Key Layout}{8}{subsection.1.5}%
-\contentsline {subsection}{\numberline {1.6}Challenges and Considerations}{8}{subsection.1.6}%
-\contentsline {section}{\numberline {2}\color {red}Project Update: Week 1}{9}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Technical Considerations}{9}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Functional hardware block diagram}{9}{subsubsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.2}Wireless Communication and Software Architecture}{15}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}HID Profile Characteristics}{15}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Software Architecture}{15}{subsubsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.3}Project Management}{16}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Energy Analysis and Power Management}{16}{subsection.2.4}%
-\contentsline {section}{\numberline {3}\color {red}Project Update: Week 2}{18}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Selection Criteria}{18}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Chosen Components}{18}{subsubsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.2}Justification for Each Component}{19}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}EFR32BG13 Microcontroller}{19}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}TCA6408A I/O Expander}{19}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}Waveshare E-ink Display}{19}{subsubsection.3.2.3}%
-\contentsline {subsubsection}{\numberline {3.2.4}TPS22919 Load Switch}{19}{subsubsection.3.2.4}%
-\contentsline {subsubsection}{\numberline {3.2.5}BQ25570 Power Management IC}{19}{subsubsection.3.2.5}%
-\contentsline {subsubsection}{\numberline {3.2.6}SI7021 Temperature and Humidity Sensor}{20}{subsubsection.3.2.6}%
-\contentsline {subsubsection}{\numberline {3.2.7}Solar Panel (SM141K06L)}{20}{subsubsection.3.2.7}%
-\contentsline {subsubsection}{\numberline {3.2.8}Battery (1000mAh)}{20}{subsubsection.3.2.8}%
-\contentsline {subsection}{\numberline {3.3}Energy Analysis}{20}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Overall Energy Efficiency}{20}{subsubsection.3.3.1}%
-\contentsline {paragraph}{Energy Consumption Breakdown}{20}{section*.4}%
-\contentsline {paragraph}{Average Power Consumption}{20}{section*.5}%
-\contentsline {paragraph}{Daily Energy Requirement}{21}{section*.6}%
-\contentsline {paragraph}{Battery Capacity Calculation}{21}{section*.7}%
-\contentsline {paragraph}{Energy Harvesting Efficiency}{21}{section*.8}%
-\contentsline {paragraph}{Power Budget Analysis}{21}{section*.9}%
-\contentsline {paragraph}{Capacitor Sizing}{21}{section*.10}%
-\contentsline {subsection}{\numberline {3.4}Battery and Power Management}{21}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Power Management IC (PMIC) Selection}{21}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Energy Storage Element Selection}{22}{subsubsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.5}Energy Requirements Analysis}{22}{subsection.3.5}%
-\contentsline {subsubsection}{\numberline {3.5.1}Unregulated Supply Performance}{22}{subsubsection.3.5.1}%
-\contentsline {subsubsection}{\numberline {3.5.2}Peak and Average Current Use Cases}{22}{subsubsection.3.5.2}%
-\contentsline {subsubsection}{\numberline {3.5.3}Total Energy Required Between Charging}{23}{subsubsection.3.5.3}%
-\contentsline {subsubsection}{\numberline {3.5.4}Recharge Time Calculation}{23}{subsubsection.3.5.4}%
-\contentsline {subsection}{\numberline {3.6}Supercapacitor vs Battery Comparison: Mathematical Analysis}{23}{subsection.3.6}%
-\contentsline {subsubsection}{\numberline {3.6.1}Energy Storage}{23}{subsubsection.3.6.1}%
-\contentsline {paragraph}{Battery:}{23}{section*.11}%
-\contentsline {paragraph}{Supercapacitor:}{23}{section*.12}%
-\contentsline {subsubsection}{\numberline {3.6.2}Power Density}{23}{subsubsection.3.6.2}%
-\contentsline {paragraph}{Battery:}{23}{section*.13}%
-\contentsline {paragraph}{Supercapacitor:}{23}{section*.14}%
-\contentsline {subsubsection}{\numberline {3.6.3}Current Handling}{24}{subsubsection.3.6.3}%
-\contentsline {paragraph}{Battery:}{24}{section*.15}%
-\contentsline {paragraph}{Supercapacitor:}{24}{section*.16}%
-\contentsline {subsubsection}{\numberline {3.6.4}Self-Discharge}{24}{subsubsection.3.6.4}%
-\contentsline {paragraph}{Battery:}{24}{section*.17}%
-\contentsline {paragraph}{Supercapacitor:}{24}{section*.18}%
-\contentsline {subsubsection}{\numberline {3.6.5}Charging Time}{24}{subsubsection.3.6.5}%
-\contentsline {paragraph}{Battery:}{24}{section*.19}%
-\contentsline {paragraph}{Supercapacitor:}{24}{section*.20}%
-\contentsline {subsubsection}{\numberline {3.6.6}Conclusion}{24}{subsubsection.3.6.6}%
-\contentsline {subsection}{\numberline {3.7}PCB Design Progress}{25}{subsection.3.7}%
-\contentsline {subsubsection}{\numberline {3.7.1}Footprint Generation}{25}{subsubsection.3.7.1}%
-\contentsline {subsubsection}{\numberline {3.7.2}Power Supply Considerations}{25}{subsubsection.3.7.2}%
-\contentsline {subsection}{\numberline {3.8}Mechanical Design}{26}{subsection.3.8}%
-\contentsline {subsubsection}{\numberline {3.8.1}Dimensions}{26}{subsubsection.3.8.1}%
-\contentsline {subsubsection}{\numberline {3.8.2}Material}{26}{subsubsection.3.8.2}%
-\contentsline {subsubsection}{\numberline {3.8.3}Operating Conditions}{26}{subsubsection.3.8.3}%
-\contentsline {subsection}{\numberline {3.9}Project Progress and Future Plans}{26}{subsection.3.9}%
-\contentsline {subsubsection}{\numberline {3.9.1}Recent Updates}{26}{subsubsection.3.9.1}%
-\contentsline {subsubsection}{\numberline {3.9.2}Upcoming Tasks}{27}{subsubsection.3.9.2}%
-\contentsline {section}{\numberline {4}\color {red}{Update 3}}{28}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Battery Specifications and Usage Profile}{28}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Power Consumption Analysis}{28}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.2}Charging Characteristics}{28}{subsubsection.4.1.2}%
-\contentsline {paragraph}{Charging Current and Time Calculations}{29}{section*.21}%
-\contentsline {subsubsection}{\numberline {4.1.3}Conclusion}{29}{subsubsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.2}Worst-Case Communication Bus Timing}{30}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}SPI Bus Timing}{31}{subsubsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.3}High-Risk Development Items}{31}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Hardware Challenges}{31}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}Software Challenges}{31}{subsubsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.4}Mitigation Plans}{31}{subsection.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.1}Prototyping and Manufacturing}{31}{subsubsection.4.4.1}%
-\contentsline {subsubsection}{\numberline {4.4.2}Hardware Development}{32}{subsubsection.4.4.2}%
-\contentsline {subsubsection}{\numberline {4.4.3}Software Development}{32}{subsubsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.5}Update}{32}{subsection.4.5}%
-\contentsline {subsection}{\numberline {4.6}gnatt chart}{32}{subsection.4.6}%
-\contentsline {section}{\numberline {5}\color {red}{Update 4}}{33}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Microcontroller Programming}{33}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Test Points}{35}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Reset Circuit}{35}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Clock Generation}{35}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Power Management and Energy Sources}{36}{subsection.5.5}%
-\contentsline {subsubsection}{\numberline {5.5.1}Energy Sources}{36}{subsubsection.5.5.1}%
-\contentsline {subsubsection}{\numberline {5.5.2}Power Specifications}{36}{subsubsection.5.5.2}%
-\contentsline {subsubsection}{\numberline {5.5.3}Battery Management}{36}{subsubsection.5.5.3}%
-\contentsline {subsection}{\numberline {5.6}Power Analysis}{36}{subsection.5.6}%
-\contentsline {subsection}{\numberline {5.7}3D Printed Keyboard Case}{37}{subsection.5.7}%
-\contentsline {subsection}{\numberline {5.8}Progress Update}{40}{subsection.5.8}%
-\contentsline {subsubsection}{\numberline {5.8.1}Completed Tasks}{40}{subsubsection.5.8.1}%
-\contentsline {subsubsection}{\numberline {5.8.2}Upcoming Tasks}{40}{subsubsection.5.8.2}%
-\contentsline {subsection}{\numberline {5.9}Conclusion}{40}{subsection.5.9}%
+\contentsline {section}{\numberline {1}\color {red}Project Proposal}{5}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Project Rationale and Goals}{5}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Project Rationale}{5}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Project Goals}{5}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}Unique Features}{6}{subsubsection.1.1.3}%
+\contentsline {subsubsection}{\numberline {1.1.4}Expected Outcomes}{6}{subsubsection.1.1.4}%
+\contentsline {subsection}{\numberline {1.2}Existing Products and Ideas from products}{6}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}High Level Requirements}{7}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}General Requirements}{7}{subsubsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.4}Keyboard Layout and Design}{8}{subsection.1.4}%
+\contentsline {subsubsection}{\numberline {1.4.1}Main Board Key Layout}{8}{subsubsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.5}Secondary Module Key Layout}{9}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Challenges and Considerations}{9}{subsection.1.6}%
+\contentsline {section}{\numberline {2}\color {red}Project Update: Week 1}{10}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Technical Considerations}{10}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Functional hardware block diagram}{10}{subsubsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.2}Wireless Communication and Software Architecture}{16}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}HID Profile Characteristics}{16}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Software Architecture}{16}{subsubsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.3}Project Management}{17}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Energy Analysis and Power Management}{17}{subsection.2.4}%
+\contentsline {section}{\numberline {3}\color {red}Project Update: Week 2}{19}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Selection Criteria}{19}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Chosen Components}{19}{subsubsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.2}Justification for Each Component}{20}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}EFR32BG13 Microcontroller}{20}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}TCA6408A I/O Expander}{20}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Waveshare E-ink Display}{20}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}TPS22919 Load Switch}{20}{subsubsection.3.2.4}%
+\contentsline {subsubsection}{\numberline {3.2.5}BQ25570 Power Management IC}{20}{subsubsection.3.2.5}%
+\contentsline {subsubsection}{\numberline {3.2.6}SI7021 Temperature and Humidity Sensor}{21}{subsubsection.3.2.6}%
+\contentsline {subsubsection}{\numberline {3.2.7}Solar Panel (SM141K06L)}{21}{subsubsection.3.2.7}%
+\contentsline {subsubsection}{\numberline {3.2.8}Battery (1000mAh)}{21}{subsubsection.3.2.8}%
+\contentsline {subsection}{\numberline {3.3}Energy Analysis}{21}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Overall Energy Efficiency}{21}{subsubsection.3.3.1}%
+\contentsline {paragraph}{Energy Consumption Breakdown}{21}{section*.4}%
+\contentsline {paragraph}{Average Power Consumption}{21}{section*.5}%
+\contentsline {paragraph}{Daily Energy Requirement}{22}{section*.6}%
+\contentsline {paragraph}{Battery Capacity Calculation}{22}{section*.7}%
+\contentsline {paragraph}{Energy Harvesting Efficiency}{22}{section*.8}%
+\contentsline {paragraph}{Power Budget Analysis}{22}{section*.9}%
+\contentsline {paragraph}{Capacitor Sizing}{22}{section*.10}%
+\contentsline {subsection}{\numberline {3.4}Battery and Power Management}{22}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Power Management IC (PMIC) Selection}{22}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Energy Storage Element Selection}{23}{subsubsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.5}Energy Requirements Analysis}{23}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Unregulated Supply Performance}{23}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}Peak and Average Current Use Cases}{23}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.3}Total Energy Required Between Charging}{24}{subsubsection.3.5.3}%
+\contentsline {subsubsection}{\numberline {3.5.4}Recharge Time Calculation}{24}{subsubsection.3.5.4}%
+\contentsline {subsection}{\numberline {3.6}Supercapacitor vs Battery Comparison: Mathematical Analysis}{24}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}Energy Storage}{24}{subsubsection.3.6.1}%
+\contentsline {paragraph}{Battery:}{24}{section*.11}%
+\contentsline {paragraph}{Supercapacitor:}{24}{section*.12}%
+\contentsline {subsubsection}{\numberline {3.6.2}Power Density}{24}{subsubsection.3.6.2}%
+\contentsline {paragraph}{Battery:}{24}{section*.13}%
+\contentsline {paragraph}{Supercapacitor:}{24}{section*.14}%
+\contentsline {subsubsection}{\numberline {3.6.3}Current Handling}{25}{subsubsection.3.6.3}%
+\contentsline {paragraph}{Battery:}{25}{section*.15}%
+\contentsline {paragraph}{Supercapacitor:}{25}{section*.16}%
+\contentsline {subsubsection}{\numberline {3.6.4}Self-Discharge}{25}{subsubsection.3.6.4}%
+\contentsline {paragraph}{Battery:}{25}{section*.17}%
+\contentsline {paragraph}{Supercapacitor:}{25}{section*.18}%
+\contentsline {subsubsection}{\numberline {3.6.5}Charging Time}{25}{subsubsection.3.6.5}%
+\contentsline {paragraph}{Battery:}{25}{section*.19}%
+\contentsline {paragraph}{Supercapacitor:}{25}{section*.20}%
+\contentsline {subsubsection}{\numberline {3.6.6}Conclusion}{25}{subsubsection.3.6.6}%
+\contentsline {subsection}{\numberline {3.7}PCB Design Progress}{26}{subsection.3.7}%
+\contentsline {subsubsection}{\numberline {3.7.1}Footprint Generation}{26}{subsubsection.3.7.1}%
+\contentsline {subsubsection}{\numberline {3.7.2}Power Supply Considerations}{26}{subsubsection.3.7.2}%
+\contentsline {subsection}{\numberline {3.8}Mechanical Design}{27}{subsection.3.8}%
+\contentsline {subsubsection}{\numberline {3.8.1}Dimensions}{27}{subsubsection.3.8.1}%
+\contentsline {subsubsection}{\numberline {3.8.2}Material}{27}{subsubsection.3.8.2}%
+\contentsline {subsubsection}{\numberline {3.8.3}Operating Conditions}{27}{subsubsection.3.8.3}%
+\contentsline {subsection}{\numberline {3.9}Project Progress and Future Plans}{27}{subsection.3.9}%
+\contentsline {subsubsection}{\numberline {3.9.1}Recent Updates}{27}{subsubsection.3.9.1}%
+\contentsline {subsubsection}{\numberline {3.9.2}Upcoming Tasks}{28}{subsubsection.3.9.2}%
+\contentsline {section}{\numberline {4}\color {red}{Update 3}}{29}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Battery Specifications and Usage Profile}{29}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Power Consumption Analysis}{29}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Charging Characteristics}{29}{subsubsection.4.1.2}%
+\contentsline {paragraph}{Charging Current and Time Calculations}{30}{section*.21}%
+\contentsline {subsubsection}{\numberline {4.1.3}Conclusion}{30}{subsubsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.2}Worst-Case Communication Bus Timing}{31}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}SPI Bus Timing}{32}{subsubsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.3}High-Risk Development Items}{32}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Hardware Challenges}{32}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Software Challenges}{32}{subsubsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.4}Mitigation Plans}{32}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Prototyping and Manufacturing}{32}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Hardware Development}{33}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.3}Software Development}{33}{subsubsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.5}Update}{33}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}gnatt chart}{33}{subsection.4.6}%
+\contentsline {section}{\numberline {5}\color {red}{Update 4}}{34}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Microcontroller Programming}{34}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Test Points}{36}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Reset Circuit}{36}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Clock Generation}{36}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Power Management and Energy Sources}{37}{subsection.5.5}%
+\contentsline {subsubsection}{\numberline {5.5.1}Energy Sources}{37}{subsubsection.5.5.1}%
+\contentsline {subsubsection}{\numberline {5.5.2}Power Specifications}{37}{subsubsection.5.5.2}%
+\contentsline {subsubsection}{\numberline {5.5.3}Battery Management}{37}{subsubsection.5.5.3}%
+\contentsline {subsection}{\numberline {5.6}Power Analysis}{37}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}3D Printed Keyboard Case}{38}{subsection.5.7}%
+\contentsline {subsection}{\numberline {5.8}Progress Update}{41}{subsection.5.8}%
+\contentsline {subsubsection}{\numberline {5.8.1}Completed Tasks}{41}{subsubsection.5.8.1}%
+\contentsline {subsubsection}{\numberline {5.8.2}Upcoming Tasks}{41}{subsubsection.5.8.2}%
+\contentsline {subsection}{\numberline {5.9}Conclusion}{41}{subsection.5.9}%
+\contentsline {section}{\numberline {6}\color {red}{Update 5}}{42}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Bulk capacitor selection}{42}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Test Points}{43}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Reset Circuit}{43}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Clock Generation}{43}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Power Management and Energy Sources}{44}{subsection.6.5}%
+\contentsline {subsubsection}{\numberline {6.5.1}Energy Sources}{44}{subsubsection.6.5.1}%
+\contentsline {subsubsection}{\numberline {6.5.2}Power Specifications}{44}{subsubsection.6.5.2}%
+\contentsline {subsubsection}{\numberline {6.5.3}Battery Management}{44}{subsubsection.6.5.3}%
+\contentsline {subsection}{\numberline {6.6}Power Analysis}{44}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}3D Printed Keyboard Case}{45}{subsection.6.7}%
+\contentsline {subsection}{\numberline {6.8}Progress Update}{48}{subsection.6.8}%
+\contentsline {subsubsection}{\numberline {6.8.1}Completed Tasks}{48}{subsubsection.6.8.1}%
+\contentsline {subsubsection}{\numberline {6.8.2}Upcoming Tasks}{48}{subsubsection.6.8.2}%
+\contentsline {subsection}{\numberline {6.9}Conclusion}{48}{subsection.6.9}%
