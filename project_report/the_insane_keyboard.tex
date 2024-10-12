@@ -1593,13 +1593,13 @@ Voltage requirements of the components in the system
     \begin{figure}[H]
         \centering
         \includegraphics[width=\textwidth]{figures/Update5/DC bias characteristics of capacitor .png}
-        \caption{Aging characteristics of GRM21BR61A476ME15K}
+        \caption{DC bias characteristics of GRM21BR61A476ME15K}
     \end{figure}
 
     \begin{figure}[H]
         \centering
         \includegraphics[width=\textwidth]{figures/Update5/Temperature characteristics of capacitor.png}
-        \caption{Aging characteristics of GRM21BR61A476ME15K}
+        \caption{Temperature characteristics of GRM21BR61A476ME15K}
     \end{figure}
 
     \begin{figure}[H]
@@ -1611,17 +1611,39 @@ Voltage requirements of the components in the system
     The worst case degradation of the capacitor is 71\%. The effective capacitance value comes to a worst case of 13.3uF.
     Hence to achieve a suitable bulk capacitance, we need to use two 47uF bulk capacitors or 47uF each. 
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{figures/serial_wire.png}
-    \caption{Serial Wire Debug Interface}
-\end{figure}
+\subsection{ESD considerations}
 
+I/O ports in our design:
+\textbf{USB:} These are connected to an TVS diode for ESD protection since these pins are exposed to ESD. 
+\begin{itemize}
+    \item $USB\_VBUS$
+    \item $USB\_Data\_N$
+    \item $USB\_Data\_P$
+\end{itemize}
+\textbf{SWD pins:} These pins are not easily victim to ESD since they are not accessed by the user. It is accessed only during programming and debugging. 
+\begin{itemize}
+    \item {VAEM (Power)}
+    \item {Reset}
+    \item $VCOM\_TX$ and $VCOM\_RX$
+    \item $SWDIO$, $SWCLK$, $SWO$
+\end{itemize}
+\textbf{Reset switch:}
+\textbf{DPDT switch:}
+
+
+
+
+\subsection{Missed in previous updates}
+Max current throught he inductor is 160mA. This is within the max current limit of 230mA of the PMIC. 
 
 \subsection{Test Points}
 
 We have added test points to various signals on the board. Table \ref{tab:test_points} lists these test points.
-
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/Update5/Max inductor current.png}
+    \caption{Aging characteristics of GRM21BR61A476ME15K}
+\end{figure}
 \begin{table}[H]
     \centering
     \begin{tabular}{|l|l|l|}
