@@ -1,11 +1,11 @@
 # Fdb version 4
-["makeindex the_insane_keyboard.idx"] 1728774932.39589 "the_insane_keyboard.idx" "the_insane_keyboard.ind" "the_insane_keyboard" 1728775136.50429 2
-  "the_insane_keyboard.idx" 1728775132 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex the_insane_keyboard.idx"] 1728774932.39589 "the_insane_keyboard.idx" "the_insane_keyboard.ind" "the_insane_keyboard" 1728775289.54614 2
+  "the_insane_keyboard.idx" 1728775285 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "the_insane_keyboard.ilg"
   "the_insane_keyboard.ind"
   (rewritten before read)
-["pdflatex"] 1728775131.82207 "d:/Embedded Systems - MS/LowPowerEmbeddedSystems/Insane-Keyboard/project_report/the_insane_keyboard.tex" "the_insane_keyboard.pdf" "the_insane_keyboard" 1728775136.50469 0
+["pdflatex"] 1728775283.26282 "d:/Embedded Systems - MS/LowPowerEmbeddedSystems/Insane-Keyboard/project_report/the_insane_keyboard.tex" "the_insane_keyboard.pdf" "the_insane_keyboard" 1728775289.54685 0
   "c:/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1728351987 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1728354103 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1728362361 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -147,7 +147,7 @@
   "c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1728403830 3325957 2f8b7dae81f64e40f995558581856b82 ""
   "c:/texlive/2024/texmf.cnf" 1728365585 713 e69b156964470283e0530f5060668171 ""
   "content/title_page.tex" 1728349129 1948 4899f3d855a2af8353aec3c5b24002b6 ""
-  "d:/Embedded Systems - MS/LowPowerEmbeddedSystems/Insane-Keyboard/project_report/the_insane_keyboard.tex" 1728775115 64925 31f89750f7d770f658c653bec76490ba ""
+  "d:/Embedded Systems - MS/LowPowerEmbeddedSystems/Insane-Keyboard/project_report/the_insane_keyboard.tex" 1728775252 59400 5f1ac09f1b59edf81a618efbc0a274b7 ""
   "figures/3d_print_fusion.png" 1728349129 2431725 9b6385ef92d48909a3cea3f5bb45c4e4 ""
   "figures/BlueGecko.jpg" 1728349129 139990 56646306e6b255072ff51afabd4a70c8 ""
   "figures/IO expander.jpg" 1728349129 86486 4809ea8e2791d6e5c118ccfd404c09b6 ""
@@ -162,7 +162,6 @@
   "figures/Update5/3V_22uF_Vout_simulation.png" 1728771768 97189 b4ba8b5db144e636eece15fe9b07e0a1 ""
   "figures/Update5/Aging characteristics of capacitor.png" 1728772110 51089 156624d827adbf7acc43ac3ae1b22725 ""
   "figures/Update5/DC bias characteristics of capacitor .png" 1728772070 71592 174a19c48ad3649f3e9e6bb1b0d4b12a ""
-  "figures/Update5/Max inductor current.png" 1728774428 158753 2df09ef4f23a103cab21e0220608e364 ""
   "figures/Update5/Temperature characteristics of capacitor.png" 1728772047 82431 310ff316aedf168e0b046e00e9870c34 ""
   "figures/Update_4/3d1.jpeg" 1728747844 420737 4fafffd97425dac9ac60c50d7b22a4f2 ""
   "figures/blockdiagram.png" 1728349129 125023 88c16e5bd20326a519ec7abee96aa49f ""
@@ -184,13 +183,13 @@
   "settings/macros.tex" 1728349129 897 698fb2c3d01b320df27e4b93711dcb0c ""
   "settings/packages.tex" 1728349129 1644 40337528d3cda32322797ae21375329f ""
   "settings/page.tex" 1728349129 468 29330b44c69a3f078aa639d592e547f3 ""
-  "the_insane_keyboard.aux" 1728775136 24583 e7e4f438f972273e9fff73180f9a6882 "pdflatex"
+  "the_insane_keyboard.aux" 1728775289 22470 f3df142eeb0471d3a8905cc210152917 "pdflatex"
   "the_insane_keyboard.ind" 0 -1 0 "makeindex the_insane_keyboard.idx"
-  "the_insane_keyboard.lof" 1728775136 3397 fca3d0b50c7f47ad118e56d889224788 "pdflatex"
-  "the_insane_keyboard.lot" 1728775136 1254 6b98bd6d0eef7dfcdc7b9d76a69b64a4 "pdflatex"
-  "the_insane_keyboard.out" 1728775136 19119 5de37d48066f9dea3e32ff035cf0ed22 "pdflatex"
-  "the_insane_keyboard.tex" 1728775115 64925 31f89750f7d770f658c653bec76490ba ""
-  "the_insane_keyboard.toc" 1728775136 11366 b18309c613f5bd623541f2da68a958b7 "pdflatex"
+  "the_insane_keyboard.lof" 1728775289 2852 fa276c7c8c94abe5b2c088cb8076d342 "pdflatex"
+  "the_insane_keyboard.lot" 1728775289 1172 786654685e483802db44c88b033f027f "pdflatex"
+  "the_insane_keyboard.out" 1728775289 17685 97289f8adbd087d22bed061df76b5a35 "pdflatex"
+  "the_insane_keyboard.tex" 1728775252 59400 5f1ac09f1b59edf81a618efbc0a274b7 ""
+  "the_insane_keyboard.toc" 1728775289 10557 5871f006cfdc63c3a756c6e4286d5f6c "pdflatex"
   (generated)
   "the_insane_keyboard.aux"
   "the_insane_keyboard.idx"
