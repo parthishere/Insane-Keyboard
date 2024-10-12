@@ -1565,7 +1565,15 @@ Voltage requirements of the components in the system
         \caption{Input Voltage Specifications}
         \end{table}
         
+    As per the results from the simulation, upon using a 22uF bulk capacitor with worst case input voltage of 3V, the Vout ranges from 2.677V to 3.31V. 
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{figures/Update5/3V_22uF_Vout_simulation.png}
+        \caption{Simulation of Vout with 3V input}
+    \end{figure}
         
+    The current through the inductor has a max running current of 
+
 \begin{table}[h!]
     \centering
     \begin{tabular}{|l|r|}
@@ -1582,6 +1590,26 @@ Voltage requirements of the components in the system
     \caption{Capacitor Tolerance and Degradation Table Part number: GRM21BR61A476ME15K}
     \end{table}
 
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{figures/Update5/DC bias characteristics of capacitor .png}
+        \caption{Aging characteristics of GRM21BR61A476ME15K}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{figures/Update5/Temperature characteristics of capacitor.png}
+        \caption{Aging characteristics of GRM21BR61A476ME15K}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{figures/Update5/Aging characteristics of capacitor.png}
+        \caption{Aging characteristics of GRM21BR61A476ME15K}
+    \end{figure}
+
+    The worst case degradation of the capacitor is 71\%. The effective capacitance value comes to a worst case of 13.3uF.
+    Hence to achieve a suitable bulk capacitance, we need to use two 47uF bulk capacitors or 47uF each. 
 
 \begin{figure}[H]
     \centering

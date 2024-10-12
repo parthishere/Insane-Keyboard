@@ -111,16 +111,16 @@
 \contentsline {subsection}{\numberline {5.9}Conclusion}{41}{subsection.5.9}%
 \contentsline {section}{\numberline {6}\color {red}{Update 5}}{42}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Bulk capacitor selection}{42}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Test Points}{43}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Reset Circuit}{43}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}Clock Generation}{43}{subsection.6.4}%
-\contentsline {subsection}{\numberline {6.5}Power Management and Energy Sources}{44}{subsection.6.5}%
-\contentsline {subsubsection}{\numberline {6.5.1}Energy Sources}{44}{subsubsection.6.5.1}%
-\contentsline {subsubsection}{\numberline {6.5.2}Power Specifications}{44}{subsubsection.6.5.2}%
-\contentsline {subsubsection}{\numberline {6.5.3}Battery Management}{44}{subsubsection.6.5.3}%
-\contentsline {subsection}{\numberline {6.6}Power Analysis}{44}{subsection.6.6}%
-\contentsline {subsection}{\numberline {6.7}3D Printed Keyboard Case}{45}{subsection.6.7}%
-\contentsline {subsection}{\numberline {6.8}Progress Update}{48}{subsection.6.8}%
-\contentsline {subsubsection}{\numberline {6.8.1}Completed Tasks}{48}{subsubsection.6.8.1}%
-\contentsline {subsubsection}{\numberline {6.8.2}Upcoming Tasks}{48}{subsubsection.6.8.2}%
-\contentsline {subsection}{\numberline {6.9}Conclusion}{48}{subsection.6.9}%
+\contentsline {subsection}{\numberline {6.2}Test Points}{46}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Reset Circuit}{46}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Clock Generation}{46}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Power Management and Energy Sources}{47}{subsection.6.5}%
+\contentsline {subsubsection}{\numberline {6.5.1}Energy Sources}{47}{subsubsection.6.5.1}%
+\contentsline {subsubsection}{\numberline {6.5.2}Power Specifications}{47}{subsubsection.6.5.2}%
+\contentsline {subsubsection}{\numberline {6.5.3}Battery Management}{47}{subsubsection.6.5.3}%
+\contentsline {subsection}{\numberline {6.6}Power Analysis}{47}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}3D Printed Keyboard Case}{48}{subsection.6.7}%
+\contentsline {subsection}{\numberline {6.8}Progress Update}{51}{subsection.6.8}%
+\contentsline {subsubsection}{\numberline {6.8.1}Completed Tasks}{51}{subsubsection.6.8.1}%
+\contentsline {subsubsection}{\numberline {6.8.2}Upcoming Tasks}{51}{subsubsection.6.8.2}%
+\contentsline {subsection}{\numberline {6.9}Conclusion}{51}{subsection.6.9}%
