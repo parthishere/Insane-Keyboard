@@ -189,7 +189,7 @@ uint16_t read_SI7021()
   // Check for errors in writing to the GATT database
   if (sc != SL_STATUS_OK)
   {
-    LOG_ERROR("Failed to write to local db. Status: 0x%04x", sc);
+//    LOG_ERROR("Failed to write to local db. Status: 0x%04x", sc);
   }
 
   // Check if it's appropriate to send an indication or queue it

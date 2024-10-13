@@ -263,7 +263,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
         sl_bt_sm_delete_bondings();
         sl_bt_sm_configure(FLAGS, sl_bt_sm_io_capability_noinputnooutput);
 
-#if (DEVICE_IS_BLE_SERVER == 1)
+        // Server
 
         // Create an advertising set for BLE advertising
         sc = sl_bt_advertiser_create_set(&ble_data.advertisingSetHandle);
@@ -287,48 +287,16 @@ void handle_ble_event(sl_bt_msg_t *evt)
         }
 
         // Start advertising
-        sc = sl_bt_advertiser_start(
+        sc = sl_bt_extended_advertiser_start(
             ble_data.advertisingSetHandle,           // The advertising set handle
             sl_bt_advertiser_general_discoverable,   // General discoverability mode
-            sl_bt_advertiser_connectable_scannable); // Connectable and scannable advertising
+            sl_bt_extended_advertiser_connectable); // Connectable and scannable advertising
         if (sc != SL_STATUS_OK)
         {
             // Log an error if advertising cannot be started
             LOG_ERROR("sl_bt_advertiser_start() returned != 0 status=0x%04x", (unsigned int)sc);
         }
 
-#else
-        sc = sl_bt_scanner_set_mode(sl_bt_gap_phy_1m, SERVER_PASSIVE_SCANNING);
-        if (sc != SL_STATUS_OK)
-        {
-            // Log an error if the advertising set cannot be created
-            LOG_ERROR("sl_bt_scanner_set_mode() returned != 0 status=0x%04x", (unsigned int)sc);
-        }
-
-        sc = sl_bt_scanner_set_timing(sl_bt_gap_phy_1m, SERVER_SCANNING_INTERVAL, SERVER_SCANNING_WINDOW);
-        if (sc != SL_STATUS_OK)
-        {
-            // Log an error if scanner timing set cannot be created
-            LOG_ERROR("sl_bt_scanner_set_timing() returned != 0 status=0x%04x", (unsigned int)sc);
-        }
-
-        sc = sl_bt_connection_set_default_parameters(CON_INTERVAL, CON_INTERVAL, CON_LATENCY, CON_TIMEOUT, 0, MAX_CE_LEN);
-        if (sc != SL_STATUS_OK)
-        {
-            // Log an error if the connection paramter set cannot be created
-            LOG_ERROR("sl_bt_connection_set_default_parameters() returned != 0 status=0x%04x", (unsigned int)sc);
-        }
-
-        sc = sl_bt_scanner_start(sl_bt_gap_phy_1m, sl_bt_scanner_discover_observation);
-        if (sc != SL_STATUS_OK)
-        {
-            // Log an error if the connection scanning can not be started
-            LOG_ERROR("sl_bt_scanner_start() returned != 0 status=0x%04x", (unsigned int)sc);
-        }
-        displayPrintf(DISPLAY_ROW_CONNECTION, "Discovering");
-        displayPrintf(DISPLAY_ROW_BTADDR2, "");
-        displayPrintf(DISPLAY_ROW_TEMPVALUE, "");
-#endif
         break;
 
     /*
@@ -353,7 +321,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
         ble_data.bonded = false;
         ble_data.bonding = false;
 
-#if (DEVICE_IS_BLE_SERVER == 1)
+        // GATT DB server
         // Stop advertising since a connection has been established
         sc = sl_bt_advertiser_stop(ble_data.advertisingSetHandle);
         if (sc != SL_STATUS_OK)
@@ -376,17 +344,6 @@ void handle_ble_event(sl_bt_msg_t *evt)
             LOG_ERROR("Failed to set connection parameters. Status: 0x%04x", sc);
         }
 
-#else
-        displayPrintf(DISPLAY_ROW_BTADDR2, "%02X:%02X:%02X:%02X:%02X:%X",
-                      evt->data.evt_connection_opened.address.addr[0],
-                      evt->data.evt_connection_opened.address.addr[ONE],
-                      evt->data.evt_connection_opened.address.addr[TWO],
-                      evt->data.evt_connection_opened.address.addr[THREE],
-                      evt->data.evt_connection_opened.address.addr[FOUR],
-                      evt->data.evt_connection_opened.address.addr[FIVE]);
-        displayPrintf(DISPLAY_ROW_CONNECTION, "Connected");
-
-#endif
         break;
 
     // Handle the event when a BLE connection is closed
@@ -408,9 +365,9 @@ void handle_ble_event(sl_bt_msg_t *evt)
         gpioLed1SetOff();
 
 
-#if (DEVICE_IS_BLE_SERVER == 1)
+        // GATT DB server
         // Restart advertising to allow new connections
-        sc = sl_bt_advertiser_start(
+        sc = sl_bt_extended_advertiser_start(
             ble_data.advertisingSetHandle,
             sl_bt_advertiser_general_discoverable,
             sl_bt_advertiser_connectable_scannable);
@@ -420,19 +377,6 @@ void handle_ble_event(sl_bt_msg_t *evt)
             LOG_ERROR("sl_bt_advertiser_start() returned != 0 status=0x%04x", (unsigned int)sc);
         }
 
-
-#else
-        displayPrintf(DISPLAY_ROW_TEMPVALUE, "");
-        displayPrintf(DISPLAY_ROW_BTADDR2, "");
-        displayPrintf(DISPLAY_ROW_CONNECTION, "Discovering");
-
-        sc = sl_bt_scanner_start(sl_bt_gap_phy_1m, sl_bt_scanner_discover_observation);
-        if (sc != SL_STATUS_OK)
-        {
-            // Log an error if the connection paramter set cannot be created
-            LOG_ERROR("sl_bt_connection_set_default_parameters() returned != 0 status=0x%04x", (unsigned int)sc);
-        }
-#endif
         break;
 
     /*
@@ -480,7 +424,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
                 sl_bt_sm_passkey_confirm(ble_data.appConnectionHandle, true); // Confirm the passkey with 'true'.
             }
 
-#if (DEVICE_IS_BLE_SERVER)
+
             // Toggle the button state between pressed and released.
             // ble_data.buttonState = !ble_data.buttonState;
             ble_data.buttonState = !GPIO_PinInGet(SW_PORT, SW0_pin); //  cause of pull up
@@ -496,7 +440,6 @@ void handle_ble_event(sl_bt_msg_t *evt)
             {
                 attemptToSendOrQueueIndication(NULL, true);
             }
-#endif
         }
 
         else if (((evt->data.evt_system_external_signal.extsignals - evtBTN1) == 0x00) && !DEVICE_IS_BLE_SERVER)
@@ -587,23 +530,6 @@ void handle_ble_event(sl_bt_msg_t *evt)
 
         break;
 
-    /*
-     * typedef struct sl_bt_evt_sm_confirm_passkey_t
-     * {
-     * uint8_t  connection; Connection handle
-     * uint32_t passkey;     Passkey. Range: 0 to 999999.
-     * } evt_sm_confirm_passkey ;
-     */
-    // Event raised by the security manager when a passkey needs to be confirmed
-    case sl_bt_evt_sm_confirm_passkey_id:
-        // Update the application state to indicate bonding is in progress but not yet bonded.
-        ble_data.bonding = true;
-        ble_data.bonded = false;
-
-        // Log a message prompting the user to verify the passkey matches the other device's display.
-        PRINT_LOG("Do you see this passkey on the other device: %06lu? (y/n)\r\n\n",
-                  evt->data.evt_sm_confirm_passkey.passkey);
-        break;
 
     /* ******************************************************
      * ******************************************************
@@ -677,185 +603,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
 
         break;
 
-    /* ******************************************************
-     * ******************************************************
-     * Events common to Client
-     * ******************************************************
-     * --------------------------------------------------------
-     * --------------------------------------------------------
-     * --------------------------------------------------------
-     * --------------------------------------------------------
-     */
-    /* typedef struct sl_bt_evt_scanner_scan_report_t
-     * {
-     * uint8_t    packet_type;
-     * bd_addr    address;
-     * uint8_t    address_type;
-     * uint8_t    bonding;
-     * uint8_t    primary_phy;
-     * uint8_t    secondary_phy;
-     * uint8_t    adv_sid;
-     * int8_t     tx_power;
-     * int8_t     rssi;
-     * uint8_t    channel;
-     * uint16_t   periodic_interval;
-     * uint8array data;
-     * } evt_scanner_scan_report;
-     */
-    // this means there was packet found while discovery process
-    case sl_bt_evt_scanner_scan_report_id:
-        PRINT_LOG("Found Address :%02X %02X %02X %02X %02X %02X\n\r",
-                  evt->data.evt_scanner_scan_report.address.addr[0],
-                  evt->data.evt_scanner_scan_report.address.addr[1],
-                  evt->data.evt_scanner_scan_report.address.addr[2],
-                  evt->data.evt_scanner_scan_report.address.addr[3],
-                  evt->data.evt_scanner_scan_report.address.addr[4],
-                  evt->data.evt_scanner_scan_report.address.addr[5]);
-        // if address matcches and address type also matches
-        bd_addr device_addr = SERVER_BT_ADDRESS;
-        if (evt->data.evt_scanner_scan_report.packet_type == 0)
-        {
-
-            if (memcmp(evt->data.evt_scanner_scan_report.address.addr, device_addr.addr, sizeof(device_addr.addr)) == 0)
-            {
-                PRINT_LOG(" Found the address wohooo!\n\r");
-                sc = sl_bt_scanner_stop();
-                if (sc != SL_STATUS_OK)
-                {
-                    // Log an error if stopping advertising fails
-                    LOG_ERROR("sl_bt_scanner_stop() returned != 0 status=0x%04x", (unsigned int)sc);
-                }
-
-                sc = sl_bt_connection_open(evt->data.evt_scanner_scan_report.address,
-                                           evt->data.evt_scanner_scan_report.address_type,
-                                           sl_bt_gap_1m_phy,
-                                           NULL);
-                if (sc != SL_STATUS_OK)
-                {
-                    // Log an error if stopping advertising fails
-                    LOG_ERROR("sl_bt_connection_open() returned != 0 status=0x%04x", (unsigned int)sc);
-                }
-            }
-        }
-        break;
-
-    /*
-     * typedef struct sl_bt_evt_gatt_service_s
-     * {
-     * uint8_t    connection;
-     * uint32_t   service;
-     * uint8array uuid;
-     * }evt_gatt_service;
-     */
-    // this event means there was gatt service found in server's database
-    case sl_bt_evt_gatt_service_id:
-    {
-        // save service handle and save service uuid
-        uint8_t thermometer_service_uuid[2] = THERMOMETER_SERVICE_UUID;
-        uint8_t button_service_uuid[16] = BUTTON_SERVICE_UUID;
-
-        PRINT_LOG("Got service with service handle %X , uuid %x %x\n\r",
-                  evt->data.evt_gatt_service.service,
-                  evt->data.evt_gatt_service.uuid.data[0],
-                  evt->data.evt_gatt_service.uuid.data[1]);
-        if (memcmp(evt->data.evt_gatt_service.uuid.data, thermometer_service_uuid, sizeof(thermometer_service_uuid)) == 0)
-        {
-            PRINT_LOG("Found the Temperature service, saving handle\n\r");
-            // save service handle
-            ble_data.thermometerHandle = evt->data.evt_gatt_service.service;
-        }
-
-        else if (memcmp(evt->data.evt_gatt_service.uuid.data, button_service_uuid, sizeof(button_service_uuid)) == 0)
-        {
-            PRINT_LOG("Found the Button service, saving handle\n\r");
-            // save service handle
-            ble_data.buttonServiceHandle = evt->data.evt_gatt_service.service;
-        }
-    }
-    break;
-
-    /*
-     * typedef struct sl_bt_evt_gatt_characteristic_t
-     *    {
-     *   uint8_t    connection;
-     *   uint16_t   characteristic;
-     *   uint8_t    properties;
-     *   uint8array uuid;
-     *   } evt_gatt_characteristic;
-     *
-     */
-    // GATT server characteristic status event: Handles changes in characteristics, enabling notifications
-    case sl_bt_evt_gatt_characteristic_id:
-    {
-        uint8_t thermometer_characteristic_uuid[2] = THERMOMETER_CHARACTERISTIC_UUID;
-        uint8_t button_characteristic_uuid[16] = BUTTON_CHARACTERISTIC_UUID;
-
-        PRINT_LOG("Got characteristic with char handle %X , uuid %x %x\n\r",
-                  evt->data.evt_gatt_characteristic.characteristic,
-                  evt->data.evt_gatt_characteristic.uuid.data[0],
-                  evt->data.evt_gatt_characteristic.uuid.data[1]);
-
-        // Check for the characteristic uuid
-        if (memcmp(evt->data.evt_gatt_characteristic.uuid.data, thermometer_characteristic_uuid, sizeof(thermometer_characteristic_uuid)) == 0)
-        {
-            PRINT_LOG("Found HTM Characteristics that we want, enabling Indication \n\r");
-            // we found the service we want
-
-            // save handle
-            ble_data.thermometerCharacteristicHandle = evt->data.evt_gatt_characteristic.characteristic;
-        }
-
-        else if (memcmp(evt->data.evt_gatt_characteristic.uuid.data, button_characteristic_uuid, sizeof(button_characteristic_uuid)) == 0)
-        {
-            PRINT_LOG("Found Button Characteristics that we want, enabling Indication \n\r");
-            // we found the service we want
-
-            // save handle
-            ble_data.buttonCharacteristicHandle = evt->data.evt_gatt_characteristic.characteristic;
-        }
-    }
-    break;
-
-    /*
-     * typedef struct sl_bt_evt_gatt_characteristic_value_s
-     * {
-     *   uint8_t    connection;
-     *   uint16_t   characteristic;
-     *   uint8_t    att_opcode;
-     *   uint16_t   offset;
-     *   uint8array value;
-     * };
-     */
-    // This event is generated when a characteristic value was received , an indication, a notification
-    case sl_bt_evt_gatt_characteristic_value_id:
-        // send confirmation to server about received data
-        if (evt->data.evt_gatt_characteristic_value.characteristic == ble_data.thermometerCharacteristicHandle && ble_data.ok_to_send_htm_indications == true)
-        {
-
-            sc = sl_bt_gatt_send_characteristic_confirmation(evt->data.evt_gatt_characteristic_value.connection);
-            // extract value sent by server from evt_gatt_characteristic_value data structure
-            uint8_t *char_value = &(evt->data.evt_gatt_characteristic_value.value.data[0]);
-            // convert IEEE-11073 value to int32 for display
-            int32_t server_temperature = float_to_int32(char_value);
-            // printing value on console
-            PRINT_LOG("Temperature Data from Server: %d\n\r", server_temperature);
-
-        }
-
-        // Check if the event is for the button characteristic and if sending button indications is allowed and the device is bonded.
-        else if (evt->data.evt_gatt_characteristic_value.characteristic == ble_data.buttonCharacteristicHandle && ble_data.bonded)
-        {
-            // Attempt to send a confirmation for the characteristic update back to the server.
-            sc = sl_bt_gatt_send_characteristic_confirmation(evt->data.evt_gatt_characteristic_value.connection);
-            // Extract the button state value sent by the server from the event data structure.
-            uint8_t char_value = evt->data.evt_gatt_characteristic_value.value.data[0];
-            // Update the local button state based on the received value.
-            ble_data.buttonState = char_value;
-
-            // Log the received button state value for debugging purposes.
-            PRINT_LOG("Button Data from Server: %d\n\r", char_value);
-        }
-        break;
+  
 
     case sl_bt_evt_gatt_procedure_completed_id:
         ble_data.indication_in_flight = false;
@@ -890,21 +638,21 @@ void handle_ble_event(sl_bt_msg_t *evt)
 void send_HTM_Indication(uint8_t htm_temperature_buffer[], uint8_t size)
 {
 
-    // Send the temperature data over BLE as an indication
-    sc = sl_bt_gatt_server_send_indication(
-        ble_data.appConnectionHandle,
-        gattdb_report_map,
-        size,
-        htm_temperature_buffer);
-    // Check for errors in sending the indication
-    if (sc != SL_STATUS_OK)
-    {
-        LOG_ERROR("Failed to send indication. Status: 0x%04x", sc);
-    }
-    else
-    {
-        ble_data.indication_in_flight = true;
-    }
+    // // Send the temperature data over BLE as an indication
+    // sc = sl_bt_gatt_server_send_indication(
+    //     ble_data.appConnectionHandle,
+    //     gattdb_report_map,
+    //     size,
+    //     htm_temperature_buffer);
+    // // Check for errors in sending the indication
+    // if (sc != SL_STATUS_OK)
+    // {
+    //     LOG_ERROR("Failed to send indication. Status: 0x%04x", sc);
+    // }
+    // else
+    // {
+    //     ble_data.indication_in_flight = true;
+    // }
 }
 
 /**
@@ -924,22 +672,22 @@ void send_HTM_Indication(uint8_t htm_temperature_buffer[], uint8_t size)
  */
 void send_Button_Indication(uint8_t buffer[])
 {
-    sc = sl_bt_gatt_server_send_indication(
-        ble_data.appConnectionHandle,
-        gattdb_report_map,
-        1,
-        buffer);
-    if (sc != SL_STATUS_OK)
-    {
-        // Log an error if sending the indication fails.
-        LOG_ERROR("sl_bt_gatt_server_send_indication() in sl_bt_evt_gatt_server_characteristic_status_id returned != 0 status=0x%04x", (unsigned int)sc);
-    }
-    else
-    {
-        PRINT_LOG("BTN indication Sent\n\r");
-        // Successfully sent the indication, set the in-flight flag.
-        ble_data.indication_in_flight = true;
-    }
+    // sc = sl_bt_gatt_server_send_indication(
+    //     ble_data.appConnectionHandle,
+    //     gattdb_report_map,
+    //     1,
+    //     buffer);
+    // if (sc != SL_STATUS_OK)
+    // {
+    //     // Log an error if sending the indication fails.
+    //     LOG_ERROR("sl_bt_gatt_server_send_indication() in sl_bt_evt_gatt_server_characteristic_status_id returned != 0 status=0x%04x", (unsigned int)sc);
+    // }
+    // else
+    // {
+    //     PRINT_LOG("BTN indication Sent\n\r");
+    //     // Successfully sent the indication, set the in-flight flag.
+    //     ble_data.indication_in_flight = true;
+    // }
 }
 
 /*

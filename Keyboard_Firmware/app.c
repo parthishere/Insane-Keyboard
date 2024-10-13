@@ -16,6 +16,10 @@
  ******************************************************************************/
 #include "app.h"
 
+// Include logging specifically for this .c file
+#define INCLUDE_LOG_DEBUG 1
+#include "src/log.h"
+
 // See: https://docs.silabs.com/gecko-platform/latest/service/power_manager/overview
 #if defined(SL_CATALOG_POWER_MANAGER_PRESENT)
 
@@ -98,13 +102,15 @@ void app_init(void)
   init_Oscillator();
 
   // Initializing LETIMER0
-  // init_Timer();
+  init_Timer();
 
   // Initializing GPIOs
-  // gpioInit();
+  gpioInit();
 
-  // Initializing I2C
   // init_I2C();
+
+ gpioLed0SetOn();
+  
 }
 
 /***************************************************************************//**
@@ -112,4 +118,12 @@ void app_init(void)
  ******************************************************************************/
 void app_process_action(void)
 {
+//
+  while(1){
+      gpioLed0SetOff();
+      timerWaitUs_irq(100000);
+      gpioLed0SetOn();
+      timerWaitUs_irq(100000);
+  }
+
 }

@@ -13,6 +13,8 @@ src/oscillator.o: ../src/oscillator.c \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/CMSIS/Core/Include/cmsis_gcc.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_enum.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_core_generic.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/oscillator.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/gpio.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_cmu.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32BG13P/Include/em_device.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32BG13P/Include/efr32bg13p632f512gm48.h \
@@ -76,7 +78,34 @@ src/oscillator.o: ../src/oscillator.c \
  /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/emlib_core_debug_config.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_cmu_compat.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_gpio.h \
- /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/sli_em_cmu.h
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/sli_em_cmu.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/display.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/i2c.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_i2c.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/driver/i2cspm/inc/sl_i2cspm.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_gpio.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/gpio.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/timers.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_letimer.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_core.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/scheduler.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/i2c.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/ble.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_api.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bgapi.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_api_compatibility.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/gatt_db.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sli_bt_gattdb_def.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/ble_device_type.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/spi.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emdrv/spidrv/inc/spidrv.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emdrv/dmadrv/inc/dmadrv.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emdrv/common/inc/ecode.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_ldma.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/dmadrv_config.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/spidrv_config.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sl_spidrv_instances.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/timers.h
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/toolchain/inc/sl_gcc_preinclude.h:
 ../src/oscillator.h:
 /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/app.h:
@@ -91,6 +120,8 @@ src/oscillator.o: ../src/oscillator.c \
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/CMSIS/Core/Include/cmsis_gcc.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_enum.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_core_generic.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/oscillator.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/gpio.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_cmu.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32BG13P/Include/em_device.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32BG13P/Include/efr32bg13p632f512gm48.h:
@@ -155,3 +186,30 @@ src/oscillator.o: ../src/oscillator.c \
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_cmu_compat.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_gpio.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/sli_em_cmu.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/display.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/i2c.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_i2c.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/driver/i2cspm/inc/sl_i2cspm.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_gpio.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/gpio.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/timers.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_letimer.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_core.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/scheduler.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/i2c.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/ble.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_api.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bgapi.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_api_compatibility.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/gatt_db.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sli_bt_gattdb_def.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/ble_device_type.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/spi.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emdrv/spidrv/inc/spidrv.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emdrv/dmadrv/inc/dmadrv.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emdrv/common/inc/ecode.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_ldma.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/dmadrv_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/spidrv_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sl_spidrv_instances.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/timers.h:

@@ -19,7 +19,12 @@
 #define APP_H
 
 #include "sl_power_manager.h"
-
+#include "src/oscillator.h"
+#include "src/gpio.h"
+#include "src/display.h"
+#include "src/i2c.h"
+#include "src/spi.h"
+#include "src/timers.h"
 
 #define EM3_MODE 3
 #define EM1_MODE 1

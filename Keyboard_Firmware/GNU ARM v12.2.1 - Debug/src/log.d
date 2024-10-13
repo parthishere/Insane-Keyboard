@@ -97,6 +97,15 @@ src/log.o: ../src/log.c \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_gpio.h \
  ../src/timers.h \
  /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/app.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/oscillator.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/gpio.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/display.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/i2c.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/spi.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emdrv/spidrv/inc/spidrv.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/spidrv_config.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sl_spidrv_instances.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/timers.h \
  ../src/ble.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_api.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bgapi.h \
@@ -204,6 +213,15 @@ src/log.o: ../src/log.c \
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_gpio.h:
 ../src/timers.h:
 /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/app.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/oscillator.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/gpio.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/display.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/i2c.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/spi.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emdrv/spidrv/inc/spidrv.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/spidrv_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sl_spidrv_instances.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/timers.h:
 ../src/ble.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_api.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bgapi.h:
