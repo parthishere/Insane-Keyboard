@@ -1,0 +1,63 @@
+Removed Pin From Net: NetName=RESET Pin=C14-1
+Removed Pin From Net: NetName=NetC14_2 Pin=C14-2
+Removed Pin From Net: NetName=RESET Pin=S1-3
+Removed Pin From Net: NetName=RESET Pin=S1-4
+Removed Member From Class: ClassName=U_EFR32_IO Member=C14
+Added Component: Designator=C?(Capacitor 0603)
+Add component (AddParameter): Name = "Capacitor Type"; Value = "Ceramic"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case/Package"; Value = "0603"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "Ceramic Capacitors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "https://psearch.en.murata.com:443/capacitor/product/GRM188R61A105KA61%23.pdf?src-supplier=IHS+Markit"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://psearch.en.murata.com:443/capacitor/product/GRM188R61A105KA61%23.pdf?src-supplier=IHS+Markit"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "https://datasheet.ciiva.com/18102/getdatasheetpartid-85467-18102910.pdf?src-supplier=Verical"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://datasheet.ciiva.com/18102/getdatasheetpartid-85467-18102910.pdf?src-supplier=Verical"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3Description"; Value = "https://datasheet.ciiva.com/19476/1857381-19476568.pdf?src-supplier=Jameco"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3URL"; Value = "https://datasheet.ciiva.com/19476/1857381-19476568.pdf?src-supplier=Jameco"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink4Description"; Value = "https://datasheet.ciiva.com/7719/608985-7719036.pdf?src-supplier=Element14"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink4URL"; Value = "https://datasheet.ciiva.com/7719/608985-7719036.pdf?src-supplier=Element14"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink5Description"; Value = "https://datasheet.ciiva.com/22706/608985-22706782.pdf?src-supplier=Element14"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink5URL"; Value = "https://datasheet.ciiva.com/22706/608985-22706782.pdf?src-supplier=Element14"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink6Description"; Value = "https://datasheet.ciiva.com/131/partnumbering-e-01-131741.pdf?src-supplier=Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink6URL"; Value = "https://datasheet.ciiva.com/131/partnumbering-e-01-131741.pdf?src-supplier=Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink7Description"; Value = "https://datasheet.ciiva.com/131/partnumbering-e-01-131742.pdf?src-supplier=Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink7URL"; Value = "https://datasheet.ciiva.com/131/partnumbering-e-01-131742.pdf?src-supplier=Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink8Description"; Value = "https://datasheet.ciiva.com/131/partnumbering-e-01-131743.pdf?src-supplier=Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink8URL"; Value = "https://datasheet.ciiva.com/131/partnumbering-e-01-131743.pdf?src-supplier=Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink9Description"; Value = "https://datasheet.ciiva.com/16199/product-16199724.pdf?src-supplier=Future+Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink9URL"; Value = "https://datasheet.ciiva.com/16199/product-16199724.pdf?src-supplier=Future+Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Dielectric Material"; Value = "Ceramic"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "0.8mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "JESD-609 Code"; Value = "e3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Length"; Value = "1.6mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Murata"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "GRM188R61A105KA61D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "85°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-55°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Multilayer"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Shape"; Value = "Rectangular"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Style"; Value = "SMTMeter"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing"; Value = "1=0.1, 10=0.059, 50=0.0408, 100=0.0354, 500=0.0261, 1000=0.02321 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rated DC Voltage (URdc)"; Value = "10V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Reach SVHC Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock"; Value = "2506225"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number"; Value = "490-1543-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Characteristics Code"; Value = "X5R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Terminal Finish"; Value = "Nickel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Termination"; Value = "Wraparound"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance  (fill in as +-)"; Value = "10%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance (fill in as +-)"; Value = "10%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1uF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Width"; Value = "0.8mm"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=RESET Pin=C?-1
+Change Net Name : Old Net Name=NetC14_2 New Net Name=NetR6_2
+Added Pin To Net: NetName=NetC?_2 Pin=C?-2
+Added Pin To Net: NetName=NetC?_2 Pin=S1-3
+Added Pin To Net: NetName=NetC?_2 Pin=S1-4
+Added Net: Name=NetC?_2
+Added Member To Class: ClassName=U_EFR32_IO Member=Component C? CAP 1uF 10V 0603
