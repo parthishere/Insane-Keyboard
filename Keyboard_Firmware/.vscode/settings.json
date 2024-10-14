@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "log.h": "c"
+        "log.h": "c",
+        "oscillator.h": "c",
+        "timers.h": "c"
     }
 }

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (C) 2024 by Parth Thakkar
+ * Copyright (C) 2023 by Parth Thakkar
  *
  * Redistribution, modification or use of this software in source or binary
  * forms is permitted as long as the files maintain this copyright. Users are
@@ -17,13 +17,13 @@
  * and configures it for optimal operation in that mode.
  *
  * @author  Parth Thakkar
- * @date    27st Sept 2024
+ * @date    1st Feb 2024
  *
  */
 
 #include "oscillator.h" // Include the header file for oscillator-related functions and definitions.
 
-
+#define PRESCALER 4
 
 /**
  * @brief Initializes the oscillator for LETIMER0.
@@ -41,12 +41,17 @@
  */
 void init_Oscillator(void)
 {
-  if(LOWEST_ENERGY_MODE > 3){
-       // For EM2 mode
-
-      //For EM1 mode
-  }
-  else{
-      //EM3 Mode and lower
-  }
+    if (LOWEST_ENERGY_MODE != EM3_MODE) // Check if the energy mode is not EM3.
+    {
+        // Select LFXO as the clock source for the LETIMER0 in non-EM3 modes.
+        CMU_ClockSelectSet(cmuClock_LFA, cmuSelect_LFXO); // Select LFXO for the LETIMER.
+        CMU_ClockDivSet(cmuClock_LETIMER0, PRESCALER);    // Set clock division for LETIMER0.
+        CMU_ClockEnable(cmuClock_LETIMER0, true);         // Enable the clock for LETIMER0.
+    }
+    else
+    {
+        // Select ULFRCO as the clock source for the LETIMER0 in EM3 mode.
+        CMU_ClockSelectSet(cmuClock_LFA, cmuSelect_ULFRCO); // Select ULFRCO as LETIMER0 clock.
+        CMU_ClockEnable(cmuClock_LETIMER0, true);           // Enable the clock for LETIMER0.
+    }
 } // init_Oscillator()

@@ -606,6 +606,16 @@
 			<locationURI>STUDIO_SDK_LOC/protocol/bluetooth/src/sli_bt_sync_config.c</locationURI>
 		</link>
 		<link>
+			<name>gecko_sdk_4.4.4/app/common/util/app_assert/app_assert.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/app/common/util/app_assert/app_assert.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.4.4/app/common/util/app_assert/sl_app_assert.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/app/common/util/app_assert/sl_app_assert.h</locationURI>
+		</link>
+		<link>
 			<name>gecko_sdk_4.4.4/app/common/util/app_log/app_log.c</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/app/common/util/app_log/app_log.c</locationURI>

@@ -27,6 +27,7 @@ sdk: {id: gecko_sdk, version: 4.4.4}
 toolchain_settings: []
 component:
 - {id: EFR32BG13P632F512GM48}
+- {id: app_assert}
 - {id: app_log}
 - {id: bluetooth_stack}
 - {id: brd4001a}
