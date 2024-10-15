@@ -1,71 +1,57 @@
 /*
    gpio.h
-
-    Created on: Dec 12, 2018
-        Author: Dan Walkes
-
-    Updated by Dave Sluiter Sept 7, 2020. moved #defines from .c to .h file.
-    Updated by Dave Sluiter Dec 31, 2020. Minor edits with #defines.
-
-    Editor: Feb 26, 2022, Dave Sluiter
-    Change: Added comment about use of .h files.
-
- *
- * Student edit: Add your name and email address here:
- * @student    Awesome Student, Awesome.Student@Colorado.edu
- *
-
  */
 
-// Students: Remember, a header file (a .h file) generally defines an interface
-//           for functions defined within an implementation file (a .c file).
-//           The .h file defines what a caller (a user) of a .c file requires.
-//           At a minimum, the .h file should define the publicly callable
-//           functions, i.e. define the function prototypes. #define and type
-//           definitions can be added if the caller requires theses.
 
 #ifndef SRC_GPIO_H_
 #define SRC_GPIO_H_
 
 #include "em_cmu.h"
 
-/*
- * Initializes the GPIO pins with predefined settings for LEDs and sensors.
- * This setup involves setting the drive strength and mode for the LED and sensor pins.
- * No parameters and no return value.
- */
-void gpioInit();
-/*
- * Turns on LED0 by setting its corresponding GPIO pin high.
- * No parameters and no return value.
- */
-void gpioLed0SetOn();
-/*
- * Turns off LED0 by clearing its corresponding GPIO pin.
- * No parameters and no return value.
- */
-void gpioLed0SetOff();
-/*
- * Turns on LED1 by setting its corresponding GPIO pin high.
- * No parameters and no return value.
- */
-void gpioLed1SetOn();
-/*
- * Turns off LED1 by clearing its corresponding GPIO pin.
- * No parameters and no return value.
- */
-void gpioLed1SetOff();
 
-/*
- * Enables the sensor by setting its enable pin high.
- * No parameters and no return value.
- */
-void sensor_Enable();
-/*
- * Disables the sensor by clearing its enable pin.
- * No parameters and no return value.
- */
-void sensor_Disable();
+
+#define EXPANDER_RESET_port (gpioPortB)
+#define EXPANDER_RESET_pin (12)
+#define EXPANDER_RESET EXPANDER_RESET_port, EXPANDER_RESET_pin
+
+//GPIO eink
+#define RST_GPIO_Port gpioPortC
+#define RST_Pin 6
+#define EINK_RST    RST_GPIO_Port, RST_Pin
+
+#define DC_GPIO_Port gpioPortD
+#define DC_Pin 15
+#define EINK_DC     DC_GPIO_Port, DC_Pin   
+
+#define BUSY_GPIO_Port gpioPortA
+#define BUSY_Pin 5
+#define EINK_BUSY   BUSY_GPIO_Port, BUSY_Pin
+
+
+#define ROTARY_ENCODER_port (gpioPortD)
+#define ROTARY_ENCODER_A_pin (10)
+#define ROTARY_ENCODER_A ROTARY_ENCODER_port, ROTARY_ENCODER_A_pin
+
+#define ROTARY_ENCODER_B_pin (11)
+#define ROTARY_ENCODER_B ROTARY_ENCODER_port, ROTARY_ENCODER_B_pin
+
+#define ROTERY_ENCODER_SW_pin (7)
+#define ROTARY_ENCODER_SW ROTARY_ENCODER_port, ROTERY_ENCODER_SW_pin
+
+#define TEMP_ENABLE_port (gpioPortD)
+#define TEMP_ENABLE_pin (15)
+#define TEMP_ENABLE TEMP_ENABLE_port TEMP_ENABLE_pin
+
+#define DISPLAY_ENABLE_port (gpioPortD)
+#define DISPLAY_ENABLE_pin (15)
+#define DISPLAY_ENABLE DISPLAY_ENABLE_port DISPLAY_ENABLE_pin
+
+
+
+void gpioInit();
+
+
+uint32_t gpio_Read_Busy(void);
 
 /*
  * Sets the display's external communication pin (EXTCOMIN) according to the parameter.
@@ -74,6 +60,24 @@ void sensor_Disable();
  *           If true, the EXTCOMIN pin is set high; if false, it is cleared (set low).
  * No return value.
  */
-void gpioSetDisplayExtcomin(bool on);
+void gpio_Set_Display_Reset(bool on);
+
+
+void gpio_Set_Display_DC(bool on);
+
+
+/*
+ * Enables the temp sensor by setting its enable pin high.
+ * No parameters and no return value.
+ */
+uint32_t enable_Temperature_Sensor(bool on);
+
+/*
+ * Enables the display by setting its enable pin high.
+ * No parameters and no return value.
+ */
+uint32_t enable_Display(bool on);
+
+
 
 #endif /* SRC_GPIO_H_ */

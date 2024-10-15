@@ -488,11 +488,6 @@ void handle_ble_event(sl_bt_msg_t *evt)
 
         break;
 
-    // Soft timer event: Handles periodic tasks, such as updating display or sensor readings
-    case sl_bt_evt_system_soft_timer_id:
-
-
-        break;
 
     // Indicates a user request to display that the new bonding request is received and for the user to confirm the request
     case sl_bt_evt_sm_confirm_bonding_id:

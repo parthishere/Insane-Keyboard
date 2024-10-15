@@ -26,17 +26,7 @@
  *    misrepresented as being the original software.
  * 3. This notice may not be removed or altered from any source distribution.
  *
- * Date:        02-25-2022
- * Author:      Dave Sluiter
- * Description: This code was created by the Silicon Labs application wizard
- *              and started as "Bluetooth - SoC Empty".
- *              It is to be used only for ECEN 5823 "IoT Embedded Firmware".
- *              The MSLA referenced above is in effect.
  *
- *
- *
- * Student edit: parth Thakkar
- * @student     ParthRajeshkumar.Thakkar@colorado.edu
  *
  *
  *
@@ -49,21 +39,15 @@
 
 #include "src/ble.h"
 
-// *************************************************
-// Students: It is OK to modify this file.
-//           Make edits appropriate for each
-//           assignment.
-// *************************************************
+
 
 #include "sl_status.h" // for sl_status_print()
 
 #include "src/ble_device_type.h"
 #include "src/gpio.h"
-
-// Assignment 2 related import
 #include "src/oscillator.h"
 #include "src/irq.h"
-#include "src/timers.h"
+#include "src/timer.h"
 #include "src/i2c.h"
 
 // Include logging specifically for this .c file
@@ -168,6 +152,7 @@ SL_WEAK void app_init(void)
 
 } // app_init()
 
+
 /**
  * @brief Application process action function.
  * This function is designed to process actions based on events. It continuously checks
@@ -176,7 +161,9 @@ SL_WEAK void app_init(void)
  */
 SL_WEAK void app_process_action(void)
 {
-  // nothing to do here !
+  while(1){
+    
+  }
 } // app_process_action()
 
 /**************************************************************************
@@ -197,12 +184,5 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
 
   handle_ble_event(evt); // bluetooth event actions
 
-// #if (DEVICE_IS_BLE_SERVER == 1)
-  state_machine_si7021(evt); //  pass event to state machine
-  state_machine_io_expander(evt);
-
-// #else
-//   discovery_State_Machine(evt); // Event to discovery state machine for client implementation
-// #endif
 
 } // sl_bt_on_event()

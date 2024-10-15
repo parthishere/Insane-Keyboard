@@ -6,7 +6,6 @@
 
 
 
-
 void transmitBytes(uint8_t *t_data, int size_in_bytes)
 {
     SPIDRV_MTransmitB(sl_spidrv_usart_displayy_handle, t_data, size_in_bytes);

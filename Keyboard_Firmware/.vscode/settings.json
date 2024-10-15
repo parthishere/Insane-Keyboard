@@ -2,6 +2,7 @@
     "files.associations": {
         "log.h": "c",
         "oscillator.h": "c",
-        "timers.h": "c"
+        "timers.h": "c",
+        "stdbool.h": "c"
     }
 }

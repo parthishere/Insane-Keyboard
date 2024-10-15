@@ -26,16 +26,27 @@
 #include "src/spi.h"
 #include "src/timers.h"
 
+
+// Students:
+// For your Bluetooth Client implementations, starting with A7,
+// set this #define to the bd_addr of the Gecko that will be your Server.
+// These values are from one of my Geckos, to serve as an example for you:
+//                   bd_addr  [0]   [1]   [2]   [3]   [4]   [5] <- array indices
+#define SERVER_BT_ADDRESS {{ 0x7E, 0x65, 0xA6, 0x14, 0x2E, 0x84 }}
+// This also can work:
+//#define SERVER_BT_ADDRESS (bd_addr) { .addr = { 0x85, 0x61, 0x17, 0x57, 0x0b, 0x00 } }
+
+
+
+
 #define EM3_MODE 3
+#define EM2_MODE 2
 #define EM1_MODE 1
-// 0 = highest energy mode, 3 = lowest energy mode
-// #define LOWEST_ENERGY_MODE 0
-// #define LOWEST_ENERGY_MODE 1
-#define LOWEST_ENERGY_MODE 2
-// #define LOWEST_ENERGY_MODE 3
+#define LOWEST_ENERGY_MODE          EM2_MODE
+
 
 // If PRINT_LOG_STATEMENTS is set to 1, PRINT_LOG macro will use LOG_INFO for logging.
-#define PRINT_LOG_STATEMENTS 0
+#define PRINT_LOG_STATEMENTS        0
 
 // If PRINT_LOG_STATEMENTS is set to 1, PRINT_LOG macro will use LOG_INFO for logging.
 // Otherwise, PRINT_LOG is defined as an empty macro, effectively disabling logging.
