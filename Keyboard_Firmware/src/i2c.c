@@ -115,6 +115,23 @@ void init_I2C()
 
   I2CSPM_Init(&I2C_Config); // Initialize I2C with the specified configuration
 
+
+  cmd_data = TCA6408_CONFIGURATION;
+  // Setup I2C transfer for writing the read temperature command to the sensor
+  I2C_TransferSeq.addr = TCA6408_ADDR2 << 1; // Set the sensor's I2C address (left shift for write operation)
+  I2C_TransferSeq.flags = I2C_FLAG_WRITE_WRITE;    // Indicate that this is a write operation
+  I2C_TransferSeq.buf[0].data = &cmd_data;        // Point to the command data
+  I2C_TransferSeq.buf[0].len = 1;  // Set the command data length
+  I2C_TransferSeq.buf[1].data = 0xFF;
+  I2C_TransferSeq.buf[1].len = 1;
+
+  I2C_TransferStatus = I2CSPM_Transfer(I2C0, &I2C_TransferSeq);
+  if (I2C_TransferStatus != i2cTransferDone)
+  {
+    LOG_ERROR("Error: init_I2C, Input pin conf failed\n");
+    return 0; // Return 0 if the operation failed
+  }
+
   return;
 }
 
@@ -181,8 +198,8 @@ int io_expander_readByte(void)
 {
   cmd_data = TCA6408_INPUT;
   // Setup I2C transfer for writing the read temperature command to the sensor
-  I2C_TransferSeq.addr = TCA6408_ADDR1 << 1; // Set the sensor's I2C address (left shift for write operation)
-  I2C_TransferSeq.flags = I2C_FLAG_WRITE_READ;         // Indicate that this is a write operation
+  I2C_TransferSeq.addr = TCA6408_ADDR2 << 1; // Set the sensor's I2C address (left shift for write operation)
+  I2C_TransferSeq.flags = I2C_FLAG_WRITE;         // Indicate that this is a write operation
   I2C_TransferSeq.buf[0].data = &cmd_data;        // Point to the command data
   I2C_TransferSeq.buf[0].len = sizeof(cmd_data);  // Set the command data length
 
@@ -193,7 +210,21 @@ int io_expander_readByte(void)
     return 0; // Return 0 if the operation failed
   }
 
-  LOG_INFO("!! IO expander read sucessfull, data : %d len %d \n\r", *I2C_TransferSeq.buf[1].data, I2C_TransferSeq.buf[1].len);
+  // Setup I2C transfer for writing the read temperature command to the sensor
+  I2C_TransferSeq.addr = TCA6408_ADDR2 << 1; // Set the sensor's I2C address (left shift for write operation)
+  I2C_TransferSeq.flags = I2C_FLAG_READ;         // Indicate that this is a write operation
+  I2C_TransferSeq.buf[0].data = readData;        // Point to the command data
+  I2C_TransferSeq.buf[0].len = 1;  // Set the command data length
+
+  I2C_TransferStatus = I2CSPM_Transfer(I2C0, &I2C_TransferSeq);
+  if (I2C_TransferStatus != i2cTransferDone)
+  {
+    LOG_ERROR("Failed to write %u bytes when writing to Register, return value was %d", sizeof(cmd_data), I2C_TransferStatus);
+    return 0; // Return 0 if the operation failed
+  }
+
+
+  LOG_INFO("!! IO expander read sucessfull, data : %d \n\r", readData[0]);
   return *I2C_TransferSeq.buf[1].data;
 }
 

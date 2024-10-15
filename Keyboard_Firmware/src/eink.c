@@ -69,7 +69,7 @@ static void EINK_TurnOnDisplay(void)
     EINK_SendCommand(0x22);
     EINK_SendData(0xc7);
     EINK_SendCommand(0x20);
-    EINK_ReadBusy();
+    //EINK_ReadBusy();
 }
 
 
@@ -79,7 +79,7 @@ static void EINK_TurnOnDisplayPart(void)
     EINK_SendCommand(0x22);
     EINK_SendData(0xcF);
     EINK_SendCommand(0x20);
-    EINK_ReadBusy();
+    //EINK_ReadBusy();
 }
 
 //set window
@@ -112,9 +112,9 @@ void EINK_Init(void)
 {
     EINK_Reset();
 
-    EINK_ReadBusy();
+    //EINK_ReadBusy();
     EINK_SendCommand(0x12);  //SWRESET
-    EINK_ReadBusy();
+    //EINK_ReadBusy();
 
     EINK_SendCommand(0x01); //Driver output control
     EINK_SendData(0xC7);
@@ -137,14 +137,14 @@ void EINK_Init(void)
     EINK_SendCommand(0x20);
 
     EINK_SetCursor(0, EINK_HEIGHT-1);
-    EINK_ReadBusy();
+    //EINK_ReadBusy();
 }
 
 //Partial Init
 void EINK_Init_Partial(void)
 {
     EINK_Reset();
-	EINK_ReadBusy();
+	//EINK_ReadBusy();
 	
 	EINK_SendCommand(0x37); 
 	EINK_SendData(0x00);  
@@ -164,7 +164,7 @@ void EINK_Init_Partial(void)
 	EINK_SendCommand(0x22); 
 	EINK_SendData(0xc0); 
 	EINK_SendCommand(0x20); 
-	EINK_ReadBusy();
+	//EINK_ReadBusy();
 }
 
 //clear
