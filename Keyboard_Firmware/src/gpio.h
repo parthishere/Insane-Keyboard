@@ -14,24 +14,29 @@
 #define EXPANDER_RESET_pin (12)
 #define EXPANDER_RESET EXPANDER_RESET_port, EXPANDER_RESET_pin
 
-#define EXPANDER_RESET_INT0_pin
-#define EXPANDER_RESET_INT0 EXPANDER_RESET_port, EXPANDER_RESET_INT0
+#define EXPANDER_INT_port (gpioPortA)
+#define EXPANDER_INT_0_pin 4
+#define EXPANDER_INT_0 EXPANDER_INT_port, EXPANDER_INT_0_pin
 
-#define EXPANDER_RESET_INT1_pin
-#define EXPANDER_RESET_INT1 EXPANDER_RESET_port, EXPANDER_RESET_INT1_pin
+
+#define EXPANDER_INT_1_pin 5
+#define EXPANDER_INT_1 EXPANDER_INT_port, EXPANDER_INT_1_pin
+
+
 
 //GPIO eink
-#define RST_GPIO_Port gpioPortC
-#define RST_Pin 6
-#define EINK_RST    RST_GPIO_Port, RST_Pin
+#define RST_GPIO_Port gpioPortA
+#define RST_Pin 2
+#define DISPLAY_RST    RST_GPIO_Port, RST_Pin
 
-#define DC_GPIO_Port gpioPortD
-#define DC_Pin 15
-#define EINK_DC     DC_GPIO_Port, DC_Pin   
+#define DC_GPIO_Port gpioPortA
+#define DC_Pin 3
+#define DISPLAY_DC     DC_GPIO_Port, DC_Pin   
 
 #define BUSY_GPIO_Port gpioPortA
-#define BUSY_Pin 5
-#define EINK_BUSY   BUSY_GPIO_Port, BUSY_Pin
+#define BUSY_Pin 1
+#define DISPLAY_BUSY   BUSY_GPIO_Port, BUSY_Pin
+
 
 
 #define ROTARY_ENCODER_port (gpioPortD)
@@ -41,16 +46,18 @@
 #define ROTARY_ENCODER_B_pin (11)
 #define ROTARY_ENCODER_B ROTARY_ENCODER_port, ROTARY_ENCODER_B_pin
 
-#define ROTERY_ENCODER_SW_pin (7)
+#define ROTERY_ENCODER_SW_pin (14)
 #define ROTARY_ENCODER_SW ROTARY_ENCODER_port, ROTERY_ENCODER_SW_pin
 
-#define TEMP_ENABLE_port (gpioPortD)
-#define TEMP_ENABLE_pin (15)
-#define TEMP_ENABLE TEMP_ENABLE_port, TEMP_ENABLE_pin
 
-#define DISPLAY_ENABLE_port (gpioPortD)
-#define DISPLAY_ENABLE_pin (15)
-#define DISPLAY_ENABLE DISPLAY_ENABLE_port, DISPLAY_ENABLE_pin
+
+#define ON_TEMP_port (gpioPortD)
+#define ON_TEMP_pin (12)
+#define ON_TEMP ON_TEMP_port, ON_TEMP_pin
+
+#define ON_DISPLAY_port (gpioPortD)
+#define ON_DISPLAY_pin (13)
+#define ON_DISPLAY ON_DISPLAY_port, ON_DISPLAY_pin
 
 
 
@@ -76,13 +83,13 @@ void gpio_Set_Display_DC(bool on);
  * Enables the temp sensor by setting its enable pin high.
  * No parameters and no return value.
  */
-uint32_t enable_Temperature_Sensor(bool on);
+void enable_Temperature_Sensor(bool on);
 
 /*
  * Enables the display by setting its enable pin high.
  * No parameters and no return value.
  */
-uint32_t enable_Display(bool on);
+void enable_Display(bool on);
 
 
 

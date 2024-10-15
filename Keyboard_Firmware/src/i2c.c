@@ -23,7 +23,7 @@
 
 // Enables debug logging for this file
 #define INCLUDE_LOG_DEBUG 1
-#include "log.h" // Includes the logging header for debug messages
+#include "src/log.h" // Includes the logging header for debug messages
 
 
 
@@ -169,7 +169,7 @@ uint16_t read_SI7021()
   temprature = SHIFT_DATA_EIGHT_BIT(readData[0]) + MASK_TEMPRATURE_DATA_BITS(readData[1]);
   temprature = CONVERT_TEMP_TO_C(temprature);
 
-  LOG_INFO("Got the temprature from Si7021 sensor => %d Celsius\n", temprature); // Log the temperature data
+  LOG_INFO("Got the temprature from Si7021 sensor => %ld Celsius\n", temprature); // Log the temperature data
 
   //sensor_Disable();    // Disable the sensor
   return (temprature); // Return the calculated temperature
@@ -177,7 +177,7 @@ uint16_t read_SI7021()
 
 
 
-void io_expander_readByte(void)
+int io_expander_readByte(void)
 {
   cmd_data = TCA6408_INPUT;
   // Setup I2C transfer for writing the read temperature command to the sensor
@@ -193,7 +193,7 @@ void io_expander_readByte(void)
     return 0; // Return 0 if the operation failed
   }
 
-  LOG_INFO("!! IO expander read sucessfull, data : %d len %d \n\r", I2C_TransferSeq.buf[1].data, I2C_TransferSeq.buf[1].data);
-
+  LOG_INFO("!! IO expander read sucessfull, data : %d len %d \n\r", *I2C_TransferSeq.buf[1].data, I2C_TransferSeq.buf[1].len);
+  return *I2C_TransferSeq.buf[1].data;
 }
 

@@ -145,48 +145,7 @@ ble_data_struct_t *getBleDataPtr()
     return (&ble_data);
 } // getBleDataPtr()
 
-/**
- * @brief Converts a floating-point representation from a Bluetooth (BT) buffer into a 32-bit integer.
- *
- * This static function interprets a specific byte format in a Bluetooth buffer to calculate
- * a temperature value represented as a 32-bit integer. The buffer format is expected to be
- * as follows:
- * - The first byte ([0]) contains flags, where bit[0] distinguishes between Celsius and Fahrenheit.
- * - Bytes [1] to [3] represent the mantissa in 2's complement form.
- * - The fifth byte ([4]) represents the exponent, also in 2's complement form.
- *
- * The formula used for conversion is: value = 10^exponent * mantissa
- *
- * @param buffer_ptr Pointer to the buffer containing the bytes to be converted.
- *                   This buffer is expected to have at least 5 bytes:
- *                   a flags byte, three bytes for the mantissa, and one byte for the exponent.
- *
- * @return The temperature value as a 32-bit integer. The return value accounts for the sign of the mantissa
- *         and applies the mathematical operation as per the decoded exponent and mantissa from the buffer.
- *
- */
-static int32_t float_to_int32(const uint8_t *buffer_ptr)
-{
-    uint8_t signByte = 0;
-    int32_t mantissa;
-    // input data format is:
-    // [0] = flags byte, bit[0] = 0 -> Celsius; =1 -> Fahrenheit
-    // [3][2][1] = mantissa (2's complement)
-    // [4] = exponent (2's complement)
-    // BT buffer_ptr[0] has the flags byte
-    int8_t exponent = (int8_t)buffer_ptr[4];
-    // sign extend the mantissa value if the mantissa is negative
-    if (buffer_ptr[3] & 0x80)
-    { // msb of [3] is the sign of the mantissa
-        signByte = 0xFF;
-    }
-    mantissa = (int32_t)(buffer_ptr[1] << 0) |
-               (buffer_ptr[2] << 8) |
-               (buffer_ptr[3] << 16) |
-               (signByte << 24);
-    // value = 10^exponent * mantissa, pow() returns a double type
-    return (int32_t)(pow(10, exponent) * mantissa);
-} // FLOAT_TO_INT32
+
 
 /**
  * @brief Handles incoming BLE events and dispatches actions based on the event type.
@@ -341,7 +300,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
         if (sc != SL_STATUS_OK)
         {
             // Log an error if setting new connection parameters fails
-            LOG_ERROR("Failed to set connection parameters. Status: 0x%04x", sc);
+            LOG_ERROR("Failed to set connection parameters. Status: %lu", sc);
         }
 
         break;
@@ -605,49 +564,6 @@ void handle_ble_event(sl_bt_msg_t *evt)
 } // handle_ble_event()
 
 
-/**
- * @brief Sends a temperature measurement indication over Bluetooth Low Energy (BLE) using GATT (Generic Attribute Profile).
- *
- * This function writes a temperature value to a local GATT database and then sends an indication to a connected BLE device
- * if there is not already an indication in flight. The temperature value is displayed on a connected display and sent
- * over BLE in IEEE-11073 format. If any operation fails, an error is logged.
- *
- * @param htm_temperature_buffer Array of uint8_t that contains the temperature data in IEEE-11073 format to be written
- *                               to the GATT database and sent as an indication.
- * @param size The size of the `htm_temperature_buffer` array, indicating how many bytes of temperature data are to be sent.
- *             This should match the length of the temperature data in IEEE-11073 format.
- *
- * @return void This function does not return a value. It performs operations of writing to a GATT database and sending BLE
- *              indications. If any operation fails, errors are logged but not returned.
- *
- * @note This function checks if an indication is currently being sent (`indication_in_flight`). If so, it does not attempt
- *       to send another indication. This is to prevent sending multiple indications at the same time.
- * @note The function uses `sl_bt_gatt_server_write_attribute_value` to write the temperature value to the GATT database and
- *       `sl_bt_gatt_server_send_indication` to send the indication over BLE. The success of these operations is checked,
- *       and errors are logged accordingly.
- * @note The macro `LOG_ERROR` is used to log errors. It must be defined elsewhere in your codebase.
- * @note This function assumes that `ble_data.indication_in_flight`, `ble_data.appConnectionHandle`, and `gattdb_temperature_measurement`
- *       are properly defined and available in your application.
- */
-void send_HTM_Indication(uint8_t htm_temperature_buffer[], uint8_t size)
-{
-
-    // // Send the temperature data over BLE as an indication
-    // sc = sl_bt_gatt_server_send_indication(
-    //     ble_data.appConnectionHandle,
-    //     gattdb_report_map,
-    //     size,
-    //     htm_temperature_buffer);
-    // // Check for errors in sending the indication
-    // if (sc != SL_STATUS_OK)
-    // {
-    //     LOG_ERROR("Failed to send indication. Status: 0x%04x", sc);
-    // }
-    // else
-    // {
-    //     ble_data.indication_in_flight = true;
-    // }
-}
 
 
 /*

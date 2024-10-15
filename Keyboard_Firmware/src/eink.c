@@ -2,10 +2,16 @@
 E-ink display source file
 */
 
-#include<eink.h>
-#include<debug.h>
+#include<src/eink.h>
+#include <stdint.h>
 
-Modules Inits
+
+// Enables debug logging for this file
+#define INCLUDE_LOG_DEBUG 1
+#include "src/log.h" // Includes the logging header for debug messages
+
+
+// Modules Inits
 void EINK_Module_Init(void)
 {
     gpio_Set_Display_DC(0);
@@ -83,8 +89,8 @@ static void EINK_SetWindows(uint16_t Xstart, uint16_t Ystart, uint16_t Xend, uin
     EINK_SendData((Xstart>>3) & 0xFF);
     EINK_SendData((Xend>>3) & 0xFF);
 	
-    EINK__SendCommand(0x45); // SET_RAM_Y_ADDRESS_START_END_POSITION
-    EINK__SendData(Ystart & 0xFF);
+    EINK_SendCommand(0x45); // SET_RAM_Y_ADDRESS_START_END_POSITION
+    EINK_SendData(Ystart & 0xFF);
     EINK_SendData((Ystart >> 8) & 0xFF);
     EINK_SendData(Yend & 0xFF);
     EINK_SendData((Yend >> 8) & 0xFF);
@@ -238,7 +244,7 @@ void display_test(void)
 {
     EINK_Module_Init();
 
-    printf("e-Paper Init and Clear...\r\n");
+    LOG_INFO("e-Paper Init and Clear...\r\n");
     EINK_Init();
     EINK_Clear();
     EINK_Delay_ms(500);

@@ -40,59 +40,10 @@
  */
 void init_I2C();
 
-/**
- * @brief Waits for the sensor to be ready to send temperature data.
- * Enables the sensor and waits for a specified delay to ensure the sensor is ready for data transmission.
- */
-void read_SI7021_write_initiate();
 
-/**
- * @brief Initiates a temperature measurement command to the SI7021 sensor.
- * Sends a command over I2C to the SI7021 sensor to start a temperature measurement.
- */
-void read_SI7021_timer_wait();
-
-/**
- * @brief Reads the measured temperature from the SI7021 sensor.
- * Initiates an I2C read operation to retrieve the temperature measurement from the sensor.
- */
-void read_SI7021_MEASUREMENT();
-
-/**
- * @brief Reads temperature data from the SI7021 sensor, formats it for BLE transmission,
- * and manages the indication sending and queuing based on the BLE connection state.
- * 
- * The function reads raw temperature data from the SI7021 sensor, converts it to Celsius,
- * formats it according to the IEEE 11073-20601 FLOAT-Type format for BLE transmission,
- * writes the formatted data to the local GATT database, and manages the sending of 
- * indications or queuing them if another indication is currently in flight.
- * 
- * @return uint16_t The temperature in Celsius.
- */
 uint16_t read_SI7021();
 
 
-
-/**
- * Attempts to send a temperature/button indication immediately if possible.
- * If an indication is already in-flight, or the queue is not empty, the temperature data
- * is queued for later transmission.
- *
- * @param[in] htm_temperature_buffer The buffer containing the temperature data formatted for BLE transmission.
- * @param[in] is_button is indication is for button?.
- */
-void attemptToSendOrQueueIndication(uint8_t *htm_temperature_buffer, bool is_button);
-
-
-/**
- * Attempts to send the next queued indication for either temperature data or button state. This function is called
- * when the device is ready to send another indication, typically after a previous indication has been sent and
- * acknowledged, or when the device first becomes ready to send indications after a busy period.
- *
- * The function checks the queue for any pending indications. If an indication is found, it determines the type based
- * on the characteristic handle and attempts to send the indication using the appropriate function. This ensures
- * that indications are sent in the order they were queued, maintaining the integrity of the transmitted data.
- */
-void send_from_queue();
+int io_expander_readByte(void);
 
 #endif // !__I2C_h__

@@ -33,17 +33,7 @@
 #define INITIAL_DELAY 80000  // Initial delay in microseconds before reading temperature
 #define TRANSFER_DELAY 10800 // Delay in microseconds after initiating the temperature read command
 
-// Structure to hold current event states,  we wont use it in this assignment
-static event_struct_t current_events_data = {
-    .LETIMER0_UF = 0,          // LETIMER0 underflow event flag
-    .LETIMER0_COMP1 = 0,       // LETIMER0 compare match 1 event flag
-    .I2C_TRANSFER_COMPLETE = 0 // I2C communication event flag
-};
 
-// global variable for current state
-static state_t current_state = stateIdle_Timer_Wait;
-
-static discovery_state_t current_discovery_state = stateInitialState;
 
 /**
  * @brief Sets the LETIMER0 underflow event in the scheduler.

@@ -49,6 +49,7 @@
 #include "src/irq.h"
 #include "src/timer.h"
 #include "src/i2c.h"
+#include "src/eink.h"
 
 // Include logging specifically for this .c file
 #define INCLUDE_LOG_DEBUG 1
@@ -162,7 +163,8 @@ SL_WEAK void app_init(void)
 SL_WEAK void app_process_action(void)
 {
   while(1){
-    
+//      read_SI7021();
+      display_test();
   }
 } // app_process_action()
 

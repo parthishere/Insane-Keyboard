@@ -21,7 +21,7 @@
 #include "sl_power_manager.h"
 #include "src/oscillator.h"
 #include "src/gpio.h"
-#include "src/display.h"
+#include "src/eink.h"
 #include "src/i2c.h"
 #include "src/spi.h"
 #include "src/timer.h"
