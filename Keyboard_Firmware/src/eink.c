@@ -69,7 +69,7 @@ static void EINK_TurnOnDisplay(void)
     EINK_SendCommand(0x22);
     EINK_SendData(0xc7);
     EINK_SendCommand(0x20);
-    //EINK_ReadBusy();
+    EINK_ReadBusy();
 }
 
 
@@ -79,7 +79,7 @@ static void EINK_TurnOnDisplayPart(void)
     EINK_SendCommand(0x22);
     EINK_SendData(0xcF);
     EINK_SendCommand(0x20);
-    //EINK_ReadBusy();
+    EINK_ReadBusy();
 }
 
 //set window

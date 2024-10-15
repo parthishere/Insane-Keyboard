@@ -108,9 +108,11 @@ void GPIO_ODD_IRQHandler(void)
           if(pinPrevState == 0 && pinState == 1){
               if(GPIO_PinInGet(ROTARY_ENCODER_PORT,ROTARY_ENCODER_B_PIN)){
                   counter++;
+                  LOG_INFO("%d",counter);
               }
               else{
                   counter--;
+                  LOG_INFO("%d",counter);
               }
           }
           pinPrevState = pinState;

@@ -122,14 +122,14 @@ void init_I2C()
   I2C_TransferSeq.flags = I2C_FLAG_WRITE_WRITE;    // Indicate that this is a write operation
   I2C_TransferSeq.buf[0].data = &cmd_data;        // Point to the command data
   I2C_TransferSeq.buf[0].len = 1;  // Set the command data length
-  I2C_TransferSeq.buf[1].data = 0xFF;
+  cmd_data = 0xff;
+  I2C_TransferSeq.buf[1].data = &cmd_data;
   I2C_TransferSeq.buf[1].len = 1;
 
   I2C_TransferStatus = I2CSPM_Transfer(I2C0, &I2C_TransferSeq);
   if (I2C_TransferStatus != i2cTransferDone)
   {
     LOG_ERROR("Error: init_I2C, Input pin conf failed\n");
-    return 0; // Return 0 if the operation failed
   }
 
   return;
