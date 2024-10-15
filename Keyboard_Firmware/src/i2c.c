@@ -118,7 +118,7 @@ void init_I2C()
 
   cmd_data = TCA6408_CONFIGURATION;
   // Setup I2C transfer for writing the read temperature command to the sensor
-  I2C_TransferSeq.addr = TCA6408_ADDR2 << 1; // Set the sensor's I2C address (left shift for write operation)
+  I2C_TransferSeq.addr = TCA6408_ADDR1 << 1; // Set the sensor's I2C address (left shift for write operation)
   I2C_TransferSeq.flags = I2C_FLAG_WRITE_WRITE;    // Indicate that this is a write operation
   I2C_TransferSeq.buf[0].data = &cmd_data;        // Point to the command data
   I2C_TransferSeq.buf[0].len = 1;  // Set the command data length
@@ -198,7 +198,7 @@ int io_expander_readByte(void)
 {
   cmd_data = TCA6408_INPUT;
   // Setup I2C transfer for writing the read temperature command to the sensor
-  I2C_TransferSeq.addr = TCA6408_ADDR2 << 1; // Set the sensor's I2C address (left shift for write operation)
+  I2C_TransferSeq.addr = TCA6408_ADDR1 << 1; // Set the sensor's I2C address (left shift for write operation)
   I2C_TransferSeq.flags = I2C_FLAG_WRITE;         // Indicate that this is a write operation
   I2C_TransferSeq.buf[0].data = &cmd_data;        // Point to the command data
   I2C_TransferSeq.buf[0].len = sizeof(cmd_data);  // Set the command data length
@@ -211,7 +211,7 @@ int io_expander_readByte(void)
   }
 
   // Setup I2C transfer for writing the read temperature command to the sensor
-  I2C_TransferSeq.addr = TCA6408_ADDR2 << 1; // Set the sensor's I2C address (left shift for write operation)
+  I2C_TransferSeq.addr = TCA6408_ADDR1 << 1; // Set the sensor's I2C address (left shift for write operation)
   I2C_TransferSeq.flags = I2C_FLAG_READ;         // Indicate that this is a write operation
   I2C_TransferSeq.buf[0].data = readData;        // Point to the command data
   I2C_TransferSeq.buf[0].len = 1;  // Set the command data length
