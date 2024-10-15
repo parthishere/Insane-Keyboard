@@ -30,11 +30,7 @@
 
 // Interval for log timing
 #define UF_TIME_MS 3000
-#define SW0_pin (6)
-#define SW1_pin (7)
-#define ROTARY_ENCODER_PORT (gpioPortD)
-#define ROTARY_ENCODER_A_PIN (10)
-#define ROTARY_ENCODER_B_PIN (11)
+
 
 volatile uint32_t underflow_count = 0;
 
@@ -102,17 +98,17 @@ void GPIO_ODD_IRQHandler(void)
           schedularSetEventPB1();
 
       }
-       if (flags & (1 << ROTARY_ENCODER_B_PIN))
+       if (flags & (1 << ROTARY_ENCODER_B_pin))
       {
-          pinState = GPIO_PinInGet(ROTARY_ENCODER_PORT,ROTARY_ENCODER_A_PIN);
+          pinState = GPIO_PinInGet(ROTARY_ENCODER_PORT,ROTARY_ENCODER_A_pin);
           if(pinPrevState == 0 && pinState == 1){
-              if(GPIO_PinInGet(ROTARY_ENCODER_PORT,ROTARY_ENCODER_B_PIN)){
+              if(GPIO_PinInGet(ROTARY_ENCODER_PORT,ROTARY_ENCODER_B_pin)){
                   counter++;
-                  LOG_INFO("%d",counter);
+                  LOG_INFO("Encoder Value: %d",counter);
               }
               else{
                   counter--;
-                  LOG_INFO("%d",counter);
+                  LOG_INFO("Encoder Value: %d",counter);
               }
           }
           pinPrevState = pinState;
