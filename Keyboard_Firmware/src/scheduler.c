@@ -65,25 +65,7 @@ void schedulerSetEventUF()
   CORE_EXIT_CRITICAL(); // Exit the critical section, allowing other interrupts to be processed.
 } // schedulerSetEventXXX()
 
-/**
- * @brief Sets the I2C communication event in the scheduler.
- *
- * Similar to schedulerSetEventUF, this function marks the I2C event as pending.
- * It ensures atomic access to the event structure using critical sections.
- * Sends Signal to Bluetooth stack call back function with external signal
- */
-void schedularSetEventI2C()
-{
-  CORE_DECLARE_IRQ_STATE;
-  // enter critical section
-  CORE_ENTER_CRITICAL(); // Enter a critical section to prevent interruption during flag handling.
 
-  // Send external Event Signal to state machine
-  sl_bt_external_signal(evtI2CTransferComplete);
-
-  // exit critical section
-  CORE_EXIT_CRITICAL(); // Exit the critical section, allowing other interrupts to be processed.
-}
 
 /**
  * @brief Sets the LETIMER0 COMP1 event in the scheduler.
@@ -119,7 +101,7 @@ void schedularSetEventPB0()
   CORE_ENTER_CRITICAL(); // Enter a critical section to prevent interruption during flag handling.
 
   // Send external Event Signal to state machine
-  sl_bt_external_signal(evtBTN0);
+  // sl_bt_external_signal(evtBTN0);
 
   // exit critical section
   CORE_EXIT_CRITICAL(); // Exit the critical section, allowing other interrupts to be processed.
@@ -140,48 +122,12 @@ void schedularSetEventPB1()
   CORE_ENTER_CRITICAL(); // Enter a critical section to prevent interruption during flag handling.
 
   // Send external Event Signal to state machine
-  sl_bt_external_signal(evtBTN1);
+  // sl_bt_external_signal(evtBTN1);
 
   // exit critical section
   CORE_EXIT_CRITICAL(); // Exit the critical section, allowing other interrupts to be processed.
 }
 
-/**
- * @brief Retrieves the next pending event from the scheduler.
- *
- * This function checks the scheduler's event structure for any pending events,
- * prioritizing them in the order of LETIMER0 underflow, LETIMER0 COMP1, and then I2C.
- * It ensures atomic access to the event structure and clears the event flag before returning.
- *
- * @return event_t The next event to be processed, or evtNOEVT if no events are pending.
- */
-event_t getNextEvent()
-{
-  CORE_DECLARE_IRQ_STATE; // Prepare to save current interrupt status.
-  uint32_t theEvent;      // Variable to hold the event that will be returned.
-  CORE_ENTER_CRITICAL();  // Protect the event checking and clearing process.
-
-  // Priority: LETIMER0 underflow < LETIMER0 COMP1 < I2C
-  if (current_events_data.LETIMER0_UF)
-  {
-    current_events_data.LETIMER0_UF = false; // Clear the underflow event.
-    theEvent = evtLETIMER0_UF;               // Set to return the underflow event.
-  }
-  if (current_events_data.LETIMER0_COMP1)
-  {
-    current_events_data.LETIMER0_COMP1 = false; // Clear the COMP1 event.
-    theEvent = evtLETIMER0_COMP1;               // Set to return the COMP1 event.
-  }
-  if (current_events_data.I2C_TRANSFER_COMPLETE)
-  {
-    current_events_data.I2C_TRANSFER_COMPLETE = false; // Clear the I2C event.
-    theEvent = evtI2CTransferComplete;                 // Set to return the I2C event.
-  }
-
-  CORE_EXIT_CRITICAL(); // Restore interrupts, ending critical section.
-
-  return (theEvent); // Return the determined event.
-} // getNextEvent()
 
 /**
  * @brief Manages state transitions for the SI7021 sensor based on events.
@@ -286,209 +232,5 @@ void state_machine_si7021(sl_bt_msg_t *bt_event)
     default:
       break;
     }
-  }
-}
-
-/**
- * @brief Manages the discovery process state machine for BLE services and characteristics.
- *
- * This function progresses through a series of states to discover BLE services and
- * characteristics, and to enable indications for discovered characteristics. The state
- * machine starts in the initial state and moves through discovering services,
- * discovering characteristics, enabling indications, and ends when the process is complete.
- * The transition between states is triggered by BLE events indicating the completion of each
- * discovery step or a change in connection status.
- *
- * @param bt_event Pointer to the BLE event structure received from the BLE stack.
- *                 This structure contains the event information that determines state transitions.
- */
-void discovery_State_Machine(sl_bt_msg_t *bt_event)
-{
-  // Retrieve pointer to the global BLE data structure
-  ble_data_struct_t *ble_data_ptr = getBleDataPtr();
-
-  // Status code variable for storing the result of Silicon Labs API function calls
-  sl_status_t sc;
-
-  // Switch statement to handle different states of the discovery process
-  switch (current_discovery_state)
-  {
-  // Initial state: Awaiting a connection to be opened
-  case stateInitialState:
-    // Check if the received event is a connection opened event
-    if (SL_BT_MSG_ID(bt_event->header) == sl_bt_evt_connection_opened_id)
-    {
-      // Transition to the service discovery state
-      current_discovery_state = stateDiscoveringHTMService;
-      PRINT_LOG("Finding Services : from state machine\n\r");
-
-      uint8_t thermometer_service_uuid[2] = THERMOMETER_SERVICE_UUID;
-
-      // Initiate discovery of primary services based on uuid on the connected device
-      sc = sl_bt_gatt_discover_primary_services_by_uuid(ble_data_ptr->appConnectionHandle,
-                                                        sizeof(thermometer_service_uuid),
-                                                        thermometer_service_uuid);
-
-      // Error handling if the discovery could not be started
-      if (sc != SL_STATUS_OK)
-      {
-        LOG_ERROR("htm sl_bt_gatt_discover_primary_services_by_uuid() returned != 0 status=0x%04x", (unsigned int)sc);
-      }
-    }
-    break;
-
-  // State for discovering services
-  case stateDiscoveringHTMService:
-    // Check if the discovery process is completed
-    if (SL_BT_MSG_ID(bt_event->header) == sl_bt_evt_gatt_procedure_completed_id)
-    {
-      // Transition to the characteristic discovery state
-      current_discovery_state = stateDiscoveringButtonService;
-      PRINT_LOG("Finding HTM service : from state machine\n\r");
-
-      // Define the UUID for the button service to discover
-      uint8_t button_service_uuid[16] = BUTTON_SERVICE_UUID;
-
-      // Initiate discovery of service by UUID
-      sc = sl_bt_gatt_discover_primary_services_by_uuid(ble_data_ptr->appConnectionHandle,
-                                                        sizeof(button_service_uuid),
-                                                        button_service_uuid);
-
-      // Error handling if the characteristic discovery could not be started
-      if (sc != SL_STATUS_OK)
-      {
-        LOG_ERROR("button sl_bt_gatt_discover_primary_services_by_uuid() returned != 0 status=0x%04x", (unsigned int)sc);
-      }
-    }
-    break;
-
-  // State for discovering services
-  case stateDiscoveringButtonService:
-    // Check if the discovery process is completed
-    if (SL_BT_MSG_ID(bt_event->header) == sl_bt_evt_gatt_procedure_completed_id)
-    {
-      // Transition to the characteristic discovery state
-      current_discovery_state = stateDiscoveringHTMCharacteristic;
-      PRINT_LOG("Finding HTM characteristic : from state machine\n\r");
-
-      // Define the UUID for the thermometer characteristic to discover
-      uint8_t thermometer_characteristic_uuid[2] = THERMOMETER_CHARACTERISTIC_UUID;
-
-      // Initiate discovery of characteristics by UUID
-      sc = sl_bt_gatt_discover_characteristics_by_uuid(
-          bt_event->data.evt_gatt_procedure_completed.connection,
-          ble_data_ptr->thermometerHandle,
-          sizeof(thermometer_characteristic_uuid),
-          (const uint8_t *)thermometer_characteristic_uuid);
-
-      // Error handling if the characteristic discovery could not be started
-      if (sc != SL_STATUS_OK)
-      {
-        LOG_ERROR("HTM sl_bt_gatt_discover_characteristics_by_uuid() returned != 0 status=0x%04x", (unsigned int)sc);
-      }
-    }
-    break;
-
-  // State for discovering characteristics
-  case stateDiscoveringHTMCharacteristic:
-    // Check if the characteristic discovery process is completed
-    if (SL_BT_MSG_ID(bt_event->header) == sl_bt_evt_gatt_procedure_completed_id)
-    {
-      // Transition to the indication enabling state
-      current_discovery_state = stateDiscoveringButtonCharacteristic;
-      PRINT_LOG("Finding Button characteristic : from state machine\n\r");
-
-      // Define the UUID for the thermometer characteristic to discover
-      uint8_t button_characteristic_uuid[16] = BUTTON_CHARACTERISTIC_UUID;
-
-      // Initiate discovery of characteristics by UUID
-      sc = sl_bt_gatt_discover_characteristics_by_uuid(
-          bt_event->data.evt_gatt_procedure_completed.connection,
-          ble_data_ptr->buttonServiceHandle,
-          sizeof(button_characteristic_uuid),
-          (const uint8_t *)button_characteristic_uuid);
-
-      // Error handling if enabling indications failed
-      if (sc != SL_STATUS_OK)
-      {
-        // SL_STATUS_IN_PROGRESS ((sl_status_t)0x0005): Operation is in progress and not yet complete (pass or fail).
-        LOG_ERROR("button sl_bt_gatt_discover_characteristics_by_uuid() returned != 0 status=0x%04x", (unsigned int)sc);
-      }
-    }
-    break;
-
-  // State for discovering characteristics
-  case stateDiscoveringButtonCharacteristic:
-    // Check if the characteristic discovery process is completed
-    if (SL_BT_MSG_ID(bt_event->header) == sl_bt_evt_gatt_procedure_completed_id)
-    {
-      /// Transition to the final state of the discovery process
-      
-      current_discovery_state = stateEnablingHTMIndication;
-      
-
-      sc = sl_bt_gatt_set_characteristic_notification(
-          bt_event->data.evt_gatt_procedure_completed.connection,
-          ble_data_ptr->thermometerCharacteristicHandle,
-          sl_bt_gatt_indication);
-
-      // Error handling if enabling indications failed
-      if (sc != SL_STATUS_OK)
-      {
-        // SL_STATUS_IN_PROGRESS ((sl_status_t)0x0005): Operation is in progress and not yet complete (pass or fail).
-        LOG_ERROR("HTM sl_bt_gatt_set_characteristic_notification() returned != 0 status=0x%04x", (unsigned int)sc);
-      }
-    }
-    break;
-
-  // State for enabling indications
-  case stateEnablingHTMIndication:
-    // Check if the indication enabling process is completed
-    if (SL_BT_MSG_ID(bt_event->header) == sl_bt_evt_gatt_procedure_completed_id)
-    {
-
-      // Transition to the final state of the discovery process
-      PRINT_LOG("HTM Indication Enabled : from state machine\n\r");
-      current_discovery_state = stateEnablingBTNIndication;
-      ble_data_ptr->ok_to_send_htm_indications = true;
-      
-      sc = sl_bt_gatt_set_characteristic_notification(
-          bt_event->data.evt_gatt_procedure_completed.connection,
-          ble_data_ptr->buttonCharacteristicHandle,
-          sl_bt_gatt_indication);
-
-      // Error handling if enabling indications failed
-      if (sc != SL_STATUS_OK)
-      {
-        // SL_STATUS_IN_PROGRESS ((sl_status_t)0x0005): Operation is in progress and not yet complete (pass or fail).
-        LOG_ERROR("BTN sl_bt_gatt_set_characteristic_notification() returned != 0 status=0x%04x", (unsigned int)sc);
-      }
-
-      
-    }
-    break;
-
-  // State for enabling indications
-  case stateEnablingBTNIndication:
-    // Check if the indication enabling process is completed
-    if (SL_BT_MSG_ID(bt_event->header) == sl_bt_evt_gatt_procedure_completed_id)
-    {
-      PRINT_LOG("BTN Indication Enabled : from state machine\n\r");
-      ble_data_ptr->ok_to_send_button_indications = true;
-      current_discovery_state = stateEndState;
-    }
-
-    break;
-
-  // Final state: Awaiting connection closure to reset to the initial state
-  case stateEndState:
-    // Check if the connection has been closed
-    if (SL_BT_MSG_ID(bt_event->header) == sl_bt_evt_connection_closed_id)
-    {
-      PRINT_LOG("End State : from state machine\n\r");
-      // Reset to the initial state to be ready for a new discovery process
-      current_discovery_state = stateInitialState;
-    }
-    break;
   }
 }

@@ -611,6 +611,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
     } // end - switch
 } // handle_ble_event()
 
+
 /**
  * @brief Sends a temperature measurement indication over Bluetooth Low Energy (BLE) using GATT (Generic Attribute Profile).
  *
@@ -655,40 +656,6 @@ void send_HTM_Indication(uint8_t htm_temperature_buffer[], uint8_t size)
     // }
 }
 
-/**
- * @brief Sends a button state indication over Bluetooth Low Energy (BLE) using GATT (Generic Attribute Profile).
- *
- * This function sends a single byte representing the state of a button to a connected BLE device
- * as an indication. The button state is sent over BLE using the specified GATT characteristic. If the operation
- * succeeds, a log message is produced, and the indication is marked as in-flight. If the operation fails,
- * an error with the status code is logged.
- *
- * @param buffer Array of uint8_t that contains the single byte of button state data to be sent as an indication.
- *               The button state is represented by this single byte (e.g., 0x00 for released, 0x01 for pressed).
- *
- * @return void This function does not return a value. It logs either the success or failure of sending the
- *              button state indication. On success, it also marks an indication as in-flight to prevent
- *              sending multiple indications simultaneously.
- */
-void send_Button_Indication(uint8_t buffer[])
-{
-    // sc = sl_bt_gatt_server_send_indication(
-    //     ble_data.appConnectionHandle,
-    //     gattdb_report_map,
-    //     1,
-    //     buffer);
-    // if (sc != SL_STATUS_OK)
-    // {
-    //     // Log an error if sending the indication fails.
-    //     LOG_ERROR("sl_bt_gatt_server_send_indication() in sl_bt_evt_gatt_server_characteristic_status_id returned != 0 status=0x%04x", (unsigned int)sc);
-    // }
-    // else
-    // {
-    //     PRINT_LOG("BTN indication Sent\n\r");
-    //     // Successfully sent the indication, set the in-flight flag.
-    //     ble_data.indication_in_flight = true;
-    // }
-}
 
 /*
  * ---------------------------------------------------------------------

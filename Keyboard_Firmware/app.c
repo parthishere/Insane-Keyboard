@@ -164,7 +164,7 @@ SL_WEAK void app_init(void)
   gpioInit();
 
   // Initializing I2C
-  // init_I2C();
+  init_I2C();
 
 } // app_init()
 
@@ -177,13 +177,6 @@ SL_WEAK void app_init(void)
 SL_WEAK void app_process_action(void)
 {
   // nothing to do here !
-  while(1){
-      gpioLed0SetOff();
-      timerWaitUs_polled(1000000);
-      gpioLed0SetOn();
-      timerWaitUs_polled(1000000);
-      LOG_INFO("heya\n\r");
-  }
 } // app_process_action()
 
 /**************************************************************************
@@ -200,12 +193,14 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
 {
 
   // Just a trick to hide a compiler warning about unused input parameter evt.
-//   (void)evt;
+  (void)evt;
 
-//   handle_ble_event(evt); // bluetooth event actions
+  handle_ble_event(evt); // bluetooth event actions
 
 // #if (DEVICE_IS_BLE_SERVER == 1)
-//   state_machine_si7021(evt); //  pass event to state machine
+  state_machine_si7021(evt); //  pass event to state machine
+  state_machine_io_expander(evt);
+
 // #else
 //   discovery_State_Machine(evt); // Event to discovery state machine for client implementation
 // #endif

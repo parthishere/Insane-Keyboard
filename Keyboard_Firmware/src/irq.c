@@ -27,12 +27,22 @@
 #define INCLUDE_LOG_DEBUG 1
 #include "src/log.h"
 
+
 // Interval for log timing
 #define UF_TIME_MS 3000
 #define SW0_pin (6)
 #define SW1_pin (7)
+#define ROTARY_ENCODER_PORT (gpioPortD)
+#define ROTARY_ENCODER_A_PIN (10)
+#define ROTARY_ENCODER_B_PIN (11)
 
 volatile uint32_t underflow_count = 0;
+
+
+volatile bool pin_a_detected_first = false, pin_b_detected_first = false;
+volatile int32_t counter = 0;
+int pinState = 0, pinPrevState = 0;
+
 
 /**
  * @brief Interrupt Service Routine for LETIMER0.
@@ -71,37 +81,6 @@ void LETIMER0_IRQHandler(void)
     CORE_EXIT_CRITICAL(); // Exit the critical section, allowing other interrupts to be processed.
 } // LETIMER0_IRQHandler
 
-/**
- * @brief Interrupt Service Routine (ISR) for I2C0.
- *
- * This function serves as the ISR for I2C0 interrupts. It handles the I2C communication by calling the
- * I2C_Transfer function to process ongoing data transfers. Upon successful completion of a transfer,
- * it sets an I2C event in the scheduler to notify the system of the completed transfer. If an error occurs
- * during the transfer, it logs the error with the specific error code.
- * only performs actions related to the I2C transfer status.
- *
- */
-void I2C0_IRQHandler(void)
-{
-
-    // Call the I2C_Transfer function to handle the I2C interrupt and move the state machine forward.
-    I2C_TransferReturn_TypeDef transferStatus = I2C_Transfer(I2C0);
-
-    // Check if the I2C transfer is complete.
-    if (transferStatus == i2cTransferDone)
-    {
-        // If the transfer is done, set the corresponding I2C event in the scheduler.
-        schedularSetEventI2C();
-    }
-    else if (transferStatus < 0)
-    {
-        // If an error occurred (transfer status is negative), log the error with its code.
-        LOG_ERROR("Error Occurred: %d\n", transferStatus);
-    }
-
-} // LETIMER0_IRQHandler
-
-
 
 /**
  * Handles GPIO interrupts for odd-numbered GPIO pins.
@@ -113,17 +92,33 @@ void I2C0_IRQHandler(void)
  */
 void GPIO_ODD_IRQHandler(void)
 {
-    uint32_t flags = GPIO_IntGetEnabled();
-    GPIO_IntClear(flags);
+  uint32_t flags = GPIO_IntGetEnabled();
+      GPIO_IntClear(flags);
 
-    // during reading for client
-    if (flags & (1 << SW1_pin))
-    {
-        // sw1 pressed
-        schedularSetEventPB1();
-    }
+      // during reading for client
+      if (flags & (1 << SW1_pin))
+      {
+          // sw1 pressed
+          schedularSetEventPB1();
 
-    // GPIO_PinInGet
+      }
+       if (flags & (1 << ROTARY_ENCODER_B_PIN))
+      {
+          pinState = GPIO_PinInGet(ROTARY_ENCODER_PORT,ROTARY_ENCODER_A_PIN);
+          if(pinPrevState == 0 && pinState == 1){
+              if(GPIO_PinInGet(ROTARY_ENCODER_PORT,ROTARY_ENCODER_B_PIN)){
+                  counter++;
+              }
+              else{
+                  counter--;
+              }
+          }
+          pinPrevState = pinState;
+          schedularSetEventEncoder();
+
+
+      }
+      // GPIO_PinInGet
 }
 
 
@@ -145,9 +140,8 @@ void GPIO_EVEN_IRQHandler(void)
     if (flags & (1 << SW0_pin))
     {
         // sw0 pressed
-        schedularSetEventPB0();
+        // schedularSetEventPB0();
     }
-
 }
 
 

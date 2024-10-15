@@ -42,7 +42,7 @@
 #define INTNO0 0 // from 0,1,2,3
 #define INTNO1 1 // from 4,5,6,7 // odd
 #define INTNO2 2 // from 8,9,10,11
-#define INTNO3 3 // from12,13,14,15
+#define INTNO3 3 // from 12,13,14,15
 
 #define LED_port (gpioPortF)
 #define LED0_pin (4)
@@ -51,6 +51,14 @@
 #define SW_PORT (gpioPortF)
 #define SW0_pin (6)
 #define SW1_pin (7)
+
+#define SENSOR_ENABLE_PORT (gpioPortD)
+#define SENSOR_ENABLE (15)
+#define DISP_EXTCOMIN_PIN (13)
+
+#define ROTARY_ENCODER_PORT (gpioPortD)
+#define ROTARY_ENCODER_A_PIN (10)
+#define ROTARY_ENCODER_B_PIN (11)
 
 #define SENSOR_ENABLE_PORT (gpioPortD)
 #define SENSOR_ENABLE (15)
@@ -73,16 +81,14 @@ void gpioInit()
   // GPIO_DriveStrengthSet(LED_port, gpioDriveStrengthStrongAlternateStrong); // Strong, 10mA
   GPIO_DriveStrengthSet(LED_port, gpioDriveStrengthWeakAlternateWeak); // Weak, 1mA
 
-  // Set the 2 GPIOs mode of operation, port, pin, mode ,dout set filter for gpio
-  GPIO_PinModeSet(LED_port, LED0_pin, gpioModePushPull, false);
-  GPIO_PinModeSet(LED_port, LED1_pin, gpioModePushPull, false);
+  // GPIO_DriveStrengthSet(LED_port, gpioDriveStrengthWeakAlternateWeak);            // Weak, 1mA
+  GPIO_DriveStrengthSet(ROTARY_ENCODER_PORT, gpioDriveStrengthWeakAlternateWeak); // Weak, 1mA
+  GPIO_DriveStrengthSet(SENSOR_ENABLE_PORT, gpioDriveStrengthWeakAlternateWeak);
 
-  GPIO_PinModeSet(SW_PORT, SW0_pin, gpioModeInputPullFilter, true);
-  GPIO_PinModeSet(SW_PORT, SW1_pin, gpioModeInputPullFilter, true);
+  GPIO_PinModeSet(ROTARY_ENCODER_PORT, ROTARY_ENCODER_A_PIN, gpioModeInput, true);
+  GPIO_PinModeSet(ROTARY_ENCODER_PORT, ROTARY_ENCODER_B_PIN, gpioModeInput, true);
 
-  // port, pin, intNo, risingEdge, FallingEdge, enable
-  GPIO_ExtIntConfig(SW_PORT, SW0_pin, SW0_pin, 1, 1, true);
-  GPIO_ExtIntConfig(SW_PORT, SW1_pin, SW1_pin, 1, 1, true);
+  GPIO_ExtIntConfig(ROTARY_ENCODER_PORT, ROTARY_ENCODER_B_PIN, ROTARY_ENCODER_B_PIN, 1, 0, true);
 
   GPIO_DriveStrengthSet(SENSOR_ENABLE_PORT, gpioDriveStrengthWeakAlternateWeak);
   GPIO_PinModeSet(SENSOR_ENABLE_PORT, SENSOR_ENABLE, gpioModePushPull, false);

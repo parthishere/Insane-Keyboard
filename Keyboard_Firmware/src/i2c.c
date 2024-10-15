@@ -25,6 +25,21 @@
 #define INCLUDE_LOG_DEBUG 1
 #include "log.h" // Includes the logging header for debug messages
 
+
+
+#define TCA6408_ADDR1                           0x20
+#define TCA6408_ADDR2                           0x21
+
+#define TCA6408_INPUT                           0x00
+#define TCA6408_OUTPUT                          0x01
+#define TCA6408_POLARITY_INVERSION              0x02
+#define TCA6408_CONFIGURATION                   0x03
+
+
+
+
+
+
 // SI7021 sensor I2C address and command definitions
 #define SI7021_I2C_ADDRESS 0x40 // I2C address of the SI7021 sensor
 #define TEMPRETURE_COMMAND 0xF3 // Command to read temperature
@@ -55,7 +70,34 @@ I2C_TransferReturn_TypeDef I2C_TransferStatus; // Holds the status of the I2C tr
 uint8_t readData[2];                           // Buffer to hold raw temperature data read from the sensor
 int32_t temperature;                           // Variable to hold the calculated temperature
 
+
+
+// SI7021 sensor I2C address and command definitions
+#define SI7021_I2C_ADDRESS 0x40 // I2C address of the SI7021 sensor
+#define TEMPRETURE_COMMAND 0xF3 // Command to read temperature
+
+// Timing delays for sensor communication
+#define INITIAL_DELAY 80000  // Initial delay in microseconds before reading temperature
+#define TRANSFER_DELAY 10800 // Delay in microseconds after initiating the temperature read command
+
+// I2C SCL and SDA pin definitions and their alternate locations
+#define SCL_PIN 10
+#define SDA_PIN 11
+#define PORT_ALTERNATE_LOCATION_SCL 14
+#define PORT_ALTERNATE_LOCATION_SDA 16
+
+#define SHIFT_DATA_EIGHT_BIT(x) (uint32_t)((uint32_t)x << 8)
+#define MASK_TEMPRATURE_DATA_BITS(x) (uint32_t)((uint32_t)x & 0xfc)
+#define CONVERT_TEMP_TO_C(x) (int32_t)((((x * 21965L) >> 13) - 46850) / 1000);
+
+/* Global variables */
+uint8_t cmd_data = TEMPRETURE_COMMAND;         // Command data for reading temperature
+I2C_TransferReturn_TypeDef I2C_TransferStatus; // Holds the status of the I2C transfer
+uint8_t readData[2];                           // Buffer to hold raw temperature data read from the sensor
+int32_t temprature;                            // Variable to hold the calculated temperature
+
 I2C_TransferSeq_TypeDef I2C_TransferSeq; // I2C transfer sequence structure
+
 
 /**
  * @brief Initializes the I2C interface for communication.
@@ -85,22 +127,18 @@ void init_I2C()
 }
 
 /**
- * @brief Waits for the sensor to be ready to send temperature data.
- * Enables the sensor and waits for a specified delay to ensure the sensor is ready for data transmission.
+ * @brief Reads temperature data from the SI7021 sensor.
+ *
+ * This function sends a command to the SI7021 temperature sensor to initiate a temperature measurement,
+ * then reads the measurement result from the sensor over I2C. The raw sensor data is processed to calculate
+ * the temperature value, which is then returned.
+ *
+ * @return uint16_t The calculated temperature value from the sensor data.
  */
-void read_SI7021_timer_wait()
+uint16_t read_SI7021()
 {
-
-  timerWaitUs_irq(INITIAL_DELAY); // Wait for the sensor to be ready
-  return;
-}
-
-/**
- * @brief Initiates a temperature measurement command to the SI7021 sensor.
- * Sends a command over I2C to the SI7021 sensor to start a temperature measurement.
- */
-void read_SI7021_write_initiate()
-{
+  //sensor_Enable();            // Enable the sensor pin
+  timerWaitUs_polled(INITIAL_DELAY); // Wait for the sensor to be ready
 
   // Setup I2C transfer for writing the read temperature command to the sensor
   I2C_TransferSeq.addr = SI7021_I2C_ADDRESS << 1; // Set the sensor's I2C address (left shift for write operation)
@@ -108,24 +146,16 @@ void read_SI7021_write_initiate()
   I2C_TransferSeq.buf[0].data = &cmd_data;        // Point to the command data
   I2C_TransferSeq.buf[0].len = sizeof(cmd_data);  // Set the command data length
 
-  NVIC_EnableIRQ(I2C0_IRQn);
-
   // Perform the I2C write operation
-  I2C_TransferStatus = I2C_TransferInit(I2C0, &I2C_TransferSeq);
+  I2C_TransferStatus = I2CSPM_Transfer(I2C0, &I2C_TransferSeq);
+  timerWaitUs_polled(TRANSFER_DELAY); // Wait after sending the read command
 
-  // Check for errors in initiating the I2C transfer
-  if (I2C_TransferStatus < 0)
+  // Check if the write operation was successful
+  if (I2C_TransferStatus != i2cTransferDone)
   {
-    LOG_ERROR("I2C_TransferInit() Write error = %d", I2C_TransferStatus);
+    LOG_ERROR("Failed to write %u bytes when writing to Register, return value was %d", sizeof(cmd_data), I2C_TransferStatus);
+    return 0; // Return 0 if the operation failed
   }
-}
-
-/**
- * @brief Reads the measured temperature from the SI7021 sensor.
- * Initiates an I2C read operation to retrieve the temperature measurement from the sensor.
- */
-void read_SI7021_MEASUREMENT()
-{
 
   // Setup I2C transfer for reading the temperature data from the sensor
   I2C_TransferSeq.addr = SI7021_I2C_ADDRESS << 1; // Set the sensor's I2C address (left shift for read operation)
@@ -133,171 +163,45 @@ void read_SI7021_MEASUREMENT()
   I2C_TransferSeq.buf[0].data = readData;         // Point to the buffer to store read data
   I2C_TransferSeq.buf[0].len = 2;                 // Expect to read 2 bytes of data
 
-  NVIC_EnableIRQ(I2C0_IRQn);
   // Perform the I2C read operation
-  I2C_TransferStatus = I2C_TransferInit(I2C0, &I2C_TransferSeq);
+  I2C_TransferStatus = I2CSPM_Transfer(I2C0, &I2C_TransferSeq);
 
-  // Check for errors in initiating the I2C transfer
-  if (I2C_TransferStatus < 0)
+  // Check if the read operation was successful
+  if (I2C_TransferStatus != i2cTransferDone)
   {
-    LOG_ERROR("I2C_TransferInit() Write error = %d", I2C_TransferStatus);
+    LOG_ERROR("Failed to write %u bytes while reading register, return value was %d", sizeof(cmd_data), I2C_TransferStatus);
+    return 0; // Return 0 if the operation failed
   }
-}
-
-/**
- * @brief Reads temperature data from the SI7021 sensor, formats it for BLE transmission,
- * and manages the indication sending and queuing based on the BLE connection state.
- *
- * The function reads raw temperature data from the SI7021 sensor, converts it to Celsius,
- * formats it according to the IEEE 11073-20601 FLOAT-Type format for BLE transmission,
- * writes the formatted data to the local GATT database, and manages the sending of
- * indications or queuing them if another indication is currently in flight.
- *
- * @return uint16_t The temperature in Celsius.
- */
-uint16_t read_SI7021()
-{
-
-  uint8_t htm_temperature_buffer[TEMPERATURE_BUFFER_SIZE]; // Buffer for holding the temperature data in a format suitable for BLE transmission
-  uint8_t *p = htm_temperature_buffer;                     // Pointer for buffer manipulation
-  uint32_t htm_temperature_flt;                            // Variable to hold the formatted temperature data
-  bool status = false;
-
-  uint8_t flags = 0x00;         // Flags for the BLE temperature measurement characteristic
-  UINT8_TO_BITSTREAM(p, flags); // Insert the flags into the buffer
-
-  ble_data_struct_t *ble_data = getBleDataPtr();
 
   // Calculate temperature from the raw sensor data
-  temperature = SHIFT_DATA_EIGHT_BIT(readData[0]) + MASK_TEMPRATURE_DATA_BITS(readData[1]);
-  temperature = CONVERT_TEMP_TO_C(temperature);
+  temprature = SHIFT_DATA_EIGHT_BIT(readData[0]) + MASK_TEMPRATURE_DATA_BITS(readData[1]);
+  temprature = CONVERT_TEMP_TO_C(temprature);
 
-  // Convert temperature to IEEE 11073-20601 FLOAT-Type
-  htm_temperature_flt = INT32_TO_FLOAT((int32_t)(temperature * MANTISSA_MULTIPLIER), EXPONENT); // Convert to FLOAT-Type
-  UINT32_TO_BITSTREAM(p, htm_temperature_flt);
+  LOG_INFO("Got the temprature from Si7021 sensor => %d Celsius\n", temprature); // Log the temperature data
 
-  // Log the temperature
-  PRINT_LOG("Temperature from Si7021 => %d C\n", temperature); // Log the temperature data
-
-  // Write to server's gattdb
-  sl_status_t sc = sl_bt_gatt_server_write_attribute_value(
-      gattdb_report_map, // handle from gatt_db.h
-      0,                              // offset
-      TEMPERATURE_BUFFER_SIZE,        // length
-      &htm_temperature_buffer[0]      // in IEEE-11073 format
-  );
-  // Check for errors in writing to the GATT database
-  if (sc != SL_STATUS_OK)
-  {
-//    LOG_ERROR("Failed to write to local db. Status: 0x%04x", sc);
-  }
-
-  // Check if it's appropriate to send an indication or queue it
-  if (!ble_data->indication_in_flight)
-  {
-
-    // Attempt to send or queue the temperature indication
-    attemptToSendOrQueueIndication(htm_temperature_buffer, false);
-  }
-  else
-  {
-    // Queue the temperature indication if another indication is in flight
-    status = write_queue(gattdb_report_map, TEMPERATURE_BUFFER_SIZE, htm_temperature_buffer);
-    // Check for errors in queuing the indication
-    if (status)
-    {
-      LOG_ERROR("Queue Full and Indication in Flight, Discarding HTM Reading !\n\r");
-      return 0;
-    }
-  }
-
-  return (temperature);
+  //sensor_Disable();    // Disable the sensor
+  return (temprature); // Return the calculated temperature
 }
 
-/**
- * Attempts to send a temperature/button indication immediately if possible.
- * If an indication is already in-flight, or the queue is not empty, the temperature data
- * is queued for later transmission.
- *
- * @param[in] htm_temperature_buffer The buffer containing the temperature data formatted for BLE transmission.
- * @param[in] is_button is indication is for button?.
- */
-void attemptToSendOrQueueIndication(uint8_t *htm_temperature_buffer, bool is_button)
+
+
+void io_expander_readByte(void)
 {
-  // Access shared BLE data structure to manage indication state and connection details
-  ble_data_struct_t *ble_data = getBleDataPtr();
+  cmd_data = TCA6408_INPUT;
+  // Setup I2C transfer for writing the read temperature command to the sensor
+  I2C_TransferSeq.addr = TCA6408_ADDR1 << 1; // Set the sensor's I2C address (left shift for write operation)
+  I2C_TransferSeq.flags = I2C_FLAG_WRITE_READ;         // Indicate that this is a write operation
+  I2C_TransferSeq.buf[0].data = &cmd_data;        // Point to the command data
+  I2C_TransferSeq.buf[0].len = sizeof(cmd_data);  // Set the command data length
 
-  // Check if an indication is already in flight or if there are items in the queue
-  if (!ble_data->indication_in_flight && get_queue_depth() == 0)
+  I2C_TransferStatus = I2CSPM_Transfer(I2C0, &I2C_TransferSeq);
+  if (I2C_TransferStatus != i2cTransferDone)
   {
-    // No indications in flight and queue is empty, proceed to send immediately
-    if (!is_button && ble_data->ok_to_send_htm_indications)
-    {
-      // Send temperature indication if this is not for a button
-      send_HTM_Indication(htm_temperature_buffer, TEMPERATURE_BUFFER_SIZE);
-    }
-    else if (ble_data->ok_to_send_button_indications)
-    {
-      // Send button indication if allowed and this is for a button
-      send_Button_Indication(&ble_data->buttonState);
-    }
+    LOG_ERROR("Failed to write %u bytes when writing to Register, return value was %d", sizeof(cmd_data), I2C_TransferStatus);
+    return 0; // Return 0 if the operation failed
   }
-  else
-  {
-    // Either an indication is in flight or the queue is not empty, attempt to enqueue the data
-    bool status;
-    if (is_button && ble_data->ok_to_send_button_indications)
-    {
-      // Attempt to enqueue button state indication
-      status = write_queue(gattdb_report_map, 1, &ble_data->buttonState);
-    }
-    else
-    {
-      // Attempt to enqueue temperature data for later transmission
-      status = write_queue(gattdb_report_map, TEMPERATURE_BUFFER_SIZE, htm_temperature_buffer);
-    }
 
-    // Check if the queue operation was unsuccessful
-    if (status)
-    {
-      LOG_ERROR("Failed to queue indication. Queue might be full.\n\r");
-    }
-  }
+  LOG_INFO("!! IO expander read sucessfull, data : %d len %d \n\r", I2C_TransferSeq.buf[1].data, I2C_TransferSeq.buf[1].data);
+
 }
 
-/**
- * Attempts to send the next queued indication for either temperature data or button state. This function is called
- * when the device is ready to send another indication, typically after a previous indication has been sent and
- * acknowledged, or when the device first becomes ready to send indications after a busy period.
- *
- * The function checks the queue for any pending indications. If an indication is found, it determines the type based
- * on the characteristic handle and attempts to send the indication using the appropriate function. This ensures
- * that indications are sent in the order they were queued, maintaining the integrity of the transmitted data.
- */
-void send_from_queue()
-{
-  // Access shared BLE data structure
-  ble_data_struct_t *ble_data = getBleDataPtr();
-  uint16_t handle;       // Characteristic handle for the queued indication
-  uint32_t bufferlength; // Length of the indication data
-  uint8_t buffer[5];     // Buffer to hold the indication data
-
-  // Attempt to read the next indication from the queue
-  bool status = read_queue(&handle, &bufferlength, buffer);
-
-  // Check if the queue read was unsuccessful (no data to send)
-  if (!status)
-  {
-    // Determine the type of indication to send based on the characteristic handle
-    if (handle == gattdb_report_map && ble_data->ok_to_send_button_indications)
-    {
-      // Send button indication if applicable
-      send_Button_Indication(buffer);
-    }
-    else if (handle == gattdb_report_map && ble_data->ok_to_send_htm_indications)
-    {
-      // Send temperature indication if applicable
-      send_HTM_Indication(buffer, bufferlength);
-    }
-  }
-}
