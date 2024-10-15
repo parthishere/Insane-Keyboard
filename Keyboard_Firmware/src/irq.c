@@ -92,23 +92,24 @@ void GPIO_ODD_IRQHandler(void)
       GPIO_IntClear(flags);
 
       // during reading for client
-      if (flags & (1 << SW1_pin))
+      if (flags & (1 << ROTERY_ENCODER_SW_pin))
       {
+          LOG_INFO("Encoder Switch pressed !");
           // sw1 pressed
-          schedularSetEventPB1();
+//          schedularSetEventPB1();
 
       }
        if (flags & (1 << ROTARY_ENCODER_B_pin))
       {
-          pinState = GPIO_PinInGet(ROTARY_ENCODER_PORT,ROTARY_ENCODER_A_pin);
+          pinState = GPIO_PinInGet(ROTARY_ENCODER_port,ROTARY_ENCODER_A_pin);
           if(pinPrevState == 0 && pinState == 1){
-              if(GPIO_PinInGet(ROTARY_ENCODER_PORT,ROTARY_ENCODER_B_pin)){
+              if(GPIO_PinInGet(ROTARY_ENCODER_port,ROTARY_ENCODER_B_pin)){
                   counter++;
-                  LOG_INFO("Encoder Value: %d",counter);
+                  LOG_INFO("Encoder Value Increase: %d\n",counter);
               }
               else{
                   counter--;
-                  LOG_INFO("Encoder Value: %d",counter);
+                  LOG_INFO("Encoder Value Decrease: %d\n",counter);
               }
           }
           pinPrevState = pinState;
@@ -134,10 +135,12 @@ void GPIO_EVEN_IRQHandler(void)
     GPIO_IntClear(flags);
 
     // during pairing and bonding confirmation for server
-    if (flags & (1 << SW0_pin))
+    if (flags & (1 << ROTERY_ENCODER_SW_pin))
     {
-        // sw0 pressed
-        // schedularSetEventPB0();
+        LOG_INFO("Encoder Switch pressed even !\n");
+        // sw1 pressed
+//          schedularSetEventPB1();
+
     }
 }
 

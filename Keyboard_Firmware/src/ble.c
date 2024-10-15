@@ -635,9 +635,9 @@ void printBuffer(void)
         for (int j = 0; j < MAX_BUFFER_LENGTH; j++)
         {
             // Printing buffer elements
-            printf("%d ", my_queue[i].buffer[j]);
+            LOG_INFO("%d ", my_queue[i].buffer[j]);
         }
-        printf("\n");
+        LOG_INFO("\n");
     }
 }
 

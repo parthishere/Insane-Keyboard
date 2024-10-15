@@ -30,8 +30,8 @@
 #define DC_Pin 3
 #define DISPLAY_DC     DC_GPIO_Port, DC_Pin   
 
-#define BUSY_GPIO_Port gpioPortD
-#define BUSY_Pin 12
+#define BUSY_GPIO_Port gpioPortA
+#define BUSY_Pin 1
 #define DISPLAY_BUSY   BUSY_GPIO_Port, BUSY_Pin
 
 

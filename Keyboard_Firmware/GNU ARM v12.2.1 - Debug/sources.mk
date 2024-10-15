@@ -47,4 +47,7 @@ gecko_sdk_4.4.4/protocol/bluetooth/src \
 gecko_sdk_4.4.4/util/silicon_labs/silabs_core/memory_manager \
 gecko_sdk_4.4.4/util/third_party/mbedtls/library \
 src \
+src/Fonts \
+src/GUI \
+src/e-ink \
 

@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "log.h": "c",
-        "stdint.h": "c"
+        "stdint.h": "c",
+        "epd_1in54.h": "c",
+        "fonts.h": "c"
     }
 }
