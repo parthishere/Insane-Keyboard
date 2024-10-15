@@ -361,8 +361,6 @@ void handle_ble_event(sl_bt_msg_t *evt)
         ble_data.ok_to_send_button_indications = false;
         ble_data.bonding = false;
 
-        gpioLed0SetOff();
-        gpioLed1SetOff();
 
 
         // GATT DB server
@@ -438,11 +436,11 @@ void handle_ble_event(sl_bt_msg_t *evt)
             // If the device is already bonded and not currently bonding, handle the button state indication.
             if (ble_data.bonded && !ble_data.bonding && ble_data.ok_to_send_button_indications)
             {
-                attemptToSendOrQueueIndication(NULL, true);
+                //attemptToSendOrQueueIndication(NULL, true);
             }
         }
 
-        else if (((evt->data.evt_system_external_signal.extsignals - evtBTN1) == 0x00) && !DEVICE_IS_BLE_SERVER)
+        else if (((evt->data.evt_system_external_signal.extsignals - evtBTN1) == 0x00))
         {
             if (!GPIO_PinInGet(SW_PORT, SW0_pin) && !GPIO_PinInGet(SW_PORT, SW1_pin) && !ble_data.indication_in_flight)
             {
@@ -553,7 +551,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
             ble_data.indication_in_flight = false;
             // If there are queued indications, attempt to send the next one.
 
-            send_from_queue();
+            // send_from_queue();
         }
 
 //        // Check if the event is related to the temperature measurement characteristic by comparing the characteristic handle.

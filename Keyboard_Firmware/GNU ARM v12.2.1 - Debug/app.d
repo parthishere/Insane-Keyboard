@@ -104,7 +104,7 @@ app.o: ../app.c \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_i2c.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/driver/i2cspm/inc/sl_i2cspm.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_gpio.h \
- ../src/gpio.h ../src/timers.h \
+ ../src/gpio.h ../src/timer.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_letimer.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_core.h \
  ../src/scheduler.h ../src/i2c.h ../src/ble.h ../src/ble_device_type.h \
@@ -112,7 +112,7 @@ app.o: ../app.c \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emdrv/spidrv/inc/spidrv.h \
  /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/spidrv_config.h \
  /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sl_spidrv_instances.h \
- ../src/timers.h ../src/ble.h ../src/ble_device_type.h ../src/irq.h \
+ ../src/timer.h ../src/ble.h ../src/ble_device_type.h ../src/irq.h \
  ../src/log.h ../src/irq.h
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/toolchain/inc/sl_gcc_preinclude.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_common.h:
@@ -223,7 +223,7 @@ app.o: ../app.c \
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/driver/i2cspm/inc/sl_i2cspm.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_gpio.h:
 ../src/gpio.h:
-../src/timers.h:
+../src/timer.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_letimer.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_core.h:
 ../src/scheduler.h:
@@ -234,7 +234,7 @@ app.o: ../app.c \
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emdrv/spidrv/inc/spidrv.h:
 /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/spidrv_config.h:
 /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sl_spidrv_instances.h:
-../src/timers.h:
+../src/timer.h:
 ../src/ble.h:
 ../src/ble_device_type.h:
 ../src/irq.h:

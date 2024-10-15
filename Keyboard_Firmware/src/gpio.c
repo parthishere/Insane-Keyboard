@@ -27,7 +27,7 @@ void gpioInit()
 
   // Set the port's drive strength. In this MCU implementation, all GPIO cells
   // in a "Port" share the same drive strength setting.
-  GPIO_DriveStrengthSet(ROTARY_ENCODER_PORT, gpioDriveStrengthWeakAlternateWeak); // Weak, 1mA
+  GPIO_DriveStrengthSet(ROTARY_ENCODER_port, gpioDriveStrengthWeakAlternateWeak); // Weak, 1mA
   GPIO_DriveStrengthSet(EXPANDER_RESET_port, gpioDriveStrengthWeakAlternateWeak);
   GPIO_DriveStrengthSet(RST_GPIO_Port, gpioDriveStrengthWeakAlternateWeak);
   GPIO_DriveStrengthSet(DC_GPIO_Port, gpioDriveStrengthWeakAlternateWeak);
@@ -45,8 +45,8 @@ void gpioInit()
   GPIO_PinModeSet(TEMP_ENABLE, gpioModePushPull, false); // output
   GPIO_PinModeSet(DISPLAY_ENABLE, gpioModePushPull, false); // output
 
-  GPIO_ExtIntConfig(ROTARY_ENCODER_PORT, ROTARY_ENCODER_B_PIN, ROTARY_ENCODER_B_PIN, 1, 0, true);
-  GPIO_ExtIntConfig(ROTARY_ENCODER_PORT, ROTARY_ENCODER_B_PIN, ROTARY_ENCODER_B_PIN, 1, 0, true);
+  GPIO_ExtIntConfig(ROTARY_ENCODER_port, ROTARY_ENCODER_B_pin, ROTARY_ENCODER_B_pin, 1, 0, true);
+  GPIO_ExtIntConfig(ROTARY_ENCODER_port, ROTARY_ENCODER_B_pin, ROTARY_ENCODER_B_pin, 1, 0, true);
 
   NVIC_ClearPendingIRQ(GPIO_ODD_IRQn); // Clear pending interrupts for ODD IRQs.
   NVIC_EnableIRQ(GPIO_ODD_IRQn);       // Enable NVIC interrupts for ODD IRQs.
@@ -59,7 +59,7 @@ void gpioInit()
 
 
 uint32_t gpio_Read_Busy(void){
-  GPIO_PinInGet(EINK_BUSY);
+  return GPIO_PinInGet(EINK_BUSY);
 }
 
 /*
@@ -77,7 +77,7 @@ void gpio_Set_Display_Reset(bool on)
   }
   else
   {
-    GPIO_PinOutClear(EINK_RST) // Turn the display COM pin off
+    GPIO_PinOutClear(EINK_RST); // Turn the display COM pin off
   }
 }
 
@@ -101,10 +101,10 @@ void gpio_Set_Display_DC(bool on)
  */
 uint32_t enable_Temperature_Sensor(bool on){
   if(on){
-    GPIO_PinOutSet(SENSOR_ENABLE_PORT, SENSOR_ENABLE);
+    GPIO_PinOutSet(TEMP_ENABLE);
   }
   else{
-    GPIO_PinOutClear(SENSOR_ENABLE_PORT, SENSOR_ENABLE);
+    GPIO_PinOutClear(TEMP_ENABLE);
   }
 }
 
@@ -114,9 +114,9 @@ uint32_t enable_Temperature_Sensor(bool on){
  */
 uint32_t enable_Display(bool on){
   if(on){
-    GPIO_PinOutSet(SENSOR_ENABLE_PORT, SENSOR_ENABLE);
+    GPIO_PinOutSet(DISPLAY_ENABLE);
   }
   else{
-    GPIO_PinOutClear(SENSOR_ENABLE_PORT, SENSOR_ENABLE);
+    GPIO_PinOutClear(DISPLAY_ENABLE);
   }
 }

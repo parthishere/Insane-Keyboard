@@ -24,7 +24,7 @@
 #include "src/display.h"
 #include "src/i2c.h"
 #include "src/spi.h"
-#include "src/timers.h"
+#include "src/timer.h"
 
 
 // Students:

@@ -21,7 +21,7 @@
  *
  */
 
-#include "timers.h" // Include the header file for timer-related functions and definitions.
+#include "timer.h" // Include the header file for timer-related functions and definitions.
 
 // Include logging specifically for this .c file
 #define INCLUDE_LOG_DEBUG 1

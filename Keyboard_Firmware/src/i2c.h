@@ -26,7 +26,7 @@
 #include "em_i2c.h"    // I2C peripheral library, provides low-level functions to interact with I2C hardware
 #include "sl_i2cspm.h" // Simplified I2C SPM (Signal Path Module) library for easier I2C configuration
 #include "gpio.h"      // General Purpose Input/Output header, for configuring I2C pins
-#include "timers.h"    // Timers header
+#include "timer.h"    // Timers header
 #include "scheduler.h"
 #include "ble.h"
 #include "sl_status.h"

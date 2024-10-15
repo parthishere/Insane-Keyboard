@@ -64,14 +64,6 @@
 #define MANTISSA_MULTIPLIER 1000
 #define EXPONENT -3
 
-/* Global variables */
-uint8_t cmd_data = TEMPRETURE_COMMAND;         // Command data for reading temperature
-I2C_TransferReturn_TypeDef I2C_TransferStatus; // Holds the status of the I2C transfer
-uint8_t readData[2];                           // Buffer to hold raw temperature data read from the sensor
-int32_t temperature;                           // Variable to hold the calculated temperature
-
-
-
 // SI7021 sensor I2C address and command definitions
 #define SI7021_I2C_ADDRESS 0x40 // I2C address of the SI7021 sensor
 #define TEMPRETURE_COMMAND 0xF3 // Command to read temperature

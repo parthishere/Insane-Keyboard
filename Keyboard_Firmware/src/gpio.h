@@ -46,11 +46,11 @@
 
 #define TEMP_ENABLE_port (gpioPortD)
 #define TEMP_ENABLE_pin (15)
-#define TEMP_ENABLE TEMP_ENABLE_port TEMP_ENABLE_pin
+#define TEMP_ENABLE TEMP_ENABLE_port, TEMP_ENABLE_pin
 
 #define DISPLAY_ENABLE_port (gpioPortD)
 #define DISPLAY_ENABLE_pin (15)
-#define DISPLAY_ENABLE DISPLAY_ENABLE_port DISPLAY_ENABLE_pin
+#define DISPLAY_ENABLE DISPLAY_ENABLE_port, DISPLAY_ENABLE_pin
 
 
 

@@ -114,7 +114,6 @@ void GPIO_ODD_IRQHandler(void)
               }
           }
           pinPrevState = pinState;
-          schedularSetEventEncoder();
 
 
       }
