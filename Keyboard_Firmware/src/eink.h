@@ -36,7 +36,7 @@ typedef enum
 /**
  * delay x ms
 **/
-#define EINK_Delay_ms(xms) timerWaitUs_polled(xms);
+#define EINK_Delay_ms(xms) timerWaitUs_polled(xms*1000);
 
 /*
 SPI data read and write

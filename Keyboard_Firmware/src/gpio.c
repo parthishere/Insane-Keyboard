@@ -39,7 +39,6 @@ void gpioInit()
   GPIO_PinModeSet(DISPLAY_BUSY, gpioModeInput, true);
   // GPIO_PinModeSet(ROTARY_ENCODER_SW, gpioModeInput, true);
 
-  GPIO_PinModeSet(EXPANDER_RESET, gpioModePushPull, false); // output
 
   GPIO_PinModeSet(DISPLAY_RST, gpioModePushPull, false); // output
   GPIO_PinModeSet(DISPLAY_DC, gpioModePushPull, false); // output

@@ -148,7 +148,7 @@ uint16_t read_SI7021()
 {
   //sensor_Enable();            // Enable the sensor pin
   timerWaitUs_polled(INITIAL_DELAY); // Wait for the sensor to be ready
-
+  cmd_data = TEMPRETURE_COMMAND;
   // Setup I2C transfer for writing the read temperature command to the sensor
   I2C_TransferSeq.addr = SI7021_I2C_ADDRESS << 1; // Set the sensor's I2C address (left shift for write operation)
   I2C_TransferSeq.flags = I2C_FLAG_WRITE;         // Indicate that this is a write operation

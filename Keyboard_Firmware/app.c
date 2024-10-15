@@ -163,9 +163,9 @@ SL_WEAK void app_init(void)
 SL_WEAK void app_process_action(void)
 {
   while(1){
-//      read_SI7021();
+      read_SI7021();
      io_expander_readByte();
-//      display_test();
+      display_test();
   }
 } // app_process_action()
 

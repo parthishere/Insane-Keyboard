@@ -10,9 +10,6 @@
 
 
 
-#define EXPANDER_RESET_port (gpioPortB)
-#define EXPANDER_RESET_pin (12)
-#define EXPANDER_RESET EXPANDER_RESET_port, EXPANDER_RESET_pin
 
 #define EXPANDER_INT_port (gpioPortA)
 #define EXPANDER_INT_0_pin 4
