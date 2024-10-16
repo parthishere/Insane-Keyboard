@@ -164,7 +164,7 @@ SL_WEAK void app_process_action(void)
   while(1){
       read_SI7021();
      io_expander_readByte();
-     EPD_test();
+     // EPD_test();
 
 
   

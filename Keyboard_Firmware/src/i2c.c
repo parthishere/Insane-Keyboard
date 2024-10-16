@@ -166,6 +166,8 @@ uint16_t read_SI7021()
     return 0; // Return 0 if the operation failed
   }
 
+  readData[0] = 0;
+  readData[1] = 1;
   // Setup I2C transfer for reading the temperature data from the sensor
   I2C_TransferSeq.addr = SI7021_I2C_ADDRESS << 1; // Set the sensor's I2C address (left shift for read operation)
   I2C_TransferSeq.flags = I2C_FLAG_READ;          // Indicate that this is a read operation
@@ -203,12 +205,16 @@ int io_expander_readByte(void)
   I2C_TransferSeq.buf[0].data = &cmd_data;        // Point to the command data
   I2C_TransferSeq.buf[0].len = sizeof(cmd_data);  // Set the command data length
 
+
   I2C_TransferStatus = I2CSPM_Transfer(I2C0, &I2C_TransferSeq);
   if (I2C_TransferStatus != i2cTransferDone)
   {
     LOG_ERROR("Failed to write %u bytes when writing to Register, return value was %d", sizeof(cmd_data), I2C_TransferStatus);
     return 0; // Return 0 if the operation failed
   }
+
+  readData[0] = 0;
+  readData[1] = 1;
 
   // Setup I2C transfer for writing the read temperature command to the sensor
   I2C_TransferSeq.addr = TCA6408_ADDR1 << 1; // Set the sensor's I2C address (left shift for write operation)
