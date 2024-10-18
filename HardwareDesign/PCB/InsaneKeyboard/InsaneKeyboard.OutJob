@@ -2,9 +2,9 @@
 Version=1.0
 
 [PublishSettings]
-OutputFilePath2=\\vmware-host\Shared Folders\home\All_data\university\Low_Power\Insane-Keyboard\HardwareDesign\PCB\InsaneKeyboard\.PDF
+OutputFilePath2=D:\Embedded Systems - MS\LowPowerEmbeddedSystems\Insane-Keyboard\HardwareDesign\PCB\InsaneKeyboard\.PDF
 ReleaseManaged2=0
-OutputBasePath2=\\vmware-host\Shared Folders\home\All_data\university\Low_Power\Insane-Keyboard\HardwareDesign\PCB\InsaneKeyboard\
+OutputBasePath2=D:\Embedded Systems - MS\LowPowerEmbeddedSystems\Insane-Keyboard\HardwareDesign\PCB\InsaneKeyboard\
 OutputPathMedia2=
 OutputPathMediaValue2=
 OutputPathOutputer2=[Output Type]
@@ -81,7 +81,7 @@ WmvVideoCodecName4=Windows Media Video V7
 WmvQuality4=80
 
 [GeneratedFilesSettings]
-RelativeOutputPath2=\\vmware-host\Shared Folders\home\All_data\university\Low_Power\Insane-Keyboard\HardwareDesign\PCB\InsaneKeyboard\.PDF
+RelativeOutputPath2=D:\Embedded Systems - MS\LowPowerEmbeddedSystems\Insane-Keyboard\HardwareDesign\PCB\InsaneKeyboard\.PDF
 OpenOutputs2=1
 RelativeOutputPath3=
 OpenOutputs3=1
@@ -140,7 +140,7 @@ OutputEnabled2_OutputMedium2=2
 OutputEnabled2_OutputMedium3=0
 OutputEnabled2_OutputMedium4=0
 OutputDefault2=0
-PageOptions2=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.24|XCorrection=1.00|YCorrection=1.00|PrintKind=0|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+PageOptions2=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.16|XCorrection=1.00|YCorrection=1.00|PrintKind=0|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
 Configuration2_Name1=OutputConfigurationParameter1
 Configuration2_Item1=DesignatorDisplayMode=Physical|PrintArea=DesignExtent|PrintAreaLowerLeftCornerX=0|PrintAreaLowerLeftCornerY=0|PrintAreaUpperRightCornerX=0|PrintAreaUpperRightCornerY=0|Record=PcbPrintView|DocumentPath=\\vmware-host\Shared Folders\home\All_data\university\Low_Power\Insane-Keyboard\HardwareDesign\PCB\InsaneKeyboard\InsaneKeyboard.PcbDoc
 Configuration2_Name2=OutputConfigurationParameter2
