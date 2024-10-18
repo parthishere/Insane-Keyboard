@@ -78,6 +78,9 @@ typedef struct
 // Macro for converting a 32-bit unsigned integer to a floating-point format.
 #define INT32_TO_FLOAT(m, e) ((int32_t)(((uint32_t)m) & 0x00FFFFFFU) | (((uint32_t)e) << 24))
 
+
+
+
 #define THERMOMETER_SERVICE_UUID \
     {                            \
         0x09, 0x18               \
@@ -105,12 +108,11 @@ typedef struct
     uint16_t thermometerCharacteristicHandle; // Characteristic handle for thermometer measurement.
     uint32_t buttonServiceHandle; // Service handle for the custom button service.
     uint32_t buttonCharacteristicHandle; // Characteristic handle for button state.
-    uint8_t buttonState;                // Current state of button PB0 (pressed or released).
+    // uint8_t buttonState;                // Current state of button PB0 (pressed or released).
     bool connection_open;               // True if there is an active BLE connection.
     bool bonded;                        // True if the device has successfully bonded with a client.
     bool bonding;                       // True if the device is currently in the process of bonding.
-    bool ok_to_send_htm_indications;    // True if it's permissible to send HTM indications.
-    bool ok_to_send_button_indications; // True if it's permissible to send button indications.
+    bool ok_to_send_report_notification; // True if it's permissible to send button notificaiton.
     bool indication_in_flight;          // True if an indication is currently being sent.
 } ble_data_struct_t;
 

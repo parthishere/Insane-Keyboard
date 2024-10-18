@@ -27,18 +27,14 @@
 #define INCLUDE_LOG_DEBUG 1
 #include "src/log.h"
 
-
 // Interval for log timing
 #define UF_TIME_MS 3000
 
-
 volatile uint32_t underflow_count = 0;
-
 
 volatile bool pin_a_detected_first = false, pin_b_detected_first = false;
 volatile int32_t counter = 0;
 int pinState = 0, pinPrevState = 0;
-
 
 /**
  * @brief Interrupt Service Routine for LETIMER0.
@@ -77,7 +73,6 @@ void LETIMER0_IRQHandler(void)
     CORE_EXIT_CRITICAL(); // Exit the critical section, allowing other interrupts to be processed.
 } // LETIMER0_IRQHandler
 
-
 /**
  * Handles GPIO interrupts for odd-numbered GPIO pins.
  * This interrupt service routine (ISR) is triggered by events on odd-numbered GPIO pins. It reads
@@ -88,38 +83,36 @@ void LETIMER0_IRQHandler(void)
  */
 void GPIO_ODD_IRQHandler(void)
 {
-  uint32_t flags = GPIO_IntGetEnabled();
-      GPIO_IntClear(flags);
+    uint32_t flags = GPIO_IntGetEnabled();
+    GPIO_IntClear(flags);
 
-      // during reading for client
-      if (flags & (1 << ROTERY_ENCODER_SW_pin))
-      {
-          LOG_INFO("Encoder Switch pressed !");
-          // sw1 pressed
-//          schedularSetEventPB1();
-
-      }
-       if (flags & (1 << ROTARY_ENCODER_B_pin))
-      {
-          pinState = GPIO_PinInGet(ROTARY_ENCODER_port,ROTARY_ENCODER_A_pin);
-          if(pinPrevState == 0 && pinState == 1){
-              if(GPIO_PinInGet(ROTARY_ENCODER_port,ROTARY_ENCODER_B_pin)){
-                  counter++;
-                  LOG_INFO("Encoder Value Increase: %d\n",counter);
-              }
-              else{
-                  counter--;
-                  LOG_INFO("Encoder Value Decrease: %d\n",counter);
-              }
-          }
-          pinPrevState = pinState;
-
-
-      }
-      // GPIO_PinInGet
+    // during reading for client
+    if (flags & (1 << ROTERY_ENCODER_SW_pin))
+    {
+        LOG_INFO("Encoder Switch pressed !");
+        // sw1 pressed
+        schedularSetEventPB1();
+    }
+    if (flags & (1 << ROTARY_ENCODER_B_pin))
+    {
+        pinState = GPIO_PinInGet(ROTARY_ENCODER_port, ROTARY_ENCODER_A_pin);
+        if (pinPrevState == 0 && pinState == 1)
+        {
+            if (GPIO_PinInGet(ROTARY_ENCODER_port, ROTARY_ENCODER_B_pin))
+            {
+                counter++;
+                LOG_INFO("Encoder Value Increase: %d\n", counter);
+            }
+            else
+            {
+                counter--;
+                LOG_INFO("Encoder Value Decrease: %d\n", counter);
+            }
+        }
+        pinPrevState = pinState;
+    }
+    // GPIO_PinInGet
 }
-
-
 
 /**
  * Handles GPIO interrupts for even-numbered GPIO pins.
@@ -139,11 +132,9 @@ void GPIO_EVEN_IRQHandler(void)
     {
         LOG_INFO("Encoder Switch pressed even !\n");
         // sw1 pressed
-//          schedularSetEventPB1();
-
+        //          schedularSetEventPB1();
     }
 }
-
 
 /**
  * @brief Calculate the total elapsed time in milliseconds based on LETIMER underflows.

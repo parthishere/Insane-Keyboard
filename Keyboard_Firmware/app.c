@@ -39,8 +39,6 @@
 
 #include "src/ble.h"
 
-
-
 #include "sl_status.h" // for sl_status_print()
 
 #include "src/ble_device_type.h"
@@ -152,7 +150,6 @@ SL_WEAK void app_init(void)
 
 } // app_init()
 
-
 /**
  * @brief Application process action function.
  * This function is designed to process actions based on events. It continuously checks
@@ -161,14 +158,7 @@ SL_WEAK void app_init(void)
  */
 SL_WEAK void app_process_action(void)
 {
-  while(1){
-      read_SI7021();
-     io_expander_readByte();
-     // EPD_test();
 
-
-  
-  }
 } // app_process_action()
 
 /**************************************************************************
@@ -188,6 +178,5 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
   (void)evt;
 
   handle_ble_event(evt); // bluetooth event actions
-
 
 } // sl_bt_on_event()

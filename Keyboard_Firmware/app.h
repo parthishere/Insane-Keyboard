@@ -46,7 +46,7 @@
 
 
 // If PRINT_LOG_STATEMENTS is set to 1, PRINT_LOG macro will use LOG_INFO for logging.
-#define PRINT_LOG_STATEMENTS        0
+#define PRINT_LOG_STATEMENTS        1
 
 // If PRINT_LOG_STATEMENTS is set to 1, PRINT_LOG macro will use LOG_INFO for logging.
 // Otherwise, PRINT_LOG is defined as an empty macro, effectively disabling logging.

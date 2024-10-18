@@ -17,6 +17,8 @@ gecko_sdk_4.4.4/protocol/bluetooth/src/sli_bt_periodic_adv_config.o: \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_enum.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_core_generic.h \
  /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_bluetooth_config.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_bluetooth_connection_config.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_bluetooth_advertiser_config.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_stack_config.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_ll_config.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_api.h \
@@ -39,6 +41,8 @@ gecko_sdk_4.4.4/protocol/bluetooth/src/sli_bt_periodic_adv_config.o: \
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_enum.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_core_generic.h:
 /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_bluetooth_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_bluetooth_connection_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_bluetooth_advertiser_config.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_stack_config.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_ll_config.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_api.h:

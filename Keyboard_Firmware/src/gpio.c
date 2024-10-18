@@ -33,21 +33,32 @@ void gpioInit()
   GPIO_DriveStrengthSet(gpioPortD, gpioDriveStrengthWeakAlternateWeak);
   GPIO_DriveStrengthSet(gpioPortF, gpioDriveStrengthWeakAlternateWeak);
 
+
+  // INPUTS 
   GPIO_PinModeSet(ROTARY_ENCODER_A, gpioModeInput, true);
   GPIO_PinModeSet(ROTARY_ENCODER_B, gpioModeInput, true);
   GPIO_PinModeSet(ROTARY_ENCODER_SW, gpioModeInput, true);
+
+  GPIO_PinModeSet(EXPANDER_INT_COL, gpioModeInput, true);
+  GPIO_PinModeSet(EXPANDER_INT_ROW, gpioModeInput, true);
+
   GPIO_PinModeSet(DISPLAY_BUSY, gpioModeInput, true);
-  // GPIO_PinModeSet(ROTARY_ENCODER_SW, gpioModeInput, true);
+  GPIO_PinModeSet(ROTARY_ENCODER_SW, gpioModeInput, true);
+
+  // Setting Interrupts on inputs
+  GPIO_ExtIntConfig(ROTARY_ENCODER_port, ROTARY_ENCODER_B_pin, ROTARY_ENCODER_B_pin, 1, 0, true);
+  GPIO_ExtIntConfig(ROTARY_ENCODER_port, ROTERY_ENCODER_SW_pin, ROTERY_ENCODER_SW_pin, 1, 0, true);
+  GPIO_ExtIntConfig(EXPANDER_INT_port, EXPANDER_INT_COL_pin, EXPANDER_INT_COL_pin, 1, 0, true);
+  GPIO_ExtIntConfig(EXPANDER_INT_port, EXPANDER_INT_ROW_pin, EXPANDER_INT_ROW_pin, 1, 0, true);
 
 
+  // OUTPUTS
   GPIO_PinModeSet(DISPLAY_RST, gpioModePushPull, false); // output
   GPIO_PinModeSet(DISPLAY_DC, gpioModePushPull, false); // output
 
   GPIO_PinModeSet(ON_TEMP, gpioModePushPull, false); // output
   GPIO_PinModeSet(ON_DISPLAY, gpioModePushPull, false); // output
 
-  GPIO_ExtIntConfig(ROTARY_ENCODER_port, ROTARY_ENCODER_B_pin, ROTARY_ENCODER_B_pin, 1, 0, true);
-  GPIO_ExtIntConfig(ROTARY_ENCODER_port, ROTERY_ENCODER_SW_pin, ROTERY_ENCODER_SW_pin, 1, 0, true);
 
 
   NVIC_ClearPendingIRQ(GPIO_ODD_IRQn); // Clear pending interrupts for ODD IRQs.

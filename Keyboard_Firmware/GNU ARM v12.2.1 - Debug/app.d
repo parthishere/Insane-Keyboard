@@ -82,6 +82,8 @@ app.o: ../app.c \
  /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/app_log_config.h \
  /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sl_bluetooth.h \
  /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_bluetooth_config.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_bluetooth_connection_config.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_bluetooth_advertiser_config.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_stack_config.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_ll_config.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_api.h \
@@ -201,6 +203,8 @@ app.o: ../app.c \
 /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/app_log_config.h:
 /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sl_bluetooth.h:
 /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_bluetooth_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_bluetooth_connection_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_bluetooth_advertiser_config.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_stack_config.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_ll_config.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_api.h:

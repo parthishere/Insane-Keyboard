@@ -3,6 +3,7 @@
         "log.h": "c",
         "stdint.h": "c",
         "epd_1in54.h": "c",
-        "fonts.h": "c"
+        "fonts.h": "c",
+        "ble.h": "c"
     }
 }

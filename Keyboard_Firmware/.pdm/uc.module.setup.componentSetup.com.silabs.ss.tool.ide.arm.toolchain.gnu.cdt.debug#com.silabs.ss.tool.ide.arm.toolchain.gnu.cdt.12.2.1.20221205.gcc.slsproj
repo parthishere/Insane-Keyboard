@@ -69,6 +69,7 @@
         <folder name="inc">
           <file name="sl_atomic.h" uri="studio:/sdk/platform/common/inc/sl_atomic.h"/>
           <file name="sl_enum.h" uri="studio:/sdk/platform/common/inc/sl_enum.h"/>
+          <file name="sl_gsdk_version.h" uri="studio:/sdk/platform/common/inc/sl_gsdk_version.h"/>
           <file name="sl_assert.h" uri="studio:/sdk/platform/common/inc/sl_assert.h"/>
           <file name="sl_common.h" uri="studio:/sdk/platform/common/inc/sl_common.h"/>
           <file name="sl_string.h" uri="studio:/sdk/platform/common/inc/sl_string.h"/>
@@ -90,6 +91,21 @@
             <file name="sl_memory.h" uri="studio:/sdk/platform/common/toolchain/inc/sl_memory.h"/>
             <file name="sl_gcc_preinclude.h" uri="studio:/sdk/platform/common/toolchain/inc/sl_gcc_preinclude.h"/>
           </folder>
+        </folder>
+      </folder>
+      <folder name="bootloader">
+        <folder name="app_properties">
+          <file name="app_properties.c" uri="studio:/sdk/platform/bootloader/app_properties/app_properties.c"/>
+        </folder>
+        <folder name="api">
+          <file name="btl_interface.c" uri="studio:/sdk/platform/bootloader/api/btl_interface.c"/>
+          <file name="btl_interface_storage.c" uri="studio:/sdk/platform/bootloader/api/btl_interface_storage.c"/>
+          <file name="application_properties.h" uri="studio:/sdk/platform/bootloader/api/application_properties.h"/>
+          <file name="btl_errorcode.h" uri="studio:/sdk/platform/bootloader/api/btl_errorcode.h"/>
+          <file name="btl_interface.h" uri="studio:/sdk/platform/bootloader/api/btl_interface.h"/>
+          <file name="btl_interface_parser.h" uri="studio:/sdk/platform/bootloader/api/btl_interface_parser.h"/>
+          <file name="btl_interface_storage.h" uri="studio:/sdk/platform/bootloader/api/btl_interface_storage.h"/>
+          <file name="btl_reset_info.h" uri="studio:/sdk/platform/bootloader/api/btl_reset_info.h"/>
         </folder>
       </folder>
       <folder name="CMSIS">
@@ -431,23 +447,38 @@
             <file name="app_log.h" uri="studio:/sdk/app/common/util/app_log/app_log.h"/>
             <file name="sl_app_log.h" uri="studio:/sdk/app/common/util/app_log/sl_app_log.h"/>
           </folder>
+          <folder name="app_timer">
+            <file name="app_timer.c" uri="studio:/sdk/app/common/util/app_timer/app_timer.c"/>
+            <file name="app_timer.h" uri="studio:/sdk/app/common/util/app_timer/app_timer.h"/>
+            <file name="sl_simple_timer.h" uri="studio:/sdk/app/common/util/app_timer/sl_simple_timer.h"/>
+          </folder>
+        </folder>
+      </folder>
+      <folder name="bluetooth">
+        <folder name="common">
+          <folder name="gatt_service_device_information">
+            <file name="sl_gatt_service_device_information.h" uri="studio:/sdk/app/bluetooth/common/gatt_service_device_information/sl_gatt_service_device_information.h"/>
+          </folder>
+          <folder name="in_place_ota_dfu">
+            <file name="sl_bt_in_place_ota_dfu.c" uri="studio:/sdk/app/bluetooth/common/in_place_ota_dfu/sl_bt_in_place_ota_dfu.c"/>
+            <file name="sl_bt_in_place_ota_dfu.h" uri="studio:/sdk/app/bluetooth/common/in_place_ota_dfu/sl_bt_in_place_ota_dfu.h"/>
+          </folder>
         </folder>
       </folder>
     </folder>
     <folder name="protocol">
       <folder name="bluetooth">
-        <folder name="bgcommon">
-          <folder name="src">
-            <file name="sl_bt_mbedtls_context.c" uri="studio:/sdk/protocol/bluetooth/bgcommon/src/sl_bt_mbedtls_context.c"/>
+        <folder name="lib">
+          <folder name="EFR32XG13">
+            <folder name="GCC">
+              <file name="binapploader.o" uri="studio:/sdk/protocol/bluetooth/lib/EFR32XG13/GCC/binapploader.o"/>
+              <file name="libpsstore.a" uri="studio:/sdk/protocol/bluetooth/lib/EFR32XG13/GCC/libpsstore.a"/>
+            </folder>
           </folder>
-          <folder name="inc">
-            <file name="sl_bt_mbedtls_context.h" uri="studio:/sdk/protocol/bluetooth/bgcommon/inc/sl_bt_mbedtls_context.h"/>
-          </folder>
-          <folder name="lib">
-            <file name="libbgcommon_efr32xg13_gcc_release.a" uri="studio:/sdk/protocol/bluetooth/bgcommon/lib/libbgcommon_efr32xg13_gcc_release.a"/>
-          </folder>
+          <file name="libbluetooth_host_efr32xg13_gcc_release.a" uri="studio:/sdk/protocol/bluetooth/lib/libbluetooth_host_efr32xg13_gcc_release.a"/>
         </folder>
         <folder name="src">
+          <file name="sl_apploader_util_s1.c" uri="studio:/sdk/protocol/bluetooth/src/sl_apploader_util_s1.c"/>
           <file name="sli_bt_advertiser_config.c" uri="studio:/sdk/protocol/bluetooth/src/sli_bt_advertiser_config.c"/>
           <file name="sli_bt_connection_config.c" uri="studio:/sdk/protocol/bluetooth/src/sli_bt_connection_config.c"/>
           <file name="sli_bt_dynamic_gattdb_config.c" uri="studio:/sdk/protocol/bluetooth/src/sli_bt_dynamic_gattdb_config.c"/>
@@ -460,6 +491,7 @@
           <file name="sl_bt_stack_init.c" uri="studio:/sdk/protocol/bluetooth/src/sl_bt_stack_init.c"/>
         </folder>
         <folder name="inc">
+          <file name="sl_apploader_util.h" uri="studio:/sdk/protocol/bluetooth/inc/sl_apploader_util.h"/>
           <file name="sli_bt_config_defs.h" uri="studio:/sdk/protocol/bluetooth/inc/sli_bt_config_defs.h"/>
           <file name="sli_bt_advertiser_config.h" uri="studio:/sdk/protocol/bluetooth/inc/sli_bt_advertiser_config.h"/>
           <file name="sli_bt_connection_config.h" uri="studio:/sdk/protocol/bluetooth/inc/sli_bt_connection_config.h"/>
@@ -480,6 +512,17 @@
           <file name="sl_bt_types.h" uri="studio:/sdk/protocol/bluetooth/inc/sl_bt_types.h"/>
           <file name="sl_bt_version.h" uri="studio:/sdk/protocol/bluetooth/inc/sl_bt_version.h"/>
         </folder>
+        <folder name="bgcommon">
+          <folder name="src">
+            <file name="sl_bt_mbedtls_context.c" uri="studio:/sdk/protocol/bluetooth/bgcommon/src/sl_bt_mbedtls_context.c"/>
+          </folder>
+          <folder name="inc">
+            <file name="sl_bt_mbedtls_context.h" uri="studio:/sdk/protocol/bluetooth/bgcommon/inc/sl_bt_mbedtls_context.h"/>
+          </folder>
+          <folder name="lib">
+            <file name="libbgcommon_efr32xg13_gcc_release.a" uri="studio:/sdk/protocol/bluetooth/bgcommon/lib/libbgcommon_efr32xg13_gcc_release.a"/>
+          </folder>
+        </folder>
         <folder name="bgstack">
           <folder name="ll">
             <folder name="lib">
@@ -489,14 +532,6 @@
               <file name="sl_btctrl_linklayer.h" uri="studio:/sdk/protocol/bluetooth/bgstack/ll/inc/sl_btctrl_linklayer.h"/>
             </folder>
           </folder>
-        </folder>
-        <folder name="lib">
-          <folder name="EFR32XG13">
-            <folder name="GCC">
-              <file name="libpsstore.a" uri="studio:/sdk/protocol/bluetooth/lib/EFR32XG13/GCC/libpsstore.a"/>
-            </folder>
-          </folder>
-          <file name="libbluetooth_host_efr32xg13_gcc_release.a" uri="studio:/sdk/protocol/bluetooth/lib/libbluetooth_host_efr32xg13_gcc_release.a"/>
         </folder>
         <folder name="api">
           <file name="sl_bt.xapi" uri="studio:/sdk/protocol/bluetooth/api/sl_bt.xapi"/>
@@ -715,15 +750,22 @@
   <file name="main.c" linked="false" uri="studio:/project/main.c"/>
   <file name="app.h" linked="false" uri="studio:/project/app.h"/>
   <file name="readme.md" linked="false" uri="studio:/project/readme.md"/>
+  <file name="create_bl_files.bat" generated="true" linked="false"/>
+  <file name="create_bl_files.sh" generated="true" linked="false"/>
+  <file name="create_bl_files.py" generated="true" linked="false"/>
+  <file name="sl_gatt_service_device_information.c" generated="true" linked="false"/>
   <includePath uri="studio:/project/"/>
   <includePath uri="studio:/sdk/platform/Device/SiliconLabs/EFR32BG13P/Include"/>
   <includePath uri="studio:/sdk/app/common/util/app_assert"/>
   <includePath uri="studio:/sdk/app/common/util/app_log"/>
+  <includePath uri="studio:/sdk/app/common/util/app_timer"/>
+  <includePath uri="studio:/sdk/protocol/bluetooth/inc"/>
   <includePath uri="studio:/sdk/platform/common/inc"/>
   <includePath uri="studio:/sdk/protocol/bluetooth/bgcommon/inc"/>
-  <includePath uri="studio:/sdk/protocol/bluetooth/inc"/>
   <includePath uri="studio:/sdk/protocol/bluetooth/bgstack/ll/inc"/>
   <includePath uri="studio:/sdk/hardware/board/inc"/>
+  <includePath uri="studio:/sdk/platform/bootloader"/>
+  <includePath uri="studio:/sdk/platform/bootloader/api"/>
   <includePath uri="studio:/sdk/platform/CMSIS/Core/Include"/>
   <includePath uri="studio:/sdk/hardware/driver/configuration_over_swo/inc"/>
   <includePath uri="studio:/sdk/platform/driver/debug/inc"/>
@@ -731,7 +773,9 @@
   <includePath uri="studio:/sdk/platform/emdrv/dmadrv/inc"/>
   <includePath uri="studio:/sdk/platform/emdrv/common/inc"/>
   <includePath uri="studio:/sdk/platform/emlib/inc"/>
+  <includePath uri="studio:/sdk/app/bluetooth/common/gatt_service_device_information"/>
   <includePath uri="studio:/sdk/platform/driver/i2cspm/inc"/>
+  <includePath uri="studio:/sdk/app/bluetooth/common/in_place_ota_dfu"/>
   <includePath uri="studio:/sdk/platform/service/iostream/inc"/>
   <includePath uri="studio:/sdk/platform/security/sl_component/sl_mbedtls_support/config"/>
   <includePath uri="studio:/sdk/platform/security/sl_component/sl_mbedtls_support/config/preset"/>
@@ -760,6 +804,7 @@
   <includePath uri="studio:/sdk/platform/service/udelay/inc"/>
   <macroDefinition name="DEBUG_EFM"/>
   <macroDefinition name="EFR32BG13P632F512GM48"/>
+  <macroDefinition name="SL_APP_PROPERTIES"/>
   <macroDefinition name="SL_BOARD_NAME" value="&quot;BRD4001A&quot;"/>
   <macroDefinition name="SL_BOARD_REV" value="&quot;A02&quot;"/>
   <macroDefinition name="HARDWARE_BOARD_DEFAULT_RF_BAND_2400"/>
@@ -773,6 +818,7 @@
   <macroDefinition name="MBEDTLS_PSA_CRYPTO_CONFIG_FILE" value="&lt;psa_crypto_config.h>"/>
   <macroDefinition name="SL_RAIL_LIB_MULTIPROTOCOL_SUPPORT" value="0"/>
   <macroDefinition name="SL_RAIL_UTIL_PA_CONFIG_HEADER" value="&lt;sl_rail_util_pa_config.h>"/>
+  <libraryFile uri="studio:/sdk/protocol/bluetooth/lib/EFR32XG13/GCC/binapploader.o"/>
   <libraryFile uri="studio:/sdk/protocol/bluetooth/bgcommon/lib/libbgcommon_efr32xg13_gcc_release.a"/>
   <libraryFile uri="studio:/sdk/protocol/bluetooth/bgstack/ll/lib/libbluetooth_controller_efr32xg13_gcc_release.a"/>
   <libraryFile uri="studio:/sdk/protocol/bluetooth/lib/libbluetooth_host_efr32xg13_gcc_release.a"/>

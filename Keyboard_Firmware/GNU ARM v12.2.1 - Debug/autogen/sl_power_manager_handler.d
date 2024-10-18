@@ -68,8 +68,11 @@ autogen/sl_power_manager_handler.o: ../autogen/sl_power_manager_handler.c \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/sleeptimer/inc/sl_sleeptimer.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_enum.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_core_generic.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//app/common/util/app_timer/app_timer.h \
  ../autogen/sl_bluetooth.h \
  /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_bluetooth_config.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_bluetooth_connection_config.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_bluetooth_advertiser_config.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_stack_config.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_ll_config.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_api.h \
@@ -153,8 +156,11 @@ autogen/sl_power_manager_handler.o: ../autogen/sl_power_manager_handler.c \
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/sleeptimer/inc/sl_sleeptimer.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_enum.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_core_generic.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//app/common/util/app_timer/app_timer.h:
 ../autogen/sl_bluetooth.h:
 /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_bluetooth_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_bluetooth_connection_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/sl_bluetooth_advertiser_config.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_stack_config.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_ll_config.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_api.h:

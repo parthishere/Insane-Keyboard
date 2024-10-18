@@ -41,6 +41,8 @@ extern const sli_bt_gattdb_t gattdb;
 #define gattdb_battery_service_0              61
 #define gattdb_battery_level                  63
 #define gattdb_characteristic_presentation_format 64
+#define gattdb_ota                            65
+#define gattdb_ota_control                    67
 
 
 #endif // __GATT_DB_H
