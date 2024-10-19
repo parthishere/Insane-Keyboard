@@ -67,7 +67,7 @@ GenerateClassCluster=0
 DocumentUniqueId=RZMDURIT
 
 [Document2]
-DocumentPath=EFR32_IO.SchDoc
+DocumentPath=Right_EFR32_IO.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -152,7 +152,7 @@ GenerateClassCluster=0
 DocumentUniqueId=MIPMVTRW
 
 [Document7]
-DocumentPath=Peripherals.SchDoc
+DocumentPath=Right_Peripherals.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -186,7 +186,7 @@ GenerateClassCluster=0
 DocumentUniqueId=JBQVYJXE
 
 [Document9]
-DocumentPath=RF_Antenna_Power.SchDoc
+DocumentPath=Right_RF_Antenna_Power.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -203,7 +203,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document10]
-DocumentPath=Switches.SchDoc
+DocumentPath=Right_Switches.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
