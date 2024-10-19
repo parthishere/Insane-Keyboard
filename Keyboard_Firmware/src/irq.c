@@ -95,6 +95,7 @@ void GPIO_ODD_IRQHandler(void)
     }
     if (flags & (1 << ROTARY_ENCODER_B_pin))
     {
+        schedularSetEventPB1();
         pinState = GPIO_PinInGet(ROTARY_ENCODER_port, ROTARY_ENCODER_A_pin);
         if (pinPrevState == 0 && pinState == 1)
         {

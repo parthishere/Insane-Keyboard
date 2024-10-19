@@ -26,6 +26,7 @@
 #include "gatt_db.h"   // GATT database for BLE services and characteristics
 #include "ble_device_type.h"
 #include "math.h"
+#include "app_assert.h"
 
 // This is the number of entries in the queue. Please leave
 // this value set to 16.

@@ -79,51 +79,57 @@
 // Time = Value x 0.625 ms => time = 25ms
 #define SERVER_SCANNING_WINDOW 0x28
 
+#define KEY_ARRAY_SIZE 25
+#define MODIFIER_INDEX 0
+#define DATA_INDEX 2
 
+#define CAPSLOCK_KEY_OFF 0x00
+#define CAPSLOCK_KEY_ON 0x02
 
-
-
-#define KEY_ARRAY_SIZE         25
-#define MODIFIER_INDEX         0
-#define DATA_INDEX             2
-
-#define CAPSLOCK_KEY_OFF       0x00
-#define CAPSLOCK_KEY_ON        0x02
-
-static uint8_t input_report_data[] = { 0, 0, 0, 0, 0, 0, 0, 0 };
+static uint8_t input_report_data[] = {0, 0, 0, 0, 0, 0, 0, 0};
 static uint8_t actual_key = KEY_A;
 
 /*
  *   Bit 0:
- *     - 0: Allow bonding without authentication
- *     - 1: Bonding requires authentication (Man-in-the-Middle
+ *     - <b>0:</b> Allow bonding without authentication
+ *     - <b>1:</b> Bonding requires authentication (Man-in-the-Middle
  *       protection)
  *
  *   Bit 1:
- *     - 0: Allow encryption without bonding
- *     - 1: Encryption requires bonding. Note that this setting will also
+ *     - <b>0:</b> Allow encryption without bonding
+ *     - <b>1:</b> Encryption requires bonding. Note that this setting will also
  *       enable bonding.
  *
  *   Bit 2:
- *     - 0: Allow bonding with legacy pairing
- *     - 1: Secure connections only
+ *     - <b>0:</b> Allow bonding with legacy pairing
+ *     - <b>1:</b> Secure connections only
  *
  *   Bit 3:
- *     - 0: Bonding request does not need to be confirmed
- *     - 1: Bonding requests need to be confirmed. Received bonding
+ *     - <b>0:</b> Bonding request does not need to be confirmed
+ *     - <b>1:</b> Bonding requests need to be confirmed. Received bonding
  *       requests are notified by @ref sl_bt_evt_sm_confirm_bonding
  *
- *   Bit 4:
- *     - 0: Allow all connections
- *     - 1: Allow connections only from bonded devices
+ *   Bit 4: This option is ignored when the application includes the
+ *   bluetooth_feature_external_bonding_database feature.
+ *     - <b>0:</b> Allow all connections
+ *     - <b>1:</b> Allow connections only from bonded devices
  *
  *   Bit 5:
- *     - 0: Prefer just works pairing when both options are possible
+ *     - <b>0:</b> Prefer just works pairing when both options are possible
  *       based on the settings.
- *     - 1: Prefer authenticated pairing when both options are possible
+ *     - <b>1:</b> Prefer authenticated pairing when both options are possible
  *       based on the settings.
+ *
+ *   Bit 6:
+ *     - <b>0:</b> Allow secure connections OOB pairing with OOB data from only
+ *       one device.
+ *     - <b>1:</b> Require secure connections OOB data from both devices.
+ *
+ *   Bit 7:
+ *     - <b>0:</b> Allow debug keys from remote device.
+ *     - <b>1:</b> Reject pairing if remote device uses debug keys.
  */
-#define FLAGS (0b00001111)
+#define FLAGS (0b00000011)
 
 // Global structure to store BLE data
 ble_data_struct_t ble_data;
@@ -156,8 +162,6 @@ ble_data_struct_t *getBleDataPtr()
     return (&ble_data);
 } // getBleDataPtr()
 
-
-
 /**
  * @brief Handles incoming BLE events and dispatches actions based on the event type.
  *
@@ -181,6 +185,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
     // --------------------------------------------------------
     // System boot event: Initialize BLE settings on device boot-up
     case sl_bt_evt_system_boot_id:
+
         // Log the version of the Bluetooth stack
         PRINT_LOG("Bluetooth stack booted: v%d.%d.%d-b%d\n\r",
                   evt->data.evt_system_boot.major,
@@ -190,11 +195,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
 
         // Retrieve the device's Bluetooth identity address
         sc = sl_bt_system_get_identity_address(&ble_data.myAddress, &ble_data.myAddressType);
-        if (sc != SL_STATUS_OK)
-        {
-            // Log an error if unable to retrieve the address
-            LOG_ERROR("sl_bt_system_get_identity_address() returned != 0 status=0x%04x", (unsigned int)sc);
-        }
+        app_assert_status(sc);
 
         // Prepare the System ID based on the Bluetooth address
         // The System ID is derived from the device's Bluetooth address with a standard format
@@ -212,11 +213,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
                                                      0,                 // Attribute value offset
                                                      sizeof(system_id), // Length of the System ID
                                                      system_id);        // System ID value
-        if (sc != SL_STATUS_OK)
-        {
-            // Log an error if unable to retrieve the address
-            LOG_ERROR("sl_bt_gatt_server_write_attribute_value() returned != 0 status=0x%04x", (unsigned int)sc);
-        }
+        app_assert_status(sc);
 
         // Log the Bluetooth address of the device
         PRINT_LOG("Bluetooth %s address: %02X:%02X:%02X:%02X:%02X:%02X\n\r",
@@ -228,20 +225,13 @@ void handle_ble_event(sl_bt_msg_t *evt)
                   ble_data.myAddress.addr[FOUR],
                   ble_data.myAddress.addr[FIVE]);
 
-
-        // Delete the bondings , and configure the stack for bonding.
-        sl_bt_sm_delete_bondings();
-        sl_bt_sm_configure(FLAGS, sl_bt_sm_io_capability_noinputnooutput);
-
-        // Server
-
         // Create an advertising set for BLE advertising
         sc = sl_bt_advertiser_create_set(&ble_data.advertisingSetHandle);
-        if (sc != SL_STATUS_OK)
-        {
-            // Log an error if the advertising set cannot be created
-            LOG_ERROR("sl_bt_advertiser_create_set() returned != 0 status=0x%04x", (unsigned int)sc);
-        }
+        app_assert_status(sc);
+
+        sc = sl_bt_legacy_advertiser_generate_data(ble_data.advertisingSetHandle,
+                                                   sl_bt_advertiser_general_discoverable);
+        app_assert_status(sc);
 
         // Configure advertising timing parameters
         sc = sl_bt_advertiser_set_timing(
@@ -250,30 +240,20 @@ void handle_ble_event(sl_bt_msg_t *evt)
             ADV_INTERVAL,                  // Maximum advertising interval (in units of 0.625 ms, i.e 400*0.625 = 250)
             0,                             // Advertising duration (0 means continue until stopped)
             0);                            // Maximum number of advertising events (0 means no limit)
-        if (sc != SL_STATUS_OK)
-        {
-            // Log an error if advertising timing cannot be set
-            LOG_ERROR("sl_bt_advertiser_set_timing() returned != 0 status=0x%04x", (unsigned int)sc);
-        }
+        app_assert_status(sc);
 
-        // Start advertising
-        // sc = sl_bt_advertiser_start(
-        //     ble_data.advertisingSetHandle,           // The advertising set handle
-        //     sl_bt_advertiser_general_discoverable,   // General discoverability mode
-        //     sl_bt_extended_advertiser_connectable); // Connectable and scannable advertising
-        // Start advertising
-        // sc = sl_bt_extended_advertiser_start(
-        //     ble_data.advertisingSetHandle,           // The advertising set handle
-        //     sl_bt_extended_advertiser_connectable,   // General discoverability mode
-        //     0); // Connectable and scannable advertising
+        // Bondings
+
+        sc = sl_bt_sm_configure(0, sl_bt_sm_io_capability_noinputnooutput);
+        app_assert_status(sc);
+
+        sc = sl_bt_sm_set_bondable_mode(1);
+        app_assert_status(sc);
+
         sc = sl_bt_legacy_advertiser_start(
-            ble_data.advertisingSetHandle,           // The advertising set handle
+            ble_data.advertisingSetHandle,        // The advertising set handle
             sl_bt_legacy_advertiser_connectable); // Connectable and scannable advertising
-        if (sc != SL_STATUS_OK)
-        {
-            // Log an error if advertising cannot be started
-            LOG_ERROR("sl_bt_legacy_advertiser_start() returned != 0 status=0x%04x", (unsigned int)sc);
-        }
+        app_assert_status(sc);
 
         break;
 
@@ -302,11 +282,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
         // GATT DB server
         // Stop advertising since a connection has been established
         sc = sl_bt_advertiser_stop(ble_data.advertisingSetHandle);
-        if (sc != SL_STATUS_OK)
-        {
-            // Log an error if stopping advertising fails
-            LOG_ERROR("sl_bt_advertiser_stop() returned != 0 status=0x%04x", (unsigned int)sc);
-        }
+        app_assert_status(sc);
 
         // Request to update the connection parameters
         sc = sl_bt_connection_set_parameters(ble_data.appConnectionHandle,
@@ -316,12 +292,10 @@ void handle_ble_event(sl_bt_msg_t *evt)
                                              CON_TIMEOUT,
                                              0,
                                              MAX_CE_LEN);
-        if (sc != SL_STATUS_OK)
-        {
-            // Log an error if setting new connection parameters fails
-            LOG_ERROR("Failed to set connection parameters. Status: %lu", sc);
-        }
-        sc = sl_bt_sm_increase_security(ble_data.appConnectionHandle);
+        app_assert_status(sc);
+
+        // sc = sl_bt_sm_increase_security(ble_data.appConnectionHandle);
+        // app_assert_status(sc);
 
         break;
 
@@ -329,29 +303,23 @@ void handle_ble_event(sl_bt_msg_t *evt)
     case sl_bt_evt_connection_closed_id:
         // Log the closure of the connection
         PRINT_LOG("Connection Closed\n\r");
-        sl_bt_sm_delete_bondings();
 
         // Reset connection-related flags as the connection is now closed, reset flags
-        ble_data.appConnectionHandle = 0;            // Reset the connection handle
-        ble_data.indication_in_flight = false;       // No longer sending indications
-        ble_data.connection_open = false;            // Mark the connection as closed
+        ble_data.appConnectionHandle = 0;      // Reset the connection handle
+        ble_data.indication_in_flight = false; // No longer sending indications
+        ble_data.connection_open = false;      // Mark the connection as closed
         ble_data.bonded = false;
         ble_data.ok_to_send_report_notification = false;
         ble_data.bonding = false;
 
+        sc = sl_bt_legacy_advertiser_generate_data(ble_data.advertisingSetHandle,
+                                                   sl_bt_advertiser_general_discoverable);
+        app_assert_status(sc);
 
-
-        // GATT DB server
-        // Restart advertising to allow new connections
-        sc = sl_bt_extended_advertiser_start(
-            ble_data.advertisingSetHandle,
-            sl_bt_advertiser_general_discoverable,
-            sl_bt_advertiser_connectable_scannable);
-        if (sc != SL_STATUS_OK)
-        {
-            // Log an error if restarting advertising fails
-            LOG_ERROR("sl_bt_advertiser_start() returned != 0 status=0x%04x", (unsigned int)sc);
-        }
+        sc = sl_bt_legacy_advertiser_start(
+            ble_data.advertisingSetHandle,        // The advertising set handle
+            sl_bt_legacy_advertiser_connectable); // Connectable and scannable advertising
+        app_assert_status(sc);
 
         break;
 
@@ -388,22 +356,22 @@ void handle_ble_event(sl_bt_msg_t *evt)
         break;
 
     case sl_bt_evt_system_external_signal_id:
-
-        if (ble_data.ok_to_send_report_notification) {
+        PRINT_LOG("SOMETHING HAPPED \n");
+        if (ble_data.ok_to_send_report_notification)
+        {
             memset(input_report_data, 0, sizeof(input_report_data));
 
             input_report_data[MODIFIER_INDEX] = CAPSLOCK_KEY_OFF;
             input_report_data[DATA_INDEX] = actual_key;
 
             sc = sl_bt_gatt_server_notify_all(gattdb_report,
-                                            sizeof(input_report_data),
-                                            input_report_data);
+                                              sizeof(input_report_data),
+                                              input_report_data);
 
             app_log("Key report was sent\r\n");
         }
 
         break;
-
 
     // Indicates a user request to display that the new bonding request is received and for the user to confirm the request
     case sl_bt_evt_sm_confirm_bonding_id:
@@ -413,11 +381,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
         // Confirm bonding without user interaction, automatically accepting the bonding request.
         sc = sl_bt_sm_bonding_confirm(ble_data.appConnectionHandle, 1);
         // Check if the bonding confirmation was successfully sent.
-        if (sc != SL_STATUS_OK)
-        {
-            // Log an error if the bonding confirmation failed.
-            LOG_ERROR("sl_bt_sm_bonding_confirm() returned != 0 status=0x%04x", (unsigned int)sc);
-        }
+        app_assert_status(sc);
         break;
 
     // Event raised when bonding is successful
@@ -440,7 +404,6 @@ void handle_ble_event(sl_bt_msg_t *evt)
         PRINT_LOG("--------------------------------------\r\n\n");
 
         break;
-
 
     /* ******************************************************
      * ******************************************************
@@ -471,24 +434,24 @@ void handle_ble_event(sl_bt_msg_t *evt)
 
             // send_from_queue();
         }
-
-        if (evt->data.evt_gatt_server_characteristic_status.characteristic
-                  == gattdb_report) {
+        PRINT_LOG("Something came \n");
+        if (evt->data.evt_gatt_server_characteristic_status.characteristic == gattdb_report)
+        {
             // client characteristic configuration changed by remote GATT client
-            if (evt->data.evt_gatt_server_characteristic_status.status_flags
-                == sl_bt_gatt_server_client_config) {
-              if (evt->data.evt_gatt_server_characteristic_status.
-                  client_config_flags == sl_bt_gatt_notification) {
-                  PRINT_LOG("Indication for Temprature has been enabled by Client\n");
-                  ble_data.ok_to_send_report_notification = 1;
-              } else {
-                  PRINT_LOG("Indication for Temprature has been disabled by Client\n");
-                  ble_data.ok_to_send_report_notification = 0;
-              }
+            if (evt->data.evt_gatt_server_characteristic_status.status_flags == sl_bt_gatt_server_client_config)
+            {
+                if (evt->data.evt_gatt_server_characteristic_status.client_config_flags == sl_bt_gatt_notification)
+                {
+                    PRINT_LOG("Indication for Temprature has been enabled by Client\n");
+                    ble_data.ok_to_send_report_notification = 1;
+                }
+                else
+                {
+                    PRINT_LOG("Indication for Temprature has been disabled by Client\n");
+                    ble_data.ok_to_send_report_notification = 0;
+                }
             }
-          }
-
-
+        }
 
         break;
 
@@ -504,16 +467,11 @@ void handle_ble_event(sl_bt_msg_t *evt)
 
         break;
 
-  
-
     case sl_bt_evt_gatt_procedure_completed_id:
         ble_data.indication_in_flight = false;
         break;
     } // end - switch
 } // handle_ble_event()
-
-
-
 
 /*
  * ---------------------------------------------------------------------
