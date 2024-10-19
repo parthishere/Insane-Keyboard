@@ -117,7 +117,9 @@ src/GUI/GUI_Paint.o: ../src/GUI/GUI_Paint.c \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_api_compatibility.h \
  /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/gatt_db.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sli_bt_gattdb_def.h \
- /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/ble_device_type.h
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/ble_device_type.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//app/common/util/app_assert/app_assert.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/app_assert_config.h
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/toolchain/inc/sl_gcc_preinclude.h:
 /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/GUI/GUI_Paint.h:
 /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/spi.h:
@@ -237,3 +239,5 @@ src/GUI/GUI_Paint.o: ../src/GUI/GUI_Paint.c \
 /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/gatt_db.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sli_bt_gattdb_def.h:
 /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/ble_device_type.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//app/common/util/app_assert/app_assert.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/app_assert_config.h:

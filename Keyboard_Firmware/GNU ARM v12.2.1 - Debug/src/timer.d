@@ -107,10 +107,8 @@ src/timer.o: ../src/timer.c \
  /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/gatt_db.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sli_bt_gattdb_def.h \
  /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/ble_device_type.h \
- /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/spi.h \
- /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/timer.h \
- /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_letimer.h \
- ../src/gpio.h ../src/log.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//app/common/util/app_assert/app_assert.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/app_assert_config.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//app/common/util/app_log/app_log.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/iostream/inc/sl_iostream.h \
  /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sl_iostream_handles.h \
@@ -119,7 +117,11 @@ src/timer.o: ../src/timer.c \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/iostream/inc/sl_iostream_uart.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/iostream/inc/sl_iostream.h \
  /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/app_log_config.h \
- ../src/irq.h ../src/scheduler.h ../src/ble_device_type.h
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/spi.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/timer.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_letimer.h \
+ ../src/gpio.h ../src/log.h ../src/irq.h ../src/scheduler.h \
+ ../src/ble_device_type.h
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/toolchain/inc/sl_gcc_preinclude.h:
 ../src/timer.h:
 /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/app.h:
@@ -228,11 +230,8 @@ src/timer.o: ../src/timer.c \
 /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/gatt_db.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sli_bt_gattdb_def.h:
 /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/ble_device_type.h:
-/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/spi.h:
-/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/timer.h:
-/home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_letimer.h:
-../src/gpio.h:
-../src/log.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//app/common/util/app_assert/app_assert.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/app_assert_config.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//app/common/util/app_log/app_log.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/iostream/inc/sl_iostream.h:
 /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sl_iostream_handles.h:
@@ -241,6 +240,11 @@ src/timer.o: ../src/timer.c \
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/iostream/inc/sl_iostream_uart.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/iostream/inc/sl_iostream.h:
 /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/app_log_config.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/spi.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/timer.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_letimer.h:
+../src/gpio.h:
+../src/log.h:
 ../src/irq.h:
 ../src/scheduler.h:
 ../src/ble_device_type.h:

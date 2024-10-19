@@ -68,8 +68,9 @@ src/ble.o: ../src/ble.c \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sl_bt_api_compatibility.h \
  /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/gatt_db.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sli_bt_gattdb_def.h \
- ../src/ble_device_type.h ../src/hid.h \
- /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/log.h \
+ ../src/ble_device_type.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//app/common/util/app_assert/app_assert.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/app_assert_config.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//app/common/util/app_log/app_log.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/iostream/inc/sl_iostream.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_enum.h \
@@ -88,6 +89,8 @@ src/ble.o: ../src/ble.c \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_ldma.h \
  /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/dmadrv_config.h \
  /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/app_log_config.h \
+ ../src/hid.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/log.h \
  /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/irq.h \
  /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/gpio.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_cmu.h \
@@ -190,8 +193,8 @@ src/ble.o: ../src/ble.c \
 /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/gatt_db.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//protocol/bluetooth/inc/sli_bt_gattdb_def.h:
 ../src/ble_device_type.h:
-../src/hid.h:
-/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/log.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//app/common/util/app_assert/app_assert.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/app_assert_config.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//app/common/util/app_log/app_log.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/service/iostream/inc/sl_iostream.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_enum.h:
@@ -210,6 +213,8 @@ src/ble.o: ../src/ble.c \
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_ldma.h:
 /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/dmadrv_config.h:
 /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/app_log_config.h:
+../src/hid.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/log.h:
 /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/irq.h:
 /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/gpio.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_cmu.h:

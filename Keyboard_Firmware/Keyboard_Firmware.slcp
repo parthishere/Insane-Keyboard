@@ -31,10 +31,10 @@ component:
 - {id: app_log}
 - {id: bluetooth_feature_advertiser}
 - {id: bluetooth_feature_builtin_bonding_database}
-- {id: bluetooth_feature_extended_advertiser}
-- {id: bluetooth_feature_extended_scanner}
+- {id: bluetooth_feature_gatt}
 - {id: bluetooth_feature_legacy_advertiser}
 - {id: bluetooth_feature_legacy_scanner}
+- {id: bluetooth_feature_sm}
 - {id: bluetooth_stack}
 - {id: brd4001a}
 - {id: brd4104a}

@@ -91,7 +91,7 @@ void schedularSetEventPB0()
   CORE_ENTER_CRITICAL(); // Enter a critical section to prevent interruption during flag handling.
 
   // Send external Event Signal to state machine
-  // sl_bt_external_signal(evtBTN0);
+  sl_bt_external_signal(evtBTN0);
 
   // exit critical section
   CORE_EXIT_CRITICAL(); // Exit the critical section, allowing other interrupts to be processed.
@@ -112,7 +112,7 @@ void schedularSetEventPB1()
   CORE_ENTER_CRITICAL(); // Enter a critical section to prevent interruption during flag handling.
 
   // Send external Event Signal to state machine
-  // sl_bt_external_signal(evtBTN1);
+  sl_bt_external_signal(evtBTN1);
 
   // exit critical section
   CORE_EXIT_CRITICAL(); // Exit the critical section, allowing other interrupts to be processed.
