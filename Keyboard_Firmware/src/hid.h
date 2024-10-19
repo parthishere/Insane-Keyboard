@@ -12,6 +12,9 @@
 #ifndef USB_HID_KEYS
 #define USB_HID_KEYS
 
+#define MODIFIER_INDEX 0
+#define DATA0_INDEX 2
+
 /**
  * Modifier masks - used for the first byte in the HID report.
  * NOTE: The second byte in the report is reserved, 0x00
