@@ -85,11 +85,11 @@ void GPIO_ODD_IRQHandler(void)
 {
     uint32_t flags = GPIO_IntGetEnabled();
     GPIO_IntClear(flags);
-
+    LOG_INFO("Sonmthing Switch pressed !");
     // during reading for client
     if (flags & (1 << ROTERY_ENCODER_SW_pin))
     {
-        LOG_INFO("Encoder Switch pressed !");
+        
         // sw1 pressed
         schedularSetEventPB1();
     }
@@ -127,7 +127,7 @@ void GPIO_EVEN_IRQHandler(void)
 {
     uint32_t flags = GPIO_IntGetEnabled();
     GPIO_IntClear(flags);
-
+    LOG_INFO("a thing Switch pressed !");
     // during pairing and bonding confirmation for server
     if (flags & (1 << ROTERY_ENCODER_SW_pin))
     {

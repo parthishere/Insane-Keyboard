@@ -84,6 +84,7 @@
 
 /* Global variables */
 uint8_t cmd_data = TEMPRETURE_COMMAND;         // Command data for reading temperature
+uint8_t write_data = 0xff;
 I2C_TransferReturn_TypeDef I2C_TransferStatus; // Holds the status of the I2C transfer
 uint8_t readData[2];                           // Buffer to hold raw temperature data read from the sensor
 int32_t temprature;                            // Variable to hold the calculated temperature
@@ -122,15 +123,16 @@ void init_I2C()
   I2C_TransferSeq.flags = I2C_FLAG_WRITE_WRITE;    // Indicate that this is a write operation
   I2C_TransferSeq.buf[0].data = &cmd_data;        // Point to the command data
   I2C_TransferSeq.buf[0].len = 1;  // Set the command data length
-  cmd_data = 0xff;
-  I2C_TransferSeq.buf[1].data = &cmd_data;
+  I2C_TransferSeq.buf[1].data = &write_data;
   I2C_TransferSeq.buf[1].len = 1;
 
   I2C_TransferStatus = I2CSPM_Transfer(I2C0, &I2C_TransferSeq);
   if (I2C_TransferStatus != i2cTransferDone)
   {
-    LOG_ERROR("Error: init_I2C, Input pin conf failed\n");
+    LOG_ERROR("hhError: init_I2C, Input pin conf failed, %02X \n", I2C_TransferStatus);
   }
+
+
 
   return;
 }
