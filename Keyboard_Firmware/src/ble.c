@@ -186,34 +186,74 @@ void handle_ble_event(sl_bt_msg_t *evt)
     // System boot event: Initialize BLE settings on device boot-up
     case sl_bt_evt_system_boot_id:
 
-            sc = sl_bt_advertiser_create_set(&ble_data.advertisingSetHandle);
-           app_assert_status(sc);
+        // Log the version of the Bluetooth stack
+        PRINT_LOG("Bluetooth stack booted: v%d.%d.%d-b%d\n\r",
+                  evt->data.evt_system_boot.major,
+                  evt->data.evt_system_boot.minor,
+                  evt->data.evt_system_boot.patch,
+                  evt->data.evt_system_boot.build);
 
-           // Generate data for advertising
-           sc = sl_bt_legacy_advertiser_generate_data(ble_data.advertisingSetHandle,
-                                                      sl_bt_advertiser_general_discoverable);
-           app_assert_status(sc);
+        // Retrieve the device's Bluetooth identity address
+        sc = sl_bt_system_get_identity_address(&ble_data.myAddress, &ble_data.myAddressType);
+        app_assert_status(sc);
 
-           // Set advertising interval to 100ms.
-           sc = sl_bt_advertiser_set_timing(
-               ble_data.advertisingSetHandle,
-             160, // min. adv. interval (milliseconds * 1.6)
-             160, // max. adv. interval (milliseconds * 1.6)
-             0,   // adv. duration
-             0);  // max. num. adv. events
-           app_assert_status(sc);
+        // Prepare the System ID based on the Bluetooth address
+        // The System ID is derived from the device's Bluetooth address with a standard format
+        system_id[0] = ble_data.myAddress.addr[FIVE];
+        system_id[SYSTEM_ID_1] = ble_data.myAddress.addr[FOUR];
+        system_id[SYSTEM_ID_2] = ble_data.myAddress.addr[THREE];
+        system_id[SYSTEM_ID_3] = SYSTEM_ID3; // Middle bytes are fixed according to the Bluetooth SIG's specification
+        system_id[SYSTEM_ID_4] = SYSTEM_ID4; // Middle bytes are fixed according to the Bluetooth SIG's specification
+        system_id[SYSTEM_ID_5] = ble_data.myAddress.addr[TWO];
+        system_id[SYSTEM_ID_6] = ble_data.myAddress.addr[ONE];
+        system_id[SYSTEM_ID_7] = ble_data.myAddress.addr[0];
 
-           app_log("boot event - starting advertising\r\n");
+        // Write the System ID to the GATT database
+        sc = sl_bt_gatt_server_write_attribute_value(gattdb_system_id,
+                                                     0,                 // Attribute value offset
+                                                     sizeof(system_id), // Length of the System ID
+                                                     system_id);        // System ID value
+        app_assert_status(sc);
 
-           sc = sl_bt_sm_configure(0, sl_bt_sm_io_capability_noinputnooutput);
-           app_assert_status(sc);
-           sc = sl_bt_sm_set_bondable_mode(1);
-           app_assert_status(sc);
+        // Log the Bluetooth address of the device
+        PRINT_LOG("Bluetooth %s address: %02X:%02X:%02X:%02X:%02X:%02X\n\r",
+                  ble_data.myAddressType ? "static random" : "public device",
+                  ble_data.myAddress.addr[0],
+                  ble_data.myAddress.addr[ONE],
+                  ble_data.myAddress.addr[TWO],
+                  ble_data.myAddress.addr[THREE],
+                  ble_data.myAddress.addr[FOUR],
+                  ble_data.myAddress.addr[FIVE]);
 
-           // Start advertising and enable connections.
-           sc = sl_bt_legacy_advertiser_start(ble_data.advertisingSetHandle,
-                                              sl_bt_advertiser_connectable_scannable);
-           app_assert_status(sc);
+        // Create an advertising set for BLE advertising
+        sc = sl_bt_advertiser_create_set(&ble_data.advertisingSetHandle);
+        app_assert_status(sc);
+
+        sc = sl_bt_legacy_advertiser_generate_data(ble_data.advertisingSetHandle,
+                                                   sl_bt_advertiser_general_discoverable);
+        app_assert_status(sc);
+
+        // Configure advertising timing parameters
+        sc = sl_bt_advertiser_set_timing(
+            ble_data.advertisingSetHandle, // The advertising set handle
+            ADV_INTERVAL,                  // Minimum advertising interval (in units of 0.625 ms, i.e 400*0.625 = 250)
+            ADV_INTERVAL,                  // Maximum advertising interval (in units of 0.625 ms, i.e 400*0.625 = 250)
+            0,                             // Advertising duration (0 means continue until stopped)
+            0);                            // Maximum number of advertising events (0 means no limit)
+        app_assert_status(sc);
+
+        // Bondings
+
+        sc = sl_bt_sm_configure(0, sl_bt_sm_io_capability_noinputnooutput);
+        app_assert_status(sc);
+
+        sc = sl_bt_sm_set_bondable_mode(1);
+        app_assert_status(sc);
+
+        sc = sl_bt_legacy_advertiser_start(
+            ble_data.advertisingSetHandle,        // The advertising set handle
+            sl_bt_legacy_advertiser_connectable); // Connectable and scannable advertising
+        app_assert_status(sc);
 
         break;
 
