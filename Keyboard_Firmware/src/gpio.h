@@ -12,12 +12,12 @@
 
 
 #define EXPANDER_INT_port (gpioPortA)
-#define EXPANDER_INT_0_pin 4
-#define EXPANDER_INT_0 EXPANDER_INT_port, EXPANDER_INT_0_pin
+#define EXPANDER_INT_ROW_pin 4
+#define EXPANDER_INT_ROW EXPANDER_INT_port, EXPANDER_INT_ROW_pin
 
 
-#define EXPANDER_INT_1_pin 5
-#define EXPANDER_INT_1 EXPANDER_INT_port, EXPANDER_INT_1_pin
+#define EXPANDER_INT_COL_pin 5
+#define EXPANDER_INT_COL EXPANDER_INT_port, EXPANDER_INT_COL_pin
 
 
 

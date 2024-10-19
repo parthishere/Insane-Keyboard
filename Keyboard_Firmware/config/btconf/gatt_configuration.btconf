@@ -175,7 +175,7 @@ Summary: This service exposes manufacturer information about a device. The Devic
       <informativeText>Abstract: 
         The value of this characteristic is a UTF-8 string representing the name of the manufacturer of the device.            
 		</informativeText>
-      <value length="1" type="utf-8" variable_length="false"/>
+      <value length="1" type="utf-8" variable_length="false">1</value>
       <properties>
         <read authenticated="false" bonded="false" encrypted="false"/>
       </properties>
@@ -186,7 +186,7 @@ Summary: This service exposes manufacturer information about a device. The Devic
       <informativeText>Abstract: 
             The value of this characteristic is a UTF-8 string representing the model number assigned by the device vendor.
         </informativeText>
-      <value length="1" type="utf-8" variable_length="false"/>
+      <value length="8" type="utf-8" variable_length="false">1</value>
       <properties>
         <read authenticated="false" bonded="false" encrypted="false"/>
       </properties>
@@ -209,7 +209,7 @@ Summary: This service exposes manufacturer information about a device. The Devic
 Summary: 
       The value of this characteristic is a UTF-8 string representing the hardware revision for the hardware within the device.
 		</informativeText>
-      <value length="1" type="utf-8" variable_length="false">1</value>
+      <value length="3" type="utf-8" variable_length="false">1</value>
       <properties>
         <read authenticated="false" bonded="false" encrypted="false"/>
       </properties>
@@ -221,7 +221,7 @@ Summary:
 Summary: 
             The value of this characteristic is a UTF-8 string representing the firmware revision for the firmware within the device.
 		</informativeText>
-      <value length="1" type="utf-8" variable_length="false">1</value>
+      <value length="5" type="utf-8" variable_length="false">1</value>
       <properties>
         <read authenticated="false" bonded="false" encrypted="false"/>
       </properties>
@@ -246,7 +246,7 @@ Summary:
       If System ID generated based on a Bluetooth Device Address, it is required to be done as follows. System ID and the Bluetooth Device Address have a very similar structure: a Bluetooth Device Address is 48 bits in length and consists of a 24 bit Company Assigned Identifier (manufacturer defined identifier) concatenated with a 24 bit Company Identifier (OUI). In order to encapsulate a Bluetooth Device Address as System ID, the Company Identifier is concatenated with 0xFFFE followed by the Company Assigned Identifier of the Bluetooth Address. For more guidelines related to EUI-64, refer to http://standards.ieee.org/develop/regauth/tut/eui64.pdf.
     
 Examples: If the system ID is based of a Bluetooth Device Address with a Company Identifier (OUI) is 0x123456 and the Company Assigned Identifier is 0x9ABCDE, then the System Identifier is required to be 0x123456FFFE9ABCDE.</informativeText>
-      <value length="8" type="hex" variable_length="false"/>
+      <value length="8" type="hex" variable_length="false">123456FFFE9ABCDE</value>
       <properties>
         <read authenticated="false" bonded="false" encrypted="false"/>
       </properties>

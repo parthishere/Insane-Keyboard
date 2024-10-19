@@ -18,6 +18,7 @@
  */
 
 #include "ble.h"
+#include "hid.h"
 
 // Include logging specifically for this .c file
 #define INCLUDE_LOG_DEBUG 1
@@ -33,7 +34,7 @@
 
 // Advertising interval for BLE in units of 0.625ms.
 // ADV_INTERVAL of 400 translates to 250ms (400 * 0.625ms = 250ms).
-#define ADV_INTERVAL 400
+#define ADV_INTERVAL 160
 
 // Connection interval for BLE in units of 1.25ms.
 // CON_INTERVAL of 60 translates to 75ms (60 * 1.25ms = 75ms).
@@ -78,9 +79,19 @@
 // Time = Value x 0.625 ms => time = 25ms
 #define SERVER_SCANNING_WINDOW 0x28
 
-#define SW_PORT (gpioPortF)
-#define SW0_pin (6)
-#define SW1_pin (7)
+
+
+
+
+#define KEY_ARRAY_SIZE         25
+#define MODIFIER_INDEX         0
+#define DATA_INDEX             2
+
+#define CAPSLOCK_KEY_OFF       0x00
+#define CAPSLOCK_KEY_ON        0x02
+
+static uint8_t input_report_data[] = { 0, 0, 0, 0, 0, 0, 0, 0 };
+static uint8_t actual_key = KEY_A;
 
 /*
  *   Bit 0:
@@ -246,14 +257,22 @@ void handle_ble_event(sl_bt_msg_t *evt)
         }
 
         // Start advertising
-        sc = sl_bt_extended_advertiser_start(
+        // sc = sl_bt_advertiser_start(
+        //     ble_data.advertisingSetHandle,           // The advertising set handle
+        //     sl_bt_advertiser_general_discoverable,   // General discoverability mode
+        //     sl_bt_extended_advertiser_connectable); // Connectable and scannable advertising
+        // Start advertising
+        // sc = sl_bt_extended_advertiser_start(
+        //     ble_data.advertisingSetHandle,           // The advertising set handle
+        //     sl_bt_extended_advertiser_connectable,   // General discoverability mode
+        //     0); // Connectable and scannable advertising
+        sc = sl_bt_legacy_advertiser_start(
             ble_data.advertisingSetHandle,           // The advertising set handle
-            sl_bt_advertiser_general_discoverable,   // General discoverability mode
-            sl_bt_extended_advertiser_connectable); // Connectable and scannable advertising
+            sl_bt_legacy_advertiser_connectable); // Connectable and scannable advertising
         if (sc != SL_STATUS_OK)
         {
             // Log an error if advertising cannot be started
-            LOG_ERROR("sl_bt_advertiser_start() returned != 0 status=0x%04x", (unsigned int)sc);
+            LOG_ERROR("sl_bt_legacy_advertiser_start() returned != 0 status=0x%04x", (unsigned int)sc);
         }
 
         break;
@@ -302,6 +321,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
             // Log an error if setting new connection parameters fails
             LOG_ERROR("Failed to set connection parameters. Status: %lu", sc);
         }
+        sc = sl_bt_sm_increase_security(ble_data.appConnectionHandle);
 
         break;
 
@@ -314,10 +334,9 @@ void handle_ble_event(sl_bt_msg_t *evt)
         // Reset connection-related flags as the connection is now closed, reset flags
         ble_data.appConnectionHandle = 0;            // Reset the connection handle
         ble_data.indication_in_flight = false;       // No longer sending indications
-        ble_data.ok_to_send_htm_indications = false; // No longer permitted to send indications
         ble_data.connection_open = false;            // Mark the connection as closed
         ble_data.bonded = false;
-        ble_data.ok_to_send_button_indications = false;
+        ble_data.ok_to_send_report_notification = false;
         ble_data.bonding = false;
 
 
@@ -369,78 +388,18 @@ void handle_ble_event(sl_bt_msg_t *evt)
         break;
 
     case sl_bt_evt_system_external_signal_id:
-        // Check if the external signal corresponds to button 0 being pressed.
-        if ((evt->data.evt_system_external_signal.extsignals - evtBTN0) == 0x00)
-        {
 
-            // If the device is in the bonding process but not yet bonded, confirm the passkey to complete bonding.
-            if (!ble_data.bonded && ble_data.bonding)
-            {
-                ble_data.bonding = false;
-                ble_data.bonded = true;
-                sl_bt_sm_passkey_confirm(ble_data.appConnectionHandle, true); // Confirm the passkey with 'true'.
-            }
+        if (ble_data.ok_to_send_report_notification) {
+            memset(input_report_data, 0, sizeof(input_report_data));
 
+            input_report_data[MODIFIER_INDEX] = CAPSLOCK_KEY_OFF;
+            input_report_data[DATA_INDEX] = actual_key;
 
-            // Toggle the button state between pressed and released.
-            // ble_data.buttonState = !ble_data.buttonState;
-            ble_data.buttonState = !GPIO_PinInGet(SW_PORT, SW0_pin); //  cause of pull up
+            sc = sl_bt_gatt_server_notify_all(gattdb_report,
+                                            sizeof(input_report_data),
+                                            input_report_data);
 
-            // Write the new button state to the corresponding GATT characteristic.
-            sl_bt_gatt_server_write_attribute_value(gattdb_report_map, 0, sizeof(ble_data.buttonState), &ble_data.buttonState);
-
-            // Log the current queue depth for debugging purposes.
-            PRINT_LOG("Current Queue Length (EXT event): %d\n\r", get_queue_depth());
-
-            // If the device is already bonded and not currently bonding, handle the button state indication.
-            if (ble_data.bonded && !ble_data.bonding && ble_data.ok_to_send_button_indications)
-            {
-                //attemptToSendOrQueueIndication(NULL, true);
-            }
-        }
-
-        else if (((evt->data.evt_system_external_signal.extsignals - evtBTN1) == 0x00))
-        {
-            if (!GPIO_PinInGet(SW_PORT, SW0_pin) && !GPIO_PinInGet(SW_PORT, SW1_pin) && !ble_data.indication_in_flight)
-            {
-                int flag = (ble_data.ok_to_send_button_indications == true) ? 0x00 : 0x02;
-                ble_data.ok_to_send_button_indications = (ble_data.ok_to_send_button_indications == true) ? false : true;
-                // enable indication
-
-                sc = sl_bt_gatt_set_characteristic_notification(
-                    ble_data.appConnectionHandle,
-                    ble_data.buttonCharacteristicHandle,
-                    flag);
-                // Error handling if enabling indications failed
-                if (sc != SL_STATUS_OK)
-                {
-
-                    // SL_STATUS_IN_PROGRESS ((sl_status_t)0x0005): Operation is in progress and not yet complete (pass or fail).
-                    LOG_ERROR("BTN sl_bt_gatt_set_characteristic_notification() returned != 0 status=0x%04x", (unsigned int)sc);
-                }
-                else{
-                    ble_data.indication_in_flight = true;
-                }
-            }
-            else if (GPIO_PinInGet(SW_PORT, SW0_pin) && !GPIO_PinInGet(SW_PORT, SW1_pin) && !ble_data.indication_in_flight)
-            {
-                if(!ble_data.bonded){
-                    sl_bt_sm_increase_security(ble_data.appConnectionHandle);
-                }
-                else{
-                    sc = sl_bt_gatt_read_characteristic_value(ble_data.appConnectionHandle, ble_data.buttonCharacteristicHandle);
-                    if (sc != SL_STATUS_OK)
-                    {
-                        LOG_ERROR("BTN sl_bt_gatt_read_characteristic_value() returned != 0 status=0x%04x", (unsigned int)sc);
-                        
-                    }
-                    else{
-                        ble_data.indication_in_flight = true;
-                    }
-                }
-                
-            
-            }
+            app_log("Key report was sent\r\n");
         }
 
         break;
@@ -513,32 +472,22 @@ void handle_ble_event(sl_bt_msg_t *evt)
             // send_from_queue();
         }
 
-//        // Check if the event is related to the temperature measurement characteristic by comparing the characteristic handle.
-//        if (evt->data.evt_gatt_server_characteristic_status.characteristic == gattdb_temperature_measurement)
-//        {
-//            // Check if the status change was due to a change in the Client Characteristic Configuration Descriptor (CCCD).
-//            if (evt->data.evt_gatt_server_characteristic_status.status_flags == gatt_server_client_config)
-//            {
-//                // Check if indications have been enabled for the characteristic by inspecting the client configuration flags.
-//                // The gatt_indication flag is set if indications are enabled.
-//                if (evt->data.evt_gatt_server_characteristic_status.client_config_flags & gatt_indication)
-//                {
-//                    PRINT_LOG("Indication for Temprature has been enabled by Client\n");
-//                    // Indications have been enabled by the client.
-//                    ble_data.ok_to_send_htm_indications = true;
-//                    gpioLed0SetOn();
-//                }
-//                else
-//                {
-//                    PRINT_LOG("Indication for Temprature has been disabled by Client\n");
-//                    // Resetting the queue as we are not sending indication
-//                    reset_queue();
-//                    // Indications have been disabled by the client.
-//                    ble_data.ok_to_send_htm_indications = false;
-//                    gpioLed0SetOff();
-//                }
-//            }
-//        }
+        if (evt->data.evt_gatt_server_characteristic_status.characteristic
+                  == gattdb_report) {
+            // client characteristic configuration changed by remote GATT client
+            if (evt->data.evt_gatt_server_characteristic_status.status_flags
+                == sl_bt_gatt_server_client_config) {
+              if (evt->data.evt_gatt_server_characteristic_status.
+                  client_config_flags == sl_bt_gatt_notification) {
+                  PRINT_LOG("Indication for Temprature has been enabled by Client\n");
+                  ble_data.ok_to_send_report_notification = 1;
+              } else {
+                  PRINT_LOG("Indication for Temprature has been disabled by Client\n");
+                  ble_data.ok_to_send_report_notification = 0;
+              }
+            }
+          }
+
 
 
         break;

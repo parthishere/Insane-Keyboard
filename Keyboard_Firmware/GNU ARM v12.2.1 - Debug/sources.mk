@@ -18,11 +18,15 @@ C_DEPS :=
 SUBDIRS := \
 . \
 autogen \
+gecko_sdk_4.4.4/app/bluetooth/common/in_place_ota_dfu \
 gecko_sdk_4.4.4/app/common/util/app_log \
+gecko_sdk_4.4.4/app/common/util/app_timer \
 gecko_sdk_4.4.4/hardware/board/src \
 gecko_sdk_4.4.4/hardware/driver/configuration_over_swo/src \
 gecko_sdk_4.4.4/hardware/driver/mx25_flash_shutdown/src/sl_mx25_flash_shutdown_usart \
 gecko_sdk_4.4.4/platform/Device/SiliconLabs/EFR32BG13P/Source \
+gecko_sdk_4.4.4/platform/bootloader/api \
+gecko_sdk_4.4.4/platform/bootloader/app_properties \
 gecko_sdk_4.4.4/platform/common/src \
 gecko_sdk_4.4.4/platform/common/toolchain/src \
 gecko_sdk_4.4.4/platform/driver/debug/src \
@@ -43,6 +47,7 @@ gecko_sdk_4.4.4/platform/service/sleeptimer/src \
 gecko_sdk_4.4.4/platform/service/system/src \
 gecko_sdk_4.4.4/platform/service/udelay/src \
 gecko_sdk_4.4.4/protocol/bluetooth/bgcommon/src \
+gecko_sdk_4.4.4/protocol/bluetooth/lib/EFR32XG13/GCC \
 gecko_sdk_4.4.4/protocol/bluetooth/src \
 gecko_sdk_4.4.4/util/silicon_labs/silabs_core/memory_manager \
 gecko_sdk_4.4.4/util/third_party/mbedtls/library \
