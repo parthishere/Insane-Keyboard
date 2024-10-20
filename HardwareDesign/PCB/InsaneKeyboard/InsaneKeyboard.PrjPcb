@@ -227,26 +227,30 @@ DocumentPath=Project Outputs for InsaneKeyboard\BOM\Bill of Materials-InsaneKeyb
 DItemRevisionGUID=
 
 [GeneratedDocument2]
-DocumentPath=Project Outputs for InsaneKeyboard\Keyboard.DRR
+DocumentPath=Project Outputs for InsaneKeyboard\Design Rule Check - InsaneKeyboard.html
 DItemRevisionGUID=
 
 [GeneratedDocument3]
-DocumentPath=Project Outputs for InsaneKeyboard\Keyboard.EXTREP
+DocumentPath=Project Outputs for InsaneKeyboard\Keyboard.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument4]
-DocumentPath=Project Outputs for InsaneKeyboard\Keyboard.GM
+DocumentPath=Project Outputs for InsaneKeyboard\Keyboard.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument5]
-DocumentPath=Project Outputs for InsaneKeyboard\Keyboard.LDP
+DocumentPath=Project Outputs for InsaneKeyboard\Keyboard.GM
 DItemRevisionGUID=
 
 [GeneratedDocument6]
-DocumentPath=Project Outputs for InsaneKeyboard\Keyboard.REP
+DocumentPath=Project Outputs for InsaneKeyboard\Keyboard.LDP
 DItemRevisionGUID=
 
 [GeneratedDocument7]
+DocumentPath=Project Outputs for InsaneKeyboard\Keyboard.REP
+DItemRevisionGUID=
+
+[GeneratedDocument8]
 DocumentPath=Project Outputs for InsaneKeyboard\Pick Place for Keyboard.txt
 DItemRevisionGUID=
 
