@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
-PCB File : C:\Parth\Insane-Keyboard\HardwareDesign\PCB\InsaneKeyboard\InsaneKeyboard.PcbDoc
-Date     : 10/20/2024
-Time     : 7:42:03 AM
+PCB File : D:\Embedded Systems - MS\LowPowerEmbeddedSystems\Insane-Keyboard\HardwareDesign\PCB\InsaneKeyboard\InsaneKeyboard.PcbDoc
+Date     : 20-10-2024
+Time     : 18:09:29
 
 WARNING: 2 Net Ties failed verification
    SMT Small Component C23-CAP 47uF 10V 0805 (1316mil,794mil) on Top Layer, SMT Small Component C23-CAP 47uF 10V 0805 (1316mil,794mil) on Top Layer, has isolated copper
@@ -14,8 +14,7 @@ Processing Rule : Clearance Constraint (Gap=4mil) (All),(All)
    Violation between Clearance Constraint: (Collision < 4mil) Between Pad Q2-(1088mil,1604mil) on Multi-Layer And Pad Q2-21(1088mil,1604mil) on Top Layer 
    Violation between Clearance Constraint: (Collision < 4mil) Between Pad Q2-(1088mil,1634.512mil) on Multi-Layer And Pad Q2-21(1088mil,1604mil) on Top Layer 
    Violation between Clearance Constraint: (Collision < 4mil) Between Pad Q2-(1118.51mil,1604mil) on Multi-Layer And Pad Q2-21(1088mil,1604mil) on Top Layer 
-   Violation between Clearance Constraint: (Collision < 4mil) Between Track (1071.976mil,3142.338mil)(1071.976mil,3212.257mil) on Top Layer And Via (1060.5mil,3178.5mil) from Top Layer to Bottom Layer 
-Rule Violations :7
+Rule Violations :6
 
 Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
    Violation between Short-Circuit Constraint: Between Pad ATT1-FEED(1063mil,3582mil) on Top Layer And Region (0 hole(s)) Top Layer Location : [X = 2063mil][Y = 7003mil]
@@ -60,134 +59,10 @@ Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
    Violation between Short-Circuit Constraint: Between Pad Q2-(1088mil,1604mil) on Multi-Layer And Pad Q2-21(1088mil,1604mil) on Top Layer Location : [X = 2088mil][Y = 4999mil]
    Violation between Short-Circuit Constraint: Between Pad Q2-(1088mil,1634.512mil) on Multi-Layer And Pad Q2-21(1088mil,1604mil) on Top Layer Location : [X = 2088mil][Y = 5029.512mil]
    Violation between Short-Circuit Constraint: Between Pad Q2-(1118.51mil,1604mil) on Multi-Layer And Pad Q2-21(1088mil,1604mil) on Top Layer Location : [X = 2118.51mil][Y = 4999mil]
-   Violation between Short-Circuit Constraint: Between Track (1071.976mil,3142.338mil)(1071.976mil,3212.257mil) on Top Layer And Via (1060.5mil,3178.5mil) from Top Layer to Bottom Layer Location : [X = 2070.004mil][Y = 6573.5mil]
-Rule Violations :43
+Rule Violations :42
 
 Processing Rule : Un-Routed Net Constraint ( (All) )
-   Violation between Un-Routed Net Constraint: Net USB_D_P Between Pad J2-B6(271mil,1105.63mil) on Top Layer And Track (273.906mil,1142.094mil)(300.227mil,1142.094mil) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net VSTOR Between Pad Q2-19(1023.038mil,1584.314mil) on Top Layer And Pad Q2-6(1152.96mil,1564.63mil) on Top Layer 
-   Violation between Isolated copper: Split Plane  (GND) on Int1 (GND). Copper island connected to pads/vias detected. Copper area is : 391.804 sq. mils
-   Violation between Isolated copper: Split Plane  (GND) on Int1 (GND). Copper island connected to pads/vias detected. Copper area is : 391.804 sq. mils
-   Violation between Isolated copper: Split Plane  (GND) on Int1 (GND). Copper island connected to pads/vias detected. Copper area is : 391.804 sq. mils
-   Violation between Isolated copper: Split Plane  (GND) on Int1 (GND). Copper island connected to pads/vias detected. Copper area is : 391.804 sq. mils
-   Violation between Isolated copper: Split Plane  (GND) on Int1 (GND). Dead copper detected. Copper area is : 103.941 sq. mils
-   Violation between Isolated copper: Split Plane  (GND) on Int1 (GND). Dead copper detected. Copper area is : 103.941 sq. mils
-   Violation between Isolated copper: Split Plane  (GND) on Int1 (GND). Dead copper detected. Copper area is : 103.941 sq. mils
-   Violation between Isolated copper: Split Plane  (GND) on Int1 (GND). Dead copper detected. Copper area is : 103.941 sq. mils
-   Violation between Isolated copper: Split Plane  (GND) on Int1 (GND). Dead copper detected. Copper area is : 103.958 sq. mils
-   Violation between Isolated copper: Split Plane  (GND) on Int1 (GND). Dead copper detected. Copper area is : 103.958 sq. mils
-   Violation between Isolated copper: Split Plane  (GND) on Int1 (GND). Dead copper detected. Copper area is : 103.958 sq. mils
-   Violation between Isolated copper: Split Plane  (GND) on Int1 (GND). Dead copper detected. Copper area is : 103.958 sq. mils
-   Violation between Isolated copper: Split Plane  (GND) on Int1 (GND). Dead copper detected. Copper area is : 103.958 sq. mils
-   Violation between Isolated copper: Split Plane  (GND) on Int2 (GND). Copper island connected to pads/vias detected. Copper area is : 391.804 sq. mils
-   Violation between Isolated copper: Split Plane  (GND) on Int2 (GND). Copper island connected to pads/vias detected. Copper area is : 391.804 sq. mils
-   Violation between Isolated copper: Split Plane  (GND) on Int2 (GND). Copper island connected to pads/vias detected. Copper area is : 391.804 sq. mils
-   Violation between Isolated copper: Split Plane  (GND) on Int2 (GND). Copper island connected to pads/vias detected. Copper area is : 391.804 sq. mils
-   Violation between Isolated copper: Split Plane  (GND) on Int2 (GND). Dead copper detected. Copper area is : 103.941 sq. mils
-   Violation between Isolated copper: Split Plane  (GND) on Int2 (GND). Dead copper detected. Copper area is : 103.941 sq. mils
-   Violation between Isolated copper: Split Plane  (GND) on Int2 (GND). Dead copper detected. Copper area is : 103.941 sq. mils
-   Violation between Isolated copper: Split Plane  (GND) on Int2 (GND). Dead copper detected. Copper area is : 103.941 sq. mils
-   Violation between Isolated copper: Split Plane  (GND) on Int2 (GND). Dead copper detected. Copper area is : 103.958 sq. mils
-   Violation between Isolated copper: Split Plane  (GND) on Int2 (GND). Dead copper detected. Copper area is : 103.958 sq. mils
-   Violation between Isolated copper: Split Plane  (GND) on Int2 (GND). Dead copper detected. Copper area is : 103.958 sq. mils
-   Violation between Isolated copper: Split Plane  (GND) on Int2 (GND). Dead copper detected. Copper area is : 103.958 sq. mils
-   Violation between Isolated copper: Split Plane  (GND) on Int2 (GND). Dead copper detected. Copper area is : 103.958 sq. mils
-   Violation between Un-Routed Net Constraint: Net RADIO_PD10 Between Track (1008.941mil,3169mil)(1013mil,3169mil) on Bottom Layer And Via (1013mil,3169mil) from Top Layer to Int1 (GND) 
-   Violation between Un-Routed Net Constraint: Net NetC17_1 Between Track (973.25mil,1402mil)(1067.25mil,1496mil) on Bottom Layer And Track (1068.407mil,1496.093mil)(1068.407mil,1538.947mil) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net VMCU Between Track (1401.298mil,3186.191mil)(1433.809mil,3186.191mil) on Top Layer And Via (1434mil,3186mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net VMCU Between Track (1410.729mil,2569mil)(1427.729mil,2586mil) on Bottom Layer And Track (1428.271mil,2586mil)(1448.767mil,2606.496mil) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net IO_ROW_P2 Between Track (1605.941mil,2332mil)(1611.941mil,2338mil) on Bottom Layer And Track (1617.693mil,2339.693mil)(1617.693mil,2388.354mil) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P6 Between Track (1672.078mil,-104.13mil)(1688.13mil,-104.13mil) on Top Layer And Via (1691mil,-107mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net RADIO_PA5 Between Via (1792mil,2745mil) from Int2 (GND) to Bottom Layer And Track (1798.496mil,2633mil)(1798.496mil,2738.504mil) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P6 Between Track (1827.941mil,-115mil)(1832mil,-115mil) on Bottom Layer And Via (2495mil,212mil) from Top Layer to Int1 (GND) 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P2 Between Track (1957.252mil,3070.87mil)(1957.252mil,3081.999mil) on Bottom Layer And Track (1960.122mil,3068mil)(1962.992mil,3070.87mil) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P1 Between Via (1971mil,3093mil) from Int2 (GND) to Bottom Layer And Track (1973.87mil,3095.87mil)(1973.87mil,3107.216mil) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P0 Between Via (1985.549mil,3143.644mil) from Int2 (GND) to Bottom Layer And Track (1985.549mil,3143.644mil)(1988.419mil,3146.514mil) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P4 Between Track (2105.528mil,3078.723mil)(2105.528mil,3112.419mil) on Bottom Layer And Via (2112mil,3055mil) from Top Layer to Int1 (GND) 
-   Violation between Un-Routed Net Constraint: Net RADIO_PA4 Between Track (875.717mil,3036.63mil)(887.528mil,3036.63mil) on Top Layer And Track (2126.496mil,3159.842mil)(2133.189mil,3159.842mil) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P7 Between Track (2126.917mil,3140.579mil)(2172.579mil,3140.579mil) on Top Layer And Via (2173mil,3141mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P5 Between Track (3196.227mil,130.227mil)(3196.227mil,220.319mil) on Bottom Layer And Via (3196.454mil,220.546mil) from Top Layer to Int1 (GND) 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P5 Between Via (3196mil,130mil) from Top Layer to Int1 (GND) And Track (3196.227mil,130.227mil)(3196.227mil,220.319mil) on Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P4 Between Track (3220.026mil,3161.496mil)(3845.496mil,3161.496mil) on Top Layer And Via (3849.016mil,3168.996mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P5 Between Via (3235mil,935mil) from Top Layer to Int1 (GND) And Track (3235mil,935mil)(3237mil,933mil) on Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P5 Between Track (3237mil,863mil)(3239mil,861mil) on Bottom Layer And Via (3239mil,861mil) from Top Layer to Int1 (GND) 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P5 Between Via (3248mil,2309mil) from Top Layer to Int1 (GND) And Track (3248mil,2309mil)(3250mil,2311mil) on Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P5 Between Track (3250mil,2391mil)(3252mil,2393mil) on Bottom Layer And Via (3252mil,2393mil) from Top Layer to Int1 (GND) 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P5 Between Via (3270mil,1590mil) from Top Layer to Int1 (GND) And Track (3271mil,1591mil)(3271mil,1675mil) on Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P5 Between Track (3271mil,1675mil)(3272mil,1676mil) on Bottom Layer And Via (3272mil,1676mil) from Top Layer to Int1 (GND) 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P4 Between Track (3981mil,2390.941mil)(3981mil,2395mil) on Top Layer And Via (3981mil,2395mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P4 Between Via (3997mil,232.162mil) from Top Layer to Int1 (GND) And Track (3998mil,152mil)(3998mil,231.162mil) on Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P4 Between Track (3998mil,152mil)(3998mil,231.162mil) on Bottom Layer And Via (3999mil,151mil) from Top Layer to Int1 (GND) 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P4 Between Via (3999mil,1719mil) from Top Layer to Int1 (GND) And Track (3999mil,1719mil)(4000mil,1718mil) on Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P4 Between Track (4000mil,1652mil)(4000mil,1718mil) on Bottom Layer And Via (4001mil,1651mil) from Top Layer to Int1 (GND) 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P4 Between Track (4015mil,966.941mil)(4021mil,960.941mil) on Bottom Layer And Via (4015mil,971mil) from Top Layer to Int1 (GND) 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P3 Between Track (4638.637mil,1714.363mil)(4638.819mil,1714.544mil) on Bottom Layer And Track (4685.5mil,916.5mil)(4687mil,918mil) on Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P3 Between Track (4638.819mil,1714.544mil)(4638.819mil,1797.819mil) on Bottom Layer And Via (4639mil,1798mil) from Top Layer to Int1 (GND) 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P3 Between Track (4654mil,316.941mil)(4654mil,321mil) on Bottom Layer And Via (4654mil,321mil) from Top Layer to Int1 (GND) 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P3 Between Via (4684mil,855mil) from Top Layer to Int1 (GND) And Track (4685.5mil,856.5mil)(4685.5mil,916.5mil) on Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P3 Between Track (4685.5mil,916.5mil)(4687mil,918mil) on Bottom Layer And Via (4687mil,918mil) from Top Layer to Int1 (GND) 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P2 Between Via (5461mil,1608mil) from Top Layer to Int1 (GND) And Track (5463.5mil,1610.5mil)(5463.5mil,1751.5mil) on Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P2 Between Track (5463.5mil,1610.5mil)(5463.5mil,1751.5mil) on Bottom Layer And Via (5466mil,1754mil) from Top Layer to Int1 (GND) 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P2 Between Track (5466.135mil,63.076mil)(5477mil,73.941mil) on Top Layer And Via (5477mil,78mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P2 Between Via (5477mil,262mil) from Int2 (GND) to Bottom Layer And Track (5470.124mil,272.935mil)(5477mil,266.059mil) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P2 Between Track (5549.941mil,3316mil)(5554mil,3316mil) on Top Layer And Via (5554mil,3316mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P2 Between Via (5585mil,3042mil) from Int2 (GND) to Bottom Layer And Track (5585mil,3042mil)(5585.496mil,3042mil) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P1 Between Track (6165.858mil,1141.048mil)(6166.842mil,1141.048mil) on Top Layer And Track (6197mil,857mil)(6199mil,855mil) on Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P1 Between Track (6177.938mil,2642mil)(6178.922mil,2642mil) on Top Layer And Via (6216mil,2372mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P1 Between Track (6197mil,857mil)(6199mil,855mil) on Bottom Layer And Via (6201mil,771mil) from Top Layer to Int1 (GND) 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P1 Between Via (6204mil,38mil) from Top Layer to Int1 (GND) And Track (6204mil,38mil)(6205.5mil,39.5mil) on Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P1 Between Track (6205.5mil,39.5mil)(6205.5mil,99.5mil) on Bottom Layer And Via (6207mil,101mil) from Top Layer to Int1 (GND) 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P1 Between Track (6216.5mil,1550.5mil)(6216.5mil,1632.5mil) on Bottom Layer And Track (6218mil,1544.941mil)(6218mil,1549mil) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P1 Between Via (6215mil,1634mil) from Top Layer to Int1 (GND) And Track (6216.5mil,1550.5mil)(6216.5mil,1632.5mil) on Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net RADIO_PD10 Between Track (650.649mil,3163.5mil)(807.5mil,3163.5mil) on Top Layer And Via (808mil,3164mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net RADIO_PD11 Between Track (734.378mil,3179.378mil)(736mil,3181mil) on Top Layer And Track (736mil,3181mil)(738.751mil,3183.751mil) on Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net VDCDC Between Track (827.299mil,2597mil)(827.299mil,2635.372mil) on Top Layer And Via (895mil,2573mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net RADIO_PA5 Between Via (852mil,3008mil) from Int2 (GND) to Bottom Layer And Track (852mil,3008mil)(853.904mil,3008mil) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net VMCU Between Track (928.834mil,3215.378mil)(935.126mil,3215.378mil) on Top Layer And Track (953.866mil,2871.866mil)(953.866mil,2883.677mil) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net RADIO_PD11 Between Track (948.256mil,3385.182mil)(951.126mil,3388.052mil) on Bottom Layer And Track (951.126mil,3386.37mil)(951.126mil,3388.052mil) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net VMCU Between Track (953.866mil,2865.004mil)(953.866mil,2871.866mil) on Top Layer And Via (954mil,2831mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net NetC17_1 Between Via (972mil,1402mil) from Top Layer to Int1 (GND) And Track (973.25mil,1402mil)(1067.25mil,1496mil) on Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net VBAT Between Track (985.107mil,1614.622mil)(988.538mil,1611.191mil) on Bottom Layer And Track (989mil,1611mil)(989.271mil,1611mil) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net VDCDC Between Via (1031mil,2822mil) from Top Layer to Int1 (GND) And Via (1031mil,2822mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net VMCU Between Via (1183mil,2569mil) from Int2 (GND) to Bottom Layer And Via (1183mil,2569mil) from Top Layer to Int1 (GND) 
-   Violation between Un-Routed Net Constraint: Net RADIO_PA5 Between Via (1187mil,2825mil) from Int2 (GND) to Bottom Layer And Via (1187mil,2825mil) from Top Layer to Int1 (GND) 
-   Violation between Un-Routed Net Constraint: Net VDCDC Between Via (1431mil,2848mil) from Int2 (GND) to Bottom Layer And Via (1431mil,2848mil) from Top Layer to Int1 (GND) 
-   Violation between Un-Routed Net Constraint: Net IO_ROW_P2 Between Via (1537mil,2332mil) from Int2 (GND) to Bottom Layer And Via (1537mil,2332mil) from Top Layer to Int1 (GND) 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P7 Between Via (1568mil,2257mil) from Top Layer to Int1 (GND) And Via (1568mil,2257mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net RADIO_PA5 Between Via (1671mil,2775mil) from Top Layer to Int1 (GND) And Via (1671mil,2775mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P5 Between Via (2123.028mil,3085.972mil) from Top Layer to Int1 (GND) And Via (2123.028mil,3085.972mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net RADIO_PA4 Between Via (2123mil,3244.311mil) from Int2 (GND) to Bottom Layer And Via (2123mil,3244.311mil) from Top Layer to Int1 (GND) 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P2 Between Via (2185mil,3324mil) from Int2 (GND) to Bottom Layer And Via (2185mil,3324mil) from Top Layer to Int1 (GND) 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P0 Between Via (2190mil,3293.311mil) from Top Layer to Int1 (GND) And Via (2190mil,3293.311mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P6 Between Via (2495mil,212mil) from Top Layer to Int1 (GND) And Via (2495mil,212mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P6 Between Via (2505mil,1435mil) from Top Layer to Int1 (GND) And Via (2505mil,1494mil) from Top Layer to Int1 (GND) 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P6 Between Via (2505mil,1494mil) from Int2 (GND) to Bottom Layer And Via (2505mil,1494mil) from Top Layer to Int1 (GND) 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P6 Between Via (2507mil,891mil) from Top Layer to Int1 (GND) And Via (2507mil,891mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P6 Between Via (2517mil,2752mil) from Top Layer to Int1 (GND) And Via (2517mil,2752mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P6 Between Via (2519mil,2316mil) from Int2 (GND) to Bottom Layer And Via (2519mil,2316mil) from Top Layer to Int1 (GND) 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P6 Between Via (2522mil,1034mil) from Top Layer to Int1 (GND) And Via (2522mil,1034mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P6 Between Via (2527mil,301mil) from Top Layer to Int1 (GND) And Via (2527mil,301mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P4 Between Via (2548mil,3119mil) from Int2 (GND) to Bottom Layer And Via (2548mil,3119mil) from Top Layer to Int1 (GND) 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P1 Between Via (2686mil,3158mil) from Top Layer to Int1 (GND) And Via (2686mil,3158mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P5 Between Via (2904mil,3010mil) from Top Layer to Int1 (GND) And Via (2904mil,3010mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P4 Between Via (3918mil,3096mil) from Top Layer to Int1 (GND) And Via (3918mil,3096mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P4 Between Via (3976mil,2480mil) from Top Layer to Int1 (GND) And Via (3976mil,2480mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P4 Between Via (4015mil,971mil) from Top Layer to Int1 (GND) And Via (4021mil,900mil) from Top Layer to Int1 (GND) 
-   Violation between Un-Routed Net Constraint: Net VMCU Between Via (448mil,2302mil) from Int2 (GND) to Bottom Layer And Via (448mil,2302mil) from Top Layer to Int1 (GND) 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P3 Between Via (4648mil,172mil) from Top Layer to Int1 (GND) And Via (4648mil,172mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P3 Between Via (4651mil,2463mil) from Int2 (GND) to Bottom Layer And Via (4651mil,2463mil) from Top Layer to Int1 (GND) 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P3 Between Via (4651mil,2523mil) from Top Layer to Int1 (GND) And Via (4651mil,2523mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P2 Between Via (5466mil,1007mil) from Top Layer to Int1 (GND) And Via (5466mil,1007mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P2 Between Via (5466mil,825mil) from Top Layer to Int1 (GND) And Via (5466mil,825mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P2 Between Via (5469mil,2361mil) from Int2 (GND) to Bottom Layer And Via (5469mil,2361mil) from Top Layer to Int1 (GND) 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P2 Between Via (5469mil,2504mil) from Top Layer to Int1 (GND) And Via (5469mil,2504mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P1 Between Via (6216mil,2132mil) from Top Layer to Int1 (GND) And Via (6216mil,2132mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P1 Between Via (6254.524mil,3191mil) from Top Layer to Int1 (GND) And Via (6254.524mil,3191mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net IO_COL_P1 Between Via (6307mil,3094mil) from Top Layer to Int1 (GND) And Via (6307mil,3094mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net VDCDC Between Via (698.569mil,2435.569mil) from Top Layer to Int1 (GND) And Via (698.569mil,2435.569mil) from Int2 (GND) to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net VBAT Between Via (788.378mil,1614.622mil) from Int2 (GND) to Bottom Layer And Via (788.378mil,1614.622mil) from Top Layer to Int1 (GND) 
-   Violation between Un-Routed Net Constraint: Net VMCU Between Via (885mil,2466.432mil) from Top Layer to Int1 (GND) And Via (885mil,2466.432mil) from Int2 (GND) to Bottom Layer 
-Rule Violations :123
+Rule Violations :0
 
 Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
 Rule Violations :0
@@ -213,13 +88,9 @@ Rule Violations :0
 Processing Rule : Width Constraint (Min=6mil) (Max=20mil) (Preferred=20mil) (InNet('USB_VCC'))
 Rule Violations :0
 
-Processing Rule : Width Constraint (Min=20mil) (Max=20mil) (Preferred=20mil) (InNet('VMCU'))
-   Violation between Width Constraint: Track (1000.804mil,2895.795mil)(1012.922mil,2883.677mil) on Top Layer Actual Width = 6mil, Target Width = 20mil
+Processing Rule : Width Constraint (Min=6mil) (Max=20mil) (Preferred=20mil) (InNet('VMCU'))
    Violation between Width Constraint: Track (1012.922mil,2871.866mil)(1012.922mil,2883.677mil) on Top Layer Actual Width = 6mil, Target Width = 20mil
-   Violation between Width Constraint: Track (953.866mil,2871.866mil)(953.866mil,2883.677mil) on Top Layer Actual Width = 6mil, Target Width = 20mil
-   Violation between Width Constraint: Track (953.866mil,2883.677mil)(965.984mil,2895.795mil) on Top Layer Actual Width = 6mil, Target Width = 20mil
-   Violation between Width Constraint: Track (965.984mil,2895.795mil)(1000.804mil,2895.795mil) on Top Layer Actual Width = 6mil, Target Width = 20mil
-Rule Violations :5
+Rule Violations :1
 
 Processing Rule : Width Constraint (Min=6mil) (Max=10mil) (Preferred=6mil) (All)
    Violation between Width Constraint: Track (945mil,1742.386mil)(988.307mil,1742.386mil) on Top Layer Actual Width = 20mil, Target Width = 10mil
@@ -238,15 +109,7 @@ Processing Rule : Routing Topology Rule(Topology=Shortest) (All)
 Rule Violations :0
 
 Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
-   Violation between Starved Thermal on Int1 (GND): Via (1001.11mil,2985.448mil) from Top Layer to Bottom Layer. Only 37% copper is connected to the hole.
-   Violation between Starved Thermal on Int2 (GND): Via (1001.11mil,2985.448mil) from Top Layer to Bottom Layer. Only 37% copper is connected to the hole.
-   Violation between Starved Thermal on Int1 (GND): Via (1001.11mil,3028.756mil) from Top Layer to Bottom Layer. Only 37% copper is connected to the hole.
-   Violation between Starved Thermal on Int2 (GND): Via (1001.11mil,3028.756mil) from Top Layer to Bottom Layer. Only 37% copper is connected to the hole.
-   Violation between Starved Thermal on Int1 (GND): Via (1044.418mil,2985.448mil) from Top Layer to Bottom Layer. Only 42% copper is connected to the hole.
-   Violation between Starved Thermal on Int2 (GND): Via (1044.418mil,2985.448mil) from Top Layer to Bottom Layer. Only 42% copper is connected to the hole.
-   Violation between Starved Thermal on Int1 (GND): Via (1044.418mil,3028.756mil) from Top Layer to Bottom Layer. Only 42% copper is connected to the hole.
-   Violation between Starved Thermal on Int2 (GND): Via (1044.418mil,3028.756mil) from Top Layer to Bottom Layer. Only 42% copper is connected to the hole.
-Rule Violations :8
+Rule Violations :0
 
 Processing Rule : Hole Size Constraint (Min=1mil) (Max=248mil) (All)
 Rule Violations :0
@@ -288,10 +151,13 @@ Processing Rule : Hole To Hole Clearance (Gap=7.874mil) (All),(All)
    Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(6841.502mil,2547.004mil) on Multi-Layer And Pad SW30-8(6842mil,2546.212mil) on Multi-Layer Pad/Via Touching Holes
    Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(6841.5mil,297.088mil) on Multi-Layer And Pad SW9-8(6834.426mil,290.256mil) on Multi-Layer Pad/Via Touching Holes
    Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(986.96mil,-1135.22mil) on Multi-Layer And Pad SW38-8(991.418mil,-1136.002mil) on Multi-Layer Pad/Via Touching Holes
-Rule Violations :36
+   Violation between Hole To Hole Clearance Constraint: (7.444mil < 7.874mil) Between Via (1100.081mil,3178.5mil) from Top Layer to Int1 (GND) And Via (1120.5mil,3179.5mil) from Top Layer to Int1 (GND) 
+Rule Violations :37
 
 Processing Rule : Minimum Solder Mask Sliver (Gap=3.937mil) (All),(All)
-   Violation between Minimum Solder Mask Sliver Constraint: (0.344mil < 3.937mil) Between Pad C11-2(820mil,3040mil) on Top Layer And Via (852mil,3008mil) from Top Layer to Int1 (GND) [Top Solder] Mask Sliver [0.344mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.128mil < 3.937mil) Between Pad C11-1(820mil,2971.104mil) on Top Layer And Via (853.904mil,3008mil) from Top Layer to Int1 (GND) [Top Solder] Mask Sliver [0.128mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.59mil < 3.937mil) Between Pad C11-2(820mil,3040mil) on Top Layer And Via (853.904mil,3008mil) from Top Layer to Int1 (GND) [Top Solder] Mask Sliver [1.59mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (3.588mil < 3.937mil) Between Pad C16-1(943mil,1580.104mil) on Top Layer And Via (985.107mil,1614.622mil) from Top Layer to Int1 (GND) [Top Solder] Mask Sliver [3.588mil]
    Violation between Minimum Solder Mask Sliver Constraint: (0.756mil < 3.937mil) Between Pad C3-1(1353.551mil,3021mil) on Top Layer And Pad L3-2(1348.63mil,2965mil) on Top Layer [Top Solder] Mask Sliver [0.756mil]
    Violation between Minimum Solder Mask Sliver Constraint: (0.756mil < 3.937mil) Between Pad C3-2(1422.449mil,3021mil) on Top Layer And Pad L3-1(1427.37mil,2965mil) on Top Layer [Top Solder] Mask Sliver [0.756mil]
    Violation between Minimum Solder Mask Sliver Constraint: (1.756mil < 3.937mil) Between Pad C4-1(978.448mil,3424mil) on Top Layer And Pad L4-2(983.37mil,3481mil) on Top Layer [Top Solder] Mask Sliver [1.756mil]
@@ -307,12 +173,14 @@ Processing Rule : Minimum Solder Mask Sliver (Gap=3.937mil) (All),(All)
    Violation between Minimum Solder Mask Sliver Constraint: (3.936mil (0.1mm) < 3.937mil (0.1mm)) Between Pad J2-A6(271mil,1145mil) on Top Layer And Pad J2-A7(271mil,1125.316mil) on Top Layer [Top Solder] Mask Sliver [3.936mil]
    Violation between Minimum Solder Mask Sliver Constraint: (3.936mil (0.1mm) < 3.937mil (0.1mm)) Between Pad J2-A8(271mil,1085.946mil) on Top Layer And Pad J2-B6(271mil,1105.63mil) on Top Layer [Top Solder] Mask Sliver [3.936mil]
    Violation between Minimum Solder Mask Sliver Constraint: (3.9365mil (0.1mm) < 3.937mil (0.1mm)) Between Pad J2-B4_A9(271mil,1040.67mil) on Top Layer And Pad J2-B5(271mil,1066.26mil) on Top Layer [Top Solder] Mask Sliver [3.937mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.563mil < 3.937mil) Between Pad L6-1(1142.685mil,2569mil) on Top Layer And Via (1172mil,2569mil) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [1.563mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.37mil < 3.937mil) Between Pad L7-1(945mil,1742.386mil) on Top Layer And Via (870mil,1705mil) from Top Layer to Int1 (GND) [Top Solder] Mask Sliver [1.37mil]
    Violation between Minimum Solder Mask Sliver Constraint: (2.504mil < 3.937mil) Between Pad LED2-A(1236.504mil,2956mil) on Top Layer And Pad LED3-A(1235.504mil,2998mil) on Top Layer [Top Solder] Mask Sliver [2.504mil]
    Violation between Minimum Solder Mask Sliver Constraint: (2.504mil < 3.937mil) Between Pad LED2-C(1299.496mil,2956mil) on Top Layer And Pad LED3-C(1298.496mil,2998mil) on Top Layer [Top Solder] Mask Sliver [2.504mil]
    Violation between Minimum Solder Mask Sliver Constraint: (3.267mil < 3.937mil) Between Pad Q1-1(1158mil,2898.834mil) on Top Layer And Pad Q1-48(1131.032mil,2871.866mil) on Top Layer [Top Solder] Mask Sliver [3.267mil]
    Violation between Minimum Solder Mask Sliver Constraint: (1.295mil < 3.937mil) Between Pad Q1-28(887.528mil,3056.314mil) on Top Layer And Via (855mil,3068mil) from Top Layer to Int1 (GND) [Top Solder] Mask Sliver [1.295mil]
-   Violation between Minimum Solder Mask Sliver Constraint: (3.073mil < 3.937mil) Between Pad Q1-30(887.528mil,3016.944mil) on Top Layer And Via (852mil,3008mil) from Top Layer to Int1 (GND) [Top Solder] Mask Sliver [3.073mil]
-   Violation between Minimum Solder Mask Sliver Constraint: (3.657mil < 3.937mil) Between Pad Q1-31(887.528mil,2997.26mil) on Top Layer And Via (852mil,3008mil) from Top Layer to Int1 (GND) [Top Solder] Mask Sliver [3.657mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.258mil < 3.937mil) Between Pad Q1-30(887.528mil,3016.944mil) on Top Layer And Via (853.904mil,3008mil) from Top Layer to Int1 (GND) [Top Solder] Mask Sliver [1.258mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.892mil < 3.937mil) Between Pad Q1-31(887.528mil,2997.26mil) on Top Layer And Via (853.904mil,3008mil) from Top Layer to Int1 (GND) [Top Solder] Mask Sliver [1.892mil]
    Violation between Minimum Solder Mask Sliver Constraint: (3.936mil (0.1mm) < 3.937mil (0.1mm)) Between Pad Q3-10(1739.496mil,2410.158mil) on Top Layer And Pad Q3-11(1739.496mil,2429.842mil) on Top Layer [Top Solder] Mask Sliver [3.936mil]
    Violation between Minimum Solder Mask Sliver Constraint: (3.936mil (0.1mm) < 3.937mil (0.1mm)) Between Pad Q3-14(1692.842mil,2476.496mil) on Top Layer And Pad Q3-15(1673.158mil,2476.496mil) on Top Layer [Top Solder] Mask Sliver [3.936mil]
    Violation between Minimum Solder Mask Sliver Constraint: (3.936mil (0.1mm) < 3.937mil (0.1mm)) Between Pad Q3-2(1626.504mil,2429.842mil) on Top Layer And Pad Q3-3(1626.504mil,2410.158mil) on Top Layer [Top Solder] Mask Sliver [3.936mil]
@@ -320,14 +188,24 @@ Processing Rule : Minimum Solder Mask Sliver (Gap=3.937mil) (All),(All)
    Violation between Minimum Solder Mask Sliver Constraint: (3.936mil (0.1mm) < 3.937mil (0.1mm)) Between Pad Q4-10(2126.496mil,3140.158mil) on Top Layer And Pad Q4-11(2126.496mil,3159.842mil) on Top Layer [Top Solder] Mask Sliver [3.936mil]
    Violation between Minimum Solder Mask Sliver Constraint: (3.936mil (0.1mm) < 3.937mil (0.1mm)) Between Pad Q4-14(2079.842mil,3206.496mil) on Top Layer And Pad Q4-15(2060.158mil,3206.496mil) on Top Layer [Top Solder] Mask Sliver [3.936mil]
    Violation between Minimum Solder Mask Sliver Constraint: (3.936mil (0.1mm) < 3.937mil (0.1mm)) Between Pad Q4-2(2013.504mil,3159.842mil) on Top Layer And Pad Q4-3(2013.504mil,3140.158mil) on Top Layer [Top Solder] Mask Sliver [3.936mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.681mil < 3.937mil) Between Pad Q4-2(2013.504mil,3159.842mil) on Top Layer And Via (1986.371mil,3144.466mil) from Top Layer to Int1 (GND) [Top Solder] Mask Sliver [1.681mil]
    Violation between Minimum Solder Mask Sliver Constraint: (3.936mil (0.1mm) < 3.937mil (0.1mm)) Between Pad Q4-6(2060.158mil,3093.504mil) on Top Layer And Pad Q4-7(2079.842mil,3093.504mil) on Top Layer [Top Solder] Mask Sliver [3.936mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.126mil < 3.937mil) Between Pad Q4-8(2099.528mil,3093.504mil) on Top Layer And Via (2123.028mil,3085.972mil) from Top Layer to Int1 (GND) [Top Solder] Mask Sliver [1.126mil]
    Violation between Minimum Solder Mask Sliver Constraint: (3.346mil < 3.937mil) Between Pad Q6-(349.999mil,3223mil) on Top Layer And Pad Q6-1(292.913mil,3262.37mil) on Top Layer [Top Solder] Mask Sliver [3.346mil]
    Violation between Minimum Solder Mask Sliver Constraint: (3.346mil < 3.937mil) Between Pad Q6-(349.999mil,3223mil) on Top Layer And Pad Q6-2(292.913mil,3223mil) on Top Layer [Top Solder] Mask Sliver [3.346mil]
    Violation between Minimum Solder Mask Sliver Constraint: (3.346mil < 3.937mil) Between Pad Q6-(349.999mil,3223mil) on Top Layer And Pad Q6-3(292.913mil,3183.63mil) on Top Layer [Top Solder] Mask Sliver [3.346mil]
    Violation between Minimum Solder Mask Sliver Constraint: (3.348mil < 3.937mil) Between Pad Q6-(349.999mil,3223mil) on Top Layer And Pad Q6-4(407.087mil,3183.63mil) on Top Layer [Top Solder] Mask Sliver [3.348mil]
    Violation between Minimum Solder Mask Sliver Constraint: (3.348mil < 3.937mil) Between Pad Q6-(349.999mil,3223mil) on Top Layer And Pad Q6-5(407.087mil,3223mil) on Top Layer [Top Solder] Mask Sliver [3.348mil]
    Violation between Minimum Solder Mask Sliver Constraint: (3.348mil < 3.937mil) Between Pad Q6-(349.999mil,3223mil) on Top Layer And Pad Q6-6(407.087mil,3262.37mil) on Top Layer [Top Solder] Mask Sliver [3.348mil]
-Rule Violations :36
+   Violation between Minimum Solder Mask Sliver Constraint: (0.288mil < 3.937mil) Between Pad R6-1(1490.504mil,3539mil) on Top Layer And Via (1454mil,3531mil) from Top Layer to Int1 (GND) [Top Solder] Mask Sliver [0.288mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.942mil < 3.937mil) Between Pad R9-1(329.496mil,1158.158mil) on Top Layer And Via (342mil,1120mil) from Top Layer to Int1 (GND) [Top Solder] Mask Sliver [1.942mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.973mil < 3.937mil) Between Region (0 hole(s)) Top Solder And Via (1184mil,1624mil) from Top Layer to Int1 (GND) [Top Solder] Mask Sliver [1.973mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (3.877mil < 3.937mil) Between Via (2112mil,3055mil) from Int2 (GND) to Bottom Layer And Via (2123.028mil,3085.972mil) from Int2 (GND) to Bottom Layer [Bottom Solder] Mask Sliver [3.877mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (3.877mil < 3.937mil) Between Via (2112mil,3055mil) from Top Layer to Int1 (GND) And Via (2123.028mil,3085.972mil) from Top Layer to Int1 (GND) [Top Solder] Mask Sliver [3.877mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (2.094mil < 3.937mil) Between Via (2185mil,3324mil) from Int2 (GND) to Bottom Layer And Via (2190mil,3293.311mil) from Int2 (GND) to Bottom Layer [Bottom Solder] Mask Sliver [2.094mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (2.094mil < 3.937mil) Between Via (2185mil,3324mil) from Top Layer to Int1 (GND) And Via (2190mil,3293.311mil) from Top Layer to Int1 (GND) [Top Solder] Mask Sliver [2.094mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (3.032mil < 3.937mil) Between Via (980mil,1583mil) from Top Layer to Int1 (GND) And Via (985.107mil,1614.622mil) from Top Layer to Int1 (GND) [Top Solder] Mask Sliver [3.032mil]
+Rule Violations :50
 
 Processing Rule : Silk To Solder Mask (Clearance=4mil) (IsPad),(All)
    Violation between Silk To Solder Mask Clearance Constraint: (Collision < 4mil) Between Arc (1310.307mil,2970.441mil) on Top Overlay And Pad LED2-C(1299.496mil,2956mil) on Top Layer [Top Overlay] to [Top Solder] clearance [0mil]
@@ -385,13 +263,9 @@ Processing Rule : Net Antennae (Tolerance=0mil) (All)
 Rule Violations :0
 
 Processing Rule : Board Clearance Constraint (Gap=0mil) (All)
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 10mil) Between Arc (1758.063mil,3825.583mil) on Top Overlay And Board Edge 
-   Violation between Board Outline Clearance(Cutout Edge): (Collision < 10mil) Between Board Cutout (Multi-Layer)Region (0 hole(s)) Multi-Layer And Text "SW18" (4867mil,1516mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 10mil) Between Arc (1754.063mil,3823.583mil) on Top Overlay And Board Edge 
    Violation between Board Outline Clearance(Cutout Edge): (Collision < 10mil) Between Board Cutout (Multi-Layer)Region (0 hole(s)) Multi-Layer And Track (4553.91mil,1548.95mil)(4674.91mil,1548.95mil) on Top Overlay 
    Violation between Board Outline Clearance(Cutout Edge): (Collision < 10mil) Between Board Cutout (Multi-Layer)Region (0 hole(s)) Multi-Layer And Track (4877.916mil,1486.05mil)(4980.916mil,1486.05mil) on Top Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 10mil) Between Board Edge And Text "BT2" (-6mil,731mil) on Top Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 10mil) Between Board Edge And Text "J2" (-24mil,1379mil) on Top Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 10mil) Between Board Edge And Text "SW1" (-147mil,2012mil) on Top Overlay 
    Violation between Board Outline Clearance(Outline Edge): (Collision < 10mil) Between Board Edge And Track (-141.592mil,1636.426mil)(-141.592mil,1833.276mil) on Top Overlay 
    Violation between Board Outline Clearance(Outline Edge): (Collision < 10mil) Between Board Edge And Track (-141.592mil,1636.426mil)(15.89mil,1636.426mil) on Top Overlay 
    Violation between Board Outline Clearance(Outline Edge): (Collision < 10mil) Between Board Edge And Track (-141.592mil,1833.276mil)(15.89mil,1833.276mil) on Top Overlay 
@@ -399,12 +273,12 @@ Processing Rule : Board Clearance Constraint (Gap=0mil) (All)
    Violation between Board Outline Clearance(Outline Edge): (Collision < 10mil) Between Board Edge And Track (-18.37mil,959.174mil)(-18.37mil,1311.142mil) on Top Overlay 
    Violation between Board Outline Clearance(Outline Edge): (Collision < 10mil) Between Board Edge And Track (-18.37mil,959.174mil)(37.928mil,959.174mil) on Top Overlay 
    Violation between Board Outline Clearance(Outline Edge): (Collision < 10mil) Between Board Edge And Track (-8.574mil,490mil)(46.544mil,490mil) on Top Overlay 
-Rule Violations :14
+Rule Violations :10
 
 Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
 Rule Violations :0
 
 
-Violations Detected : 322
+Violations Detected : 196
 Waived Violations : 0
 Time Elapsed        : 00:00:03
