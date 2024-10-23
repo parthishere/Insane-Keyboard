@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : C:\Parth\Insane-Keyboard\HardwareDesign\PCB\InsaneKeyboard\InsaneKeyboard.PcbDoc
 Date     : 10/23/2024
-Time     : 7:19:49 AM
+Time     : 8:00:09 AM
 
 Processing Rule : Clearance Constraint (Gap=4mil) (All),(All)
    Violation between Clearance Constraint: (Collision < 4mil) Between Pad ATT1-FEED(1063mil,3582mil) on Top Layer And Region (0 hole(s)) Top Layer 
@@ -11,8 +11,6 @@ Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
 Rule Violations :0
 
 Processing Rule : Un-Routed Net Constraint ( (All) )
-   Violation between Un-Routed Net Constraint: Net USB_D_P Between Pad J2-B6(271mil,1105.63mil) on Top Layer And Track (273.906mil,1142.094mil)(300.227mil,1142.094mil) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad Q2-1(1048.629mil,1539.039mil) on Top Layer And Pad Q2-5(1127.369mil,1539.039mil) on Top Layer 
    Violation between Isolated copper: Split Plane  (GND) on Int1 (GND). Copper island connected to pads/vias detected. Copper area is : 325.22 sq. mils
    Violation between Isolated copper: Split Plane  (GND) on Int1 (GND). Copper island connected to pads/vias detected. Copper area is : 342.58 sq. mils
    Violation between Isolated copper: Split Plane  (GND) on Int1 (GND). Copper island connected to pads/vias detected. Copper area is : 346.785 sq. mils
@@ -41,8 +39,8 @@ Processing Rule : Un-Routed Net Constraint ( (All) )
    Violation between Isolated copper: Split Plane  (GND) on Int2 (GND). Dead copper detected. Copper area is : 293.279 sq. mils
    Violation between Un-Routed Net Constraint: Split Plane  (No Net) on Int1 (GND) Dead Copper - Net Not Assigned.
    Violation between Un-Routed Net Constraint: Split Plane  (No Net) on Int2 (GND) Dead Copper - Net Not Assigned.
-   Violation between Un-Routed Net Constraint: Net GND Between Track (588mil,2260.307mil)(588mil,2270.15mil) on Top Layer And Via (615mil,2385mil) from Top Layer to Bottom Layer 
-Rule Violations :31
+   Violation between Un-Routed Net Constraint: Net LED_PWR Between Track (6599.071mil,-752.655mil)(6609.071mil,-742.655mil) on Bottom Layer And Track (6740.543mil,-152.685mil)(6740.543mil,-112.961mil) on Bottom Layer 
+Rule Violations :29
 
 Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
 Rule Violations :0
@@ -68,7 +66,7 @@ Rule Violations :0
 Processing Rule : Width Constraint (Min=6mil) (Max=20mil) (Preferred=20mil) (InNet('USB_VCC'))
 Rule Violations :0
 
-Processing Rule : Width Constraint (Min=6mil) (Max=20mil) (Preferred=20mil) (InNet('VMCU'))
+Processing Rule : Width Constraint (Min=6mil) (Max=20mil) (Preferred=20mil) (InNet('VDCDC'))
 Rule Violations :0
 
 Processing Rule : Width Constraint (Min=6mil) (Max=10mil) (Preferred=6mil) (All)
@@ -77,7 +75,7 @@ Rule Violations :0
 Processing Rule : Width Constraint (Min=6mil) (Max=20mil) (Preferred=20mil) (InNet('NetL7_1'))
 Rule Violations :0
 
-Processing Rule : Width Constraint (Min=6mil) (Max=20mil) (Preferred=20mil) (InNet('VDCDC'))
+Processing Rule : Width Constraint (Min=6mil) (Max=20mil) (Preferred=20mil) (InNet('VMCU'))
 Rule Violations :0
 
 Processing Rule : Width Constraint (Min=6mil) (Max=20mil) (Preferred=20mil) (InNet('VBAT'))
@@ -107,13 +105,14 @@ Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Co
    Violation between Starved Thermal on Int2 (GND): Via (1025mil,3534mil) from Top Layer to Bottom Layer. Blocked 3 out of 4 entries.
    Violation between Starved Thermal on Int1 (GND): Via (1104mil,3534mil) from Top Layer to Bottom Layer. Blocked 2 out of 4 entries.
    Violation between Starved Thermal on Int2 (GND): Via (1104mil,3534mil) from Top Layer to Bottom Layer. Blocked 2 out of 4 entries.
-Rule Violations :20
+   Violation between Starved Thermal on Int1 (GND): Via (507mil,2271mil) from Top Layer to Bottom Layer. Blocked 3 out of 4 entries.
+   Violation between Starved Thermal on Int2 (GND): Via (507mil,2271mil) from Top Layer to Bottom Layer. Blocked 3 out of 4 entries.
+Rule Violations :22
 
 Processing Rule : Hole Size Constraint (Min=1mil) (Max=248mil) (All)
 Rule Violations :0
 
 Processing Rule : Hole To Hole Clearance (Gap=7.874mil) (All),(All)
-   Violation between Hole To Hole Clearance Constraint: (5.5mil < 7.874mil) Between Via (1105mil,3252.5mil) from Top Layer to Bottom Layer And Via (1105mil,3271mil) from Top Layer to Bottom Layer 
    Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Via (3235mil,935mil) from Top Layer to Bottom Layer And Via (3235mil,935mil) from Top Layer to Bottom Layer Pad/Via Touching Holes
    Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Via (3235mil,935mil) from Top Layer to Bottom Layer And Via (3235mil,935mil) from Top Layer to Bottom Layer Pad/Via Touching Holes
    Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Via (3235mil,935mil) from Top Layer to Bottom Layer And Via (3235mil,935mil) from Top Layer to Bottom Layer Pad/Via Touching Holes
@@ -123,7 +122,7 @@ Processing Rule : Hole To Hole Clearance (Gap=7.874mil) (All),(All)
    Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Via (951.126mil,3388.052mil) from Top Layer to Bottom Layer And Via (951.126mil,3388.052mil) from Top Layer to Bottom Layer Pad/Via Touching Holes
    Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Via (951.126mil,3388.052mil) from Top Layer to Bottom Layer And Via (951.126mil,3388.052mil) from Top Layer to Bottom Layer Pad/Via Touching Holes
    Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Via (951.126mil,3388.052mil) from Top Layer to Bottom Layer And Via (951.126mil,3388.052mil) from Top Layer to Bottom Layer Pad/Via Touching Holes
-Rule Violations :10
+Rule Violations :9
 
 Processing Rule : Minimum Solder Mask Sliver (Gap=2mil) (All),(All)
    Violation between Minimum Solder Mask Sliver Constraint: (0.756mil < 2mil) Between Pad C3-1(1353.551mil,3021mil) on Top Layer And Pad L3-2(1348.63mil,2965mil) on Top Layer [Top Solder] Mask Sliver [0.756mil]
@@ -132,9 +131,10 @@ Processing Rule : Minimum Solder Mask Sliver (Gap=2mil) (All),(All)
    Violation between Minimum Solder Mask Sliver Constraint: (1.756mil < 2mil) Between Pad C4-2(909.552mil,3424mil) on Top Layer And Pad L4-1(904.63mil,3481mil) on Top Layer [Top Solder] Mask Sliver [1.756mil]
    Violation between Minimum Solder Mask Sliver Constraint: (1.906mil < 2mil) Between Pad J2-(228.874mil,1021.379mil) on Multi-Layer And Pad J2-B1_A12(271mil,1009.174mil) on Top Layer [Top Solder] Mask Sliver [1.906mil]
    Violation between Minimum Solder Mask Sliver Constraint: (1.906mil < 2mil) Between Pad J2-(228.874mil,1248.938mil) on Multi-Layer And Pad J2-A1_B12(271mil,1261.142mil) on Top Layer [Top Solder] Mask Sliver [1.906mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.37mil < 2mil) Between Pad L7-1(945mil,1742.386mil) on Top Layer And Via (870mil,1705mil) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [1.37mil]
    Violation between Minimum Solder Mask Sliver Constraint: (0.776mil < 2mil) Between Pad LED2-A(1236.504mil,2956mil) on Top Layer And Via (1241.914mil,2991.023mil) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.776mil]
    Violation between Minimum Solder Mask Sliver Constraint: (1.335mil < 2mil) Between Pad Q8-6(2420.409mil,3247.307mil) on Top Layer And Via (2421mil,3211mil) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [1.335mil]
-Rule Violations :8
+Rule Violations :9
 
 Processing Rule : Silk To Solder Mask (Clearance=4mil) (IsPad),(All)
    Violation between Silk To Solder Mask Clearance Constraint: (Collision < 4mil) Between Pad BT2-N(125.284mil,490mil) on Top Layer And Track (66.228mil,265mil)(66.228mil,700mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
@@ -151,7 +151,6 @@ Processing Rule : Silk To Solder Mask (Clearance=4mil) (IsPad),(All)
    Violation between Silk To Solder Mask Clearance Constraint: (Collision < 4mil) Between Pad C3-2(1422.449mil,3021mil) on Top Layer And Text "L3" (1374.579mil,2999.032mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
    Violation between Silk To Solder Mask Clearance Constraint: (Collision < 4mil) Between Pad C4-2(909.552mil,3424mil) on Top Layer And Text "R33" (889mil,3416mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
    Violation between Silk To Solder Mask Clearance Constraint: (Collision < 4mil) Between Pad L4-2(983.37mil,3481mil) on Top Layer And Text "C4" (935.671mil,3466.003mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
-   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 4mil) Between Pad LED10-1-VDD(1719.543mil,-1442.961mil) on Bottom Layer And Text "LED11" (1698mil,-1514mil) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mil]
    Violation between Silk To Solder Mask Clearance Constraint: (2.092mil < 4mil) Between Pad LED1-A(451mil,1679.504mil) on Top Layer And Text "BT1" (396mil,1658mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.092mil]
    Violation between Silk To Solder Mask Clearance Constraint: (Collision < 4mil) Between Pad Q3-5(1653.472mil,2363.504mil) on Top Layer And Text "TP32" (1658mil,2347mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
    Violation between Silk To Solder Mask Clearance Constraint: (Collision < 4mil) Between Pad Q3-6(1673.158mil,2363.504mil) on Top Layer And Text "TP32" (1658mil,2347mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
@@ -171,7 +170,7 @@ Processing Rule : Silk To Solder Mask (Clearance=4mil) (IsPad),(All)
    Violation between Silk To Solder Mask Clearance Constraint: (Collision < 4mil) Between Pad R8-2(380mil,1680mil) on Top Layer And Text "BT1" (396mil,1658mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
    Violation between Silk To Solder Mask Clearance Constraint: (3.645mil < 4mil) Between Pad R9-1(329.496mil,1158.158mil) on Top Layer And Text "R9" (347.671mil,1182.003mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [3.645mil]
    Violation between Silk To Solder Mask Clearance Constraint: (3.637mil < 4mil) Between Pad X2-2(777mil,2899.212mil) on Top Layer And Text "C10" (719.553mil,2927.003mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [3.637mil]
-Rule Violations :34
+Rule Violations :33
 
 Processing Rule : Silk to Silk (Clearance=4mil) (All),(All)
    Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "C20" (966.033mil,2552.003mil) on Top Overlay And Track (982.063mil,2549.67mil)(989.937mil,2549.67mil) on Top Overlay Silk Text to Silk Clearance [0mil]
@@ -187,15 +186,16 @@ Processing Rule : Silk to Silk (Clearance=4mil) (All),(All)
 Rule Violations :10
 
 Processing Rule : Net Antennae (Tolerance=0mil) (All)
-   Violation between Net Antennae: Track (487mil,2280mil)(548.919mil,2280mil) on Top Layer 
-   Violation between Net Antennae: Track (917.375mil,3189.625mil)(930mil,3177mil) on Bottom Layer 
+   Violation between Net Antennae: Track (6599.071mil,-752.655mil)(6609.071mil,-742.655mil) on Bottom Layer 
+   Violation between Net Antennae: Track (919.188mil,3187.812mil)(930mil,3177mil) on Bottom Layer 
 Rule Violations :2
 
 Processing Rule : Board Clearance Constraint (Gap=0mil) (All)
    Violation between Board Outline Clearance(Cutout Edge): (Collision < 10mil) Between Board Cutout (Multi-Layer)Region (0 hole(s)) Multi-Layer And Track (4553.91mil,1548.95mil)(4674.91mil,1548.95mil) on Top Overlay 
    Violation between Board Outline Clearance(Cutout Edge): (Collision < 10mil) Between Board Cutout (Multi-Layer)Region (0 hole(s)) Multi-Layer And Track (4877.916mil,1486.05mil)(4980.916mil,1486.05mil) on Top Overlay 
    Violation between Board Outline Clearance(Outline Edge): (Collision < 10mil) Between Board Edge And Track (-8.574mil,490mil)(46.544mil,490mil) on Top Overlay 
-Rule Violations :3
+   Violation between Board Outline Clearance(Outline Edge): (7.369mil < 10mil) Between Board Edge And Via (190mil,5mil) from Top Layer to Bottom Layer 
+Rule Violations :4
 
 Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
 Rule Violations :0
@@ -241,42 +241,42 @@ Waived Violations Of Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
 Waived Violations :37
 
 Waived Violations Of Rule : Hole To Hole Clearance (Gap=7.874mil) (All),(All)
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(1349.762mil,-138.614mil) on Multi-Layer And Pad SW22-8(1349mil,-137.788mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(1825.88mil,-1157.858mil) on Multi-Layer And Pad SW8-8(1825.88mil,-1157.858mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(2153.968mil,1684.6mil) on Multi-Layer And Pad SW29-8(2153mil,1684.212mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(2153.968mil,2622.006mil) on Multi-Layer And Pad SW36-8(2154mil,2626.212mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(2153.968mil,559.592mil) on Multi-Layer And Pad SW15-8(2154mil,557.212mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(2505.584mil,-840.856mil) on Multi-Layer And Pad SW7-8(2505mil,-843.788mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(2903.974mil,1122.096mil) on Multi-Layer And Pad SW21-8(2900mil,1121.212mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(2903.974mil,1872.1mil) on Multi-Layer And Pad SW28-8(2903.974mil,1872.1mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(2903.974mil,2622.006mil) on Multi-Layer And Pad SW35-8(2896.898mil,2615.172mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(2903.974mil,372.09mil) on Multi-Layer And Pad SW14-8(2907mil,373.212mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(3653.978mil,1172.096mil) on Multi-Layer And Pad SW20-8(3646.904mil,1165.262mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(3653.978mil,1922.1mil) on Multi-Layer And Pad SW27-8(3653.978mil,1922.1mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(3653.978mil,2672.106mil) on Multi-Layer And Pad SW34-8(3654mil,2671.212mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(3653.978mil,-327.916mil) on Multi-Layer And Pad SW6-8(3646.904mil,-334.748mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(3653.978mil,422.09mil) on Multi-Layer And Pad SW13-8(3653.978mil,422.09mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(4403.984mil,1985.002mil) on Multi-Layer And Pad SW26-8(4408mil,1984.212mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(4403.984mil,-265.014mil) on Multi-Layer And Pad SW5-8(4399mil,-268.788mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(4403.984mil,2735.006mil) on Multi-Layer And Pad SW33-8(4404mil,2735.212mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(4403.984mil,484.99mil) on Multi-Layer And Pad SW12-8(4402mil,479.214mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(5153.99mil,1172.096mil) on Multi-Layer And Pad SW18-8(5146.916mil,1165.262mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(5153.99mil,1922.1mil) on Multi-Layer And Pad SW25-8(5155mil,1924.214mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(5153.99mil,2672.106mil) on Multi-Layer And Pad SW32-8(5153.99mil,2672.105mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(5153.99mil,-327.916mil) on Multi-Layer And Pad SW4-8(5150mil,-331.786mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(5153.99mil,422.09mil) on Multi-Layer And Pad SW11-8(5153.989mil,422.089mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(5903.994mil,1047.094mil) on Multi-Layer And Pad SW17-8(5896.92mil,1040.26mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(5903.994mil,1797.1mil) on Multi-Layer And Pad SW24-8(5902mil,1794.214mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(5903.994mil,297.088mil) on Multi-Layer And Pad SW10-8(5896.92mil,290.256mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(5903.994mil,-452.916mil) on Multi-Layer And Pad SW3-8(5896.92mil,-459.75mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(5903.996mil,2547.004mil) on Multi-Layer And Pad SW31-8(5909mil,2541.214mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(6654mil,-452.916mil) on Multi-Layer And Pad SW2-8(6646.926mil,-459.75mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(670.058mil,-455.516mil) on Multi-Layer And Pad SW39-8(669.418mil,-457.002mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(6841.502mil,1047.094mil) on Multi-Layer And Pad SW16-8(6834.426mil,1040.26mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(6841.502mil,1797.1mil) on Multi-Layer And Pad SW23-8(6839mil,1794.214mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(6841.502mil,2547.004mil) on Multi-Layer And Pad SW30-8(6842mil,2546.212mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(6841.5mil,297.088mil) on Multi-Layer And Pad SW9-8(6834.426mil,290.256mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
-   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(986.96mil,-1135.22mil) on Multi-Layer And Pad SW38-8(991.418mil,-1136.002mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes 
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(1349.762mil,-138.614mil) on Multi-Layer And Pad SW22-8(1349mil,-137.788mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(1825.88mil,-1157.858mil) on Multi-Layer And Pad SW8-8(1825.88mil,-1157.858mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(2153.968mil,1684.6mil) on Multi-Layer And Pad SW29-8(2153mil,1684.212mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(2153.968mil,2622.006mil) on Multi-Layer And Pad SW36-8(2154mil,2626.212mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(2153.968mil,559.592mil) on Multi-Layer And Pad SW15-8(2154mil,557.212mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(2505.584mil,-840.856mil) on Multi-Layer And Pad SW7-8(2505mil,-843.788mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(2903.974mil,1122.096mil) on Multi-Layer And Pad SW21-8(2900mil,1121.212mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(2903.974mil,1872.1mil) on Multi-Layer And Pad SW28-8(2903.974mil,1872.1mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(2903.974mil,2622.006mil) on Multi-Layer And Pad SW35-8(2896.898mil,2615.172mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(2903.974mil,372.09mil) on Multi-Layer And Pad SW14-8(2907mil,373.212mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(3653.978mil,1172.096mil) on Multi-Layer And Pad SW20-8(3646.904mil,1165.262mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(3653.978mil,1922.1mil) on Multi-Layer And Pad SW27-8(3653.978mil,1922.1mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(3653.978mil,2672.106mil) on Multi-Layer And Pad SW34-8(3654mil,2671.212mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(3653.978mil,-327.916mil) on Multi-Layer And Pad SW6-8(3646.904mil,-334.748mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(3653.978mil,422.09mil) on Multi-Layer And Pad SW13-8(3653.978mil,422.09mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(4403.984mil,1985.002mil) on Multi-Layer And Pad SW26-8(4408mil,1984.212mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(4403.984mil,-265.014mil) on Multi-Layer And Pad SW5-8(4399mil,-268.788mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(4403.984mil,2735.006mil) on Multi-Layer And Pad SW33-8(4404mil,2735.212mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(4403.984mil,484.99mil) on Multi-Layer And Pad SW12-8(4402mil,479.214mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(5153.99mil,1172.096mil) on Multi-Layer And Pad SW18-8(5146.916mil,1165.262mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(5153.99mil,1922.1mil) on Multi-Layer And Pad SW25-8(5155mil,1924.214mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(5153.99mil,2672.106mil) on Multi-Layer And Pad SW32-8(5153.99mil,2672.105mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(5153.99mil,-327.916mil) on Multi-Layer And Pad SW4-8(5150mil,-331.786mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(5153.99mil,422.09mil) on Multi-Layer And Pad SW11-8(5153.989mil,422.089mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(5903.994mil,1047.094mil) on Multi-Layer And Pad SW17-8(5896.92mil,1040.26mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(5903.994mil,1797.1mil) on Multi-Layer And Pad SW24-8(5902mil,1794.214mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(5903.994mil,297.088mil) on Multi-Layer And Pad SW10-8(5896.92mil,290.256mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(5903.994mil,-452.916mil) on Multi-Layer And Pad SW3-8(5896.92mil,-459.75mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(5903.996mil,2547.004mil) on Multi-Layer And Pad SW31-8(5909mil,2541.214mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(6654mil,-452.916mil) on Multi-Layer And Pad SW2-8(6646.926mil,-459.75mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(670.058mil,-455.516mil) on Multi-Layer And Pad SW39-8(669.418mil,-457.002mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(6841.502mil,1047.094mil) on Multi-Layer And Pad SW16-8(6834.426mil,1040.26mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(6841.502mil,1797.1mil) on Multi-Layer And Pad SW23-8(6839mil,1794.214mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(6841.502mil,2547.004mil) on Multi-Layer And Pad SW30-8(6842mil,2546.212mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(6841.5mil,297.088mil) on Multi-Layer And Pad SW9-8(6834.426mil,290.256mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
+   Waived Violation between Hole To Hole Clearance Constraint: (Collision < 7.874mil) Between Pad Free-1(986.96mil,-1135.22mil) on Multi-Layer And Pad SW38-8(991.418mil,-1136.002mil) on Multi-Layer Pad/Via Touching HolesWaived by Parth Rajeshkumar Thakkar at 10/23/2024 6:36:36 AMcomponent holes are overlapping with board holes
 Waived Violations :36
 
 
