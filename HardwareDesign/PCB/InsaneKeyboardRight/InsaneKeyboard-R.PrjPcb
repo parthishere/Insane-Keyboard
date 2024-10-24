@@ -53,7 +53,7 @@ PrefsVaultGUID=
 PrefsRevisionGUID=
 
 [Document1]
-DocumentPath=Keyboard-Left.SchDoc
+DocumentPath=Keyboard-Right.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -244,142 +244,146 @@ DocumentPath=Project Outputs for InsaneKeyboard\BOM\Bill of Materials-InsaneKeyb
 DItemRevisionGUID=
 
 [GeneratedDocument2]
-DocumentPath=Project Outputs for InsaneKeyboard\Design Rule Check - InsaneKeyboard.html
+DocumentPath=Project Outputs for InsaneKeyboard-R\Design Rule Check - InsaneKeyboard.html
 DItemRevisionGUID=
 
 [GeneratedDocument3]
-DocumentPath=Project Outputs for InsaneKeyboard\NC Drill\InsaneKeyboard-RectHoles.TXT
+DocumentPath=Project Outputs for InsaneKeyboard\Design Rule Check - InsaneKeyboard.html
 DItemRevisionGUID=
 
 [GeneratedDocument4]
-DocumentPath=Project Outputs for InsaneKeyboard\NC Drill\InsaneKeyboard-RoundHoles.TXT
+DocumentPath=Project Outputs for InsaneKeyboard\NC Drill\InsaneKeyboard-RectHoles.TXT
 DItemRevisionGUID=
 
 [GeneratedDocument5]
-DocumentPath=Project Outputs for InsaneKeyboard\NC Drill\InsaneKeyboard-SlotHoles.TXT
+DocumentPath=Project Outputs for InsaneKeyboard\NC Drill\InsaneKeyboard-RoundHoles.TXT
 DItemRevisionGUID=
 
 [GeneratedDocument6]
-DocumentPath=Project Outputs for InsaneKeyboard\NC Drill\InsaneKeyboard.DRR
+DocumentPath=Project Outputs for InsaneKeyboard\NC Drill\InsaneKeyboard-SlotHoles.TXT
 DItemRevisionGUID=
 
 [GeneratedDocument7]
-DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.EXTREP
+DocumentPath=Project Outputs for InsaneKeyboard\NC Drill\InsaneKeyboard.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument8]
-DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GBL
+DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument9]
-DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GBO
+DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GBL
 DItemRevisionGUID=
 
 [GeneratedDocument10]
-DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GBP
+DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GBO
 DItemRevisionGUID=
 
 [GeneratedDocument11]
-DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GBS
+DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GBP
 DItemRevisionGUID=
 
 [GeneratedDocument12]
-DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GD1
+DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GBS
 DItemRevisionGUID=
 
 [GeneratedDocument13]
-DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GG1
+DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GD1
 DItemRevisionGUID=
 
 [GeneratedDocument14]
-DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GKO
+DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GG1
 DItemRevisionGUID=
 
 [GeneratedDocument15]
-DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GM
+DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GKO
 DItemRevisionGUID=
 
 [GeneratedDocument16]
-DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GM1
+DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GM
 DItemRevisionGUID=
 
 [GeneratedDocument17]
-DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GM13
+DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GM1
 DItemRevisionGUID=
 
 [GeneratedDocument18]
-DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GM15
+DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GM13
 DItemRevisionGUID=
 
 [GeneratedDocument19]
-DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GP1
+DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GM15
 DItemRevisionGUID=
 
 [GeneratedDocument20]
-DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GP2
+DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GP1
 DItemRevisionGUID=
 
 [GeneratedDocument21]
-DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GPB
+DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GP2
 DItemRevisionGUID=
 
 [GeneratedDocument22]
-DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GPT
+DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GPB
 DItemRevisionGUID=
 
 [GeneratedDocument23]
-DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GTL
+DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GPT
 DItemRevisionGUID=
 
 [GeneratedDocument24]
-DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GTO
+DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GTL
 DItemRevisionGUID=
 
 [GeneratedDocument25]
-DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GTP
+DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GTO
 DItemRevisionGUID=
 
 [GeneratedDocument26]
-DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GTS
+DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GTP
 DItemRevisionGUID=
 
 [GeneratedDocument27]
-DocumentPath=Project Outputs for InsaneKeyboard\NC Drill\InsaneKeyboard.LDP
+DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.GTS
 DItemRevisionGUID=
 
 [GeneratedDocument28]
-DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.REP
+DocumentPath=Project Outputs for InsaneKeyboard\NC Drill\InsaneKeyboard.LDP
 DItemRevisionGUID=
 
 [GeneratedDocument29]
-DocumentPath=Project Outputs for InsaneKeyboard\Report Board Stack\InsaneKeyboard.xls
+DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.REP
 DItemRevisionGUID=
 
 [GeneratedDocument30]
-DocumentPath=Project Outputs for InsaneKeyboard\Keyboard.DRR
+DocumentPath=Project Outputs for InsaneKeyboard\Report Board Stack\InsaneKeyboard.xls
 DItemRevisionGUID=
 
 [GeneratedDocument31]
-DocumentPath=Project Outputs for InsaneKeyboard\Keyboard.EXTREP
+DocumentPath=Project Outputs for InsaneKeyboard\Keyboard.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument32]
-DocumentPath=Project Outputs for InsaneKeyboard\Keyboard.GM
+DocumentPath=Project Outputs for InsaneKeyboard\Keyboard.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument33]
-DocumentPath=Project Outputs for InsaneKeyboard\Keyboard.LDP
+DocumentPath=Project Outputs for InsaneKeyboard\Keyboard.GM
 DItemRevisionGUID=
 
 [GeneratedDocument34]
-DocumentPath=Project Outputs for InsaneKeyboard\Keyboard.REP
+DocumentPath=Project Outputs for InsaneKeyboard\Keyboard.LDP
 DItemRevisionGUID=
 
 [GeneratedDocument35]
-DocumentPath=Project Outputs for InsaneKeyboard\Pick Place\Pick Place for InsaneKeyboard.txt
+DocumentPath=Project Outputs for InsaneKeyboard\Keyboard.REP
 DItemRevisionGUID=
 
 [GeneratedDocument36]
+DocumentPath=Project Outputs for InsaneKeyboard\Pick Place\Pick Place for InsaneKeyboard.txt
+DItemRevisionGUID=
+
+[GeneratedDocument37]
 DocumentPath=Project Outputs for InsaneKeyboard\Pick Place for Keyboard.txt
 DItemRevisionGUID=
 
@@ -927,36 +931,6 @@ OutputName12=Web Review Data
 OutputDocumentPath12=
 OutputVariantName12=
 OutputDefault12=0
-OutputType13=Ansoft Neutral
-OutputName13=Ansoft Neutral (AutoPCB)
-OutputDocumentPath13=
-OutputVariantName13=
-OutputDefault13=0
-OutputType14=HyperLynx
-OutputName14=HyperLynx (AutoPCB)
-OutputDocumentPath14=
-OutputVariantName14=
-OutputDefault14=0
-OutputType15=Orcad v7 Capture Design
-OutputName15=Orcad v7 Capture Design (AutoSCH)
-OutputDocumentPath15=
-OutputVariantName15=
-OutputDefault15=0
-OutputType16=P-CAD ASCII
-OutputName16=P-CAD ASCII (AutoPCB)
-OutputDocumentPath16=
-OutputVariantName16=
-OutputDefault16=0
-OutputType17=P-CAD V16 Schematic Design
-OutputName17=P-CAD V16 Schematic Design (AutoSCH)
-OutputDocumentPath17=
-OutputVariantName17=
-OutputDefault17=0
-OutputType18=SiSoft
-OutputName18=SiSoft (AutoPCB)
-OutputDocumentPath18=
-OutputVariantName18=
-OutputDefault18=0
 
 [OutputGroup10]
 Name=PostProcess Outputs
