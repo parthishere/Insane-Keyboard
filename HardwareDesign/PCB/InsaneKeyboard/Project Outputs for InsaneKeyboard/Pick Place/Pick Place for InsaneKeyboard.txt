@@ -5,8 +5,8 @@ C:\Users\path1691\Insane-Keyboard\HardwareDesign\PCB\InsaneKeyboard\Project Outp
 File Design Information:
 
 Date:       24/10/24
-Time:       04:17
-Revision:   d21e4fb8f95d43b185c1e090e7dbd661f3b4c301
+Time:       14:58
+Revision:   071cb7193f8d68da676d90a6658e14155dcb0886
 Variant:    No variations
 Units used: mil
 

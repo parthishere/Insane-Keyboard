@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : C:\Users\path1691\Insane-Keyboard\HardwareDesign\PCB\InsaneKeyboard\InsaneKeyboard.PcbDoc
 Date     : 10/24/2024
-Time     : 3:13:35 AM
+Time     : 2:42:33 PM
 
 Processing Rule : Clearance Constraint (Gap=4mil) (All),(All)
 Rule Violations :0
@@ -78,4 +78,4 @@ Rule Violations :0
 
 Violations Detected : 0
 Waived Violations : 0
-Time Elapsed        : 00:00:02
+Time Elapsed        : 00:00:01

@@ -172,23 +172,6 @@ GenerateClassCluster=0
 DocumentUniqueId=ZFNBETHH
 
 [Document8]
-DocumentPath=InsaneKeyboard.OutJob
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
-[Document9]
 DocumentPath=Project Outputs for InsaneIntegratedLib\InsaneIntegratedLib.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -205,7 +188,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document10]
+[Document9]
 DocumentPath=InsaneKeyboard.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -222,7 +205,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=CTTNCNLW
 
-[Document11]
+[Document10]
 DocumentPath=Display.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -239,7 +222,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=RZMDURIT
 
-[Document12]
+[Document11]
 DocumentPath=Lights.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -369,30 +352,34 @@ DocumentPath=Project Outputs for InsaneKeyboard\Gerber\InsaneKeyboard.REP
 DItemRevisionGUID=
 
 [GeneratedDocument29]
-DocumentPath=Project Outputs for InsaneKeyboard\Keyboard.DRR
+DocumentPath=Project Outputs for InsaneKeyboard\Report Board Stack\InsaneKeyboard.xls
 DItemRevisionGUID=
 
 [GeneratedDocument30]
-DocumentPath=Project Outputs for InsaneKeyboard\Keyboard.EXTREP
+DocumentPath=Project Outputs for InsaneKeyboard\Keyboard.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument31]
-DocumentPath=Project Outputs for InsaneKeyboard\Keyboard.GM
+DocumentPath=Project Outputs for InsaneKeyboard\Keyboard.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument32]
-DocumentPath=Project Outputs for InsaneKeyboard\Keyboard.LDP
+DocumentPath=Project Outputs for InsaneKeyboard\Keyboard.GM
 DItemRevisionGUID=
 
 [GeneratedDocument33]
-DocumentPath=Project Outputs for InsaneKeyboard\Keyboard.REP
+DocumentPath=Project Outputs for InsaneKeyboard\Keyboard.LDP
 DItemRevisionGUID=
 
 [GeneratedDocument34]
-DocumentPath=Project Outputs for InsaneKeyboard\Pick Place\Pick Place for InsaneKeyboard.txt
+DocumentPath=Project Outputs for InsaneKeyboard\Keyboard.REP
 DItemRevisionGUID=
 
 [GeneratedDocument35]
+DocumentPath=Project Outputs for InsaneKeyboard\Pick Place\Pick Place for InsaneKeyboard.txt
+DItemRevisionGUID=
+
+[GeneratedDocument36]
 DocumentPath=Project Outputs for InsaneKeyboard\Pick Place for Keyboard.txt
 DItemRevisionGUID=
 
