@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=VMCU Pin=Q3-1
+Added Pin To Net: NetName=NetQ3_1 Pin=Q3-1
+Added Pin To Net: NetName=NetQ3_1 Pin=R34-2
+Added Net: Name=NetQ3_1

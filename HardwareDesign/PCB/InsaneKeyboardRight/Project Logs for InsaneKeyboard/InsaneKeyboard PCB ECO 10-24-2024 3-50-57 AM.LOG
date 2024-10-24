@@ -1,0 +1,7 @@
+Change Class Name : Old Net Name=U_Display New Net Name=DISPLAY
+Change Class Name : Old Net Name=U_EFR32_IO New Net Name=EFR32_IO
+Change Class Name : Old Net Name=U_Lights New Net Name=LIGHTS
+Change Class Name : Old Net Name=U_Peripherals New Net Name=PERIPHERALS
+Change Class Name : Old Net Name=U_Power New Net Name=POWER
+Change Class Name : Old Net Name=U_RF_Antenna_Power New Net Name=RF_ANTENNA_POWER
+Change Class Name : Old Net Name=U_Switches New Net Name=SWITCHES

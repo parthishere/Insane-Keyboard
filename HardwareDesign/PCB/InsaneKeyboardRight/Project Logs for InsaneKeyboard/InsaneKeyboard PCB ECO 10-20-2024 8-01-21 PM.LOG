@@ -1,0 +1,10 @@
+Removed Pin From Net: NetName=RADIO_PA5 Pin=BT3-1
+Removed Pin From Net: NetName=RADIO_PC6 Pin=BT3-2
+Removed Pin From Net: NetName=RADIO_PA2 Pin=BT3-4
+Removed Pin From Net: NetName=RADIO_PD12 Pin=R333-2
+Removed Pin From Net: NetName=RADIO_PA2 Pin=TP39-1
+Added Pin To Net: NetName=RADIO_PA1 Pin=BT3-1
+Added Pin To Net: NetName=RADIO_PA2 Pin=BT3-2
+Added Pin To Net: NetName=RADIO_PA3 Pin=BT3-4
+Added Pin To Net: NetName=RADIO_PD13 Pin=R333-2
+Added Pin To Net: NetName=RADIO_PA3 Pin=TP39-1
