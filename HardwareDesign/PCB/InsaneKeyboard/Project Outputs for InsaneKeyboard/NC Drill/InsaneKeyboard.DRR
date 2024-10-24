@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------------------------------------
-NCDrill File Report For: InsaneKeyboard.PcbDoc   10/23/2024  7:35:06 AM
+NCDrill File Report For: InsaneKeyboard.PcbDoc   10/24/2024  4:17:57 AM
 ----------------------------------------------------------------------------------------------------------------------------------
 
 Layer Pair : Top Layer to Bottom Layer
@@ -10,32 +10,18 @@ ASCII RectHoles File : InsaneKeyboard-RectHoles.TXT
 Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
 ----------------------------------------------------------------------------------------------------------------------------------
 T1      0.2mm (8mil)                                              Round             21        PTH        55.14mm (2.17inch)
-T2      0.33mm (13mil)                                            Round             371       PTH        2243.63mm (88.33inch)
+T2      0.33mm (13mil)                                            Round             364       PTH        2216.62mm (87.27inch)
 T3      0.6mm (24mil)                                             Slot              4         PTH        38.15mm (1.50inch)
 T4      0.8mm (31mil)                                             Round             11        PTH        44.98mm (1.77inch)
 T5      0.93mm (37mil)                                            Round             6         PTH        10.50mm (0.41inch)
-T6      1.1mm (43mil)                                             Round             5         PTH        24.50mm (0.96inch)
-T7      1.51mm (59mil)                                            Round             2         PTH        10.00mm (0.39inch)
-T8      2mm (79mil)                                               Rectangle         2         PTH        24.43mm (0.96inch)
-T9      3.556mm (140mil)                                          Round             2         PTH        141.38mm (5.57inch)
-T10     4mm (157mil)                                              Round             36        PTH        751.19mm (29.57inch)
-T11     5.9mm (232mil)                                            Round             1         PTH        0.00mm (0.00inch)
-T12     0.6mm (24mil)                                             Round             2         NPTH       5.78mm (0.23inch)
-T13     3mm (118mil)                                              Round             76        NPTH       1495.35mm (58.87inch)
-T14     4mm (157mil)                                              Round             35        NPTH       793.90mm (31.26inch)
+T6      1.02mm (40mil)                                            Round             2         PTH        2.54mm (0.10inch)
+T7      1.1mm (43mil)                                             Round             5         PTH        24.50mm (0.96inch)
+T8      1.51mm (59mil)                                            Round             2         PTH        10.00mm (0.39inch)
+T9      2mm (79mil)                                               Rectangle         2         PTH        24.43mm (0.96inch)
+T10     3.556mm (140mil)                                          Round             2         PTH        141.38mm (5.57inch)
+T11     0.6mm (24mil)                                             Round             2         NPTH       5.78mm (0.23inch)
+T12     3mm (118mil)                                              Round             76        NPTH       1455.30mm (57.30inch)
 ----------------------------------------------------------------------------------------------------------------------------------
-Totals                                                                              574
+Totals                                                                              497
 
-Two holes at same point : 9
------------------------
-1826,-1158
-3654,1922
-2904,1872
-951,3388
-951,3388
-3239,861
-3239,861
-3235,935
-3235,935
-
-Total Processing Time (hh:mm:ss) : 00:00:01
+Total Processing Time (hh:mm:ss) : 00:00:00
