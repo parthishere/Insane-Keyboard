@@ -1,8 +1,0 @@
-Removed Pin From Net: NetName=RADIO_PD10 Pin=MT1-A
-Removed Pin From Net: NetName=RADIO_PD11 Pin=MT1-B
-Removed Pin From Net: NetName=RADIO_PD10 Pin=R16-2
-Removed Pin From Net: NetName=RADIO_PD11 Pin=R33-2
-Added Pin To Net: NetName=RADIO_PD11 Pin=MT1-A
-Added Pin To Net: NetName=RADIO_PD10 Pin=MT1-B
-Added Pin To Net: NetName=RADIO_PD11 Pin=R16-2
-Added Pin To Net: NetName=RADIO_PD10 Pin=R33-2

@@ -1,4 +1,0 @@
-Removed Pin From Net: NetName=VOUT Pin=SW1-2
-Removed Pin From Net: NetName=+3.3V Pin=SW1-3
-Added Pin To Net: NetName=+3.3V Pin=SW1-2
-Added Pin To Net: NetName=VOUT Pin=SW1-3

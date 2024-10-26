@@ -1,8 +1,0 @@
-Removed Member From Class: ClassName=RADIO_PD[15..10] Member=VBAT
-Removed Member From Class: ClassName=RADIO_PD[15..10] Member=VSTOR
-Added Component: Designator=H1(Hole)
-Added Pin To Net: NetName=GND Pin=H1-1
-Added Pin To Net: NetName=NetQ2_10 Pin=R14-2
-Added Member To Class: ClassName=U_Keyboard_Mechanical Member=Component H1 #4 Hole
-Added Member To Class: ClassName=RADIO_PD[15..10] Member=Element[5]: RADIO_PD
-Added Member To Class: ClassName=RADIO_PD[15..10] Member=Element[4]: RADIO_PD

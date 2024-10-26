@@ -1,7 +1,0 @@
-Removed Pin From Net: NetName=RADIO_PF6 Pin=LED3-A
-Removed Pin From Net: NetName=GND Pin=LED3-C
-Removed Pin From Net: NetName=RADIO_PB12 Pin=LED-4-DIN
-Removed Pin From Net: NetName=RADIO_PB11 Pin=R37-2
-Removed Member From Class: ClassName=U_Peripherals Member=LED3
-Added Pin To Net: NetName=RADIO_PF7 Pin=LED-4-DIN
-Added Pin To Net: NetName=RADIO_PF6 Pin=R37-2

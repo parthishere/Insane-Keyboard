@@ -1,6 +1,0 @@
-Removed Pin From Net: NetName=RADIO_PB13 Pin=Q2-13
-Removed Pin From Net: NetName=RADIO_PB13 Pin=R18-1
-Added Pin To Net: NetName=VBAT_OK Pin=Q2-13
-Added Pin To Net: NetName=VBAT_OK Pin=R18-1
-Added Net: Name=VBAT_OK
-Added Member To Class: ClassName=U_Switches Member=Component R19 RES 10K 0603
