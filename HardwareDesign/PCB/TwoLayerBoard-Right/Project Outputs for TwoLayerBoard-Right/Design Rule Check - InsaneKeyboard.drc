@@ -1,0 +1,152 @@
+Protel Design System Design Rule Check
+PCB File : C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc
+Date     : 11/4/2024
+Time     : 11:41:11 AM
+
+Processing Rule : Clearance Constraint (Gap=4mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=6mil) (Max=20mil) (Preferred=20mil) (InNet('VBAT'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=6mil) (Max=50mil) (Preferred=20mil) (InNet('VOUT'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=6mil) (Max=20mil) (Preferred=20mil) (InNet('VMCU'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=6mil) (Max=50mil) (Preferred=6mil) (All)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=6mil) (Max=20mil) (Preferred=20mil) (InNet('LED_PWR'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=6mil) (Max=20mil) (Preferred=20mil) (InNet('DISPLAY_LOAD_SW'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=6mil) (Max=20mil) (Preferred=20mil) (InNet('VSTOR'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=6mil) (Max=20mil) (Preferred=20mil) (InNet('NetC17_1'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=6mil) (Max=20mil) (Preferred=20mil) (InNet('VDCDC'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=6mil) (Max=20mil) (Preferred=20mil) (InNet('USB_VCC'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=6mil) (Max=20mil) (Preferred=20mil) (InNet('+3.3V'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=6mil) (Max=20mil) (Preferred=20mil) (InNet('NetL8_2'))
+Rule Violations :0
+
+Processing Rule : Routing Topology Rule(Topology=Shortest) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=5.906mil) (Max=248mil) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=7.874mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=1mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=4mil) (IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=4mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mil) (All)
+Rule Violations :0
+
+Processing Rule : Board Clearance Constraint (Gap=0mil) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
+Rule Violations :0
+
+PCB Health Issue Category : Zero Area Regions
+   Zero area region: Region (0 hole(s)) Mechanical 1 (83.992mil,1135.158mil)
+   Zero area region: Region (0 hole(s)) Mechanical 1 (83.992mil,1135.158mil)
+   Zero area region: Region (0 hole(s)) Mechanical 1 (83.992mil,1135.158mil)
+   Zero area region: Region (0 hole(s)) Mechanical 1 (83.992mil,1135.158mil)
+   Zero area region: Region (0 hole(s)) Mechanical 1 (83.992mil,1135.158mil)
+   Zero area region: Region (0 hole(s)) Mechanical 1 (83.992mil,1135.158mil)
+   Zero area region: Region (0 hole(s)) Mechanical 1 (83.992mil,1135.158mil)
+   Zero area region: Region (0 hole(s)) Mechanical 1 (83.992mil,1135.158mil)
+   Zero area region: Region (0 hole(s)) Mechanical 1 (83.992mil,1135.158mil)
+   Zero area region: Region (0 hole(s)) Mechanical 1 (83.992mil,1135.158mil)
+   Zero area region: Region (0 hole(s)) Mechanical 1 (83.992mil,1135.158mil)
+   Zero area region: Region (0 hole(s)) Mechanical 1 (83.992mil,1135.158mil)
+   Zero area region: Region (0 hole(s)) Mechanical 1 (83.992mil,1135.158mil)
+   Zero area region: Region (0 hole(s)) Mechanical 1 (83.992mil,1135.158mil)
+   Zero area region: Region (0 hole(s)) Mechanical 1 (83.992mil,1135.158mil)
+   Zero area region: Region (0 hole(s)) Mechanical 1 (83.992mil,1135.158mil)
+Issues :16
+
+PCB Health Issue Category : Reference Point Outside the Component Area
+   Reference point outside the component area: Component SW39-.value (614.844mil,-456.976mil) on Bottom Layer
+   Reference point outside the component area: Component SW38-.value (936.844mil,-1135.976mil) on Bottom Layer
+   Reference point outside the component area: Component SW37-.value (1242.313mil,-1821.835mil) on Bottom Layer
+   Reference point outside the component area: Component SW36-.value (2159mil,2622mil) on Bottom Layer
+   Reference point outside the component area: Component SW35-.value (2901mil,2614mil) on Bottom Layer
+   Reference point outside the component area: Component SW34-.value (3657.919mil,2671.238mil) on Bottom Layer
+   Reference point outside the component area: Component SW33-.value (4407.918mil,2735.238mil) on Bottom Layer
+   Reference point outside the component area: Component SW32-.value (5157.908mil,2672.131mil) on Bottom Layer
+   Reference point outside the component area: Component SW31-.value (5912.919mil,2541.239mil) on Bottom Layer
+   Reference point outside the component area: Component SW30-.value (6845.918mil,2546.237mil) on Bottom Layer
+   Reference point outside the component area: Component SW29-.value (2159mil,1687mil) on Bottom Layer
+   Reference point outside the component area: Component SW28-.value (2907.892mil,1872.125mil) on Bottom Layer
+   Reference point outside the component area: Component SW27-.value (3657.897mil,1922.125mil) on Bottom Layer
+   Reference point outside the component area: Component SW26-.value (4411.918mil,1984.237mil) on Bottom Layer
+   Reference point outside the component area: Component SW25-.value (5158.918mil,1924.239mil) on Bottom Layer
+   Reference point outside the component area: Component SW24-.value (5905.919mil,1794.239mil) on Bottom Layer
+   Reference point outside the component area: Component SW23-.value (6842.919mil,1794.239mil) on Bottom Layer
+   Reference point outside the component area: Component SW22-.value (1352.919mil,-137.762mil) on Bottom Layer
+   Reference point outside the component area: Component SW21-.value (2903.918mil,1121.238mil) on Bottom Layer
+   Reference point outside the component area: Component SW20-.value (3650.823mil,1165.288mil) on Bottom Layer
+   Reference point outside the component area: Component SW19-.value (4400.828mil,1228.187mil) on Bottom Layer
+   Reference point outside the component area: Component SW18-.value (5150.834mil,1165.288mil) on Bottom Layer
+   Reference point outside the component area: Component SW17-.value (5900.839mil,1040.286mil) on Bottom Layer
+   Reference point outside the component area: Component SW16-.value (6838.345mil,1040.286mil) on Bottom Layer
+   Reference point outside the component area: Component SW15-.value (2157.918mil,557.238mil) on Bottom Layer
+   Reference point outside the component area: Component SW14-.value (2910mil,370.213mil) on Bottom Layer
+   Reference point outside the component area: Component SW13-.value (3657.896mil,422.115mil) on Bottom Layer
+   Reference point outside the component area: Component SW12-.value (4405.918mil,479.239mil) on Bottom Layer
+   Reference point outside the component area: Component SW11-.value (5157.908mil,422.115mil) on Bottom Layer
+   Reference point outside the component area: Component SW10-.value (5900.839mil,290.281mil) on Bottom Layer
+   Reference point outside the component area: Component SW9-.value (6838.344mil,290.281mil) on Bottom Layer
+   Reference point outside the component area: Component SW8-.value (1829.798mil,-1157.833mil) on Bottom Layer
+   Reference point outside the component area: Component SW7-.value (2508.918mil,-843.762mil) on Bottom Layer
+   Reference point outside the component area: Component SW6-.value (3650.823mil,-334.723mil) on Bottom Layer
+   Reference point outside the component area: Component SW5-.value (4402.918mil,-268.763mil) on Bottom Layer
+   Reference point outside the component area: Component SW4-.value (5153.919mil,-331.761mil) on Bottom Layer
+   Reference point outside the component area: Component SW3-.value (5900.839mil,-459.725mil) on Bottom Layer
+   Reference point outside the component area: Component SW2-.value (6650.844mil,-459.725mil) on Bottom Layer
+Issues :38
+
+PCB Health Issue Category : Micro-Segments (Copper)
+   Micro-Segment: Polygon Pour Cutout (Top Layer)Region (0 hole(s)) Top Layer P1(887.106mil,2871.866mil) P2(887.106mil,2871.866mil)
+Issues :1
+
+
+Violations Detected : 0
+Waived Violations : 0
+PCB Health Issues : 55
+Time Elapsed        : 00:00:02

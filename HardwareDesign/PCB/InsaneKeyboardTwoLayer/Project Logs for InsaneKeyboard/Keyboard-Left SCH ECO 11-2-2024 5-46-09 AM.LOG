@@ -1,0 +1,291 @@
+Change Component Comment: Designator=H1 Old Comment=#4 Hole New Comment=.value
+Change Component Comment: Designator=H2 Old Comment=#4 Hole New Comment=.value
+Change Component Comment: Designator=H3 Old Comment=0.1" M Header New Comment=.value
+Change Component Comment: Designator=BT3 Old Comment=1.54inch Waveshare Eink Display New Comment=.value
+Change Component Comment: Designator=C19 Old Comment=22uF 10V X5R 0603 New Comment=22uF
+Change Component Comment: Designator=X2 Old Comment=32.768kHz New Comment=.value
+Change Component Comment: Designator=BT1 Old Comment=Battery 1000mAh New Comment=.value
+Change Component Comment: Designator=Q2 Old Comment=BQ25570RGRR New Comment=.value
+Change Component Comment: Designator=C20 Old Comment=CAP 0.1uF 100V 0603 New Comment=10nF
+Change Component Comment: Designator=C21 Old Comment=CAP 0.1uF 100V 0603 New Comment=10nF
+Change Component Comment: Designator=C1 Old Comment=CAP 1.5pF 50V 0402 New Comment=1.5pF
+Change Component Comment: Designator=C8 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C9 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C12 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C13 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C14 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C26 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C27 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C29 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C31 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C32 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C33 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C34 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C35 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C36 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C37 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C38 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C39 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C40 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C41 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C42 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C43 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C44 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C45 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C46 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C47 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C48 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C49 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C50 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C51 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C52 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C53 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C54 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C55 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C56 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C57 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C58 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C59 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C60 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C61 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C62 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C63 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C64 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C65 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C66 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C67 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C68 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C69 Old Comment=CAP 1uF 10V 0603 New Comment=1uF
+Change Component Comment: Designator=C6 Old Comment=CAP 4.7uF 25V 0603 New Comment=4.7uF
+Change Component Comment: Designator=C15 Old Comment=CAP 4.7uF 25V 0603 New Comment=4.7uF
+Change Component Comment: Designator=C17 Old Comment=CAP 4.7uF 25V 0603 New Comment=4.7uF
+Change Component Comment: Designator=C11 Old Comment=CAP 10nF 100V 0603 New Comment=10nF
+Change Component Comment: Designator=C16 Old Comment=CAP 10nF 100V 0603 New Comment=10nF
+Change Component Comment: Designator=C18 Old Comment=CAP 10nF 100V 0603 New Comment=10nF
+Change Component Comment: Designator=C5 Old Comment=CAP 10pF 50V 0603 New Comment=10pF
+Change Component Comment: Designator=C7 Old Comment=CAP 10uF 10V 0603 New Comment=10uF
+Change Component Comment: Designator=C10 Old Comment=CAP 10uF 10V 0603 New Comment=10uF
+Change Component Comment: Designator=C22 Old Comment=CAP 47uF 10V 0805 New Comment=1uF
+Change Component Comment: Designator=C23 Old Comment=CAP 47uF 10V 0805 New Comment=1uF
+Change Component Comment: Designator=C24 Old Comment=CAP 47uF 10V 0805 New Comment=1uF
+Change Component Comment: Designator=C25 Old Comment=CAP 47uF 10V 0805 New Comment=1uF
+Change Component Comment: Designator=C28 Old Comment=CAP 47uF 10V 0805 New Comment=1uF
+Change Component Comment: Designator=C30 Old Comment=CAP 47uF 10V 0805 New Comment=1uF
+Change Component Comment: Designator=C70 Old Comment=CAP 47uF 10V 0805 New Comment=1uF
+Change Component Comment: Designator=C2 Old Comment=CAP 100pF 100V 0603 New Comment=100pF
+Change Component Comment: Designator=C3 Old Comment=CAP 100pF 100V 0603 New Comment=100pF
+Change Component Comment: Designator=C4 Old Comment=CAP 220nF 50V 0603 New Comment=22nF
+Change Component Comment: Designator=D1 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D3 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D4 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D5 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D6 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D7 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D8 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D9 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D10 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D11 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D12 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D13 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D14 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D15 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D16 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D17 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D18 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D19 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D20 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D21 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D22 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D23 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D24 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D25 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D26 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D27 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D28 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D29 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D30 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D31 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D32 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D33 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D34 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D35 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D36 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D37 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D38 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D39 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=D40 Old Comment=Diode Schottky New Comment=.value
+Change Component Comment: Designator=SW1 Old Comment=DPDT New Comment=.value
+Change Component Comment: Designator=Q1 Old Comment=EFR32BG13P632F512GM32-DR New Comment=.value
+Change Component Comment: Designator=Q1 Old Comment=EFR32BG13P632F512GM32-DR New Comment=.value
+Change Component Comment: Designator=Q1 Old Comment=EFR32BG13P632F512GM32-DR New Comment=.value
+Change Component Comment: Designator=ATT1 Old Comment=F_Interverted New Comment=.value
+Change Component Comment: Designator=L6 Old Comment=Farrite Bead 102(1k) New Comment=.value
+Change Component Comment: Designator=J2 Old Comment=Female USB Type C New Comment=
+Change Component Comment: Designator=L3 Old Comment=Ferrite Bead 600(601) 1LN New Comment=.value
+Change Component Comment: Designator=L4 Old Comment=Ferrite Bead 600(601) 1LN New Comment=.value
+Change Component Comment: Designator=SW2 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW3 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW4 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW5 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW6 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW7 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW8 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW9 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW10 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW11 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW12 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW13 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW14 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW15 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW16 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW17 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW18 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW19 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW20 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW21 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW22 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW23 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW24 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW25 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW26 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW27 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW28 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW29 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW30 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW31 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW32 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW33 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW34 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW35 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW36 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW37 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW38 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=SW39 Old Comment=Gateron G Pro 2.0 New Comment=.value
+Change Component Comment: Designator=LED1 Old Comment=GRN 0603 New Comment=.value
+Change Component Comment: Designator=LED2 Old Comment=GRN 0603 New Comment=.value
+Change Component Comment: Designator=LED4 Old Comment=GRN 0603 New Comment=.value
+Change Component Comment: Designator=L5 Old Comment=IND 4.7uH 1515 New Comment=.value
+Change Component Comment: Designator=L7 Old Comment=IND 10uH 1111 New Comment=.value
+Change Component Comment: Designator=L8 Old Comment=IND 22uH 1515 New Comment=.value
+Change Component Comment: Designator=H9 Old Comment=Mini SWD New Comment=.value
+Change Component Comment: Designator=R1 Old Comment=RES 0R 0402 New Comment=0R
+Change Component Comment: Designator=R4 Old Comment=RES 0R 0402 New Comment=0R
+Change Component Comment: Designator=R13 Old Comment=RES 0R 0402 New Comment=0R
+Change Component Comment: Designator=R27 Old Comment=RES 0R 0402 New Comment=0R
+Change Component Comment: Designator=R28 Old Comment=RES 0R 0402 New Comment=0R
+Change Component Comment: Designator=R29 Old Comment=RES 0R 0402 New Comment=0R
+Change Component Comment: Designator=R37 Old Comment=RES 0R 0402 New Comment=0R
+Change Component Comment: Designator=R333 Old Comment=RES 0R 0402 New Comment=0R
+Change Component Comment: Designator=R12 Old Comment=RES 1.24M 0603 New Comment=1.24MR
+Change Component Comment: Designator=R5 Old Comment=RES 1R 0603 New Comment=1R
+Change Component Comment: Designator=R7 Old Comment=RES 4.75M 0603 New Comment=4.75MR
+Change Component Comment: Designator=R17 Old Comment=RES 4.99M 0603 New Comment=4.99MR
+Change Component Comment: Designator=R9 Old Comment=RES 5.1K 0603 New Comment=5.1kR
+Change Component Comment: Designator=R10 Old Comment=RES 5.1K 0603 New Comment=5.1kR
+Change Component Comment: Designator=R15 Old Comment=RES 5.62M 0603 New Comment=5.6MR
+Change Component Comment: Designator=R14 Old Comment=RES 6.65M 0603 New Comment=6.65MR
+Change Component Comment: Designator=R11 Old Comment=RES 7.32M 0603 New Comment=7.32MR
+Change Component Comment: Designator=R2 Old Comment=RES 8.2M 0603 New Comment=8.2MR
+Change Component Comment: Designator=R16 Old Comment=RES 10K 0603 New Comment=10kR
+Change Component Comment: Designator=R19 Old Comment=RES 10K 0603 New Comment=10kR
+Change Component Comment: Designator=R20 Old Comment=RES 10K 0603 New Comment=10kR
+Change Component Comment: Designator=R21 Old Comment=RES 10K 0603 New Comment=10kR
+Change Component Comment: Designator=R22 Old Comment=RES 10K 0603 New Comment=10kR
+Change Component Comment: Designator=R23 Old Comment=RES 10K 0603 New Comment=10kR
+Change Component Comment: Designator=R24 Old Comment=RES 10K 0603 New Comment=10kR
+Change Component Comment: Designator=R25 Old Comment=RES 10K 0603 New Comment=10kR
+Change Component Comment: Designator=R26 Old Comment=RES 10K 0603 New Comment=10kR
+Change Component Comment: Designator=R30 Old Comment=RES 10K 0603 New Comment=10kR
+Change Component Comment: Designator=R31 Old Comment=RES 10K 0603 New Comment=10kR
+Change Component Comment: Designator=R32 Old Comment=RES 10K 0603 New Comment=10kR
+Change Component Comment: Designator=R33 Old Comment=RES 10K 0603 New Comment=10kR
+Change Component Comment: Designator=R34 Old Comment=RES 10K 0603 New Comment=10kR
+Change Component Comment: Designator=R35 Old Comment=RES 10K 0603 New Comment=10kR
+Change Component Comment: Designator=R36 Old Comment=RES 10K 0603 New Comment=10kR
+Change Component Comment: Designator=R6 Old Comment=RES 100R 0603 New Comment=100R
+Change Component Comment: Designator=R8 Old Comment=RES 100R 0603 New Comment=100R
+Change Component Comment: Designator=R18 Old Comment=RES 100R 0603 New Comment=100R
+Change Component Comment: Designator=R38 Old Comment=RES 100R 0603 New Comment=100R
+Change Component Comment: Designator=R3 Old Comment=RES 330K 0603 New Comment=330kR
+Change Component Comment: Designator=MT1 Old Comment=Rotery Encoder New Comment=
+Change Component Comment: Designator=Q6 Old Comment=SI7021-A20-GM1R New Comment=.value
+Change Component Comment: Designator=BT2 Old Comment=Solar Panel New Comment=.value
+Change Component Comment: Designator=S1 Old Comment=SPST New Comment=.value
+Change Component Comment: Designator=S2 Old Comment=SPST New Comment=.value
+Change Component Comment: Designator=D2 Old Comment=SRV05-4-P-T7 New Comment=.value
+Change Component Comment: Designator=D41 Old Comment=SRV05-4-P-T7 New Comment=TVS DIODE 5.5V 6TSOP
+Change Component Comment: Designator=Q3 Old Comment=TCA6408ARGTR New Comment=.value
+Change Component Comment: Designator=Q3 Old Comment=TCA6408ARGTR New Comment=.value
+Change Component Comment: Designator=Q4 Old Comment=TCA6408ARGTR New Comment=.value
+Change Component Comment: Designator=Q4 Old Comment=TCA6408ARGTR New Comment=.value
+Change Component Comment: Designator=TP1 Old Comment=Test point New Comment=.value
+Change Component Comment: Designator=TP2 Old Comment=Test point New Comment=.value
+Change Component Comment: Designator=TP3 Old Comment=Test point New Comment=.value
+Change Component Comment: Designator=TP6 Old Comment=Test point New Comment=.value
+Change Component Comment: Designator=TP7 Old Comment=Test point New Comment=.value
+Change Component Comment: Designator=TP8 Old Comment=Test point New Comment=.value
+Change Component Comment: Designator=TP9 Old Comment=Test point New Comment=.value
+Change Component Comment: Designator=TP10 Old Comment=Test point New Comment=.value
+Change Component Comment: Designator=TP11 Old Comment=Test point New Comment=.value
+Change Component Comment: Designator=TP12 Old Comment=Test point New Comment=.value
+Change Component Comment: Designator=TP13 Old Comment=Test point New Comment=.value
+Change Component Comment: Designator=TP15 Old Comment=Test point New Comment=.value
+Change Component Comment: Designator=TP16 Old Comment=Test point New Comment=.value
+Change Component Comment: Designator=TP17 Old Comment=Test point New Comment=.value
+Change Component Comment: Designator=TP18 Old Comment=Test point New Comment=.value
+Change Component Comment: Designator=TP20 Old Comment=Test point New Comment=.value
+Change Component Comment: Designator=TP21 Old Comment=Test point New Comment=.value
+Change Component Comment: Designator=TP22 Old Comment=Test point New Comment=.value
+Change Component Comment: Designator=TP23 Old Comment=Test point New Comment=.value
+Change Component Comment: Designator=TP24 Old Comment=Test point New Comment=.value
+Change Component Comment: Designator=TP25 Old Comment=Test point New Comment=.value
+Change Component Comment: Designator=TP27 Old Comment=Test point New Comment=.value
+Change Component Comment: Designator=TP28 Old Comment=Test point New Comment=.value
+Change Component Comment: Designator=TP29 Old Comment=Test point New Comment=.value
+Change Component Comment: Designator=TP30 Old Comment=Test point New Comment=.value
+Change Component Comment: Designator=TP31 Old Comment=Test point New Comment=.value
+Change Component Comment: Designator=TP32 Old Comment=Test point New Comment=.value
+Change Component Comment: Designator=TP33 Old Comment=Test point New Comment=.value
+Change Component Comment: Designator=TP34 Old Comment=Test point New Comment=.value
+Change Component Comment: Designator=Q5 Old Comment=TPS22919 New Comment=.value
+Change Component Comment: Designator=Q7 Old Comment=TPS22919 New Comment=.value
+Change Component Comment: Designator=Q8 Old Comment=TPS22919 New Comment=.value
+Change Component Comment: Designator=LED5 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED6 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED7 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED8 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED9 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED10 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED11 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED12 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED13 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED14 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED15 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED16 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED17 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED18 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED19 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED20 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED21 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED22 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED23 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED24 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED25 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED26 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED27 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED28 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED29 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED30 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED31 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED32 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED33 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED34 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED35 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED36 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED37 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED38 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED39 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED40 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED41 Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=LED Old Comment=WS2812B New Comment=.value
+Change Component Comment: Designator=X1 Old Comment=XTAL 38.4MHz New Comment=.value

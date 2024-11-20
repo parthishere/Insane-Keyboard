@@ -1,0 +1,27 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: InsaneKeyboard.PcbDoc   11/4/2024  12:09:48 PM
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : InsaneKeyboard-RoundHoles.TXT
+ASCII SlotHoles File : InsaneKeyboard-SlotHoles.TXT
+ASCII RectHoles File : InsaneKeyboard-RectHoles.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      0.2mm (8mil)                                              Round             21        PTH        56.89mm (2.24inch)
+T2      0.33mm (13mil)                                            Round             1143      PTH        5435.99mm (214.02inch)
+T3      0.6mm (24mil)                                             Slot              4         PTH        38.15mm (1.50inch)
+T4      0.8mm (31mil)                                             Round             11        PTH        44.98mm (1.77inch)
+T5      0.93mm (37mil)                                            Round             6         PTH        10.50mm (0.41inch)
+T6      1.02mm (40mil)                                            Round             2         PTH        2.54mm (0.10inch)
+T7      1.1mm (43mil)                                             Round             5         PTH        24.50mm (0.96inch)
+T8      1.51mm (59mil)                                            Round             2         PTH        10.00mm (0.39inch)
+T9      2mm (79mil)                                               Rectangle         2         PTH        24.43mm (0.96inch)
+T10     3.556mm (140mil)                                          Round             2         PTH        141.38mm (5.57inch)
+T11     0.6mm (24mil)                                             Round             2         NPTH       5.78mm (0.23inch)
+T12     3mm (118mil)                                              Round             76        NPTH       1403.50mm (55.26inch)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              1276
+
+Total Processing Time (hh:mm:ss) : 00:00:00

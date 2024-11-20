@@ -1,0 +1,578 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD24\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">11/4/2024</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">11:41:11 AM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc" class="file"><acronym title="C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc">C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">PCB Health Issues:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">55</td></tr>
+</table>
+</td>
+</table><a name="ID4FLWNIP0SCTYHVJMS1OLUU3LGMSWLRHINXHATJCG5FMRZ44CQS"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDUKK1KNP4FQWKF2IWMRMCIW0ONM3JZ0FCRCJKHLEDSJTV1ZYNNCC">Clearance Constraint (Gap=4mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID40MEOYWF3RQNOWXQXTRRDEWMUDFDR0ISC5SQDSKBANGYVL01MVKH">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDTXHC23SXN4PJFGKRWEIXFHU4QOVGDPFOFUR0CAKTYU4Y5MJGO1BP">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDOM2C4ULXMS2XI23NSJAL3VENJI4LY2ARIE1KQAIALPVUFNBQBXLM">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAHKNF0FKAOZVF4OVOAKOVRVV5GHT4IURDBBVHQBACV1L4KQ2H2HH">Width Constraint (Min=6mil) (Max=20mil) (Preferred=20mil) (InNet('VBAT'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID25MJPLCMXNNWCEU0SW53QK3RKCXKIFTCB2ZTFNNFGEKQZ21JIDUC">Width Constraint (Min=6mil) (Max=50mil) (Preferred=20mil) (InNet('VOUT'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDDI3LKBNXAJNSELVB5G4EUUATBOTLZTYL4T0QGPTCBZMFOCKGTY">Width Constraint (Min=6mil) (Max=20mil) (Preferred=20mil) (InNet('VMCU'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDNDFDFW3CORMAL4TKSFPEXN5A0K04MZHP3SCDKUPQ44BVOW4DLWT">Width Constraint (Min=6mil) (Max=50mil) (Preferred=6mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDHRQAWFKI3XKYH2PEIZZZ3H40CLE11GF0ZFDOIFPC0OCPZ0RZNLNP">Width Constraint (Min=6mil) (Max=20mil) (Preferred=20mil) (InNet('LED_PWR'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDSAWJ2YUFGDWELQDKBI3VUALJSDQ3SUULEOBIJMKQUFMQJZEFP24">Width Constraint (Min=6mil) (Max=20mil) (Preferred=20mil) (InNet('DISPLAY_LOAD_SW'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDJNDM4O3XKCMSCCJZ15X0Y4UCTKW5PCVIZWW4BCSD4GQFVL2NA5H">Width Constraint (Min=6mil) (Max=20mil) (Preferred=20mil) (InNet('VSTOR'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID0C3W4TYZOWRRHCBC4RAQAKQHZET4VJARG04V2BEGY2CCMHKY34JK">Width Constraint (Min=6mil) (Max=20mil) (Preferred=20mil) (InNet('NetC17_1'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDGA4SPEMGCVROI0XZ3FS3L5HTNKNC0OVQQEOGYJMA1DFUKXJKPK2">Width Constraint (Min=6mil) (Max=20mil) (Preferred=20mil) (InNet('VDCDC'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDVWBV45OVL305NEG14NF4543IUOC43SXGGOFJTXKM5R3ALNCCBBVN">Width Constraint (Min=6mil) (Max=20mil) (Preferred=20mil) (InNet('USB_VCC'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDUETS2DDIXDFNOZSINIYPEK1BAMAZ0YSIQ1GTBNNK5UTSK31BXHLN">Width Constraint (Min=6mil) (Max=20mil) (Preferred=20mil) (InNet('+3.3V'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID0XKV31LFV2KFGQAMMK2RHU2UIGQWOIQWZDMFX3NMH3IAHNSSTCWP">Width Constraint (Min=6mil) (Max=20mil) (Preferred=20mil) (InNet('NetL8_2'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDSC1ZF5WM3T2WP2XM1D2JZGSBJNCNXYUPTPDL5XCSMVI255OFLL4O">Routing Topology Rule(Topology=Shortest) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDZPPSRKQ2B0QTOTS4JZYDGTLB4PSBV5FXK23YIMGTCHZYGGDKQ5VP">Power Plane Connect Rule(Direct Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDI1VZH330ELXGELR20FNODMBPNDFWDEXROPTUOZJLQQPDEUSTT4RN">Hole Size Constraint (Min=5.906mil) (Max=248mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDB2GBSP2SR0J4O0RR0W0UNIZM1F21SPKVMTASGZK5PX4VJ3BJG1YK">Hole To Hole Clearance (Gap=7.874mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDUOBVEBC1KA52EMNC13IQHCBA3PS1XZFNFZNUG3FFKRD2A3UW0LZK">Minimum Solder Mask Sliver (Gap=1mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID3ZFRRSNKXLSLFTNZ0QQL2WIFFBUQBTVB0FENB3BJ5TBAX4SJZTJ">Silk To Solder Mask (Clearance=4mil) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDN2RKISG0L50YNQNFIELE4MSLUO1ZYJZUYUOKBEDPZWQ5MU525Y5P">Silk to Silk (Clearance=4mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDVQLDHOD5UJIKI5P0CMVNR0SQHMCELIJZHWO210B2YM3FA5KP0QNF">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID5TI12G1AYYHPCNAABAJOJ3JCHZYDBVM3NRDLVLKOIJJZ5EALWH">Board Clearance Constraint (Gap=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDQILEVX1YXRJRMXWBFLTWXMV1ABWXEKZ53CFP3EKJW4D4FGWMG4ZB">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">PCB Health Issues</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDFJGMHBWBGQHQJ1P0YWIFKOHNX1OFDU2DIIEC1EQWZOQZ50Z12N">Zero Area Regions</a></td>
+<td class="column2">16</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDVT4POE5YY53IP3JQP5TKDNZKJDXXD1BVCDEWJXPWZ00CDDZVF5JC">Reference Point Outside the Component Area</a></td>
+<td class="column2">38</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAKZKGAJ20AMRHQBRJTYTCDNLBTURU1XVAC5ZDKOPEQ5YFWAY3BG">Micro-Segments (Copper)</a></td>
+<td class="column2">1</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">55</td>
+</tr>
+</table><br><a name="ID0Z5URSHWTF2MLQJ3JEPFIPFE3P4B4JO3GS5PLJBR2WXAVCC1HN1N"><h2>Rule Violations</h2></a><a name="IDMIOEX0X441GCEQSDHZOXBIXOQIWKWSEZW1X0TUDLLLNSD3UYMDAP"><h2>PCB Health Issues</h2></a><a name="IDFJGMHBWBGQHQJ1P0YWIFKOHNX1OFDU2DIIEC1EQWZOQZ50Z12N"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="health">Zero Area Regions</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1083.992mil|Location2.X=1083.992mil|Location1.Y=4530.158mil|Location2.Y=4530.158mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1083.992mil|Location2.X=1083.992mil|Location1.Y=4530.158mil|Location2.Y=4530.158mil|Absolute=True">Zero area region: Region (0 hole(s)) Mechanical 1 (83.992mil,1135.158mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1083.992mil|Location2.X=1083.992mil|Location1.Y=4530.158mil|Location2.Y=4530.158mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1083.992mil|Location2.X=1083.992mil|Location1.Y=4530.158mil|Location2.Y=4530.158mil|Absolute=True">Zero area region: Region (0 hole(s)) Mechanical 1 (83.992mil,1135.158mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1083.992mil|Location2.X=1083.992mil|Location1.Y=4530.158mil|Location2.Y=4530.158mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1083.992mil|Location2.X=1083.992mil|Location1.Y=4530.158mil|Location2.Y=4530.158mil|Absolute=True">Zero area region: Region (0 hole(s)) Mechanical 1 (83.992mil,1135.158mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1083.992mil|Location2.X=1083.992mil|Location1.Y=4530.158mil|Location2.Y=4530.158mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1083.992mil|Location2.X=1083.992mil|Location1.Y=4530.158mil|Location2.Y=4530.158mil|Absolute=True">Zero area region: Region (0 hole(s)) Mechanical 1 (83.992mil,1135.158mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1083.992mil|Location2.X=1083.992mil|Location1.Y=4530.158mil|Location2.Y=4530.158mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1083.992mil|Location2.X=1083.992mil|Location1.Y=4530.158mil|Location2.Y=4530.158mil|Absolute=True">Zero area region: Region (0 hole(s)) Mechanical 1 (83.992mil,1135.158mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1083.992mil|Location2.X=1083.992mil|Location1.Y=4530.158mil|Location2.Y=4530.158mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1083.992mil|Location2.X=1083.992mil|Location1.Y=4530.158mil|Location2.Y=4530.158mil|Absolute=True">Zero area region: Region (0 hole(s)) Mechanical 1 (83.992mil,1135.158mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1083.992mil|Location2.X=1083.992mil|Location1.Y=4530.158mil|Location2.Y=4530.158mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1083.992mil|Location2.X=1083.992mil|Location1.Y=4530.158mil|Location2.Y=4530.158mil|Absolute=True">Zero area region: Region (0 hole(s)) Mechanical 1 (83.992mil,1135.158mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1083.992mil|Location2.X=1083.992mil|Location1.Y=4530.158mil|Location2.Y=4530.158mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1083.992mil|Location2.X=1083.992mil|Location1.Y=4530.158mil|Location2.Y=4530.158mil|Absolute=True">Zero area region: Region (0 hole(s)) Mechanical 1 (83.992mil,1135.158mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1083.992mil|Location2.X=1083.992mil|Location1.Y=4530.158mil|Location2.Y=4530.158mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1083.992mil|Location2.X=1083.992mil|Location1.Y=4530.158mil|Location2.Y=4530.158mil|Absolute=True">Zero area region: Region (0 hole(s)) Mechanical 1 (83.992mil,1135.158mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1083.992mil|Location2.X=1083.992mil|Location1.Y=4530.158mil|Location2.Y=4530.158mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1083.992mil|Location2.X=1083.992mil|Location1.Y=4530.158mil|Location2.Y=4530.158mil|Absolute=True">Zero area region: Region (0 hole(s)) Mechanical 1 (83.992mil,1135.158mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1083.992mil|Location2.X=1083.992mil|Location1.Y=4530.158mil|Location2.Y=4530.158mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1083.992mil|Location2.X=1083.992mil|Location1.Y=4530.158mil|Location2.Y=4530.158mil|Absolute=True">Zero area region: Region (0 hole(s)) Mechanical 1 (83.992mil,1135.158mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1083.992mil|Location2.X=1083.992mil|Location1.Y=4530.158mil|Location2.Y=4530.158mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1083.992mil|Location2.X=1083.992mil|Location1.Y=4530.158mil|Location2.Y=4530.158mil|Absolute=True">Zero area region: Region (0 hole(s)) Mechanical 1 (83.992mil,1135.158mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1083.992mil|Location2.X=1083.992mil|Location1.Y=4530.158mil|Location2.Y=4530.158mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1083.992mil|Location2.X=1083.992mil|Location1.Y=4530.158mil|Location2.Y=4530.158mil|Absolute=True">Zero area region: Region (0 hole(s)) Mechanical 1 (83.992mil,1135.158mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1083.992mil|Location2.X=1083.992mil|Location1.Y=4530.158mil|Location2.Y=4530.158mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1083.992mil|Location2.X=1083.992mil|Location1.Y=4530.158mil|Location2.Y=4530.158mil|Absolute=True">Zero area region: Region (0 hole(s)) Mechanical 1 (83.992mil,1135.158mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1083.992mil|Location2.X=1083.992mil|Location1.Y=4530.158mil|Location2.Y=4530.158mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1083.992mil|Location2.X=1083.992mil|Location1.Y=4530.158mil|Location2.Y=4530.158mil|Absolute=True">Zero area region: Region (0 hole(s)) Mechanical 1 (83.992mil,1135.158mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1083.992mil|Location2.X=1083.992mil|Location1.Y=4530.158mil|Location2.Y=4530.158mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1083.992mil|Location2.X=1083.992mil|Location1.Y=4530.158mil|Location2.Y=4530.158mil|Absolute=True">Zero area region: Region (0 hole(s)) Mechanical 1 (83.992mil,1135.158mil)</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDVT4POE5YY53IP3JQP5TKDNZKJDXXD1BVCDEWJXPWZ00CDDZVF5JC"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="health">Reference Point Outside the Component Area</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1207.075mil|Location2.X=2028.814mil|Location1.Y=2513.175mil|Location2.Y=3339.358mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1207.075mil|Location2.X=2028.814mil|Location1.Y=2513.175mil|Location2.Y=3339.358mil|Absolute=True">Reference point outside the component area: Component SW39-.value (614.844mil,-456.976mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1529.075mil|Location2.X=2402mil|Location1.Y=1834.175mil|Location2.Y=2708.995mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1529.075mil|Location2.X=2402mil|Location1.Y=1834.175mil|Location2.Y=2708.995mil|Absolute=True">Reference point outside the component area: Component SW38-.value (936.844mil,-1135.976mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1834.543mil|Location2.X=2656.283mil|Location1.Y=762.753mil|Location2.Y=1974.499mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1834.543mil|Location2.X=2656.283mil|Location1.Y=762.753mil|Location2.Y=1974.499mil|Absolute=True">Reference point outside the component area: Component SW37-.value (1242.313mil,-1821.835mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2773.599mil|Location2.X=3444mil|Location1.Y=5702.575mil|Location2.Y=6341mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2773.599mil|Location2.X=3444mil|Location1.Y=5702.575mil|Location2.Y=6341mil|Absolute=True">Reference point outside the component area: Component SW36-.value (2159mil,2622mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3515.599mil|Location2.X=4186mil|Location1.Y=5694.575mil|Location2.Y=6356.825mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3515.599mil|Location2.X=4186mil|Location1.Y=5694.575mil|Location2.Y=6356.825mil|Absolute=True">Reference point outside the component area: Component SW35-.value (2901mil,2614mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4272.518mil|Location2.X=4942.919mil|Location1.Y=5751.813mil|Location2.Y=6399.023mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4272.518mil|Location2.X=4942.919mil|Location1.Y=5751.813mil|Location2.Y=6399.023mil|Absolute=True">Reference point outside the component area: Component SW34-.value (3657.919mil,2671.238mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5022.516mil|Location2.X=5692.918mil|Location1.Y=5815.813mil|Location2.Y=6462.023mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5022.516mil|Location2.X=5692.918mil|Location1.Y=5815.813mil|Location2.Y=6462.023mil|Absolute=True">Reference point outside the component area: Component SW33-.value (4407.918mil,2735.238mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5772.507mil|Location2.X=6442.908mil|Location1.Y=5752.706mil|Location2.Y=6400.023mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5772.507mil|Location2.X=6442.908mil|Location1.Y=5752.706mil|Location2.Y=6400.023mil|Absolute=True">Reference point outside the component area: Component SW32-.value (5157.908mil,2672.131mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6527.518mil|Location2.X=7197.919mil|Location1.Y=5621.813mil|Location2.Y=6267.023mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6527.518mil|Location2.X=7197.919mil|Location1.Y=5621.813mil|Location2.Y=6267.023mil|Absolute=True">Reference point outside the component area: Component SW31-.value (5912.919mil,2541.239mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7460.517mil|Location2.X=8130.918mil|Location1.Y=5626.812mil|Location2.Y=6274.023mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7460.517mil|Location2.X=8130.918mil|Location1.Y=5626.812mil|Location2.Y=6274.023mil|Absolute=True">Reference point outside the component area: Component SW30-.value (6845.918mil,2546.237mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2773.599mil|Location2.X=3444mil|Location1.Y=4767.575mil|Location2.Y=5406mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2773.599mil|Location2.X=3444mil|Location1.Y=4767.575mil|Location2.Y=5406mil|Absolute=True">Reference point outside the component area: Component SW29-.value (2159mil,1687mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3522.491mil|Location2.X=4192.892mil|Location1.Y=4952.699mil|Location2.Y=5614.023mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3522.491mil|Location2.X=4192.892mil|Location1.Y=4952.699mil|Location2.Y=5614.023mil|Absolute=True">Reference point outside the component area: Component SW28-.value (2907.892mil,1872.125mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4272.496mil|Location2.X=4942.897mil|Location1.Y=5002.699mil|Location2.Y=5652.023mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4272.496mil|Location2.X=4942.897mil|Location1.Y=5002.699mil|Location2.Y=5652.023mil|Absolute=True">Reference point outside the component area: Component SW27-.value (3657.897mil,1922.125mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5026.516mil|Location2.X=5696.918mil|Location1.Y=5064.812mil|Location2.Y=5713.023mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5026.516mil|Location2.X=5696.918mil|Location1.Y=5064.812mil|Location2.Y=5713.023mil|Absolute=True">Reference point outside the component area: Component SW26-.value (4411.918mil,1984.237mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5773.517mil|Location2.X=6443.918mil|Location1.Y=5004.813mil|Location2.Y=5650.023mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5773.517mil|Location2.X=6443.918mil|Location1.Y=5004.813mil|Location2.Y=5650.023mil|Absolute=True">Reference point outside the component area: Component SW25-.value (5158.918mil,1924.239mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6520.518mil|Location2.X=7190.919mil|Location1.Y=4874.813mil|Location2.Y=5513.239mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6520.518mil|Location2.X=7190.919mil|Location1.Y=4874.813mil|Location2.Y=5513.239mil|Absolute=True">Reference point outside the component area: Component SW24-.value (5905.919mil,1794.239mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7457.518mil|Location2.X=8127.919mil|Location1.Y=4874.813mil|Location2.Y=5523.023mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7457.518mil|Location2.X=8127.919mil|Location1.Y=4874.813mil|Location2.Y=5523.023mil|Absolute=True">Reference point outside the component area: Component SW23-.value (6842.919mil,1794.239mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1967.518mil|Location2.X=2637.919mil|Location1.Y=2942.813mil|Location2.Y=3586.023mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1967.518mil|Location2.X=2637.919mil|Location1.Y=2942.813mil|Location2.Y=3586.023mil|Absolute=True">Reference point outside the component area: Component SW22-.value (1352.919mil,-137.762mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3518.517mil|Location2.X=4188.918mil|Location1.Y=4201.813mil|Location2.Y=4858.023mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3518.517mil|Location2.X=4188.918mil|Location1.Y=4201.813mil|Location2.Y=4858.023mil|Absolute=True">Reference point outside the component area: Component SW21-.value (2903.918mil,1121.238mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4265.422mil|Location2.X=4935.823mil|Location1.Y=4245.863mil|Location2.Y=4886.023mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4265.422mil|Location2.X=4935.823mil|Location1.Y=4245.863mil|Location2.Y=4886.023mil|Absolute=True">Reference point outside the component area: Component SW20-.value (3650.823mil,1165.288mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5015.426mil|Location2.X=5685.828mil|Location1.Y=4308.762mil|Location2.Y=4953.023mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5015.426mil|Location2.X=5685.828mil|Location1.Y=4308.762mil|Location2.Y=4953.023mil|Absolute=True">Reference point outside the component area: Component SW19-.value (4400.828mil,1228.187mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5765.433mil|Location2.X=6435.834mil|Location1.Y=4245.863mil|Location2.Y=4890.023mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5765.433mil|Location2.X=6435.834mil|Location1.Y=4245.863mil|Location2.Y=4890.023mil|Absolute=True">Reference point outside the component area: Component SW18-.value (5150.834mil,1165.288mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6515.438mil|Location2.X=7185.839mil|Location1.Y=4120.861mil|Location2.Y=4766.023mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6515.438mil|Location2.X=7185.839mil|Location1.Y=4120.861mil|Location2.Y=4766.023mil|Absolute=True">Reference point outside the component area: Component SW17-.value (5900.839mil,1040.286mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7452.944mil|Location2.X=8123.345mil|Location1.Y=4120.861mil|Location2.Y=4764.023mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7452.944mil|Location2.X=8123.345mil|Location1.Y=4120.861mil|Location2.Y=4764.023mil|Absolute=True">Reference point outside the component area: Component SW16-.value (6838.345mil,1040.286mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2772.517mil|Location2.X=3442.918mil|Location1.Y=3637.813mil|Location2.Y=4279.023mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2772.517mil|Location2.X=3442.918mil|Location1.Y=3637.813mil|Location2.Y=4279.023mil|Absolute=True">Reference point outside the component area: Component SW15-.value (2157.918mil,557.238mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3524.599mil|Location2.X=4195mil|Location1.Y=3450.787mil|Location2.Y=4134.995mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3524.599mil|Location2.X=4195mil|Location1.Y=3450.787mil|Location2.Y=4134.995mil|Absolute=True">Reference point outside the component area: Component SW14-.value (2910mil,370.213mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4272.495mil|Location2.X=4942.896mil|Location1.Y=3502.69mil|Location2.Y=4148.023mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4272.495mil|Location2.X=4942.896mil|Location1.Y=3502.69mil|Location2.Y=4148.023mil|Absolute=True">Reference point outside the component area: Component SW13-.value (3657.896mil,422.115mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5020.517mil|Location2.X=5690.918mil|Location1.Y=3559.814mil|Location2.Y=4198.239mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5020.517mil|Location2.X=5690.918mil|Location1.Y=3559.814mil|Location2.Y=4198.239mil|Absolute=True">Reference point outside the component area: Component SW12-.value (4405.918mil,479.239mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5772.507mil|Location2.X=6442.908mil|Location1.Y=3502.69mil|Location2.Y=4144.023mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5772.507mil|Location2.X=6442.908mil|Location1.Y=3502.69mil|Location2.Y=4144.023mil|Absolute=True">Reference point outside the component area: Component SW11-.value (5157.908mil,422.115mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6515.438mil|Location2.X=7185.839mil|Location1.Y=3370.855mil|Location2.Y=4014.023mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6515.438mil|Location2.X=7185.839mil|Location1.Y=3370.855mil|Location2.Y=4014.023mil|Absolute=True">Reference point outside the component area: Component SW10-.value (5900.839mil,290.281mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7452.943mil|Location2.X=8123.344mil|Location1.Y=3370.855mil|Location2.Y=4014.023mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7452.943mil|Location2.X=8123.344mil|Location1.Y=3370.855mil|Location2.Y=4014.023mil|Absolute=True">Reference point outside the component area: Component SW9-.value (6838.344mil,290.281mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2444.397mil|Location2.X=3114.798mil|Location1.Y=1922.742mil|Location2.Y=2561.167mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2444.397mil|Location2.X=3114.798mil|Location1.Y=1922.742mil|Location2.Y=2561.167mil|Absolute=True">Reference point outside the component area: Component SW8-.value (1829.798mil,-1157.833mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3123.517mil|Location2.X=3793.918mil|Location1.Y=2236.813mil|Location2.Y=2892.023mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3123.517mil|Location2.X=3793.918mil|Location1.Y=2236.813mil|Location2.Y=2892.023mil|Absolute=True">Reference point outside the component area: Component SW7-.value (2508.918mil,-843.762mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4265.422mil|Location2.X=4935.823mil|Location1.Y=2745.851mil|Location2.Y=3391.023mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4265.422mil|Location2.X=4935.823mil|Location1.Y=2745.851mil|Location2.Y=3391.023mil|Absolute=True">Reference point outside the component area: Component SW6-.value (3650.823mil,-334.723mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5017.516mil|Location2.X=5687.918mil|Location1.Y=2811.812mil|Location2.Y=3450.237mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5017.516mil|Location2.X=5687.918mil|Location1.Y=2811.812mil|Location2.Y=3450.237mil|Absolute=True">Reference point outside the component area: Component SW5-.value (4402.918mil,-268.763mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5768.518mil|Location2.X=6438.919mil|Location1.Y=2748.814mil|Location2.Y=3396.023mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5768.518mil|Location2.X=6438.919mil|Location1.Y=2748.814mil|Location2.Y=3396.023mil|Absolute=True">Reference point outside the component area: Component SW4-.value (5153.919mil,-331.761mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6515.438mil|Location2.X=7185.839mil|Location1.Y=2620.85mil|Location2.Y=3266.023mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6515.438mil|Location2.X=7185.839mil|Location1.Y=2620.85mil|Location2.Y=3266.023mil|Absolute=True">Reference point outside the component area: Component SW3-.value (5900.839mil,-459.725mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7265.442mil|Location2.X=7935.844mil|Location1.Y=2620.85mil|Location2.Y=3261.023mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7265.442mil|Location2.X=7935.844mil|Location1.Y=2620.85mil|Location2.Y=3261.023mil|Absolute=True">Reference point outside the component area: Component SW2-.value (6650.844mil,-459.725mil) on Bottom Layer</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDAKZKGAJ20AMRHQBRJTYTCDNLBTURU1XVAC5ZDKOPEQ5YFWAY3BG"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="health">Micro-Segments (Copper)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=887.106mil|Location2.X=887.106mil|Location1.Y=2871.866mil|Location2.Y=2871.866mil" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Parth\Insane-Keyboard\HardwareDesign\PCB\TwoLayerBoard-Right\InsaneKeyboard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=887.106mil|Location2.X=887.106mil|Location1.Y=2871.866mil|Location2.Y=2871.866mil">Micro-Segment: Polygon Pour Cutout (Top Layer)Region (0 hole(s)) Top Layer P1(887.106mil,2871.866mil) P2(887.106mil,2871.866mil)</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

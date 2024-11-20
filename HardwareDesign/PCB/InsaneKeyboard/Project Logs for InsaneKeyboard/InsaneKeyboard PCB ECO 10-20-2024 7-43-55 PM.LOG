@@ -1,0 +1,649 @@
+Added Component: Designator=BT3(1.54inch waveshare eink)
+Added Component: Designator=LED5(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED6(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED7(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED8(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED9(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED10(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED11(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED12(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED13(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED14(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED15(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED16(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED17(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED18(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED19(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED20(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED21(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED22(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED23(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED24(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED25(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED26(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED27(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED28(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED29(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED30(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED31(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED32(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED33(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED34(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED35(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED36(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED37(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED38(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED39(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED40(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED41(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LED(WS2812B)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "SparkFun Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "WS2812B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/WS2812B/Worldsemi/view-part/1038297/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=Q7(TPS22919DCKR - Load SW)
+Add component (AddParameter): Name = "Category"; Value = "Power Management ICs"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "https://www.ti.com:443/lit/ds/symlink/tps22919.pdf?src-supplier=IHS+Markit"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.ti.com:443/lit/ds/symlink/tps22919.pdf?src-supplier=IHS+Markit"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&amp;gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftps22919&src-supplier=Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&amp;gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftps22919&src-supplier=Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Texas Instruments"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "TPS22919DCKT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing"; Value = "1=0.94, 10=0.712, 50=0.712, 100=0.413, 1000=0.308, 10000=0.308 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock"; Value = "6490"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "Mouser"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number"; Value = "595-TPS22919DCKT"; VariantName = "[No Variations]"
+Added Component: Designator=Q8(TPS22919DCKR - Load SW)
+Add component (AddParameter): Name = "Category"; Value = "Power Management ICs"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "https://www.ti.com:443/lit/ds/symlink/tps22919.pdf?src-supplier=IHS+Markit"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.ti.com:443/lit/ds/symlink/tps22919.pdf?src-supplier=IHS+Markit"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&amp;gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftps22919&src-supplier=Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&amp;gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftps22919&src-supplier=Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Texas Instruments"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "TPS22919DCKT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing"; Value = "1=0.94, 10=0.712, 50=0.712, 100=0.413, 1000=0.308, 10000=0.308 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock"; Value = "6490"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "Mouser"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number"; Value = "595-TPS22919DCKT"; VariantName = "[No Variations]"
+Added Component: Designator=R37(Resistor 0402)
+Add component (AddParameter): Name = "Case/Package"; Value = "0402"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "Chip SMD Resistors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "https://datasheet.ciiva.com:443/pdfs/VipMasterIC/IC/YAGO/YAGO-S-A0008145938/YAGO-S-A0008145938-1.pdf?src-supplier=IHS+Markit"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://datasheet.ciiva.com:443/pdfs/VipMasterIC/IC/YAGO/YAGO-S-A0008145938/YAGO-S-A0008145938-1.pdf?src-supplier=IHS+Markit"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "https://datasheet.ciiva.com/2452/pyu-rc0402-51-rohs-l-6-2452608.pdf?src-supplier=Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://datasheet.ciiva.com/2452/pyu-rc0402-51-rohs-l-6-2452608.pdf?src-supplier=Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3Description"; Value = "https://datasheet.ciiva.com/11808/0900766b80c66297-11808195.pdf?src-supplier=Rs"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3URL"; Value = "https://datasheet.ciiva.com/11808/0900766b80c66297-11808195.pdf?src-supplier=Rs"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink4Description"; Value = "https://datasheet.ciiva.com/2452/pyu-r-int-thick-7-2452609.pdf?src-supplier=Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink4URL"; Value = "https://datasheet.ciiva.com/2452/pyu-r-int-thick-7-2452609.pdf?src-supplier=Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink5Description"; Value = "https://datasheet.ciiva.com/2452/pyu-r-int-thick-7-2452610.pdf?src-supplier=Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink5URL"; Value = "https://datasheet.ciiva.com/2452/pyu-r-int-thick-7-2452610.pdf?src-supplier=Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink6Description"; Value = "https://datasheet.ciiva.com/8896/pyu-rc0402-51-rohs-l-6-8896201.pdf?src-supplier=Avnet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink6URL"; Value = "https://datasheet.ciiva.com/8896/pyu-rc0402-51-rohs-l-6-8896201.pdf?src-supplier=Avnet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink7Description"; Value = "https://datasheet.ciiva.com/7983/1018594-7983535.pdf?src-supplier=Element14"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink7URL"; Value = "https://datasheet.ciiva.com/7983/1018594-7983535.pdf?src-supplier=Element14"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink8Description"; Value = "https://datasheet.ciiva.com/22747/1018594-22747515.pdf?src-supplier=Element14"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink8URL"; Value = "https://datasheet.ciiva.com/22747/1018594-22747515.pdf?src-supplier=Element14"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Construction"; Value = "Chip"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "JESD-609 Code"; Value = "e3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Yageo"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "RC0402JR-070RL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "155°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-55°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Height"; Value = "0.35mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Length"; Value = "1mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Shape"; Value = "Rectangular"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Style"; Value = "SMTMeter"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Width"; Value = "0.5mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power"; Value = "62.5mW"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing"; Value = "1=0.1, 10=0.011, 25=0.0084, 50=0.0064, 100=0.0045, 250=0.00364, 500=0.0029, 1000=0.00214, 5000=0.00154, 10000=0.00133, 30000=0.00117, 50000=0.00107, 100000=0.00105 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rated Temperature"; Value = "70°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Reach SVHC Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistor Type"; Value = "FIXED RESISTOR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock"; Value = "15179907"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number"; Value = "311-0.0JRCT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Technology"; Value = "METAL GLAZE/THICK FILM"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Terminal Finish"; Value = "Nickel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Termination"; Value = "Wraparound"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0R"; VariantName = "[No Variations]"
+Added Component: Designator=R333(Resistor 0402)
+Add component (AddParameter): Name = "Case/Package"; Value = "0402"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "Chip SMD Resistors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "https://datasheet.ciiva.com:443/pdfs/VipMasterIC/IC/YAGO/YAGO-S-A0008145938/YAGO-S-A0008145938-1.pdf?src-supplier=IHS+Markit"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://datasheet.ciiva.com:443/pdfs/VipMasterIC/IC/YAGO/YAGO-S-A0008145938/YAGO-S-A0008145938-1.pdf?src-supplier=IHS+Markit"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "https://datasheet.ciiva.com/2452/pyu-rc0402-51-rohs-l-6-2452608.pdf?src-supplier=Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://datasheet.ciiva.com/2452/pyu-rc0402-51-rohs-l-6-2452608.pdf?src-supplier=Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3Description"; Value = "https://datasheet.ciiva.com/11808/0900766b80c66297-11808195.pdf?src-supplier=Rs"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3URL"; Value = "https://datasheet.ciiva.com/11808/0900766b80c66297-11808195.pdf?src-supplier=Rs"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink4Description"; Value = "https://datasheet.ciiva.com/2452/pyu-r-int-thick-7-2452609.pdf?src-supplier=Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink4URL"; Value = "https://datasheet.ciiva.com/2452/pyu-r-int-thick-7-2452609.pdf?src-supplier=Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink5Description"; Value = "https://datasheet.ciiva.com/2452/pyu-r-int-thick-7-2452610.pdf?src-supplier=Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink5URL"; Value = "https://datasheet.ciiva.com/2452/pyu-r-int-thick-7-2452610.pdf?src-supplier=Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink6Description"; Value = "https://datasheet.ciiva.com/8896/pyu-rc0402-51-rohs-l-6-8896201.pdf?src-supplier=Avnet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink6URL"; Value = "https://datasheet.ciiva.com/8896/pyu-rc0402-51-rohs-l-6-8896201.pdf?src-supplier=Avnet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink7Description"; Value = "https://datasheet.ciiva.com/7983/1018594-7983535.pdf?src-supplier=Element14"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink7URL"; Value = "https://datasheet.ciiva.com/7983/1018594-7983535.pdf?src-supplier=Element14"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink8Description"; Value = "https://datasheet.ciiva.com/22747/1018594-22747515.pdf?src-supplier=Element14"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink8URL"; Value = "https://datasheet.ciiva.com/22747/1018594-22747515.pdf?src-supplier=Element14"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Construction"; Value = "Chip"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "JESD-609 Code"; Value = "e3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Yageo"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "RC0402JR-070RL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "155°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-55°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Height"; Value = "0.35mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Length"; Value = "1mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Shape"; Value = "Rectangular"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Style"; Value = "SMTMeter"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Width"; Value = "0.5mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power"; Value = "62.5mW"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing"; Value = "1=0.1, 10=0.011, 25=0.0084, 50=0.0064, 100=0.0045, 250=0.00364, 500=0.0029, 1000=0.00214, 5000=0.00154, 10000=0.00133, 30000=0.00117, 50000=0.00107, 100000=0.00105 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rated Temperature"; Value = "70°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Reach SVHC Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistor Type"; Value = "FIXED RESISTOR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock"; Value = "15179907"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number"; Value = "311-0.0JRCT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Technology"; Value = "METAL GLAZE/THICK FILM"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Terminal Finish"; Value = "Nickel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Termination"; Value = "Wraparound"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0R"; VariantName = "[No Variations]"
+Added Component: Designator=TP35(Test Point)
+Added Component: Designator=TP36(Test Point)
+Added Component: Designator=TP37(Test Point)
+Added Component: Designator=TP38(Test Point)
+Added Component: Designator=TP39(Test Point)
+Added Pin To Net: NetName=RADIO_PA5 Pin=BT3-1
+Added Pin To Net: NetName=RADIO_PC6 Pin=BT3-2
+Added Pin To Net: NetName=RADIO_PC9 Pin=BT3-3
+Added Pin To Net: NetName=RADIO_PA2 Pin=BT3-4
+Added Pin To Net: NetName=RADIO_PC8 Pin=BT3-5
+Added Pin To Net: NetName=RADIO_PC6 Pin=BT3-6
+Added Pin To Net: NetName=GND Pin=BT3-7
+Added Pin To Net: NetName=GND Pin=LED5-3-GND
+Added Pin To Net: NetName=GND Pin=LED6-3-GND
+Added Pin To Net: NetName=GND Pin=LED7-3-GND
+Added Pin To Net: NetName=GND Pin=LED8-3-GND
+Added Pin To Net: NetName=GND Pin=LED9-3-GND
+Added Pin To Net: NetName=GND Pin=LED10-3-GND
+Added Pin To Net: NetName=GND Pin=LED11-3-GND
+Added Pin To Net: NetName=GND Pin=LED12-3-GND
+Added Pin To Net: NetName=GND Pin=LED13-3-GND
+Added Pin To Net: NetName=GND Pin=LED14-3-GND
+Added Pin To Net: NetName=GND Pin=LED15-3-GND
+Added Pin To Net: NetName=GND Pin=LED16-3-GND
+Added Pin To Net: NetName=GND Pin=LED17-3-GND
+Added Pin To Net: NetName=GND Pin=LED18-3-GND
+Added Pin To Net: NetName=GND Pin=LED19-3-GND
+Added Pin To Net: NetName=GND Pin=LED20-3-GND
+Added Pin To Net: NetName=GND Pin=LED21-3-GND
+Added Pin To Net: NetName=GND Pin=LED22-3-GND
+Added Pin To Net: NetName=GND Pin=LED23-3-GND
+Added Pin To Net: NetName=GND Pin=LED24-3-GND
+Added Pin To Net: NetName=GND Pin=LED25-3-GND
+Added Pin To Net: NetName=GND Pin=LED26-3-GND
+Added Pin To Net: NetName=GND Pin=LED27-3-GND
+Added Pin To Net: NetName=GND Pin=LED28-3-GND
+Added Pin To Net: NetName=GND Pin=LED29-3-GND
+Added Pin To Net: NetName=GND Pin=LED30-3-GND
+Added Pin To Net: NetName=GND Pin=LED31-3-GND
+Added Pin To Net: NetName=GND Pin=LED32-3-GND
+Added Pin To Net: NetName=GND Pin=LED33-3-GND
+Added Pin To Net: NetName=GND Pin=LED34-3-GND
+Added Pin To Net: NetName=GND Pin=LED35-3-GND
+Added Pin To Net: NetName=GND Pin=LED36-3-GND
+Added Pin To Net: NetName=GND Pin=LED37-3-GND
+Added Pin To Net: NetName=GND Pin=LED38-3-GND
+Added Pin To Net: NetName=GND Pin=LED39-3-GND
+Added Pin To Net: NetName=GND Pin=LED40-3-GND
+Added Pin To Net: NetName=GND Pin=LED41-3-GND
+Added Pin To Net: NetName=GND Pin=LED-3-GND
+Added Pin To Net: NetName=RADIO_PB12 Pin=LED-4-DIN
+Added Pin To Net: NetName=VMCU Pin=Q7-1
+Added Pin To Net: NetName=GND Pin=Q7-2
+Added Pin To Net: NetName=VMCU Pin=Q8-1
+Added Pin To Net: NetName=GND Pin=Q8-2
+Added Pin To Net: NetName=RADIO_PB11 Pin=R37-2
+Added Pin To Net: NetName=RADIO_PD12 Pin=R333-2
+Added Pin To Net: NetName=RADIO_PC9 Pin=TP36-1
+Added Pin To Net: NetName=RADIO_PC8 Pin=TP37-1
+Added Pin To Net: NetName=RADIO_PC6 Pin=TP38-1
+Added Pin To Net: NetName=RADIO_PA2 Pin=TP39-1
+Added Pin To Net: NetName=DISPLAY_LOAD_SW Pin=BT3-8
+Added Pin To Net: NetName=DISPLAY_LOAD_SW Pin=Q7-6
+Added Pin To Net: NetName=DISPLAY_LOAD_SW Pin=TP35-1
+Added Net: Name=DISPLAY_LOAD_SW
+Added Pin To Net: NetName=LED_PWR Pin=LED-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED5-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED6-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED7-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED8-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED9-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED10-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED11-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED12-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED13-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED14-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED15-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED16-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED17-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED18-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED19-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED20-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED21-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED22-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED23-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED24-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED25-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED26-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED27-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED28-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED29-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED30-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED31-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED32-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED33-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED34-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED35-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED36-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED37-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED38-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED39-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED40-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=LED41-1-VDD
+Added Pin To Net: NetName=LED_PWR Pin=Q8-6
+Added Net: Name=LED_PWR
+Added Pin To Net: NetName=NetLED5_2-DOUT Pin=LED5-2-DOUT
+Added Pin To Net: NetName=NetLED5_2-DOUT Pin=LED6-4-DIN
+Added Net: Name=NetLED5_2-DOUT
+Added Pin To Net: NetName=NetLED5_4-DIN Pin=LED-2-DOUT
+Added Pin To Net: NetName=NetLED5_4-DIN Pin=LED5-4-DIN
+Added Net: Name=NetLED5_4-DIN
+Added Pin To Net: NetName=NetLED6_2-DOUT Pin=LED6-2-DOUT
+Added Pin To Net: NetName=NetLED6_2-DOUT Pin=LED7-4-DIN
+Added Net: Name=NetLED6_2-DOUT
+Added Pin To Net: NetName=NetLED7_2-DOUT Pin=LED7-2-DOUT
+Added Pin To Net: NetName=NetLED7_2-DOUT Pin=LED8-4-DIN
+Added Net: Name=NetLED7_2-DOUT
+Added Pin To Net: NetName=NetLED8_2-DOUT Pin=LED8-2-DOUT
+Added Pin To Net: NetName=NetLED8_2-DOUT Pin=LED9-4-DIN
+Added Net: Name=NetLED8_2-DOUT
+Added Pin To Net: NetName=NetLED9_2-DOUT Pin=LED9-2-DOUT
+Added Pin To Net: NetName=NetLED9_2-DOUT Pin=LED10-4-DIN
+Added Net: Name=NetLED9_2-DOUT
+Added Pin To Net: NetName=NetLED10_2-DOUT Pin=LED10-2-DOUT
+Added Pin To Net: NetName=NetLED10_2-DOUT Pin=LED11-4-DIN
+Added Net: Name=NetLED10_2-DOUT
+Added Pin To Net: NetName=NetLED11_2-DOUT Pin=LED11-2-DOUT
+Added Pin To Net: NetName=NetLED11_2-DOUT Pin=LED19-4-DIN
+Added Net: Name=NetLED11_2-DOUT
+Added Pin To Net: NetName=NetLED12_2-DOUT Pin=LED12-2-DOUT
+Added Pin To Net: NetName=NetLED12_2-DOUT Pin=LED20-4-DIN
+Added Net: Name=NetLED12_2-DOUT
+Added Pin To Net: NetName=NetLED12_4-DIN Pin=LED12-4-DIN
+Added Pin To Net: NetName=NetLED12_4-DIN Pin=LED13-2-DOUT
+Added Net: Name=NetLED12_4-DIN
+Added Pin To Net: NetName=NetLED13_4-DIN Pin=LED13-4-DIN
+Added Pin To Net: NetName=NetLED13_4-DIN Pin=LED14-2-DOUT
+Added Net: Name=NetLED13_4-DIN
+Added Pin To Net: NetName=NetLED14_4-DIN Pin=LED14-4-DIN
+Added Pin To Net: NetName=NetLED14_4-DIN Pin=LED15-2-DOUT
+Added Net: Name=NetLED14_4-DIN
+Added Pin To Net: NetName=NetLED15_4-DIN Pin=LED15-4-DIN
+Added Pin To Net: NetName=NetLED15_4-DIN Pin=LED16-2-DOUT
+Added Net: Name=NetLED15_4-DIN
+Added Pin To Net: NetName=NetLED16_4-DIN Pin=LED16-4-DIN
+Added Pin To Net: NetName=NetLED16_4-DIN Pin=LED17-2-DOUT
+Added Net: Name=NetLED16_4-DIN
+Added Pin To Net: NetName=NetLED17_4-DIN Pin=LED17-4-DIN
+Added Pin To Net: NetName=NetLED17_4-DIN Pin=LED18-2-DOUT
+Added Net: Name=NetLED17_4-DIN
+Added Pin To Net: NetName=NetLED18_4-DIN Pin=LED18-4-DIN
+Added Pin To Net: NetName=NetLED18_4-DIN Pin=LED19-2-DOUT
+Added Net: Name=NetLED18_4-DIN
+Added Pin To Net: NetName=NetLED20_2-DOUT Pin=LED20-2-DOUT
+Added Pin To Net: NetName=NetLED20_2-DOUT Pin=LED21-4-DIN
+Added Net: Name=NetLED20_2-DOUT
+Added Pin To Net: NetName=NetLED21_2-DOUT Pin=LED21-2-DOUT
+Added Pin To Net: NetName=NetLED21_2-DOUT Pin=LED22-4-DIN
+Added Net: Name=NetLED21_2-DOUT
+Added Pin To Net: NetName=NetLED22_2-DOUT Pin=LED22-2-DOUT
+Added Pin To Net: NetName=NetLED22_2-DOUT Pin=LED23-4-DIN
+Added Net: Name=NetLED22_2-DOUT
+Added Pin To Net: NetName=NetLED23_2-DOUT Pin=LED23-2-DOUT
+Added Pin To Net: NetName=NetLED23_2-DOUT Pin=LED24-4-DIN
+Added Net: Name=NetLED23_2-DOUT
+Added Pin To Net: NetName=NetLED24_2-DOUT Pin=LED24-2-DOUT
+Added Pin To Net: NetName=NetLED24_2-DOUT Pin=LED25-4-DIN
+Added Net: Name=NetLED24_2-DOUT
+Added Pin To Net: NetName=NetLED25_2-DOUT Pin=LED25-2-DOUT
+Added Pin To Net: NetName=NetLED25_2-DOUT Pin=LED26-4-DIN
+Added Net: Name=NetLED25_2-DOUT
+Added Pin To Net: NetName=NetLED26_2-DOUT Pin=LED26-2-DOUT
+Added Pin To Net: NetName=NetLED26_2-DOUT Pin=LED27-4-DIN
+Added Net: Name=NetLED26_2-DOUT
+Added Pin To Net: NetName=NetLED27_2-DOUT Pin=LED27-2-DOUT
+Added Pin To Net: NetName=NetLED27_2-DOUT Pin=LED34-4-DIN
+Added Net: Name=NetLED27_2-DOUT
+Added Pin To Net: NetName=NetLED28_2-DOUT Pin=LED28-2-DOUT
+Added Pin To Net: NetName=NetLED28_2-DOUT Pin=LED35-4-DIN
+Added Net: Name=NetLED28_2-DOUT
+Added Pin To Net: NetName=NetLED28_4-DIN Pin=LED28-4-DIN
+Added Pin To Net: NetName=NetLED28_4-DIN Pin=LED29-2-DOUT
+Added Net: Name=NetLED28_4-DIN
+Added Pin To Net: NetName=NetLED29_4-DIN Pin=LED29-4-DIN
+Added Pin To Net: NetName=NetLED29_4-DIN Pin=LED30-2-DOUT
+Added Net: Name=NetLED29_4-DIN
+Added Pin To Net: NetName=NetLED30_4-DIN Pin=LED30-4-DIN
+Added Pin To Net: NetName=NetLED30_4-DIN Pin=LED31-2-DOUT
+Added Net: Name=NetLED30_4-DIN
+Added Pin To Net: NetName=NetLED31_4-DIN Pin=LED31-4-DIN
+Added Pin To Net: NetName=NetLED31_4-DIN Pin=LED32-2-DOUT
+Added Net: Name=NetLED31_4-DIN
+Added Pin To Net: NetName=NetLED32_4-DIN Pin=LED32-4-DIN
+Added Pin To Net: NetName=NetLED32_4-DIN Pin=LED33-2-DOUT
+Added Net: Name=NetLED32_4-DIN
+Added Pin To Net: NetName=NetLED33_4-DIN Pin=LED33-4-DIN
+Added Pin To Net: NetName=NetLED33_4-DIN Pin=LED34-2-DOUT
+Added Net: Name=NetLED33_4-DIN
+Added Pin To Net: NetName=NetLED35_2-DOUT Pin=LED35-2-DOUT
+Added Pin To Net: NetName=NetLED35_2-DOUT Pin=LED36-4-DIN
+Added Net: Name=NetLED35_2-DOUT
+Added Pin To Net: NetName=NetLED36_2-DOUT Pin=LED36-2-DOUT
+Added Pin To Net: NetName=NetLED36_2-DOUT Pin=LED37-4-DIN
+Added Net: Name=NetLED36_2-DOUT
+Added Pin To Net: NetName=NetLED37_2-DOUT Pin=LED37-2-DOUT
+Added Pin To Net: NetName=NetLED37_2-DOUT Pin=LED38-4-DIN
+Added Net: Name=NetLED37_2-DOUT
+Added Pin To Net: NetName=NetLED38_2-DOUT Pin=LED38-2-DOUT
+Added Pin To Net: NetName=NetLED38_2-DOUT Pin=LED39-4-DIN
+Added Net: Name=NetLED38_2-DOUT
+Added Pin To Net: NetName=NetLED39_2-DOUT Pin=LED39-2-DOUT
+Added Pin To Net: NetName=NetLED39_2-DOUT Pin=LED40-4-DIN
+Added Net: Name=NetLED39_2-DOUT
+Added Pin To Net: NetName=NetLED40_2-DOUT Pin=LED40-2-DOUT
+Added Pin To Net: NetName=NetLED40_2-DOUT Pin=LED41-4-DIN
+Added Net: Name=NetLED40_2-DOUT
+Added Pin To Net: NetName=NetQ7_3 Pin=Q7-3
+Added Pin To Net: NetName=NetQ7_3 Pin=R333-1
+Added Net: Name=NetQ7_3
+Added Pin To Net: NetName=NetQ8_3 Pin=Q8-3
+Added Pin To Net: NetName=NetQ8_3 Pin=R37-1
+Added Net: Name=NetQ8_3
+Added Class: Name=U_Display
+Added Class: Name=U_Lights

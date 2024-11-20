@@ -1,0 +1,304 @@
+Removed Pin From Net: NetName=LED_PWR Pin=LED5-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED5-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED6-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED6-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED7-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED7-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED8-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED8-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED9-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED9-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED10-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED10-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED11-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED11-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED12-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED12-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED13-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED13-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED14-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED14-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED15-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED15-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED16-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED16-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED17-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED17-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED18-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED18-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED19-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED19-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED20-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED20-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED21-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED21-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED22-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED22-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED23-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED23-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED24-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED24-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED25-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED25-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED26-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED26-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED27-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED27-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED28-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED28-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED29-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED29-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED30-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED30-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED31-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED31-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED32-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED32-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED33-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED33-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED34-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED34-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED35-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED35-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED36-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED36-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED37-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED37-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED38-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED38-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED39-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED39-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED40-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED40-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED41-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED41-3-GND
+Removed Pin From Net: NetName=LED_PWR Pin=LED-1-VDD
+Removed Pin From Net: NetName=GND Pin=LED-3-GND
+Removed Pin From Net: NetName=RADIO_PF7 Pin=LED-4-DIN
+Change Component Footprint: Designator=LED5 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED6 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED7 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED8 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED9 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED10 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED11 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED12 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED13 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED14 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED15 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED16 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED17 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED18 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED19 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED20 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED21 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED22 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED23 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED24 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED25 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED26 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED27 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED28 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED29 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED30 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED31 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED32 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED33 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED34 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED35 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED36 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED37 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED38 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED39 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED40 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED41 Old Footprint= New Footprint=WS2812B
+Change Component Footprint: Designator=LED Old Footprint= New Footprint=WS2812B
+Added Pin To Net: NetName=GND Pin=LED5-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED5-4-VDD
+Added Pin To Net: NetName=GND Pin=LED6-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED6-4-VDD
+Added Pin To Net: NetName=GND Pin=LED7-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED7-4-VDD
+Added Pin To Net: NetName=GND Pin=LED8-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED8-4-VDD
+Added Pin To Net: NetName=GND Pin=LED9-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED9-4-VDD
+Added Pin To Net: NetName=GND Pin=LED10-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED10-4-VDD
+Added Pin To Net: NetName=GND Pin=LED11-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED11-4-VDD
+Added Pin To Net: NetName=GND Pin=LED12-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED12-4-VDD
+Added Pin To Net: NetName=GND Pin=LED13-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED13-4-VDD
+Added Pin To Net: NetName=GND Pin=LED14-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED14-4-VDD
+Added Pin To Net: NetName=GND Pin=LED15-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED15-4-VDD
+Added Pin To Net: NetName=GND Pin=LED16-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED16-4-VDD
+Added Pin To Net: NetName=GND Pin=LED17-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED17-4-VDD
+Added Pin To Net: NetName=GND Pin=LED18-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED18-4-VDD
+Added Pin To Net: NetName=GND Pin=LED19-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED19-4-VDD
+Added Pin To Net: NetName=GND Pin=LED20-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED20-4-VDD
+Added Pin To Net: NetName=GND Pin=LED21-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED21-4-VDD
+Added Pin To Net: NetName=GND Pin=LED22-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED22-4-VDD
+Added Pin To Net: NetName=GND Pin=LED23-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED23-4-VDD
+Added Pin To Net: NetName=GND Pin=LED24-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED24-4-VDD
+Added Pin To Net: NetName=GND Pin=LED25-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED25-4-VDD
+Added Pin To Net: NetName=GND Pin=LED26-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED26-4-VDD
+Added Pin To Net: NetName=GND Pin=LED27-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED27-4-VDD
+Added Pin To Net: NetName=GND Pin=LED28-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED28-4-VDD
+Added Pin To Net: NetName=GND Pin=LED29-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED29-4-VDD
+Added Pin To Net: NetName=GND Pin=LED30-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED30-4-VDD
+Added Pin To Net: NetName=GND Pin=LED31-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED31-4-VDD
+Added Pin To Net: NetName=GND Pin=LED32-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED32-4-VDD
+Added Pin To Net: NetName=GND Pin=LED33-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED33-4-VDD
+Added Pin To Net: NetName=GND Pin=LED34-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED34-4-VDD
+Added Pin To Net: NetName=GND Pin=LED35-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED35-4-VDD
+Added Pin To Net: NetName=GND Pin=LED36-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED36-4-VDD
+Added Pin To Net: NetName=GND Pin=LED37-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED37-4-VDD
+Added Pin To Net: NetName=GND Pin=LED38-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED38-4-VDD
+Added Pin To Net: NetName=GND Pin=LED39-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED39-4-VDD
+Added Pin To Net: NetName=GND Pin=LED40-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED40-4-VDD
+Added Pin To Net: NetName=GND Pin=LED41-2-GND
+Added Pin To Net: NetName=LED_PWR Pin=LED41-4-VDD
+Added Pin To Net: NetName=GND Pin=LED-2-GND
+Added Pin To Net: NetName=RADIO_PF7 Pin=LED-3-DI
+Added Pin To Net: NetName=LED_PWR Pin=LED-4-VDD
+Added Pin To Net: NetName=NetC23_1 Pin=TP15-1
+Added Pin To Net: NetName=NetLED5_1-DO Pin=LED5-1-DO
+Added Pin To Net: NetName=NetLED5_1-DO Pin=LED6-3-DI
+Added Net: Name=NetLED5_1-DO
+Added Pin To Net: NetName=NetLED5_3-DI Pin=LED-1-DO
+Added Pin To Net: NetName=NetLED5_3-DI Pin=LED5-3-DI
+Added Net: Name=NetLED5_3-DI
+Added Pin To Net: NetName=NetLED6_1-DO Pin=LED6-1-DO
+Added Pin To Net: NetName=NetLED6_1-DO Pin=LED7-3-DI
+Added Net: Name=NetLED6_1-DO
+Added Pin To Net: NetName=NetLED7_1-DO Pin=LED7-1-DO
+Added Pin To Net: NetName=NetLED7_1-DO Pin=LED8-3-DI
+Added Net: Name=NetLED7_1-DO
+Added Pin To Net: NetName=NetLED8_1-DO Pin=LED8-1-DO
+Added Pin To Net: NetName=NetLED8_1-DO Pin=LED9-3-DI
+Added Net: Name=NetLED8_1-DO
+Added Pin To Net: NetName=NetLED9_1-DO Pin=LED9-1-DO
+Added Pin To Net: NetName=NetLED9_1-DO Pin=LED10-3-DI
+Added Net: Name=NetLED9_1-DO
+Added Pin To Net: NetName=NetLED10_1-DO Pin=LED10-1-DO
+Added Pin To Net: NetName=NetLED10_1-DO Pin=LED11-3-DI
+Added Net: Name=NetLED10_1-DO
+Added Pin To Net: NetName=NetLED11_1-DO Pin=LED11-1-DO
+Added Pin To Net: NetName=NetLED11_1-DO Pin=LED19-3-DI
+Added Net: Name=NetLED11_1-DO
+Added Pin To Net: NetName=NetLED12_1-DO Pin=LED12-1-DO
+Added Pin To Net: NetName=NetLED12_1-DO Pin=LED20-3-DI
+Added Net: Name=NetLED12_1-DO
+Added Pin To Net: NetName=NetLED12_3-DI Pin=LED12-3-DI
+Added Pin To Net: NetName=NetLED12_3-DI Pin=LED13-1-DO
+Added Net: Name=NetLED12_3-DI
+Added Pin To Net: NetName=NetLED13_3-DI Pin=LED13-3-DI
+Added Pin To Net: NetName=NetLED13_3-DI Pin=LED14-1-DO
+Added Net: Name=NetLED13_3-DI
+Added Pin To Net: NetName=NetLED14_3-DI Pin=LED14-3-DI
+Added Pin To Net: NetName=NetLED14_3-DI Pin=LED15-1-DO
+Added Net: Name=NetLED14_3-DI
+Added Pin To Net: NetName=NetLED15_3-DI Pin=LED15-3-DI
+Added Pin To Net: NetName=NetLED15_3-DI Pin=LED16-1-DO
+Added Net: Name=NetLED15_3-DI
+Added Pin To Net: NetName=NetLED16_3-DI Pin=LED16-3-DI
+Added Pin To Net: NetName=NetLED16_3-DI Pin=LED17-1-DO
+Added Net: Name=NetLED16_3-DI
+Added Pin To Net: NetName=NetLED17_3-DI Pin=LED17-3-DI
+Added Pin To Net: NetName=NetLED17_3-DI Pin=LED18-1-DO
+Added Net: Name=NetLED17_3-DI
+Added Pin To Net: NetName=NetLED18_3-DI Pin=LED18-3-DI
+Added Pin To Net: NetName=NetLED18_3-DI Pin=LED19-1-DO
+Added Net: Name=NetLED18_3-DI
+Added Pin To Net: NetName=NetLED20_1-DO Pin=LED20-1-DO
+Added Pin To Net: NetName=NetLED20_1-DO Pin=LED21-3-DI
+Added Net: Name=NetLED20_1-DO
+Added Pin To Net: NetName=NetLED21_1-DO Pin=LED21-1-DO
+Added Pin To Net: NetName=NetLED21_1-DO Pin=LED22-3-DI
+Added Net: Name=NetLED21_1-DO
+Added Pin To Net: NetName=NetLED22_1-DO Pin=LED22-1-DO
+Added Pin To Net: NetName=NetLED22_1-DO Pin=LED23-3-DI
+Added Net: Name=NetLED22_1-DO
+Added Pin To Net: NetName=NetLED23_1-DO Pin=LED23-1-DO
+Added Pin To Net: NetName=NetLED23_1-DO Pin=LED24-3-DI
+Added Net: Name=NetLED23_1-DO
+Added Pin To Net: NetName=NetLED24_1-DO Pin=LED24-1-DO
+Added Pin To Net: NetName=NetLED24_1-DO Pin=LED25-3-DI
+Added Net: Name=NetLED24_1-DO
+Added Pin To Net: NetName=NetLED25_1-DO Pin=LED25-1-DO
+Added Pin To Net: NetName=NetLED25_1-DO Pin=LED26-3-DI
+Added Net: Name=NetLED25_1-DO
+Added Pin To Net: NetName=NetLED26_1-DO Pin=LED26-1-DO
+Added Pin To Net: NetName=NetLED26_1-DO Pin=LED27-3-DI
+Added Net: Name=NetLED26_1-DO
+Added Pin To Net: NetName=NetLED27_1-DO Pin=LED27-1-DO
+Added Pin To Net: NetName=NetLED27_1-DO Pin=LED34-3-DI
+Added Net: Name=NetLED27_1-DO
+Added Pin To Net: NetName=NetLED28_1-DO Pin=LED28-1-DO
+Added Pin To Net: NetName=NetLED28_1-DO Pin=LED35-3-DI
+Added Net: Name=NetLED28_1-DO
+Added Pin To Net: NetName=NetLED28_3-DI Pin=LED28-3-DI
+Added Pin To Net: NetName=NetLED28_3-DI Pin=LED29-1-DO
+Added Net: Name=NetLED28_3-DI
+Added Pin To Net: NetName=NetLED29_3-DI Pin=LED29-3-DI
+Added Pin To Net: NetName=NetLED29_3-DI Pin=LED30-1-DO
+Added Net: Name=NetLED29_3-DI
+Added Pin To Net: NetName=NetLED30_3-DI Pin=LED30-3-DI
+Added Pin To Net: NetName=NetLED30_3-DI Pin=LED31-1-DO
+Added Net: Name=NetLED30_3-DI
+Added Pin To Net: NetName=NetLED31_3-DI Pin=LED31-3-DI
+Added Pin To Net: NetName=NetLED31_3-DI Pin=LED32-1-DO
+Added Net: Name=NetLED31_3-DI
+Added Pin To Net: NetName=NetLED32_3-DI Pin=LED32-3-DI
+Added Pin To Net: NetName=NetLED32_3-DI Pin=LED33-1-DO
+Added Net: Name=NetLED32_3-DI
+Added Pin To Net: NetName=NetLED33_3-DI Pin=LED33-3-DI
+Added Pin To Net: NetName=NetLED33_3-DI Pin=LED34-1-DO
+Added Net: Name=NetLED33_3-DI
+Added Pin To Net: NetName=NetLED35_1-DO Pin=LED35-1-DO
+Added Pin To Net: NetName=NetLED35_1-DO Pin=LED36-3-DI
+Added Net: Name=NetLED35_1-DO
+Added Pin To Net: NetName=NetLED36_1-DO Pin=LED36-1-DO
+Added Pin To Net: NetName=NetLED36_1-DO Pin=LED37-3-DI
+Added Net: Name=NetLED36_1-DO
+Added Pin To Net: NetName=NetLED37_1-DO Pin=LED37-1-DO
+Added Pin To Net: NetName=NetLED37_1-DO Pin=LED38-3-DI
+Added Net: Name=NetLED37_1-DO
+Added Pin To Net: NetName=NetLED38_1-DO Pin=LED38-1-DO
+Added Pin To Net: NetName=NetLED38_1-DO Pin=LED39-3-DI
+Added Net: Name=NetLED38_1-DO
+Added Pin To Net: NetName=NetLED39_1-DO Pin=LED39-1-DO
+Added Pin To Net: NetName=NetLED39_1-DO Pin=LED40-3-DI
+Added Net: Name=NetLED39_1-DO
+Added Pin To Net: NetName=NetLED40_1-DO Pin=LED40-1-DO
+Added Pin To Net: NetName=NetLED40_1-DO Pin=LED41-3-DI
+Added Net: Name=NetLED40_1-DO

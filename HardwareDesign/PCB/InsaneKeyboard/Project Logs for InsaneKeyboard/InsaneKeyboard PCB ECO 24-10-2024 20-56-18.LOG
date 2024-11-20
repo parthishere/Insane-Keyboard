@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=LED_PWR Pin=C29-1
+Added Pin To Net: NetName=VMCU Pin=C29-1
+Added Pin To Net: NetName=LED_PWR Pin=C30-1
+Added Pin To Net: NetName=NetQ8_3 Pin=Q8-3
+Added Pin To Net: NetName=NetQ8_3 Pin=R37-1
+Added Net: Name=NetQ8_3

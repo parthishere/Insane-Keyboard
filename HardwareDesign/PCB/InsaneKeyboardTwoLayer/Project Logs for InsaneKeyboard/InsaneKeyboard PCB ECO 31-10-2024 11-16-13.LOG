@@ -1,0 +1,45 @@
+Removed Pin From Net: NetName=RADIO_PC10 Pin=Q1-47
+Removed Pin From Net: NetName=RADIO_PC11 Pin=Q1-48
+Change Component Description : Designator=BT1 Old Description=Lithium Ion Polymer Battery - 3.7v 1200mAh New Description=Lithium Ion Polymer Battery - 3.7v 1200mAh | Adafruit Industries 258
+Change Component Description : Designator=LED5 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED6 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED7 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED8 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED9 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED10 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED11 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED12 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED13 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED14 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED15 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED16 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED17 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED18 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED19 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED20 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED21 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED22 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED23 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED24 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED25 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED26 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED27 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED28 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED29 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED30 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED31 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED32 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED33 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED34 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED35 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED36 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED37 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED38 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED39 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED40 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED41 Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Change Component Description : Designator=LED Old Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack New Description=NeoPixel Nano 2020 RGB LEDs - 10-Pack | Adafruit Industries 4684
+Added Pin To Net: NetName=RADIO_PC11 Pin=Q1-47
+Added Pin To Net: NetName=RADIO_PC10 Pin=Q1-48
+Change Net Name : Old Net Name=RADIO_PC10 New Net Name=RADIO_PC11
+Change Net Name : Old Net Name=RADIO_PC11 New Net Name=RADIO_PC10

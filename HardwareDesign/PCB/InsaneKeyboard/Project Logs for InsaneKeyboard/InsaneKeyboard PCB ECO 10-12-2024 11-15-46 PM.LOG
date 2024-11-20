@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=VAEM Pin=R3-1
+Removed Pin From Net: NetName=PAVDD Pin=R3-2
+Removed Member From Class: ClassName=U_RF_Antenna_Power Member=R3
+Added Member To Class: ClassName=U_EFR32_IO Member=Component C14 CAP 1uF 10V 0603
