@@ -25,18 +25,18 @@
 #define INCLUDE_LOG_DEBUG 1
 #include "src/log.h" // Includes the logging header for debug messages
 
-#define TCA6408_ADDR1                           0x21
-#define TCA6408_ADDR2                           0x20
+#define TCA6408_ADDR1 0x21
+#define TCA6408_ADDR2 0x20
 
-#define TCA6408_INPUT                           0x00
-#define TCA6408_OUTPUT                          0x01
-#define TCA6408_POLARITY_INVERSION              0x02
-#define TCA6408_CONFIGURATION                   0x03
+#define TCA6408_INPUT 0x00
+#define TCA6408_OUTPUT 0x01
+#define TCA6408_POLARITY_INVERSION 0x02
+#define TCA6408_CONFIGURATION 0x03
 
-#define MAX_COLS                                8 // 0 to 7 so total 8
+#define MAX_COLS 8 // 0 to 7 so total 8
 
-#define DEFAULT_PORT_DIR_1                      0b00000111
-#define DEFAULT_PORT_DIR_2                      0b00000111
+#define DEFAULT_PORT_DIR_1 0b00000111
+#define DEFAULT_PORT_DIR_2 0b00000111
 
 // SI7021 sensor I2C address and command definitions
 #define SI7021_I2C_ADDRESS 0x40 // I2C address of the SI7021 sensor
@@ -64,7 +64,7 @@
 
 /* Global variables */
 uint8_t cmd_data = TEMPRETURE_COMMAND; // Command data for reading temperature
-uint8_t writeData[2];                 // setting p0, p1, p2 as input and other as output, setting one = input
+uint8_t writeData[2];                  // setting p0, p1, p2 as input and other as output, setting one = input
 uint8_t readData[2];                   // Buffer to hold raw temperature data read from the sensor
 
 int32_t temprature; // Variable to hold the calculated temperature
@@ -72,7 +72,8 @@ int32_t temprature; // Variable to hold the calculated temperature
 I2C_TransferReturn_TypeDef I2C_TransferStatus; // Holds the status of the I2C transfer
 I2C_TransferSeq_TypeDef I2C_TransferSeq;       // I2C transfer sequence structure
 
-typedef enum {
+typedef enum
+{
   P1_0 = 0b00000001,
   P1_1 = 0b00000010,
   P1_2 = 0b00000100,
@@ -81,36 +82,34 @@ typedef enum {
   P1_5 = 0b00100000,
   P1_6 = 0b01000000,
   P1_7 = 0b10000000
-}io_expander_pin_t;
+} io_expander_pin_t;
 
 io_expander_pin_t cols_scanning[8] = {P1_0, P1_1, P1_2, P1_3, P1_4, P1_5, P1_6, P1_7};
 
-
 int __init_IO_expander(uint8_t which_io_expander)
 {
-  if(which_io_expander > 2) return 0;
+  if (which_io_expander > 2)
+    return 0;
 
   // initialization of port in io expander
   cmd_data = TCA6408_CONFIGURATION;
   writeData[0] = DEFAULT_PORT_DIR_1; // setting p0, p1, p2 as input and other as output, setting one = input
   // Setup I2C transfer for writing the read temperature command to the sensor
   I2C_TransferSeq.addr = ((which_io_expander == 1) ? TCA6408_ADDR1 << 1 : TCA6408_ADDR2 << 1); // Set the sensor's I2C address (left shift for write operation)
-  I2C_TransferSeq.flags = I2C_FLAG_WRITE_WRITE; // Indicate that this is a write operation
-  I2C_TransferSeq.buf[0].data = &cmd_data;      // Point to the command data
-  I2C_TransferSeq.buf[0].len = 1;               // Set the command data length
+  I2C_TransferSeq.flags = I2C_FLAG_WRITE_WRITE;                                                // Indicate that this is a write operation
+  I2C_TransferSeq.buf[0].data = &cmd_data;                                                     // Point to the command data
+  I2C_TransferSeq.buf[0].len = 1;                                                              // Set the command data length
   I2C_TransferSeq.buf[1].data = writeData;
   I2C_TransferSeq.buf[1].len = 1;
 
-
   I2C_TransferStatus = I2CSPM_Transfer(I2C0, &I2C_TransferSeq);
-  if (I2C_TransferStatus != i2cTransferDone){
-   LOG_ERROR("Error: init_I2C, Input pin conf failed, %02X \n", I2C_TransferStatus);
-   return 0;
+  if (I2C_TransferStatus != i2cTransferDone)
+  {
+    LOG_ERROR("Error: init_I2C, Input pin conf failed, %02X \n", I2C_TransferStatus);
+    return 0;
   }
   return 1;
 }
-
-
 
 /**
  * @brief Initializes the I2C interface for communication.
@@ -136,18 +135,15 @@ void init_I2C()
 
   I2CSPM_Init(&I2C_Config); // Initialize I2C with the specified configuration
 
-
   timerWaitUs_polled(20 * 1000); // 20ms delay
-  
+
   // initialization of port direction in io expander
 
-   __init_IO_expander(2);
+  __init_IO_expander(1);
+  __init_IO_expander(2);
 
   return;
 }
-
-
-
 
 /**
  * @brief Reads temperature data from the SI7021 sensor.
@@ -161,7 +157,6 @@ void init_I2C()
 uint16_t read_SI7021()
 {
 
-  enable_Temperature_Sensor(1);
   // sensor_Enable();            // Enable the sensor pin
   timerWaitUs_polled(INITIAL_DELAY); // Wait for the sensor to be ready
   cmd_data = TEMPRETURE_COMMAND;
@@ -206,21 +201,22 @@ uint16_t read_SI7021()
 
   LOG_INFO("Got the temprature from Si7021 sensor => %ld Celsius\n", temprature); // Log the temperature data
 
-  enable_Temperature_Sensor(0);;    // Disable the sensor
+  // enable_Temperature_Sensor(0);;    // Disable the sensor
   return (temprature); // Return the calculated temperature
 }
 
 int io_expander_readByte(uint8_t which_io_expander)
 {
-//  __init_IO_expander(1);
+  //  __init_IO_expander(1);
 
   cmd_data = TCA6408_INPUT; // set command to input
-  if(which_io_expander > 2) return 0;
+  if (which_io_expander > 2)
+    return 0;
   // Setup I2C transfer for writing the input register to the expander
-  I2C_TransferSeq.addr = ((which_io_expander == 1) ? TCA6408_ADDR1 << 1 : TCA6408_ADDR2 << 1); // Set the sensor's I2C 
-  I2C_TransferSeq.flags = I2C_FLAG_WRITE;        // Indicate that this is a write operation
-  I2C_TransferSeq.buf[0].data = &cmd_data;       // Point to the command data
-  I2C_TransferSeq.buf[0].len = 1; // Set the command data length
+  I2C_TransferSeq.addr = ((which_io_expander == 1) ? TCA6408_ADDR1 << 1 : TCA6408_ADDR2 << 1); // Set the sensor's I2C
+  I2C_TransferSeq.flags = I2C_FLAG_WRITE;                                                      // Indicate that this is a write operation
+  I2C_TransferSeq.buf[0].data = &cmd_data;                                                     // Point to the command data
+  I2C_TransferSeq.buf[0].len = 1;                                                              // Set the command data length
 
   I2C_TransferStatus = I2CSPM_Transfer(I2C0, &I2C_TransferSeq);
   if (I2C_TransferStatus != i2cTransferDone)
@@ -229,15 +225,15 @@ int io_expander_readByte(uint8_t which_io_expander)
     return 0; // Return 0 if the operation failed
   }
 
-  // clearing read data 
+  // clearing read data
   readData[0] = 0;
   readData[1] = 0;
 
   // Setup I2C transfer for writing the read temperature command to the sensor
-  I2C_TransferSeq.addr = ((which_io_expander == 1) ? TCA6408_ADDR1 << 1 : TCA6408_ADDR2 << 1); // Set the sensor's I2C 
-  I2C_TransferSeq.flags = I2C_FLAG_READ;     // Indicate that this is a write operation
-  I2C_TransferSeq.buf[0].data = readData;    // Point to the command data
-  I2C_TransferSeq.buf[0].len = 1;            // Set the command data length
+  I2C_TransferSeq.addr = ((which_io_expander == 1) ? TCA6408_ADDR1 << 1 : TCA6408_ADDR2 << 1); // Set the sensor's I2C
+  I2C_TransferSeq.flags = I2C_FLAG_READ;                                                       // Indicate that this is a write operation
+  I2C_TransferSeq.buf[0].data = readData;                                                      // Point to the command data
+  I2C_TransferSeq.buf[0].len = 1;                                                              // Set the command data length
 
   I2C_TransferStatus = I2CSPM_Transfer(I2C0, &I2C_TransferSeq);
   if (I2C_TransferStatus != i2cTransferDone)
@@ -250,8 +246,6 @@ int io_expander_readByte(uint8_t which_io_expander)
   return readData[0];
 }
 
-
-
 int io_expander_writeByte(uint8_t which_io_expander, uint8_t what_data)
 {
   cmd_data = TCA6408_OUTPUT; // change command to output
@@ -259,14 +253,15 @@ int io_expander_writeByte(uint8_t which_io_expander, uint8_t what_data)
   writeData[0] = what_data & ~((which_io_expander == 1) ? DEFAULT_PORT_DIR_1 : DEFAULT_PORT_DIR_2);
   writeData[1] = 1;
 
-  if(which_io_expander > 2) return 0;
+  if (which_io_expander > 2)
+    return 0;
   // Setup I2C transfer for writing the read temperature command to the sensor
   I2C_TransferSeq.addr = ((which_io_expander == 1) ? TCA6408_ADDR1 << 1 : TCA6408_ADDR2 << 1); // Set the sensor's I2C address (left shift for write operation)
-  I2C_TransferSeq.flags = I2C_FLAG_WRITE_WRITE;        // Indicate that this is a write operation
-  I2C_TransferSeq.buf[0].data = &cmd_data;       // Point to the command data
-  I2C_TransferSeq.buf[0].len = 1; // Set the command data length
-  I2C_TransferSeq.buf[1].data = writeData;    // Point to the command data
-  I2C_TransferSeq.buf[1].len = 1;            // Set the command data length
+  I2C_TransferSeq.flags = I2C_FLAG_WRITE_WRITE;                                                // Indicate that this is a write operation
+  I2C_TransferSeq.buf[0].data = &cmd_data;                                                     // Point to the command data
+  I2C_TransferSeq.buf[0].len = 1;                                                              // Set the command data length
+  I2C_TransferSeq.buf[1].data = writeData;                                                     // Point to the command data
+  I2C_TransferSeq.buf[1].len = 1;                                                              // Set the command data length
 
   I2C_TransferStatus = I2CSPM_Transfer(I2C0, &I2C_TransferSeq);
   if (I2C_TransferStatus != i2cTransferDone)
@@ -279,12 +274,15 @@ int io_expander_writeByte(uint8_t which_io_expander, uint8_t what_data)
   return writeData[0];
 }
 
-int scan_io_expander(void){
-  for(int col = 0; col < MAX_COLS; col++){
-    io_expander_writeByte(2, cols_scanning[col]); // setting one to scanning column.
+int scan_io_expander(void)
+{
+  for (int col = 0; col < MAX_COLS; col++)
+  {
+    io_expander_writeByte(2, cols_scanning[col]);  // setting one to scanning column.
     io_expander_writeByte(2, ~cols_scanning[col]); // setting all other cols to zero.
     uint8_t data = io_expander_readByte(2);
-    if((data & DEFAULT_PORT_DIR_2)  > 0){
+    if ((data & DEFAULT_PORT_DIR_2) > 0)
+    {
       LOG_INFO("we got something, %d\n\r", data);
       return data;
     }

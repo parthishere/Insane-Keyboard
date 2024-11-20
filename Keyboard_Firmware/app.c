@@ -145,10 +145,11 @@ SL_WEAK void app_init(void)
   gpioInit();
 
   // Initializing I2C
-  init_I2C();
+//  init_I2C();
 
   // enable display
   enable_Display(true);
+  enable_Temperature_Sensor(true);
 } // app_init()
 
 /**
@@ -170,12 +171,14 @@ void app_process_action(void)
 //  if(get_scanning()){
 //
 //    while(1){
-//      scan_io_expander();
+//      ;
 //    }
 //  }
 
 
-   EPD_test();
+    EPD_test();
+  read_SI7021();
+  scan_io_expander();
 
 } // app_process_action()
 
