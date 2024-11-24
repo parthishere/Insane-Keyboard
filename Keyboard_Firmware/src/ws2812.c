@@ -36,7 +36,6 @@ void Set_Brightness (int brightness)  // 0-45
 			angle = angle*PI / 180;  // in rad
 			LED_Mod[i][j] = (LED_Data[i][j])/(tan(angle));
 		}
-	}
 
 #endif
 

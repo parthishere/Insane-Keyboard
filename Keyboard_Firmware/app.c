@@ -172,15 +172,15 @@ void app_process_action(void)
     led_test(1);
     timerWaitUs_polled(100000);
     // __init_IO_expander(1, 0b00000000);
-    io_expander_writeByte(1, 0b11111111);
+    // io_expander_writeByte(1, 0b11111111);
     led_test(0);
     timerWaitUs_polled(100000);
     // __init_IO_expander(1, 0b00000000);
-    io_expander_writeByte(1, 0b00000000);
+    // io_expander_writeByte(1, 0b00000000);
 
 
 //  if(get_scanning()){
-//
+//=
 //    while(1){
 //      ;
 //    }
@@ -190,10 +190,14 @@ void app_process_action(void)
 //    EPD_test();
 //  read_SI7021();
   //  scan_io_expander();
+   __init_IO_expander(1, 0b00000000);
+  io_expander_writeByte(1, 0b11111111);
+   __init_IO_expander(0, 0b00011111);
+  LOG_INFO("!! IO expander read sucessfull, data : 0x%02X \n\r", (io_expander_readByte(0) & 0b00011111));
   
   
-  
-  // rainbow_effect_right();
+
+  rainbow_effect_right();
    
 
   //rainbow_effect_right();

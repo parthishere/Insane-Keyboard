@@ -39,8 +39,7 @@
 #define MAX_COLS 8 // 0 to 7 so total 8
 
 #define DEFAULT_PORT_DIR_COL 0b00000000 // all output
-#define DEFAULT_PORT_DIR_ROW 0b11111111 // all input
-
+#define DEFAULT_PORT_DIR_ROW 0b00011111 // p1, p1, p2, p3, p4 input, other output
 // SI7021 sensor I2C address and command definitions
 #define SI7021_I2C_ADDRESS 0x40 // I2C address of the SI7021 sensor
 #define TEMPRETURE_COMMAND 0xF3 // Command to read temperature
@@ -248,7 +247,7 @@ int io_expander_readByte(uint8_t which_io_expander)
     return 0; // Return 0 if the operation failed
   }
 
-  // LOG_INFO("!! IO expander read sucessfull, data : %d \n\r", readData[0]);
+  
   return readData[0];
 }
 
@@ -282,19 +281,15 @@ int io_expander_writeByte(uint8_t which_io_expander, uint8_t what_data)
 
 int scan_io_expander(void)
 {
+  __init_IO_expander(IO_EXPANDER_ROW, DEFAULT_PORT_DIR_ROW);
   for (int col = 0; col < MAX_COLS; col++)
   {
     io_expander_writeByte(IO_EXPANDER_COL, cols_scanning[col]);  // setting one to scanning column.
     io_expander_writeByte(IO_EXPANDER_COL, ~cols_scanning[col]); // setting all other cols to zero.
     uint8_t data = io_expander_readByte(IO_EXPANDER_ROW);
-    if ((data & DEFAULT_PORT_DIR_ROW) > 0)
-    {
-      LOG_INFO("we got something, %d, at col %d\n\r", data, col);
-      return data;
-    }
-    else{
-      PRINT_LOG("DATA: %d", data);  
-    }
+    
+    PRINT_LOG("DATA: %d %d\n\r", data, col);  
+    
     // I dont want to wait here what to do ??
     // timerWaitUs_polled(20 * 1000); // 20ms
   }

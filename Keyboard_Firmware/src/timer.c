@@ -62,7 +62,7 @@
 #define FINAL_CLOCK ULFRCO_CLOCK
 #endif
 
-#define PWM_FREQ 800000 //Hz // Time Period is 1.25 us.
+#define PWM_FREQ 833333 //Hz // Time Period is 1.20 us.
 
 
 /**
