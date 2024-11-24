@@ -130,7 +130,7 @@ void init_Timer(void)
   TIMER_Init_TypeDef timerInit = TIMER_INIT_DEFAULT;
   timerInit.dmaClrAct = true;
 
-  TIMER_Init(TIMER0, &timerInit);
+  TIMER_Init(TIMER0, &ti merInit);
 
 
   LETIMER_Enable(LETIMER0, true);      // Enable LETIMER.
