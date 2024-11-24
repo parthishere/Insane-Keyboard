@@ -171,11 +171,11 @@ void app_process_action(void)
 //    PRINT_LOG("HELLOW wwwwwwwwwwww \n\r");
     led_test(1);
     timerWaitUs_polled(100000);
-    __init_IO_expander(1, 0b00000000);
+    // __init_IO_expander(1, 0b00000000);
     io_expander_writeByte(1, 0b11111111);
     led_test(0);
     timerWaitUs_polled(100000);
-    __init_IO_expander(1, 0b00000000);
+    // __init_IO_expander(1, 0b00000000);
     io_expander_writeByte(1, 0b00000000);
 
 

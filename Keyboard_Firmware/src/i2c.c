@@ -65,6 +65,9 @@
 #define MANTISSA_MULTIPLIER 1000
 #define EXPONENT -3
 
+
+#define WHICH_IO_EXPANDER(x) ((x == IO_EXPANDER_COL) ? TCA6408_COL << 1 : TCA6408_ROW << 1)
+
 /* Global variables */
 uint8_t cmd_data = TEMPRETURE_COMMAND; // Command data for reading temperature
 uint8_t writeData[2];                  // setting p0, p1, p2 as input and other as output, setting one = input
@@ -98,7 +101,7 @@ int __init_IO_expander(uint8_t which_io_expander, uint8_t data)
   cmd_data = TCA6408_CONFIGURATION;
   writeData[0] = data; // setting p0, p1, p2 as input and other as output, setting one = input
   // Setup I2C transfer for writing the read temperature command to the sensor
-  I2C_TransferSeq.addr = ((which_io_expander == IO_EXPANDER_COL) ? TCA6408_COL << 1 : TCA6408_ROW << 1); // Set the sensor's I2C address (left shift for write operation)
+  I2C_TransferSeq.addr = WHICH_IO_EXPANDER(which_io_expander); // Set the sensor's I2C address (left shift for write operation)
   I2C_TransferSeq.flags = I2C_FLAG_WRITE_WRITE;                                                // Indicate that this is a write operation
   I2C_TransferSeq.buf[0].data = &cmd_data;                                                     // Point to the command data
   I2C_TransferSeq.buf[0].len = 1;                                                              // Set the command data length
@@ -216,7 +219,7 @@ int io_expander_readByte(uint8_t which_io_expander)
   if (which_io_expander > 2)
     return 0;
   // Setup I2C transfer for writing the input register to the expander
-  I2C_TransferSeq.addr = ((which_io_expander == IO_EXPANDER_COL) ? TCA6408_COL << 1 : TCA6408_ROW << 1); // Set the sensor's I2C
+  I2C_TransferSeq.addr = WHICH_IO_EXPANDER(which_io_expander); // Set the sensor's I2C
   I2C_TransferSeq.flags = I2C_FLAG_WRITE;                                                      // Indicate that this is a write operation
   I2C_TransferSeq.buf[0].data = &cmd_data;                                                     // Point to the command data
   I2C_TransferSeq.buf[0].len = 1;                                                              // Set the command data length
@@ -233,7 +236,7 @@ int io_expander_readByte(uint8_t which_io_expander)
   readData[1] = 0;
 
   // Setup I2C transfer for writing the read temperature command to the sensor
-  I2C_TransferSeq.addr = ((which_io_expander == IO_EXPANDER_COL) ? TCA6408_COL << 1 : TCA6408_ROW << 1); // Set the sensor's I2C
+  I2C_TransferSeq.addr = WHICH_IO_EXPANDER(which_io_expander); // Set the sensor's I2C
   I2C_TransferSeq.flags = I2C_FLAG_READ;                                                       // Indicate that this is a write operation
   I2C_TransferSeq.buf[0].data = readData;                                                      // Point to the command data
   I2C_TransferSeq.buf[0].len = 1;                                                              // Set the command data length
@@ -253,13 +256,13 @@ int io_expander_writeByte(uint8_t which_io_expander, uint8_t what_data)
 {
   cmd_data = TCA6408_OUTPUT; // change command to output
    // will look on this 
-  writeData[0] = what_data & ~((which_io_expander == IO_EXPANDER_COL) ? DEFAULT_PORT_DIR_COL : DEFAULT_PORT_DIR_ROW);
+  writeData[0] = what_data;
   writeData[1] = 1;
 
   if (which_io_expander > 2)
     return 0;
   // Setup I2C transfer for writing the read temperature command to the sensor
-  I2C_TransferSeq.addr = ((which_io_expander == IO_EXPANDER_COL) ? TCA6408_COL << 1 : TCA6408_ROW << 1); // Set the sensor's I2C address (left shift for write operation)
+  I2C_TransferSeq.addr = WHICH_IO_EXPANDER(which_io_expander); // Set the sensor's I2C address (left shift for write operation)
   I2C_TransferSeq.flags = I2C_FLAG_WRITE_WRITE;                                                // Indicate that this is a write operation
   I2C_TransferSeq.buf[0].data = &cmd_data;                                                     // Point to the command data
   I2C_TransferSeq.buf[0].len = 1;                                                              // Set the command data length
