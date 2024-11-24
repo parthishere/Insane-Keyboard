@@ -33,7 +33,7 @@ int main(void)
   // this call.
   sl_system_init();
 
-  // Initialize the application. For example, create periodic timer(s) or
+  // Initialize the application. For example, create period       ic timer(s) or
   // task(s) if the kernel is present.
   app_init();
 

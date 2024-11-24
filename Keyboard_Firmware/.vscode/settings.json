@@ -11,6 +11,7 @@
         "stdbool.h": "c",
         "app.h": "c",
         "spi.h": "c",
-        "gatt_db.h": "c"
+        "gatt_db.h": "c",
+        "ws2812.h": "c"
     }
 }

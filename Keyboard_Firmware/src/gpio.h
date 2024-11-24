@@ -13,7 +13,7 @@
 // RGB LEDs
 #define LED_ON_port gpioPortF
 #define LED_ON_pin 6
-#define ON_LED LED_ON_port, LED_ON_pin
+#define ON_LED (LED_ON_port), (LED_ON_pin)
 
 #define LED_DATA_port gpioPortF
 #define LED_DATA_pin 7

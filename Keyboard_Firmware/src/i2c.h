@@ -44,7 +44,7 @@ void init_I2C();
 uint16_t read_SI7021();
 
 
-
+int __init_IO_expander(uint8_t which_io_expander, uint8_t data);
 int io_expander_readByte(uint8_t which_io_expander);
 
 int io_expander_writeByte(uint8_t which_io_expander, uint8_t what_data);

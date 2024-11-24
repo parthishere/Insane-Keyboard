@@ -1,8 +1,8 @@
 
 #include "ws2812.h"
 
-#define MAX_LED 8
-#define USE_BRIGHTNESS 0
+#define MAX_LED 1
+#define USE_BRIGHTNESS 1
 
 
 uint8_t LED_Data[MAX_LED][4];
@@ -78,7 +78,7 @@ void WS2812_Send(void)
 		indx++;
 	}
 
-	// initLdma(pwmData, indx);
+	initLdma(pwmData, indx);
 	
 }
 
@@ -125,3 +125,77 @@ void initLdma(uint16_t *buffer, int buffer_size)
 
 
 
+
+// ported from the arduino code for 8 LEDs located at ->>>>  https://adrianotiger.github.io/Neopixel-Effect-Generator/
+
+uint16_t effStep = 0;
+
+uint8_t rainbow_effect_left() {
+    // Strip ID: 0 - Effect: Rainbow - LEDS: 8
+    // Steps: 13 - Delay: 54
+    // Colors: 3 (255.0.0, 0.255.0, 0.0.255)
+    // Options: rainbowlen=8, toLeft=true,
+//  if(millis() - strip_0.effStart < 54 * (strip_0.effStep)) return 0x00;
+
+  float factor1, factor2;
+  uint16_t ind;
+  for(uint16_t j=0;j<8;j++) {
+    ind = effStep + j * 1.625;
+    switch((int)((ind % 13) / 4.333333333333333)) {
+      case 0: factor1 = 1.0 - ((float)(ind % 13 - 0 * 4.333333333333333) / 4.333333333333333);
+              factor2 = (float)((int)(ind - 0) % 13) / 4.333333333333333;
+              /************ chnaged here *********/
+              Set_LED(j, 255 * factor1 + 0 * factor2, 0 * factor1 + 255 * factor2, 0 * factor1 + 0 * factor2);
+              WS2812_Send();
+              break;
+      case 1: factor1 = 1.0 - ((float)(ind % 13 - 1 * 4.333333333333333) / 4.333333333333333);
+              factor2 = (float)((int)(ind - 4.333333333333333) % 13) / 4.333333333333333;
+              Set_LED(j, 0 * factor1 + 0 * factor2, 255 * factor1 + 0 * factor2, 0 * factor1 + 255 * factor2);
+              WS2812_Send();
+              break;
+      case 2: factor1 = 1.0 - ((float)(ind % 13 - 2 * 4.333333333333333) / 4.333333333333333);
+              factor2 = (float)((int)(ind - 8.666666666666666) % 13) / 4.333333333333333;
+              Set_LED(j, 0 * factor1 + 255 * factor2, 0 * factor1 + 0 * factor2, 255 * factor1 + 0 * factor2);
+              WS2812_Send();
+              break;
+    }
+  }
+  if(effStep >= 13) {effStep=0; return 0x03; }
+  else effStep++;
+  return 0x01;
+}
+
+
+
+uint8_t rainbow_effect_right() {
+    // Strip ID: 0 - Effect: Rainbow - LEDS: 8
+    // Steps: 14 - Delay: 30
+    // Colors: 3 (255.0.0, 0.255.0, 0.0.255)
+    // Options: rainbowlen=8, toLeft=false,
+//  if(millis() - strip_0.effStart < 30 * (strip_0.effStep)) return 0x00;
+  float factor1, factor2;
+  uint16_t ind;
+  for(uint16_t j=0;j<8;j++) {
+    ind = 14 - (int16_t)(effStep - j * 1.75) % 14;
+    switch((int)((ind % 14) / 4.666666666666667)) {
+      case 0: factor1 = 1.0 - ((float)(ind % 14 - 0 * 4.666666666666667) / 4.666666666666667);
+              factor2 = (float)((int)(ind - 0) % 14) / 4.666666666666667;
+              Set_LED(j, 255 * factor1 + 0 * factor2, 0 * factor1 + 255 * factor2, 0 * factor1 + 0 * factor2);
+              WS2812_Send();
+              break;
+      case 1: factor1 = 1.0 - ((float)(ind % 14 - 1 * 4.666666666666667) / 4.666666666666667);
+              factor2 = (float)((int)(ind - 4.666666666666667) % 14) / 4.666666666666667;
+              Set_LED(j, 0 * factor1 + 0 * factor2, 255 * factor1 + 0 * factor2, 0 * factor1 + 255 * factor2);
+              WS2812_Send();
+              break;
+      case 2: factor1 = 1.0 - ((float)(ind % 14 - 2 * 4.666666666666667) / 4.666666666666667);
+              factor2 = (float)((int)(ind - 9.333333333333334) % 14) / 4.666666666666667;
+              Set_LED(j, 0 * factor1 + 255 * factor2, 0 * factor1 + 0 * factor2, 255 * factor1 + 0 * factor2);
+              WS2812_Send();
+              break;
+    }
+  }
+  if(effStep >= 14) {effStep = 0; return 0x03; }
+  else effStep++;
+  return 0x01;
+}

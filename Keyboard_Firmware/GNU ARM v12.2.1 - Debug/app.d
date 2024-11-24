@@ -120,8 +120,8 @@ app.o: ../app.c \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_timer.h \
  ../src/scheduler.h ../src/i2c.h ../src/ble.h \
  /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/ble_utility.h \
- ../src/spi.h ../src/timer.h ../src/ble.h ../src/irq.h ../src/log.h \
- ../src/irq.h
+ ../src/spi.h ../src/timer.h ../src/ble.h ../src/irq.h ../src/ws2812.h \
+ ../src/log.h ../src/irq.h
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/toolchain/inc/sl_gcc_preinclude.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_common.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32BG13P/Include/em_device.h:
@@ -252,5 +252,6 @@ app.o: ../app.c \
 ../src/timer.h:
 ../src/ble.h:
 ../src/irq.h:
+../src/ws2812.h:
 ../src/log.h:
 ../src/irq.h:

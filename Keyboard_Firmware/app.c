@@ -46,6 +46,7 @@
 #include "src/irq.h"
 #include "src/timer.h"
 #include "src/i2c.h"
+#include "src/ws2812.h"
 
 // Include logging specifically for this .c file
 #define INCLUDE_LOG_DEBUG 1
@@ -145,11 +146,17 @@ SL_WEAK void app_init(void)
   gpioInit();
 
   // Initializing I2C
-//  init_I2C();
+  init_I2C();
 
   // enable display
   enable_Display(true);
   enable_Temperature_Sensor(true);
+ enable_LEDs(true);
+
+  Set_LED(0, 255, 0, 0);
+   Set_Brightness(10);
+
+  WS2812_Send();
 } // app_init()
 
 /**
@@ -161,11 +168,15 @@ SL_WEAK void app_init(void)
 void app_process_action(void)
 {
 
-    PRINT_LOG("HELLOW wwwwwwwwwwww \n\r");
+//    PRINT_LOG("HELLOW wwwwwwwwwwww \n\r");
     led_test(1);
     timerWaitUs_polled(100000);
+    __init_IO_expander(1, 0b00000000);
+    io_expander_writeByte(1, 0b11111111);
     led_test(0);
     timerWaitUs_polled(100000);
+    __init_IO_expander(1, 0b00000000);
+    io_expander_writeByte(1, 0b00000000);
 
 
 //  if(get_scanning()){
@@ -176,9 +187,16 @@ void app_process_action(void)
 //  }
 
 
-    EPD_test();
-  read_SI7021();
-  scan_io_expander();
+//    EPD_test();
+//  read_SI7021();
+  //  scan_io_expander();
+  
+  
+  
+  // rainbow_effect_right();
+   
+
+  //rainbow_effect_right();
 
 } // app_process_action()
 
