@@ -26,10 +26,9 @@
 #include "src/log.h" // Includes the logging header for debug messages
 
 #define TCA6408_COL 0x21
-#define IO_EXPANDER_COL 1
 
 #define TCA6408_ROW 0x20
-#define IO_EXPANDER_ROW 0
+
 
 #define TCA6408_INPUT 0x00
 #define TCA6408_OUTPUT 0x01
@@ -161,7 +160,7 @@ void init_I2C()
  */
 uint16_t read_SI7021()
 {
-
+  enable_Temperature_Sensor(true);
   // sensor_Enable();            // Enable the sensor pin
   timerWaitUs_polled(INITIAL_DELAY); // Wait for the sensor to be ready
   cmd_data = TEMPRETURE_COMMAND;
@@ -206,7 +205,7 @@ uint16_t read_SI7021()
 
   LOG_INFO("Got the temprature from Si7021 sensor => %ld Celsius\n", temprature); // Log the temperature data
 
-  // enable_Temperature_Sensor(0);;    // Disable the sensor
+  enable_Temperature_Sensor(false);    // Disable the sensor
   return (temprature); // Return the calculated temperature
 }
 
@@ -286,9 +285,12 @@ int scan_io_expander(void)
   {
     io_expander_writeByte(IO_EXPANDER_COL, cols_scanning[col]);  // setting one to scanning column.
     io_expander_writeByte(IO_EXPANDER_COL, ~cols_scanning[col]); // setting all other cols to zero.
-    uint8_t data = io_expander_readByte(IO_EXPANDER_ROW);
+    uint8_t data = io_expander_readByte(IO_EXPANDER_ROW) & DEFAULT_PORT_DIR_ROW;
     
-    PRINT_LOG("DATA: %d %d\n\r", data, col);  
+    if(data > 0){
+      PRINT_LOG("DATA : %d, col %d \n\r", data, col);
+      return data;
+    }  
     
     // I dont want to wait here what to do ??
     // timerWaitUs_polled(20 * 1000); // 20ms

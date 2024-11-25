@@ -55,32 +55,14 @@
 
 // <gpio> SL_BOARD_ENABLE_VCOM
 // $[GPIO_SL_BOARD_ENABLE_VCOM]
-#ifndef SL_BOARD_ENABLE_VCOM_PORT               
-#define SL_BOARD_ENABLE_VCOM_PORT                gpioPortA
-#endif
-#ifndef SL_BOARD_ENABLE_VCOM_PIN                
-#define SL_BOARD_ENABLE_VCOM_PIN                 5
-#endif
 // [GPIO_SL_BOARD_ENABLE_VCOM]$
 
 // <gpio> SL_BOARD_ENABLE_DISPLAY
 // $[GPIO_SL_BOARD_ENABLE_DISPLAY]
-#ifndef SL_BOARD_ENABLE_DISPLAY_PORT            
-#define SL_BOARD_ENABLE_DISPLAY_PORT             gpioPortD
-#endif
-#ifndef SL_BOARD_ENABLE_DISPLAY_PIN             
-#define SL_BOARD_ENABLE_DISPLAY_PIN              15
-#endif
 // [GPIO_SL_BOARD_ENABLE_DISPLAY]$
 
 // <gpio> SL_BOARD_ENABLE_SENSOR_RHT
 // $[GPIO_SL_BOARD_ENABLE_SENSOR_RHT]
-#ifndef SL_BOARD_ENABLE_SENSOR_RHT_PORT         
-#define SL_BOARD_ENABLE_SENSOR_RHT_PORT          gpioPortD
-#endif
-#ifndef SL_BOARD_ENABLE_SENSOR_RHT_PIN          
-#define SL_BOARD_ENABLE_SENSOR_RHT_PIN           15
-#endif
 // [GPIO_SL_BOARD_ENABLE_SENSOR_RHT]$
 
 // <<< sl:end pin_tool >>>

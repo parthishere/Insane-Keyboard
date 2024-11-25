@@ -58,10 +58,10 @@
 
 // $[GPIO_SL_MX25_FLASH_SHUTDOWN_CS]
 #ifndef SL_MX25_FLASH_SHUTDOWN_CS_PORT          
-#define SL_MX25_FLASH_SHUTDOWN_CS_PORT           gpioPortA
+#define SL_MX25_FLASH_SHUTDOWN_CS_PORT           gpioPortB
 #endif
 #ifndef SL_MX25_FLASH_SHUTDOWN_CS_PIN           
-#define SL_MX25_FLASH_SHUTDOWN_CS_PIN            4
+#define SL_MX25_FLASH_SHUTDOWN_CS_PIN            11
 #endif
 // [GPIO_SL_MX25_FLASH_SHUTDOWN_CS]$
 

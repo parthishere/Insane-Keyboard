@@ -1,5 +1,6 @@
 
 #include "ws2812.h"
+#include "src/gpio.h"
 
 #define MAX_LED 1
 #define USE_BRIGHTNESS 1
@@ -36,7 +37,7 @@ void Set_Brightness (int brightness)  // 0-45
 			angle = angle*PI / 180;  // in rad
 			LED_Mod[i][j] = (LED_Data[i][j])/(tan(angle));
 		}
-
+	}
 #endif
 
 }
@@ -77,6 +78,7 @@ void WS2812_Send(void)
 		indx++;
 	}
 
+  enable_LEDs(true);
 	initLdma(pwmData, indx);
 	
 }

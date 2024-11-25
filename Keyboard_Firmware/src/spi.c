@@ -26,6 +26,7 @@ int DEV_Module_Init(void)
 {
     gpio_Set_Display_DC(0);
     gpio_Set_Display_Reset(1);
+    enable_Display(true);
     return 0;
 }
 
@@ -33,4 +34,5 @@ void DEV_Module_Exit(void)
 {
     gpio_Set_Display_DC(0);
     gpio_Set_Display_Reset(0);
+    enable_Display(false);
 }

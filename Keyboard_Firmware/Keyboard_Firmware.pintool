@@ -10,16 +10,14 @@
     <property object="PA0" propertyId="pin.name" value=""/>
     <property object="PA2" propertyId="pin.name" value=""/>
     <property object="PA3" propertyId="pin.name" value=""/>
-    <property object="PA4" propertyId="ABModule.selectedRequirement" value="gpio%T%SL_MX25_FLASH_SHUTDOWN_CS%T%sl_mx25_flash_shutdown_usart_config.h"/>
-    <property object="PA4" propertyId="pin.reserve" value="Reserved"/>
-    <property object="PA5" propertyId="ABModule.selectedRequirement" value="gpio%T%SL_BOARD_ENABLE_VCOM%T%sl_board_control_config.h"/>
-    <property object="PA5" propertyId="pin.reserve" value="Reserved"/>
+    <property object="PA4" propertyId="pin.name" value=""/>
+    <property object="PA5" propertyId="pin.name" value=""/>
+    <property object="PB11" propertyId="ABModule.selectedRequirement" value="gpio%T%SL_MX25_FLASH_SHUTDOWN_CS%T%sl_mx25_flash_shutdown_usart_config.h"/>
     <property object="PC6" propertyId="pin.name" value=""/>
     <property object="PC7" propertyId="pin.name" value=""/>
     <property object="PC8" propertyId="pin.name" value=""/>
     <property object="PC9" propertyId="pin.name" value=""/>
-    <property object="PD15" propertyId="ABModule.selectedRequirement" value="gpio%T%SL_BOARD_ENABLE_SENSOR_RHT%T%sl_board_control_config.h"/>
-    <property object="PD15" propertyId="pin.reserve" value="Reserved"/>
+    <property object="PD15" propertyId="pin.name" value=""/>
     <property object="PF0" propertyId="pin.name" value=""/>
     <property object="PF1" propertyId="pin.name" value=""/>
     <property object="PF2" propertyId="pin.name" value=""/>

@@ -31,6 +31,11 @@
 #include "ble.h"
 #include "sl_status.h"
 
+
+#define IO_EXPANDER_COL 1
+#define IO_EXPANDER_ROW 0
+
+
 /* Function Prototypes */
 /**
  * @brief Initializes the I2C interface for communication.

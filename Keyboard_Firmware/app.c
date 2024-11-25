@@ -147,14 +147,11 @@ SL_WEAK void app_init(void)
 
   // Initializing I2C
   init_I2C();
-
-  // enable display
-  enable_Display(true);
-  enable_Temperature_Sensor(true);
- enable_LEDs(true);
+  
+ 
 
   Set_LED(0, 255, 0, 0);
-   Set_Brightness(10);
+  Set_Brightness(10);
 
   WS2812_Send();
 } // app_init()
@@ -171,36 +168,25 @@ void app_process_action(void)
 //    PRINT_LOG("HELLOW wwwwwwwwwwww \n\r");
     led_test(1);
     timerWaitUs_polled(100000);
-    // __init_IO_expander(1, 0b00000000);
-    // io_expander_writeByte(1, 0b11111111);
+    
     led_test(0);
     timerWaitUs_polled(100000);
-    // __init_IO_expander(1, 0b00000000);
-    // io_expander_writeByte(1, 0b00000000);
+    
 
 
 //  if(get_scanning()){
-//=
-//    while(1){
-//      ;
-//    }
+
+   
 //  }
 
 
-//    EPD_test();
-//  read_SI7021();
-  //  scan_io_expander();
-   __init_IO_expander(1, 0b00000000);
-  io_expander_writeByte(1, 0b11111111);
-   __init_IO_expander(0, 0b00011111);
-  LOG_INFO("!! IO expander read sucessfull, data : 0x%02X \n\r", (io_expander_readByte(0) & 0b00011111));
-  
-  
-
-  rainbow_effect_right();
+//    EPD_test();  
+  //scan_io_expander();
    
 
   //rainbow_effect_right();
+  __init_IO_expander(IO_EXPANDER_COL, 0b00000000);
+  io_expander_writeByte(IO_EXPANDER_COL, 0b11111111);
 
 } // app_process_action()
 

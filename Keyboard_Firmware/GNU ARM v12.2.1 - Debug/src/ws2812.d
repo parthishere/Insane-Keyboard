@@ -56,7 +56,22 @@ src/ws2812.o: ../src/ws2812.c \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32BG13P/Include/efr32bg13p_prs_signals.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32BG13P/Include/efr32bg13p_dmareq.h \
  /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32BG13P/Include/efr32bg13p_af_ports.h \
- /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32BG13P/Include/efr32bg13p_af_pins.h
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32BG13P/Include/efr32bg13p_af_pins.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/gpio.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_cmu.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_assert.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_bus.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_core.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_core_generic.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_common.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_assert.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sl_component_catalog.h \
+ /home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/emlib_core_debug_config.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_cmu_compat.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_gpio.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_enum.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_status.h \
+ /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/sli_em_cmu.h
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/toolchain/inc/sl_gcc_preinclude.h:
 ../src/ws2812.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_ldma.h:
@@ -115,3 +130,18 @@ src/ws2812.o: ../src/ws2812.c \
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32BG13P/Include/efr32bg13p_dmareq.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32BG13P/Include/efr32bg13p_af_ports.h:
 /home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32BG13P/Include/efr32bg13p_af_pins.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/gpio.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_cmu.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_assert.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_bus.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_core.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_core_generic.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_common.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_assert.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/autogen/sl_component_catalog.h:
+/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/config/emlib_core_debug_config.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_cmu_compat.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/em_gpio.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_enum.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/common/inc/sl_status.h:
+/home/parth/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc/sli_em_cmu.h:

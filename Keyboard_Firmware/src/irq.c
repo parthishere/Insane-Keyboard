@@ -86,13 +86,8 @@ void GPIO_ODD_IRQHandler(void)
 {
     uint32_t flags = GPIO_IntGetEnabled();
     GPIO_IntClear(flags);
-    // during reading for client
-    if (flags & (1 << ROTERY_ENCODER_SW_pin))
-    {
-        
-        // sw1 pressed
-        schedulerSetEventENCODER_SW();
-    }
+    PRINT_LOG("Something\n\r");
+    //if (flags & (1 << ROTARY_ENCODER_B_pin))
     if (flags & (1 << ROTARY_ENCODER_B_pin))
     {
         pinState = GPIO_PinInGet(ROTARY_ENCODER_port, ROTARY_ENCODER_A_pin);
@@ -112,6 +107,12 @@ void GPIO_ODD_IRQHandler(void)
         }
         pinPrevState = pinState;
     }
+
+    if (flags & (1 << EXPANDER_INT_ROW_pin)){
+        PRINT_LOG("[INFO] IO Expander Interrupt odd\n\r");
+        scan_io_expander();
+    }
+
     // GPIO_PinInGet
 }
 
@@ -127,13 +128,18 @@ void GPIO_EVEN_IRQHandler(void)
 {
     uint32_t flags = GPIO_IntGetEnabled();
     GPIO_IntClear(flags);
-    LOG_INFO("a thing Switch pressed !");
+    PRINT_LOG("Something even\n\r");
     // during pairing and bonding confirmation for server
     if (flags & (1 << ROTERY_ENCODER_SW_pin))
     {
-        LOG_INFO("Encoder Switch pressed even !\n");
-        // sw1 pressed
-        //          schedularSetEventPB1();
+        PRINT_LOG("[INFO] Encoder SW Pressed: %ld\n", counter);
+        schedulerSetEventENCODER_SW();
+    }
+
+
+    if (flags & (1 << EXPANDER_INT_ROW_pin)){
+        PRINT_LOG("[INFO] IO Expander Interrupt even\n\r");
+        scan_io_expander();
     }
 }
 

@@ -375,6 +375,9 @@ void handle_ble_event(sl_bt_msg_t *evt)
             //            LOG_INFO("Temp sensor\r\n");
         }
 
+        if (((evt->data.evt_system_external_signal.extsignals - evtLETIMER0_UF) == 0x00)){
+            read_SI7021();
+        }
         break;
 
     // Indicates a user request to display that the new bonding request is received and for the user to confirm the request
