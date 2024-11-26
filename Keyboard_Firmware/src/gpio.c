@@ -40,7 +40,7 @@ void gpioInit()
   GPIO_PinModeSet(ROTARY_ENCODER_SW, gpioModeInput, true);
 
   GPIO_PinModeSet(EXPANDER_INT_COL, gpioModeInput, true);
-  GPIO_PinModeSet(EXPANDER_INT_ROW, gpioModeInput, true);
+  GPIO_PinModeSet(EXPANDER_INT_ROW, gpioModeInput, false);
 
   GPIO_PinModeSet(DISPLAY_BUSY, gpioModeInput, true);
 
@@ -49,6 +49,7 @@ void gpioInit()
   GPIO_ExtIntConfig(ROTARY_ENCODER_port, ROTARY_ENCODER_B_pin, ROTARY_ENCODER_B_pin, 1, 0, true); // on rising edge
   GPIO_ExtIntConfig(ROTARY_ENCODER_port, ROTERY_ENCODER_SW_pin, ROTERY_ENCODER_SW_pin, 1, 0, true); // on rising edge 
   GPIO_ExtIntConfig(EXPANDER_INT_port, EXPANDER_INT_ROW_pin, EXPANDER_INT_ROW_pin, 0, 1, true); // on falling edge
+  GPIO_ExtIntConfig(EXPANDER_INT_port, EXPANDER_INT_COL_pin, EXPANDER_INT_COL_pin, 0, 1, true); // on falling edge
 
 
   // OUTPUTS
