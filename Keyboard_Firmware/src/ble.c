@@ -298,7 +298,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
 #if (DEVICE_IS_BLE_MASTER == 1)
         // scan();
 #endif
-        sc = sl_bt_legacy_advertiser_generate_data(advertising_set_handle,
+        sc = sl_bt_legacy_advertiser_generate_data(ble_data.advertisingSetHandle,
                                                  sl_bt_advertiser_general_discoverable);
         app_assert_status(sc);
 

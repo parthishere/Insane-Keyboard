@@ -13,6 +13,7 @@
         "spi.h": "c",
         "gatt_db.h": "c",
         "ws2812.h": "c",
-        "gpio.h": "c"
+        "gpio.h": "c",
+        "rotary_encoder.h": "c"
     }
 }

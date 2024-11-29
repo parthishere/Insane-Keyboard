@@ -10,6 +10,7 @@ target_sources(Keyboard_Firmware PRIVATE
 	"../src/llfifo.c"
 	"../src/log.c"
 	"../src/oscillator.c"
+	"../src/rotery_encoder.c"
 	"../src/rtcc.c"
 	"../src/scheduler.c"
 	"../src/spi.c"

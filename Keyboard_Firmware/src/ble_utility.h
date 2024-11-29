@@ -95,5 +95,6 @@ typedef struct
 void init_advertizement(ble_data_struct_t *ble_data);
 void advertizement(ble_data_struct_t *ble_data);
 void scan();
+void scan_init();
 
 #endif

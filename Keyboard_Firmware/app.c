@@ -120,6 +120,7 @@ sl_power_manager_on_isr_exit_t app_sleep_on_isr_exit(void)
 
 #endif // defined(SL_CATALOG_POWER_MANAGER_PRESENT)
 
+
 /**
  * @brief Application initialization function.
  * This function is responsible for setting up the application. It includes initializing
@@ -147,7 +148,7 @@ SL_WEAK void app_init(void)
 
   // Initializing I2C
   init_I2C();
-  
+
   __init_IO_expander(IO_EXPANDER_COL, 0b00000000);
   io_expander_writeByte(IO_EXPANDER_COL, 0xFF);
 

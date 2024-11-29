@@ -46,10 +46,12 @@ void gpioInit()
 
 
   // Setting Interrupts on inputs
-  GPIO_ExtIntConfig(ROTARY_ENCODER_port, ROTARY_ENCODER_B_pin, ROTARY_ENCODER_B_pin, 1, 0, true); // on rising edge
-  GPIO_ExtIntConfig(ROTARY_ENCODER_port, ROTERY_ENCODER_SW_pin, ROTERY_ENCODER_SW_pin, 1, 1, true); // on rising-falling edge 
-  GPIO_ExtIntConfig(EXPANDER_INT_port, EXPANDER_INT_ROW_pin, EXPANDER_INT_ROW_pin, 0, 1, true); // on falling edge
-  GPIO_ExtIntConfig(EXPANDER_INT_port, EXPANDER_INT_COL_pin, EXPANDER_INT_COL_pin, 0, 1, true); // on falling edge
+  GPIO_ExtIntConfig(ROTARY_ENCODER_port, ROTARY_ENCODER_B_pin, ROTARY_ENCODER_B_pin, 1, 1, true); // on rising edge
+  GPIO_ExtIntConfig(ROTARY_ENCODER_port, ROTARY_ENCODER_A_pin, ROTARY_ENCODER_A_pin, 1, 1, true); // on rising edge
+
+  GPIO_ExtIntConfig(ROTARY_ENCODER_port, ROTERY_ENCODER_SW_pin, ROTERY_ENCODER_SW_pin, 1, 1, true); // on falling edge 
+  GPIO_ExtIntConfig(EXPANDER_INT_port, EXPANDER_INT_ROW_pin, EXPANDER_INT_ROW_pin, 1, 1, true); // on rising-falling edge
+  GPIO_ExtIntConfig(EXPANDER_INT_port, EXPANDER_INT_COL_pin, EXPANDER_INT_COL_pin, 1, 1, true); // on rising-falling edge
 
 
   // OUTPUTS

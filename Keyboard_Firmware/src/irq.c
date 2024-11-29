@@ -23,7 +23,6 @@
 
 #include "irq.h" // Include the header file for interrupt-related functions and definitions.
 
-
 // Include logging specifically for this .c file
 #define INCLUDE_LOG_DEBUG 1
 #include "src/log.h"
@@ -32,10 +31,6 @@
 #define UF_TIME_MS 3000
 
 volatile uint32_t underflow_count = 0;
-
-volatile bool pin_a_detected_first = false, pin_b_detected_first = false;
-volatile int32_t counter = 0;
-int pinState = 0, pinPrevState = 0;
 
 /**
  * @brief Interrupt Service Routine for LETIMER0.
@@ -74,6 +69,10 @@ void LETIMER0_IRQHandler(void)
     CORE_EXIT_CRITICAL(); // Exit the critical section, allowing other interrupts to be processed.
 } // LETIMER0_IRQHandler
 
+static volatile bool last_A = false;
+static volatile bool last_B = false;
+static volatile int32_t position = 0;
+
 /**
  * Handles GPIO interrupts for odd-numbered GPIO pins.
  * This interrupt service routine (ISR) is triggered by events on odd-numbered GPIO pins. It reads
@@ -87,28 +86,51 @@ void GPIO_ODD_IRQHandler(void)
     uint32_t flags = GPIO_IntGetEnabled();
     GPIO_IntClear(flags);
     PRINT_LOG("Something\n\r");
-    //if (flags & (1 << ROTARY_ENCODER_B_pin))
+    // if (flags & (1 << ROTARY_ENCODER_B_pin))
     if (flags & (1 << ROTARY_ENCODER_B_pin))
     {
-        pinState = GPIO_PinInGet(ROTARY_ENCODER_port, ROTARY_ENCODER_A_pin);
-        if (pinPrevState == 0 && pinState == 1)
+        bool current_A, current_B;
+
+        // Read both pins with debouncing
+        do
         {
-            if (GPIO_PinInGet(ROTARY_ENCODER_port, ROTARY_ENCODER_B_pin))
+            current_A = GPIO_PinInGet(ROTARY_ENCODER_A);
+            current_B = GPIO_PinInGet(ROTARY_ENCODER_B);
+        } while ((current_A != GPIO_PinInGet(ROTARY_ENCODER_A)) ||
+                 (current_B != GPIO_PinInGet(ROTARY_ENCODER_B)));
+
+        
+        if (last_A == last_B && current_A != current_B)
+        {
+            // Transition from 00->01 or 11->10
+            if (current_A == last_A)
             {
-                counter++;
-                PRINT_LOG("[INFO] Encoder Value Increase: %ld\n", counter);
+                position--; // Counter-clockwise
+                PRINT_LOG("CCW: %ld\n", position);
             }
-            else
-            {
-                counter--;
-                PRINT_LOG("[INFO] Encoder Value Decrease: %ld\n", counter);
-            }
-            schedulerSetEventENCODER_ROTATE();
         }
-        pinPrevState = pinState;
+        else if (last_A != last_B && current_A == current_B)
+        {
+            // Transition from 01->11 or 10->00
+            if (current_A == last_B)
+            {
+                position++; // Clockwise
+                PRINT_LOG("CW: %ld\n", position);
+            }
+        }
+
+        // Update last state
+        last_A = current_A;
+        last_B = current_B;
+
+        // Signal the change
+        schedulerSetEventENCODER_ROTATE();
+        
+        printf("counter %d\n\r", position);
     }
 
-    if (flags & (1 << EXPANDER_INT_COL_pin)){
+    if (flags & (1 << EXPANDER_INT_COL_pin))
+    {
         PRINT_LOG("[INFO] IO Expander Interrupt odd\n\r");
         uint8_t *data = scan_io_expander();
     }
@@ -128,37 +150,71 @@ void GPIO_EVEN_IRQHandler(void)
 {
     uint32_t flags = GPIO_IntGetEnabled();
     GPIO_IntClear(flags);
-    PRINT_LOG("Something even\n\r");
     // during pairing and bonding confirmation for server
     if (flags & (1 << ROTERY_ENCODER_SW_pin))
     {
-        PRINT_LOG("[INFO] Encoder SW Pressed: %ld\n", counter);
-        schedulerSetEventENCODER_SW();
+    }
+    if (flags & (1 << ROTARY_ENCODER_A_pin))
+    {
+        bool current_A, current_B;
+
+        // Read both pins with debouncing
+        do
+        {
+            current_A = GPIO_PinInGet(ROTARY_ENCODER_A);
+            current_B = GPIO_PinInGet(ROTARY_ENCODER_B);
+        } while ((current_A != GPIO_PinInGet(ROTARY_ENCODER_A)) ||
+                 (current_B != GPIO_PinInGet(ROTARY_ENCODER_B)));
+
+        // Determine rotation direction based on the sequence
+     
+        if (last_A == last_B && current_A != current_B)
+        {
+            // Transition from 00->01 or 11->10
+            if (current_A == last_A)
+            {
+                position--; // Counter-clockwise
+                PRINT_LOG("CCW: %ld\n", position);
+            }
+        }
+        else if (last_A != last_B && current_A == current_B)
+        {
+            // Transition from 01->11 or 10->00
+            if (current_A == last_B)
+            {
+                position++; // Clockwise
+                PRINT_LOG("CW: %ld\n", position);
+            }
+        }
+
+        // Update last state
+        last_A = current_A;
+        last_B = current_B;
+
+        // Signal the change
+        schedulerSetEventENCODER_ROTATE();
+        
     }
 
-
-    if (flags & (1 << EXPANDER_INT_ROW_pin)){
-        PRINT_LOG("[INFO] IO Expander Interrupt even\n\r");
-        scan_io_expander();
-    }
-
+    //    if (flags & (1 << EXPANDER_INT_ROW_pin)){
+    //        PRINT_LOG("[INFO] IO Expander Interrupt even\n\r");
+    //        scan_io_expander();
+    //    }
 }
 
-
-
-/**************************************************************************//**
- * @brief RTCC interrupt service routine
- *****************************************************************************/
-//void RTCC_IRQHandler(void)
+/**************************************************************************/ /**
+                                                                              * @brief RTCC interrupt service routine
+                                                                              *****************************************************************************/
+// void RTCC_IRQHandler(void)
 //{
-//  // Read the interrupt source
-//  rtccFlag = RTCC_IntGet();
+//   // Read the interrupt source
+//   rtccFlag = RTCC_IntGet();
 //
-//  // Clear interrupt flag
-//  RTCC_IntClear(rtccFlag);
+//   // Clear interrupt flag
+//   RTCC_IntClear(rtccFlag);
 //
-//  GPIO_PinOutSet(BSP_GPIO_LED1_PORT, BSP_GPIO_LED1_PIN); // Toggle LED to turn it on
-//}
+//   GPIO_PinOutSet(BSP_GPIO_LED1_PORT, BSP_GPIO_LED1_PIN); // Toggle LED to turn it on
+// }
 
 /**
  * @brief Calculate the total elapsed time in milliseconds based on LETIMER underflows.
@@ -175,4 +231,3 @@ uint32_t letimerMilliseconds(void)
     // Return interval for underflow count and underflow millisecond (3000ms)
     return ((underflow_count * UF_TIME_MS));
 }
-
