@@ -283,18 +283,19 @@ int scan_io_expander(void)
   __init_IO_expander(IO_EXPANDER_ROW, DEFAULT_PORT_DIR_ROW);
   for (int col = 0; col < MAX_COLS; col++)
   {
+    // __init_IO_expander(IO_EXPANDER_COL, 0b00000000);
     io_expander_writeByte(IO_EXPANDER_COL, cols_scanning[col]);  // setting one to scanning column.
-    io_expander_writeByte(IO_EXPANDER_COL, ~cols_scanning[col]); // setting all other cols to zero.
+
     uint8_t data = io_expander_readByte(IO_EXPANDER_ROW) & DEFAULT_PORT_DIR_ROW;
     
     if(data > 0){
-      PRINT_LOG("DATA : %d, col %d \n\r", data, col);
+      PRINT_LOG("DATA : 0x%02X, col %d \n\r", data, col);
       return data;
     }  
     
-    // I dont want to wait here what to do ??
-    // timerWaitUs_polled(20 * 1000); // 20ms
   }
+  // __init_IO_expander(IO_EXPANDER_COL, 0b00000000);
+  io_expander_writeByte(IO_EXPANDER_COL, 0xFF);
   printf("++++++++++++++++++++\n");
   return -1;
 }

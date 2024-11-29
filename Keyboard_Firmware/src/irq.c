@@ -108,7 +108,7 @@ void GPIO_ODD_IRQHandler(void)
         pinPrevState = pinState;
     }
 
-    if (flags & (1 << EXPANDER_INT_ROW_pin)){
+    if (flags & (1 << EXPANDER_INT_COL_pin)){
         PRINT_LOG("[INFO] IO Expander Interrupt odd\n\r");
         scan_io_expander();
     }
@@ -141,6 +141,7 @@ void GPIO_EVEN_IRQHandler(void)
         PRINT_LOG("[INFO] IO Expander Interrupt even\n\r");
         scan_io_expander();
     }
+    
 }
 
 

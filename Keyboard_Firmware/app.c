@@ -185,9 +185,9 @@ void app_process_action(void)
    
 
   //rainbow_effect_right();
-  __init_IO_expander(IO_EXPANDER_COL, 0b00000000);
+  // __init_IO_expander(IO_EXPANDER_COL, 0b00000000);
   io_expander_writeByte(IO_EXPANDER_COL, 0b11111111);
-  PRINT_LOG("port value 5: %d \n", GPIO_PinInGet(gpioPortA, 5));
+  // PRINT_LOG("port value 5: %d \n", GPIO_PinInGet(gpioPortA, 5));
   // PRINT_LOG("port value 4: %d \n", GPIO_PinInGet(gpioPortA, 4));
 
 } // app_process_action()
