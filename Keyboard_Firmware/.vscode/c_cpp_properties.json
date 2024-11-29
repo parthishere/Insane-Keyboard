@@ -1,0 +1,13 @@
+{
+    "configurations": [
+        {
+            "name": "Keyboard_Firmware",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [],
+            "compilerPath": ""
+        }
+    ],
+    "version": 4
+}

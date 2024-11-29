@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "name": "Keyboard_Firmware_silabs_debug",
+            "cwd": "${workspaceFolder}",
+            "type": "cortex-debug",
+            "request": "launch",
+            "serverpath": "/home/parth/Work/SimplicityStudio_v5/developer/adapter_packs/exx32/JLinkGDBServer",
+            "servertype": "jlink",
+            "gdbPath": "/home/parth/Work/SimplicityStudio_v5/developer/adapter_packs/exx32/arm-none-eabi-gdb",
+            "device": "EFR32BG13PxxxF512",
+            "svdFile": "/home/parth/Work/SimplicityStudio_v5/offline/svd/efr32bg13p632f512gm48.svd",
+            "runToEntryPoint": "main",
+            "serverArgs": [
+                "-select",
+                "usb = 440226852"
+            ],
+            "rtos": "FreeRTOS",
+            "executable": "Keyboard_Firmware_cmake/build/default_config/Keyboard_Firmware.out"
+        }
+    ]
+}
