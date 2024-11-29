@@ -62,10 +62,10 @@ void WS2812_Send(void)
 		{
 			if (color&(1<<i))
 			{
-				pwmData[indx] = 60;  // 2/3 of 90
+				pwmData[indx] = ((480*9)/12);  // 2/3 of 90
 			}
 
-			else pwmData[indx] = 30;  // 1/3 of 90
+			else pwmData[indx] = ((480*3)/12);  // 1/3 of 90
 
 			indx++;
 		}
@@ -80,7 +80,8 @@ void WS2812_Send(void)
 
   enable_LEDs(true);
 	initLdma(pwmData, indx);
-	
+  while(LDMA_TransferDone(0));
+  LDMA_StopTransfer (0);
 }
 
 /**************************************************************************//**
@@ -104,16 +105,15 @@ void initLdma(uint16_t *buffer, int buffer_size)
   // Channel descriptor configuration
   static LDMA_Descriptor_t descriptor;
   
-  descriptor = (LDMA_Descriptor_t) LDMA_DESCRIPTOR_LINKREL_M2P_BYTE(&buffer,            // Memory source address
+  descriptor = (LDMA_Descriptor_t) LDMA_DESCRIPTOR_SINGLE_M2P_BYTE(&buffer,            // Memory source address
                                                                     &TIMER0->CC[0].CCVB, // Peripheral destination address
-                                                                    buffer_size,         // Number of bytes per transfer
-                                                                    0);                  // Link to same descriptor
+                                                                    buffer_size         // Number of bytes per transfer
+                                                                    );
   descriptor.xfer.size     = ldmaCtrlSizeHalf; // Unit transfer size
   descriptor.xfer.doneIfs  = 0;                // Don't trigger interrupt when done
 
-  // Transfer configuration and trigger selection
-  LDMA_TransferCfg_t transferConfig =
-    LDMA_TRANSFER_CFG_PERIPHERAL(ldmaPeripheralSignal_TIMER0_UFOF);
+  // // Transfer configuration and trigger selection
+  LDMA_TransferCfg_t transferConfig = LDMA_TRANSFER_CFG_PERIPHERAL(LDMA_CH_REQSEL_SOURCESEL_NONE);
 
   // LDMA initialization
   LDMA_Init_t init = LDMA_INIT_DEFAULT;
@@ -122,6 +122,7 @@ void initLdma(uint16_t *buffer, int buffer_size)
   // Start the transfer
   uint32_t channelNum = 0;
   LDMA_StartTransfer(channelNum, &transferConfig, &descriptor);
+  // while(!)
 }
 
 

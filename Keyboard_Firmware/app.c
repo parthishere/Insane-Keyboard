@@ -188,3 +188,4 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
   handle_ble_event(evt); // bluetooth event actions
 
 } // sl_bt_on_event()
+

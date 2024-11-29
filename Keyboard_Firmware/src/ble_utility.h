@@ -91,6 +91,8 @@ typedef struct
   bool ok_to_send_report_notification;
 } ble_data_struct_t;
 
+
+void init_advertizement(ble_data_struct_t *ble_data);
 void advertizement(ble_data_struct_t *ble_data);
 void scan();
 
