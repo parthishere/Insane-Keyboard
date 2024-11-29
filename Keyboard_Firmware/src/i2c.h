@@ -30,6 +30,7 @@
 #include "scheduler.h"
 #include "ble.h"
 #include "sl_status.h"
+#include "src/keyboard/layout.h"
 
 
 #define IO_EXPANDER_COL 1
@@ -54,6 +55,6 @@ int io_expander_readByte(uint8_t which_io_expander);
 
 int io_expander_writeByte(uint8_t which_io_expander, uint8_t what_data);
 
-int scan_io_expander(void);
+uint8_t * scan_io_expander(void);
 
 #endif // !__I2C_h__

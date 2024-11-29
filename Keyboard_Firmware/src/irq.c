@@ -110,7 +110,7 @@ void GPIO_ODD_IRQHandler(void)
 
     if (flags & (1 << EXPANDER_INT_COL_pin)){
         PRINT_LOG("[INFO] IO Expander Interrupt odd\n\r");
-        scan_io_expander();
+        uint8_t *data = scan_io_expander();
     }
 
     // GPIO_PinInGet

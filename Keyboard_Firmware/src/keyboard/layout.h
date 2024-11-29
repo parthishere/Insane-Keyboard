@@ -1,4 +1,5 @@
-#pragma once
+#ifndef __LAYOUT_H__
+#define __LAYOUT_H__
 
 
 #include <stdint.h>
@@ -20,7 +21,7 @@ static uint8_t current_layer = 0;
 #define LEFT 0
 #define RIGHT 1
 
-const uint16_t keymaps[2][LAYERS][MATRIX_ROWS][MATRIX_COLS] = 
+static const uint16_t keymaps[2][LAYERS][MATRIX_ROWS][MATRIX_COLS] = 
 /* Keymap 0: Basic layer
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
@@ -91,6 +92,31 @@ const uint16_t keymaps[2][LAYERS][MATRIX_ROWS][MATRIX_COLS] =
 // If it accepts an argument (i.e, is a function), it doesn't need KC_.
 // Otherwise, it needs KC_*
 {
+    {       // layer 0 : default
+        // left hand
+        {
+            {KC_EQL, KC_1, KC_2, KC_3, KC_4, KC_5, KC_LEFT},
+            {KC_DEL, KC_Q, KC_W, KC_E, KC_R, KC_T, TG(SYMB)},
+            {KC_BSPC, KC_A, KC_S, KC_D, KC_F, KC_G, ALT_T(KC_APP), KC_LGUI},
+            {KC_LSFT, CTL_T(KC_Z), KC_X, KC_C, KC_V, KC_B, ALL_T(KC_NO), KC_HOME},
+            {LT(SYMB,KC_GRV),KC_QUOT, LALT(KC_LSFT), KC_LEFT,KC_RGHT, KC_SPC,KC_BSPC,KC_END}
+        },
+        {
+            {KC_TRNS,KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_TRNS},
+            {KC_TRNS, KC_EXLM, KC_AT,   KC_LCBR, KC_RCBR, KC_PIPE, KC_TRNS},
+            {KC_TRNS, KC_HASH, KC_DLR,  KC_LPRN, KC_RPRN, KC_GRV, RGB_MOD, KC_TRNS},
+            {KC_TRNS, KC_PERC, KC_CIRC, KC_LBRC, KC_RBRC, KC_TILD, KC_TRNS, KC_TRNS},
+            {EE_CLR,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, RGB_VAD, RGB_VAI, KC_TRNS}
+        },
+        {
+            {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS},
+            {KC_TRNS, KC_TRNS, KC_TRNS, KC_MS_U, KC_TRNS, KC_TRNS, KC_TRNS},
+            {KC_TRNS, KC_TRNS, KC_MS_L, KC_MS_D, KC_MS_R, KC_TRNS, KC_TRNS, KC_TRNS},
+            {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS},
+            {KC_TRNS, KC_TRNS, KC_TRNS, KC_BTN1, KC_BTN2, KC_TRNS, KC_TRNS, KC_TRNS}
+        }
+    },
+
     {
         // right hand
         {
@@ -114,36 +140,12 @@ const uint16_t keymaps[2][LAYERS][MATRIX_ROWS][MATRIX_COLS] =
             {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_MPRV, KC_MNXT, KC_TRNS, KC_TRNS},
             {KC_TRNS, KC_TRNS, KC_WBAK, KC_VOLU, KC_VOLD, KC_MUTE, KC_TRNS, KC_TRNS,}
         }
-    },
-
-    {       // layer 0 : default
-            // left hand
-            {
-                {KC_EQL, KC_1, KC_2, KC_3, KC_4, KC_5, KC_LEFT},
-                {KC_DEL, KC_Q, KC_W, KC_E, KC_R, KC_T, TG(SYMB)},
-                {KC_BSPC, KC_A, KC_S, KC_D, KC_F, KC_G, ALT_T(KC_APP), KC_LGUI},
-                {KC_LSFT, CTL_T(KC_Z), KC_X, KC_C, KC_V, KC_B, ALL_T(KC_NO), KC_HOME},
-                {LT(SYMB,KC_GRV),KC_QUOT, LALT(KC_LSFT), KC_LEFT,KC_RGHT, KC_SPC,KC_BSPC,KC_END}
-            },
-            {
-                {KC_TRNS,KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_TRNS},
-                {KC_TRNS, KC_EXLM, KC_AT,   KC_LCBR, KC_RCBR, KC_PIPE, KC_TRNS},
-                {KC_TRNS, KC_HASH, KC_DLR,  KC_LPRN, KC_RPRN, KC_GRV, RGB_MOD, KC_TRNS},
-                {KC_TRNS, KC_PERC, KC_CIRC, KC_LBRC, KC_RBRC, KC_TILD, KC_TRNS, KC_TRNS},
-                {EE_CLR,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, RGB_VAD, RGB_VAI, KC_TRNS}
-            },
-            {
-                {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS},
-                {KC_TRNS, KC_TRNS, KC_TRNS, KC_MS_U, KC_TRNS, KC_TRNS, KC_TRNS},
-                {KC_TRNS, KC_TRNS, KC_MS_L, KC_MS_D, KC_MS_R, KC_TRNS, KC_TRNS, KC_TRNS},
-                {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS},
-                {KC_TRNS, KC_TRNS, KC_TRNS, KC_BTN1, KC_BTN2, KC_TRNS, KC_TRNS, KC_TRNS}
-            }
-
     }
+    
 };
 
 
 
 
 
+#endif

@@ -279,7 +279,7 @@ int io_expander_writeByte(uint8_t which_io_expander, uint8_t what_data)
 }
 
 
-int scan_io_expander(void)
+uint8_t * scan_io_expander(void)
 {
   __init_IO_expander(IO_EXPANDER_ROW, DEFAULT_PORT_DIR_ROW);
   uint8_t scanned_keys[MAX_COLS];
@@ -298,7 +298,6 @@ int scan_io_expander(void)
   }
   __init_IO_expander(IO_EXPANDER_COL, 0b00000000);
   io_expander_writeByte(IO_EXPANDER_COL, 0xFF);
-  printf("++++++++++++++++++++\n");
-  return data != 0 ? data : -1;
+  return scanned_keys;
 }
 
