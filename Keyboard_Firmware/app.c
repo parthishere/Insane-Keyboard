@@ -148,7 +148,8 @@ SL_WEAK void app_init(void)
   // Initializing I2C
   init_I2C();
   
- 
+  __init_IO_expander(IO_EXPANDER_COL, 0b00000000);
+  io_expander_writeByte(IO_EXPANDER_COL, 0xFF);
 
   Set_LED(0, 255, 0, 0);
   Set_Brightness(10);
@@ -163,18 +164,8 @@ SL_WEAK void app_init(void)
  * a LETIMER0 underflow event.
  */
 void app_process_action(void)
-{
+{ 
 
-//    PRINT_LOG("HELLOW wwwwwwwwwwww \n\r");
-    // led_test(1);
-    // timerWaitUs_polled(100000);
-    
-    // led_test(0);
-    // timerWaitUs_polled(100000);
-    
-
-
-  io_expander_writeByte(IO_EXPANDER_COL, 0b11111111);
 
 } // app_process_action()
 

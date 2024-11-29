@@ -141,7 +141,7 @@ void GPIO_EVEN_IRQHandler(void)
         PRINT_LOG("[INFO] IO Expander Interrupt even\n\r");
         scan_io_expander();
     }
-    
+
 }
 
 

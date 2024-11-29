@@ -187,7 +187,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
                   ble_data.myAddress.addr[FIVE]);
 
 #if (DEVICE_IS_BLE_MASTER == 1)
-        // scan();
+        scan();
 #endif
         advertizement(&ble_data);
 
@@ -255,32 +255,32 @@ void handle_ble_event(sl_bt_msg_t *evt)
 
 #if (DEVICE_IS_BLE_MASTER == 1)
         // /* Advertising stops when connection is opened. Re-start advertising */
-        // if (ble_data.number_of_connection == MAX_CONNECTIONS)
-        // {
-        //     PRINT_LOG("[ERROR] Maximum number of allowed connections reached.\r\n");
-        //     PRINT_LOG("[INFO] Stop scanning but continue advertising in non-connectable mode.\r\n");
+        if (ble_data.number_of_connection == MAX_CONNECTIONS)
+        {
+            PRINT_LOG("[ERROR] Maximum number of allowed connections reached.\r\n");
+            PRINT_LOG("[INFO] Stop scanning but continue advertising in non-connectable mode.\r\n");
 
-        //     sc = sl_bt_scanner_stop();
-        //     app_assert_status(sc);
-        // }
-        // else
-        // {
-        //     // Max connection not reached. Re-start advertising in connectable mode
-        //     advertizement(&ble_data);
-        // }
+            sc = sl_bt_scanner_stop();
+            app_assert_status(sc);
+        }
+        else
+        {
+            // Max connection not reached. Re-start advertising in connectable mode
+            advertizement(&ble_data);
+        }
 
-        // // Request to update the connection parameters
-        // sc = sl_bt_connection_set_parameters(ble_data.connectionHandle,
-        //                                      CON_INTERVAL,
-        //                                      CON_INTERVAL,
-        //                                      CON_LATENCY,
-        //                                      CON_TIMEOUT,
-        //                                      0,
-        //                                      MAX_CE_LEN);
-        // app_assert_status(sc);
+        // Request to update the connection parameters
+        sc = sl_bt_connection_set_parameters(ble_data.connectionHandle,
+                                             CON_INTERVAL,
+                                             CON_INTERVAL,
+                                             CON_LATENCY,
+                                             CON_TIMEOUT,
+                                             0,
+                                             MAX_CE_LEN);
+        app_assert_status(sc);
 
-        // sc = sl_bt_sm_increase_security(ble_data.connectionHandle);
-        // app_assert_status(sc);
+        sc = sl_bt_sm_increase_security(ble_data.connectionHandle);
+        app_assert_status(sc);
 
 #endif
         
@@ -310,7 +310,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
         }
 
 #if (DEVICE_IS_BLE_MASTER == 1)
-        // scan();
+        scan();
 #endif
         advertizement(&ble_data);
 
@@ -351,6 +351,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
     case sl_bt_evt_system_external_signal_id:
         if (((evt->data.evt_system_external_signal.extsignals - evtENCODER_SW) == 0x00) && (ble_data.ok_to_send_report_notification))
         {
+            
             // start scanning, send signal to main
             memset(input_report_data, 0, sizeof(input_report_data));
 

@@ -1,7 +1,6 @@
 #include "src/ble_utility.h"
 
 
-
 #define SERVER_PASSIVE_SCANNING 0
 
 // Value * 0.625 = 80 * 0.625 => 50ms
@@ -10,13 +9,9 @@
 // Time = Value x 0.625 ms => time = 25ms
 #define SERVER_SCANNING_WINDOW 0x28
 
-
-
 // Advertising interval for BLE in units of 0.625ms.
 // ADV_INTERVAL of 400 translates to 250ms (400 * 0.625ms = 250ms).
 #define ADV_INTERVAL 160
-
-
 
 static sl_status_t sc;
 
