@@ -20,7 +20,6 @@
 #include "ble.h"
 #include "hid.h"
 
-
 uint8_t __HID_SERVICE_UUID[2] = {0x12, 0x18};
 uint8_t __HID_REPORT_CHARACTERISTIC_UUID[2] = {0x4b, 0x2a};
 
@@ -104,7 +103,7 @@ static bool scanning = false;
 ble_data_struct_t ble_data;
 
 // Global variables
-static sl_status_t sc;                   // Status code for Silicon Labs API functions
+static sl_status_t sc;            // Status code for Silicon Labs API functions
 uint8_t system_id[SYSTEM_ID_LEN]; // Buffer for the System ID value
 uint16_t interval;
 uint16_t latency;
@@ -187,14 +186,13 @@ void handle_ble_event(sl_bt_msg_t *evt)
                   ble_data.myAddress.addr[FIVE]);
 
 #if (DEVICE_IS_BLE_MASTER == 1)
-        // scan();
+        scan_init();
+        scan();
 #endif
         init_advertizement(&ble_data);
         advertizement(&ble_data);
-    break;
+        break;
 
-
-    
     /*
     * typedef struct sl_bt_evt_connection_opened_t
     * {
@@ -215,6 +213,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
         {
             // Device role: GATT Data base client
             /* Start discovering the remote GATT database */
+            PRINT_LOG("CR_CENTRAL\n\r");
             sc = sl_bt_gatt_discover_primary_services_by_uuid(
                 evt->data.evt_connection_opened.connection,
                 sizeof(__HID_SERVICE_UUID),
@@ -232,6 +231,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
         /* else if connection role is PERIPHERAL that is GATT Client ...*/
         else if (evt->data.evt_connection_opened.master == CR_PERIPHERAL)
         {
+            PRINT_LOG("CR_PERIPHERAL\n\r");
             // Device role: GATT Data base server
             /* update device list */
             ble_data.connections[ble_data.number_of_connection].device_address =
@@ -248,6 +248,9 @@ void handle_ble_event(sl_bt_msg_t *evt)
 
             /* Increment ble_data.number_of_connection. */
             ble_data.number_of_connection++;
+
+            sc = sl_bt_sm_increase_security(ble_data.connectionHandle);
+            app_assert_status(sc);
         }
 
         // Update device connection state. common for both master and slave roles
@@ -263,23 +266,10 @@ void handle_ble_event(sl_bt_msg_t *evt)
             sc = sl_bt_scanner_stop();
             app_assert_status(sc);
         }
-        
 
-        // Request to update the connection parameters
-        // sc = sl_bt_connection_set_parameters(ble_data.connectionHandle,
-        //                                      CON_INTERVAL,
-        //                                      CON_INTERVAL,
-        //                                      CON_LATENCY,
-        //                                      CON_TIMEOUT,
-        //                                      0,
-        //                                      MAX_CE_LEN);
-        // app_assert_status(sc);
-
-        // sc = sl_bt_sm_increase_security(ble_data.connectionHandle);
-        // app_assert_status(sc);
+      
 
 #endif
-        
 
         break;
 
@@ -308,10 +298,13 @@ void handle_ble_event(sl_bt_msg_t *evt)
 #if (DEVICE_IS_BLE_MASTER == 1)
         // scan();
 #endif
-        
+        sc = sl_bt_legacy_advertiser_generate_data(advertising_set_handle,
+                                                 sl_bt_advertiser_general_discoverable);
+        app_assert_status(sc);
+
         advertizement(&ble_data);
 
-    break;
+        break;
 
     /*
      * typedef struct sl_bt_evt_connection_parameters_t
@@ -346,9 +339,8 @@ void handle_ble_event(sl_bt_msg_t *evt)
         break;
 
     case sl_bt_evt_system_external_signal_id:
-        if (((evt->data.evt_system_external_signal.extsignals - evtENCODER_SW) == 0x00))
+        if (((evt->data.evt_system_external_signal.extsignals - evtENCODER_SW) == 0x00) && (ble_data.ok_to_send_report_notification))
         {
-            
             // start scanning, send signal to main
             memset(input_report_data, 0, sizeof(input_report_data));
 
@@ -367,13 +359,13 @@ void handle_ble_event(sl_bt_msg_t *evt)
             //            LOG_INFO("Temp sensor\r\n");
         }
 
-
         if (((evt->data.evt_system_external_signal.extsignals - evtIOEXPANDER_ROW) == 0x00))
         {
             //            LOG_INFO("Temp sensor\r\n");
         }
 
-        if (((evt->data.evt_system_external_signal.extsignals - evtLETIMER0_UF) == 0x00)){
+        if (((evt->data.evt_system_external_signal.extsignals - evtLETIMER0_UF) == 0x00))
+        {
             read_SI7021();
         }
         break;
@@ -407,6 +399,8 @@ void handle_ble_event(sl_bt_msg_t *evt)
         // Log a message indicating bonding failed.
         PRINT_LOG("[ERROR] Bonding failed\r\n\n");
         PRINT_LOG("--------------------------------------\r\n\n");
+        sc = sl_bt_sm_delete_bondings();
+        app_assert_status(sc);
 
         break;
 
@@ -484,12 +478,12 @@ void handle_ble_event(sl_bt_msg_t *evt)
             {
                 if (evt->data.evt_gatt_server_characteristic_status.client_config_flags == sl_bt_gatt_notification)
                 {
-                    PRINT_LOG("Indication for Temprature has been enabled by Client\n");
+                    PRINT_LOG("Notification for Report has been enabled by Client\n");
                     ble_data.ok_to_send_report_notification = 1;
                 }
                 else
                 {
-                    PRINT_LOG("Indication for Temprature has been disabled by Client\n");
+                    PRINT_LOG("Notification for Report has been disabled by Client\n");
                     ble_data.ok_to_send_report_notification = 0;
                 }
             }
@@ -776,15 +770,15 @@ void app_log_stats()
     for (i = 0; i < ble_data.number_of_connection; i++)
     {
         // Log the Bluetooth address of the device
-//        PRINT_LOG("[INFO] Bluetooth %s address: %02X:%02X:%02X:%02X:%02X:%02X\n\r",
-//                  ble_data.connections[i].device_type ? "static random" : "public device",
-//                  ble_data.connections[i].device_address.addr[0],
-//                  ble_data.connections[i].device_address.addr[ONE],
-//                  ble_data.connections[i].device_address.addr[TWO],
-//                  ble_data.connections[i].device_address.addr[THREE],
-//                  ble_data.connections[i].device_address.addr[FOUR],
-//                  ble_dataconnections[i].device_address.addr[FIVE]);
-//        print_bd_addr(ble_data.);
+        //        PRINT_LOG("[INFO] Bluetooth %s address: %02X:%02X:%02X:%02X:%02X:%02X\n\r",
+        //                  ble_data.connections[i].device_type ? "static random" : "public device",
+        //                  ble_data.connections[i].device_address.addr[0],
+        //                  ble_data.connections[i].device_address.addr[ONE],
+        //                  ble_data.connections[i].device_address.addr[TWO],
+        //                  ble_data.connections[i].device_address.addr[THREE],
+        //                  ble_data.connections[i].device_address.addr[FOUR],
+        //                  ble_dataconnections[i].device_address.addr[FIVE]);
+        //        print_bd_addr(ble_data.);
         app_log("  %-14s%-14d%-10s\r\n",
                 (ble_data.connections[i].conn_role == 0) ? "PERIPH" : "CENTRAL",
                 ble_data.connections[i].connectionHandle,
@@ -793,15 +787,17 @@ void app_log_stats()
     app_log("\r\n");
 }
 
-
-void start_scanning(){
+void start_scanning()
+{
     scanning = true;
 }
 
-void stop_scanning(){
+void stop_scanning()
+{
     scanning = false;
 }
 
-bool get_scanning(){
+bool get_scanning()
+{
     return scanning;
 }

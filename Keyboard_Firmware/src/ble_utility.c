@@ -47,15 +47,18 @@ void advertizement(ble_data_struct_t *ble_data)
 
     sc = sl_bt_legacy_advertiser_start(
         ble_data->advertisingSetHandle,       // The advertising set handle
-        sl_bt_legacy_advertiser_connectable); // Connectable and scannable advertising
+        sl_bt_advertiser_connectable_scannable); // Connectable and scannable advertising
+    app_assert_status(sc);
+}
+
+
+void scan_init(){
+    sc = sl_bt_connection_set_default_parameters(CON_INTERVAL, CON_INTERVAL, CON_LATENCY, CON_TIMEOUT, 0, MAX_CE_LEN);
     app_assert_status(sc);
 }
 
 void scan()
 {
-    sc = sl_bt_connection_set_default_parameters(CON_INTERVAL, CON_INTERVAL, CON_LATENCY, CON_TIMEOUT, 0, MAX_CE_LEN);
-    app_assert_status(sc);
-
     sc = sl_bt_scanner_start(sl_bt_gap_phy_1m, sl_bt_scanner_discover_observation);
     app_assert_status(sc);
 }
