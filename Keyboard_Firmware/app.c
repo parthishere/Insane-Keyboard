@@ -166,29 +166,15 @@ void app_process_action(void)
 {
 
 //    PRINT_LOG("HELLOW wwwwwwwwwwww \n\r");
-    led_test(1);
-    timerWaitUs_polled(100000);
+    // led_test(1);
+    // timerWaitUs_polled(100000);
     
-    led_test(0);
-    timerWaitUs_polled(100000);
+    // led_test(0);
+    // timerWaitUs_polled(100000);
     
 
 
-//  if(get_scanning()){
-
-   
-//  }
-
-
-//    EPD_test();  
-  //scan_io_expander();
-   
-
-  //rainbow_effect_right();
-  // __init_IO_expander(IO_EXPANDER_COL, 0b00000000);
   io_expander_writeByte(IO_EXPANDER_COL, 0b11111111);
-  // PRINT_LOG("port value 5: %d \n", GPIO_PinInGet(gpioPortA, 5));
-  // PRINT_LOG("port value 4: %d \n", GPIO_PinInGet(gpioPortA, 4));
 
 } // app_process_action()
 
