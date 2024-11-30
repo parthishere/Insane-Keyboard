@@ -21,6 +21,11 @@ static uint8_t current_layer = 0;
 #define LEFT 0
 #define RIGHT 1
 
+typedef struct {
+    int row;
+    int column;
+} pressedkeys;
+
 static const uint16_t keymaps[2][LAYERS][MATRIX_ROWS][MATRIX_COLS] = 
 /* Keymap 0: Basic layer
  *
