@@ -27,6 +27,7 @@
 #include "scheduler.h"
 #include "em_i2c.h"
 #include "em_core.h"
+#include "src/keyboard/layout.h"
 
 /**
  * @brief Interrupt Service Routine for LETIMER0.

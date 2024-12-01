@@ -10,7 +10,6 @@ target_sources(Keyboard_Firmware PRIVATE
 	"../src/llfifo.c"
 	"../src/log.c"
 	"../src/oscillator.c"
-	"../src/rotery_encoder.c"
 	"../src/rtcc.c"
 	"../src/scheduler.c"
 	"../src/spi.c"
@@ -25,6 +24,7 @@ target_sources(Keyboard_Firmware PRIVATE
 	"../src/Fonts/font8.c"
 	"../src/GUI/GUI_Paint.c"
 	"../src/e-ink/EPD_1in54_V2.c"
+	"../src/keyboard/layout.c"
 )
 
 include_directories(

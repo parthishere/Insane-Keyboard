@@ -15,11 +15,17 @@ enum layers {
 #define LAYERS 3
 #define MATRIX_ROWS 5
 #define MATRIX_COLS 8
+#define MAX_KEYPRESS_HID_REPORT 6
 
 static uint8_t current_layer = 0;
 
 #define LEFT 0
 #define RIGHT 1
+
+typedef struct {
+    int row;
+    int column;
+} pressedkeys_t;
 
 static const uint16_t keymaps[2][LAYERS][MATRIX_ROWS][MATRIX_COLS] = 
 /* Keymap 0: Basic layer
@@ -95,8 +101,8 @@ static const uint16_t keymaps[2][LAYERS][MATRIX_ROWS][MATRIX_COLS] =
     {       // layer 0 : default
         // left hand
         {
-            {KC_EQL, KC_1, KC_2, KC_3, KC_4, KC_5, KC_LEFT},
-            {KC_DEL, KC_Q, KC_W, KC_E, KC_R, KC_T, TG(SYMB)},
+            {KC_EQL, KC_1, KC_2, KC_3, KC_4, KC_5, KC_LEFT, 0x00},
+            {KC_DEL, KC_Q, KC_W, KC_E, KC_R, KC_T, TG(SYMB), 0x00},
             {KC_BSPC, KC_A, KC_S, KC_D, KC_F, KC_G, ALT_T(KC_APP), KC_LGUI},
             {KC_LSFT, CTL_T(KC_Z), KC_X, KC_C, KC_V, KC_B, ALL_T(KC_NO), KC_HOME},
             {LT(SYMB,KC_GRV),KC_QUOT, LALT(KC_LSFT), KC_LEFT,KC_RGHT, KC_SPC,KC_BSPC,KC_END}
@@ -145,7 +151,7 @@ static const uint16_t keymaps[2][LAYERS][MATRIX_ROWS][MATRIX_COLS] =
 };
 
 
-
+uint8_t* modifypressedkeys_left(uint8_t *keys);
 
 
 #endif

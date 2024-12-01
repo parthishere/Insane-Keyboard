@@ -32,7 +32,9 @@
 // set this #define to the bd_addr of the Gecko that will be your Server.
 // These values are from one of my Geckos, to serve as an example for you:
 //                   bd_addr  [0]   [1]   [2]   [3]   [4]   [5] <- array indices
-#define SERVER_BT_ADDRESS {{ 0x7E, 0x65, 0xA6, 0x14, 0x2E, 0x84 }}
+#define MASTER_BT_ADDRESS {{ 0xCB, 0xCD, 0x62, 0x7E, 0xE0, 0xE8 }}
+#define SERVER_BT_ADDRESS {{ 0xFC, 0xDC, 0x62, 0x7E, 0xE0, 0xE8 }}
+
 // This also can work:
 //#define SERVER_BT_ADDRESS (bd_addr) { .addr = { 0x85, 0x61, 0x17, 0x57, 0x0b, 0x00 } }
 

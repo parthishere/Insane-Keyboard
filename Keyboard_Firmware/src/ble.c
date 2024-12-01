@@ -51,6 +51,37 @@ uint8_t __HID_REPORT_CHARACTERISTIC_UUID[2] = {0x4b, 0x2a};
 #define TWO 2
 #define ONE 1
 
+
+ /*
+ Report format
+This report must be requested by the software using interrupt transfers once every interval milliseconds, and the interval is defined in the interrupt IN descriptor of the USB keyboard. The USB keyboard report may be up to 8 bytes in size, although not all these bytes are used and it's OK to implement a proper implementation using only the first three or four bytes (and this is how I do it.) Just for completion's sake, however, I will describe the full report mechanism of the keyboard. Notice that the report structure defined below applies to the boot protocol only.
+
+Offset	Size	Description
+0	Byte	Modifier keys status.
+1	Byte	Reserved field.
+2	Byte	Keypress #1.
+3	Byte	Keypress #2.
+4	Byte	Keypress #3.
+5	Byte	Keypress #4.
+6	Byte	Keypress #5.
+7	Byte	Keypress #6.
+
+
+Modifier keys status: This byte is a bitfield, where each bit corresponds to a specific modifier key. When a bit is set to 1, the corresponding modifier key is being pressed. Unlike PS/2 keyboards, USB keyboards don't have "scancodes" for modifier keys. The bit structure of this byte is:
+
+Bit	Bit Length	Description
+0	1	Left Ctrl.
+1	1	Left Shift.
+2	1	Left Alt.
+3	1	Left GUI (Windows/Super key.)
+4	1	Right Ctrl.
+5	1	Right Shift.
+6	1	Right Alt.
+7	1	Right GUI (Windows/Super key.)
+
+Keypress fields: One keyboard report can indicate up to 6 keypresses. All these values are unsigned 8-bit values (unlike PS/2 scancodes, which are mostly 7-bit) which indicate the key being pressed. A reference on the USB scancode to ASCII character conversion table is in the bottom of the article.
+ 
+ */
 static uint8_t input_report_data[] = {0, 0, 0, 0, 0, 0, 0, 0};
 static uint8_t actual_key = KEY_A;
 
@@ -296,7 +327,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
         }
 
 #if (DEVICE_IS_BLE_MASTER == 1)
-        // scan();
+        scan();
 #endif
         sc = sl_bt_legacy_advertiser_generate_data(ble_data.advertisingSetHandle,
                                                  sl_bt_advertiser_general_discoverable);
@@ -553,7 +584,14 @@ void handle_ble_event(sl_bt_msg_t *evt)
         bd_addr device_addr = SERVER_BT_ADDRESS;
         if (evt->data.evt_scanner_scan_report.packet_type == 0)
         {
-
+           PRINT_LOG("memcpy %d ", memcmp(evt->data.evt_scanner_scan_report.address.addr, device_addr.addr, sizeof(device_addr.addr)));
+            PRINT_LOG("Found Address :%02X %02X %02X %02X %02X %02X\n\r",
+                  evt->data.evt_scanner_scan_report.address.addr[0],
+                  evt->data.evt_scanner_scan_report.address.addr[1],
+                  evt->data.evt_scanner_scan_report.address.addr[2],
+                  evt->data.evt_scanner_scan_report.address.addr[3],
+                  evt->data.evt_scanner_scan_report.address.addr[4],
+                  evt->data.evt_scanner_scan_report.address.addr[5]);
             if (memcmp(evt->data.evt_scanner_scan_report.address.addr, device_addr.addr, sizeof(device_addr.addr)) == 0)
             {
 
@@ -753,39 +791,7 @@ uint8_t get_dev_index(uint8_t handle)
     return 0xFF;
 }
 
-void app_log_stats()
-{
-    app_log("\r\n--------------- LIST of CONNECTED DEVICES ----------------\r\n");
-    app_log("==========================================================\r\n");
-    static bool print_header = true;
 
-    // print header
-    if (print_header == true)
-    {
-        app_log("ADDRESS            ROLE          HANDLE        STATE\r\n");
-    }
-    app_log("==========================================================\r\n");
-
-    int i;
-    for (i = 0; i < ble_data.number_of_connection; i++)
-    {
-        // Log the Bluetooth address of the device
-        //        PRINT_LOG("[INFO] Bluetooth %s address: %02X:%02X:%02X:%02X:%02X:%02X\n\r",
-        //                  ble_data.connections[i].device_type ? "static random" : "public device",
-        //                  ble_data.connections[i].device_address.addr[0],
-        //                  ble_data.connections[i].device_address.addr[ONE],
-        //                  ble_data.connections[i].device_address.addr[TWO],
-        //                  ble_data.connections[i].device_address.addr[THREE],
-        //                  ble_data.connections[i].device_address.addr[FOUR],
-        //                  ble_dataconnections[i].device_address.addr[FIVE]);
-        //        print_bd_addr(ble_data.);
-        app_log("  %-14s%-14d%-10s\r\n",
-                (ble_data.connections[i].conn_role == 0) ? "PERIPH" : "CENTRAL",
-                ble_data.connections[i].connectionHandle,
-                get_conn_state(ble_data.connections[i].conn_state));
-    }
-    app_log("\r\n");
-}
 
 void start_scanning()
 {

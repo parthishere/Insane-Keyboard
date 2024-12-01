@@ -278,11 +278,12 @@ int io_expander_writeByte(uint8_t which_io_expander, uint8_t what_data)
   return writeData[0];
 }
 
+static uint8_t scanned_keys[MAX_COLS];
 
 uint8_t * scan_io_expander(void)
 {
   __init_IO_expander(IO_EXPANDER_ROW, DEFAULT_PORT_DIR_ROW);
-  uint8_t scanned_keys[MAX_COLS];
+  memset(scanned_keys, 0x00, sizeof(scanned_keys));
   for (int col = 0; col < MAX_COLS; col++)
   {
     // __init_IO_expander(IO_EXPANDER_COL, 0b00000000);
@@ -291,8 +292,9 @@ uint8_t * scan_io_expander(void)
     uint8_t data = io_expander_readByte(IO_EXPANDER_ROW) & DEFAULT_PORT_DIR_ROW;
     
     if(data > 0){
-      PRINT_LOG("DATA : 0x%02X, col %d \n\r", data, col);
       scanned_keys[col] = data;
+      // PRINT_LOG("DATA : 0x%02X, col %d %d\n\r", data, col, scanned_keys[col]);
+
     }  
     
   }

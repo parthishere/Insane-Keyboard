@@ -133,6 +133,9 @@ void GPIO_ODD_IRQHandler(void)
     {
         PRINT_LOG("[INFO] IO Expander Interrupt odd\n\r");
         uint8_t *data = scan_io_expander();
+
+        uint8_t * scanned_data = modifypressedkeys_left(data);
+        printf("data: %d %d %d %d %d %d %d %d \n\r", scanned_data[0], scanned_data[1], scanned_data[2], scanned_data[3], scanned_data[4], scanned_data[5], scanned_data[6], scanned_data[7]);
     }
 
     // GPIO_PinInGet
