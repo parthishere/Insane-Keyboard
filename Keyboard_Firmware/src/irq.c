@@ -85,7 +85,7 @@ void GPIO_ODD_IRQHandler(void)
 {
     uint32_t flags = GPIO_IntGetEnabled();
     GPIO_IntClear(flags);
-    PRINT_LOG("Something\n\r");
+    PRINT_LOG("ODD\n");
     // if (flags & (1 << ROTARY_ENCODER_B_pin))
     if (flags & (1 << ROTARY_ENCODER_B_pin))
     {
@@ -131,11 +131,9 @@ void GPIO_ODD_IRQHandler(void)
 
     if (flags & (1 << EXPANDER_INT_COL_pin))
     {
-        PRINT_LOG("[INFO] IO Expander Interrupt odd\n\r");
-        uint8_t *data = scan_io_expander();
-
-        uint8_t * scanned_data = modifypressedkeys_left(data);
-        printf("data: %d %d %d %d %d %d %d %d \n\r", scanned_data[0], scanned_data[1], scanned_data[2], scanned_data[3], scanned_data[4], scanned_data[5], scanned_data[6], scanned_data[7]);
+        
+        PRINT_LOG("IRQ ODD scan\n");
+        schedulerSetEventIOEXPANDER_ROW();
     }
 
     // GPIO_PinInGet

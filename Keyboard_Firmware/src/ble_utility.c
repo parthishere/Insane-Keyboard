@@ -1,5 +1,9 @@
 #include "src/ble_utility.h"
 
+// Include logging specifically for this .c file
+#define INCLUDE_LOG_DEBUG 1
+#include "src/log.h"
+
 #define SERVER_PASSIVE_SCANNING 0
 
 // Value * 0.625 = 80 * 0.625 => 50ms
@@ -74,3 +78,5 @@ void external_signal_evtIOEXPANDER()
 void external_signal_evtENCODER_ROTATE()
 {
 }
+
+

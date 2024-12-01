@@ -217,8 +217,8 @@ void handle_ble_event(sl_bt_msg_t *evt)
                   ble_data.myAddress.addr[FIVE]);
 
 #if (DEVICE_IS_BLE_MASTER == 1)
-        scan_init();
-        scan();
+        // scan_init();
+        // scan();
 #endif
         init_advertizement(&ble_data);
         advertizement(&ble_data);
@@ -280,8 +280,8 @@ void handle_ble_event(sl_bt_msg_t *evt)
             /* Increment ble_data.number_of_connection. */
             ble_data.number_of_connection++;
 
-            sc = sl_bt_sm_increase_security(ble_data.connectionHandle);
-            app_assert_status(sc);
+            // sc = sl_bt_sm_increase_security(ble_data.connectionHandle);
+            // app_assert_status(sc);
         }
 
         // Update device connection state. common for both master and slave roles
@@ -297,6 +297,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
             sc = sl_bt_scanner_stop();
             app_assert_status(sc);
         }
+        
 
       
 
@@ -329,10 +330,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
 #if (DEVICE_IS_BLE_MASTER == 1)
         scan();
 #endif
-        sc = sl_bt_legacy_advertiser_generate_data(ble_data.advertisingSetHandle,
-                                                 sl_bt_advertiser_general_discoverable);
-        app_assert_status(sc);
-
+        init_advertizement(&ble_data);
         advertizement(&ble_data);
 
         break;
@@ -370,22 +368,28 @@ void handle_ble_event(sl_bt_msg_t *evt)
         break;
 
     case sl_bt_evt_system_external_signal_id:
-        if (((evt->data.evt_system_external_signal.extsignals - evtENCODER_SW) == 0x00) && (ble_data.ok_to_send_report_notification))
+        if (((evt->data.evt_system_external_signal.extsignals - evtIOEXPANDER_ROW) == 0x00) && (ble_data.ok_to_send_report_notification))
         {
+
+            PRINT_LOG("SCAN\n");
+            uint8_t *data = scan_io_expander();
+            uint8_t *report_data = modifypressedkeys_left(data);
+
+
             // start scanning, send signal to main
             memset(input_report_data, 0, sizeof(input_report_data));
+            memcpy(input_report_data, report_data, 8);
 
-            input_report_data[MODIFIER_INDEX] = 0;
-            input_report_data[DATA0_INDEX] = actual_key;
+            printf("Data :%d %d %d %d %d %d %d %d\n\r", input_report_data[0], input_report_data[1], input_report_data[2], input_report_data[3], input_report_data[4], input_report_data[5], input_report_data[6], input_report_data[7]);
 
             sc = sl_bt_gatt_server_notify_all(gattdb_report,
                                               sizeof(input_report_data),
                                               input_report_data);
             app_assert_status(sc);
             PRINT_LOG("[INFO] Key report was sent\r\n");
-        }
+        }  
 
-        if (((evt->data.evt_system_external_signal.extsignals - evtIOEXPANDER_COL) == 0x00) || ((evt->data.evt_system_external_signal.extsignals - evtENCODER_ROTATE) == 0x00))
+        if (((evt->data.evt_system_external_signal.extsignals - evtENCODER_SW) == 0x00) || ((evt->data.evt_system_external_signal.extsignals - evtENCODER_ROTATE) == 0x00))
         {
             //            LOG_INFO("Temp sensor\r\n");
         }
