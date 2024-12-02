@@ -489,7 +489,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
             sc = sl_bt_gatt_set_characteristic_notification(
                 evt->data.evt_gatt_procedure_completed.connection,
                 ble_data.reportMapCharacteristicHandle,
-                sl_bt_gatt_indication);
+                sl_bt_gatt_notification);
             app_assert_status(sc);
             ble_data.enabling_notification = true;
         }

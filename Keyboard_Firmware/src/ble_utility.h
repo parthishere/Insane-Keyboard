@@ -8,7 +8,7 @@
 #include "app_assert.h"
 
 #if (DEVICE_IS_BLE_MASTER == 1)
-#define MAX_CONNECTIONS 3
+#define MAX_CONNECTIONS 2
 #else
 #define MAX_CONNECTIONS 1
 #endif
@@ -18,8 +18,19 @@
 // set this #define to the bd_addr of the Gecko that will be your Server.
 // These values are from one of my Geckos, to serve as an example for you:
 //                   bd_addr  [0]   [1]   [2]   [3]   [4]   [5] <- array indices
+#if BLE_PAIR == 1
 #define MASTER_BT_ADDRESS {{ 0xCB, 0xCD, 0x62, 0x7E, 0xE0, 0xE8 }}
 #define SERVER_BT_ADDRESS {{ 0xFC, 0xDC, 0x62, 0x7E, 0xE0, 0xE8 }}
+#elif BLE_PAIR == 2
+#define MASTER_BT_ADDRESS {{ 0xCB, 0xCD, 0x62, 0x7E, 0xE0, 0xE8 }}
+#define SERVER_BT_ADDRESS {{ 0xFC, 0xDC, 0x62, 0x7E, 0xE0, 0xE8 }}
+#elif BLE_PAIR == 3
+#define MASTER_BT_ADDRESS {{ 0xCB, 0xCD, 0x62, 0x7E, 0xE0, 0xE8 }}
+#define SERVER_BT_ADDRESS {{ 0xFC, 0xDC, 0x62, 0x7E, 0xE0, 0xE8 }}
+#else
+#define MASTER_BT_ADDRESS {{ 0xCB, 0xCD, 0x62, 0x7E, 0xE0, 0xE8 }}
+#define SERVER_BT_ADDRESS {{ 0xFC, 0xDC, 0x62, 0x7E, 0xE0, 0xE8 }}
+#endif
 
 #define __HID_SERVICE_UUID {0x12, 0x18};
 #define __HID_REPORT_CHARACTERISTIC_UUID {0x4b, 0x2a};
