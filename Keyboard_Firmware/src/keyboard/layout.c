@@ -9,6 +9,8 @@
 #define INCLUDE_LOG_DEBUG 1
 #include "src/log.h"
 
+static uint8_t current_layer = 0;
+
 typedef enum {
     TOP_ROW,
     UPPER_LETTER_ROW,
@@ -163,3 +165,9 @@ uint8_t* modifypressedkeys_left(uint8_t *keys)
 
 //     return return_array; 
 // }
+
+
+
+uint8_t get_current_layer(){
+    return current_layer;
+} 

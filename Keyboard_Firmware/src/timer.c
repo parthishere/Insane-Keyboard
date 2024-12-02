@@ -33,16 +33,12 @@
 
 #define ULFRCO_CLOCK (1000) // Ultra Low Frequency RC Oscillator clock rate in Hz.
 
-// Define constants for timer durations.
-#define LETIMER_ON_TIME_MS (175) // On time in milliseconds for the Low Energy Timer.
-#define LETIMER_PERIOD_MS (3000) // Period in milliseconds for the Low Energy Timer // 3s
+
 
 // Calculate maximum counter values for LETIMER with LFXO and ULFRCO settings.
 #define LETIMER_LFXO_MAX_VALUE ((LETIMER_PERIOD_MS * (LFXO_CLOCK / LFXO_PRESCALER)) / 1000)
-#define LFXO_COMP1_VALUE (LETIMER_LFXO_MAX_VALUE - ((LETIMER_ON_TIME_MS * LFXO_CLOCK) / (LFXO_PRESCALER * 1000)))
 
 #define LETIMER_ULFRCO_MAX_VALUE ((LETIMER_PERIOD_MS * ULFRCO_CLOCK) / 1000)
-#define ULFRCO_COMP1_VALUE (LETIMER_ULFRCO_MAX_VALUE - ((LETIMER_ON_TIME_MS * ULFRCO_CLOCK) / 1000))
 
 // Maximum and minimum delays for LFXO and ULFRCO.
 #define MAX_DELAY_FOR_LFXO 3000000   // Maximum delay for LFXO in microseconds.

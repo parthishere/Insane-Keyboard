@@ -32,8 +32,6 @@
 #include "src/ble_utility.h"
 
 
-
-
 /**
  * @brief Handles incoming BLE events and dispatches actions based on the event type.
  *
@@ -54,9 +52,5 @@ void handle_ble_event(sl_bt_msg_t *evt); // Handles incoming BLE events
  * @return ble_data_struct_t* Pointer to the global BLE data structure.
  */
 ble_data_struct_t *getBleDataPtr(void); // Returns a pointer to the BLE data structure
-const char *get_conn_state(uint8_t state);
-uint8_t get_dev_index(uint8_t handle);
-void app_log_stats();
-bool hid_service_found(struct sl_bt_evt_scanner_legacy_advertisement_report_s *pResp);
-bool found_device(bd_addr bd_address);
+
 #endif // End of include guard __BLE_H__

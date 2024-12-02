@@ -42,7 +42,7 @@
  * It uses critical sections to ensure that the operation is atomic and safe from concurrent access issues.
  * Sends Signal to Bluetooth stack call back function with external signal
  */
-void schedulerSetEventUF()
+inline void schedulerSetEventUF()
 {
   CORE_DECLARE_IRQ_STATE;
   // enter critical section
@@ -63,7 +63,7 @@ void schedulerSetEventUF()
  * Marks the LETIMER0 compare match 1 event as pending, using critical sections to protect the operation.
  * Sends Signal to Bluetooth stack call back function with external signal
  */
-void schedularSetEventCOMP1()
+inline void schedularSetEventCOMP1()
 {
   CORE_DECLARE_IRQ_STATE;
   // enter critical section
@@ -78,7 +78,7 @@ void schedularSetEventCOMP1()
 
 
 
-void schedulerSetEventIOEXPANDER_COL(){
+inline void schedulerSetEventIOEXPANDER_COL(){
   CORE_DECLARE_IRQ_STATE;
   // enter critical section
   CORE_ENTER_CRITICAL(); // Enter a critical section to prevent interruption during flag handling.
@@ -90,7 +90,7 @@ void schedulerSetEventIOEXPANDER_COL(){
   CORE_EXIT_CRITICAL(); // Exit the critical section, allowing other interrupts to be processed.
 }
 
-void schedulerSetEventIOEXPANDER_ROW(){
+inline void schedulerSetEventIOEXPANDER_ROW(){
   CORE_DECLARE_IRQ_STATE;
   // enter critical section
   CORE_ENTER_CRITICAL(); // Enter a critical section to prevent interruption during flag handling.
@@ -102,7 +102,7 @@ void schedulerSetEventIOEXPANDER_ROW(){
   CORE_EXIT_CRITICAL(); // Exit the critical section, allowing other interrupts to be processed.
 }
 
-void schedulerSetEventENCODER_SW(){
+inline void schedulerSetEventENCODER_SW(){
   CORE_DECLARE_IRQ_STATE;
   // enter critical section
   CORE_ENTER_CRITICAL(); // Enter a critical section to prevent interruption during flag handling.
@@ -114,7 +114,7 @@ void schedulerSetEventENCODER_SW(){
   CORE_EXIT_CRITICAL(); // Exit the critical section, allowing other interrupts to be processed.
 }
 
-void schedulerSetEventENCODER_ROTATE(){
+inline void schedulerSetEventENCODER_ROTATE(){
   CORE_DECLARE_IRQ_STATE;
   // enter critical section
   CORE_ENTER_CRITICAL(); // Enter a critical section to prevent interruption during flag handling.

@@ -17,7 +17,7 @@ enum layers {
 #define MATRIX_COLS 8
 #define MAX_KEYPRESS_HID_REPORT 6
 
-static uint8_t current_layer = 0;
+
 
 #define LEFT 0
 #define RIGHT 1

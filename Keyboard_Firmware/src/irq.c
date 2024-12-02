@@ -28,7 +28,7 @@
 #include "src/log.h"
 
 // Interval for log timing
-#define UF_TIME_MS 3000
+#define UF_TIME_MS LETIMER_PERIOD_MS
 
 volatile uint32_t underflow_count = 0;
 
@@ -85,7 +85,7 @@ void GPIO_ODD_IRQHandler(void)
 {
     uint32_t flags = GPIO_IntGetEnabled();
     GPIO_IntClear(flags);
-    PRINT_LOG("ODD\n");
+    // PRINT_LOG("ODD\n");
     // if (flags & (1 << ROTARY_ENCODER_B_pin))
     if (flags & (1 << ROTARY_ENCODER_B_pin))
     {
@@ -132,7 +132,7 @@ void GPIO_ODD_IRQHandler(void)
     if (flags & (1 << EXPANDER_INT_COL_pin))
     {
         
-        PRINT_LOG("IRQ ODD scan\n");
+        // PRINT_LOG("IRQ ODD scan\n");
         schedulerSetEventIOEXPANDER_ROW();
     }
 
