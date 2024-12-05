@@ -24,8 +24,7 @@
 #define INCLUDE_LOG_DEBUG 1
 #include "src/log.h"
 
-
-static bd_addr new_device_id = { { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 } };
+static bd_addr new_device_id = {{0x00, 0x00, 0x00, 0x00, 0x00, 0x00}};
 
 /*
 Report format
@@ -190,10 +189,10 @@ void handle_ble_event(sl_bt_msg_t *evt)
         // Configure advertising timing parameters
         sc = sl_bt_advertiser_set_timing(
             ble_data.advertisingSetHandle, // The advertising set handle
-            ADV_INTERVAL,                   // Minimum advertising interval (in units of 0.625 ms, i.e 400*0.625 = 250)
-            ADV_INTERVAL,                   // Maximum advertising interval (in units of 0.625 ms, i.e 400*0.625 = 250)
-            0,                              // Advertising duration (0 means continue until stopped)
-            0);                             // Maximum number of advertising events (0 means no limit)
+            ADV_INTERVAL,                  // Minimum advertising interval (in units of 0.625 ms, i.e 400*0.625 = 250)
+            ADV_INTERVAL,                  // Maximum advertising interval (in units of 0.625 ms, i.e 400*0.625 = 250)
+            0,                             // Advertising duration (0 means continue until stopped)
+            0);                            // Maximum number of advertising events (0 means no limit)
         app_assert_status(sc);
 
         // Bondings
@@ -205,7 +204,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
         app_assert_status(sc);
 
         sc = sl_bt_legacy_advertiser_start(
-            ble_data.advertisingSetHandle,          // The advertising set handle
+            ble_data.advertisingSetHandle,           // The advertising set handle
             sl_bt_advertiser_connectable_scannable); // Connectable and scannable advertising
         app_assert_status(sc);
 
@@ -244,11 +243,12 @@ void handle_ble_event(sl_bt_msg_t *evt)
             /* connection process completed. */
             ble_data.connecting = false;
 
-            if(!ble_data.bonded){
-                    sc = sl_bt_sm_increase_security(ble_data.connectionHandle);
-            app_assert_status(sc);
+            if (!ble_data.bonded)
+            {
+                sc = sl_bt_sm_increase_security(ble_data.connectionHandle);
+                app_assert_status(sc);
             }
-            
+
             // we dont want to increament the count as we already did in connection open call
         }
 
@@ -273,7 +273,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
             /* Increment ble_data.number_of_connection. */
             ble_data.number_of_connection++;
 
-            // 
+            //
         }
 
         // Update device connection state. common for both master and slave roles
@@ -333,26 +333,24 @@ void handle_ble_event(sl_bt_msg_t *evt)
                 MAX_CONNECTIONS - ble_data.number_of_connection);
 
         /* If we have one less available connection than the maximum allowed...*/
-        if (ble_data.number_of_connection == MAX_CONNECTIONS - 1) {
-        
+        if (ble_data.number_of_connection == MAX_CONNECTIONS - 1)
+        {
+
 #if (DEVICE_IS_BLE_MASTER == 1)
-        sc = sl_bt_scanner_start(sl_bt_gap_1m_phy,
-                                 sl_bt_scanner_discover_generic);
-        app_assert_status_f(sc, "Failed to start discovery #1\n");
-        app_log("Scanning restarted.\r\n");
-#else 
-        // sc = sl_bt_gap_enable_whitelisting(1);
-        // sl_bt_sm_add_to_whitelist(server_address, uint8_t address_type)
+            sc = sl_bt_scanner_start(sl_bt_gap_1m_phy,
+                                     sl_bt_scanner_discover_generic);
+            app_assert_status_f(sc, "Failed to start discovery #1\n");
+            app_log("Scanning restarted.\r\n");
+#else
+            // sc = sl_bt_gap_enable_whitelisting(1);
+            // sl_bt_sm_add_to_whitelist(server_address, uint8_t address_type)
 
 #endif
-        sc = sl_bt_legacy_advertiser_start(
-          ble_data.advertisingSetHandle,
-          sl_bt_legacy_advertiser_connectable);
-        app_assert_status(sc);
-        app_log("Advertising restarted in CONNECTABLE mode.\r\n");
-
-
-
+            sc = sl_bt_legacy_advertiser_start(
+                ble_data.advertisingSetHandle,
+                sl_bt_legacy_advertiser_connectable);
+            app_assert_status(sc);
+            app_log("Advertising restarted in CONNECTABLE mode.\r\n");
         }
 
         break;
@@ -373,25 +371,25 @@ void handle_ble_event(sl_bt_msg_t *evt)
         dev_index = get_dev_index(evt->data.evt_connection_parameters.connection, ble_data);
         ble_data.connections[dev_index].conn_state = CS_CONNECTED;
         if (memcmp(&new_device_id, &ble_data.connections[dev_index].device_address,
-                 sizeof(bd_addr)) != 0) {
-        memcpy(&new_device_id, &ble_data.connections[dev_index].device_address,
-               sizeof(bd_addr));
-        app_log("\r\nNEW CONNECTION ESTABLISHED \r\n");
-        app_log("Device ID .................: ");
-        print_bd_addr(ble_data.connections[ble_data.number_of_connection - 1].device_address);
-        app_log("\r\n");
-        app_log("Role ......................: %s\r\n",
-                (ble_data.connections[dev_index].conn_role
-                 == CR_PERIPHERAL) ? "peripharal" : "central");
-        app_log("Handle ....................: %d\r\n",
-                ble_data.connections[dev_index].connectionHandle);
-        app_log("Number of connected devices: %d\r\n", ble_data.number_of_connection);
-        app_log("Available connections .....: %d\r\n",
-                MAX_CONNECTIONS - ble_data.number_of_connection);
+                   sizeof(bd_addr)) != 0)
+        {
+            memcpy(&new_device_id, &ble_data.connections[dev_index].device_address,
+                   sizeof(bd_addr));
+            app_log("\r\nNEW CONNECTION ESTABLISHED \r\n");
+            app_log("Device ID .................: ");
+            print_bd_addr(ble_data.connections[ble_data.number_of_connection - 1].device_address);
+            app_log("\r\n");
+            app_log("Role ......................: %s\r\n",
+                    (ble_data.connections[dev_index].conn_role == CR_PERIPHERAL) ? "peripharal" : "central");
+            app_log("Handle ....................: %d\r\n",
+                    ble_data.connections[dev_index].connectionHandle);
+            app_log("Number of connected devices: %d\r\n", ble_data.number_of_connection);
+            app_log("Available connections .....: %d\r\n",
+                    MAX_CONNECTIONS - ble_data.number_of_connection);
 
-        /* Print connection summary*/
-        sl_app_log_stats(&ble_data);
-      }
+            /* Print connection summary*/
+            sl_app_log_stats(&ble_data);
+        }
 
 #if (PRINT_LOG_STATEMENTS == 1)
         // Extract the updated connection parameters from the event
@@ -409,30 +407,10 @@ void handle_ble_event(sl_bt_msg_t *evt)
         PRINT_LOG("Latency: %u (number of connection events)", latency); // Log the connection latency
         PRINT_LOG("Timeout: %f ms\n", timeout_ms);                       // Log the supervision timeout in milliseconds
 #endif
-        
 
         break;
 
     case sl_bt_evt_system_external_signal_id:
-
-//        if (evt->data.evt_system_external_signal.extsignals)
-//        {
-//            /* Connection fail safe timer triggered, cancel connection procedure and
-//             * restart scanning/discovery */
-//            app_log("Connection timeout!\r\n");
-//            app_log("Cancel connection with device :");
-//
-//            uint8_t dev_index;
-//            dev_index = get_dev_index(ble_data.connectionHandle, ble_data);
-//            print_bd_addr(ble_data.connections[dev_index].device_address);
-//            app_log("\r\n");
-//            app_log("Handle .......: #%d\r\n", ble_data.connectionHandle);
-//
-//            // CANCEL CONNECTION
-//            sc = sl_bt_connection_close(ble_data.connectionHandle);
-//            app_assert_status(sc);
-//            ble_data.connecting = false;
-//        }
 
         if (((evt->data.evt_system_external_signal.extsignals - evtIOEXPANDER_ROW) == 0x00) && (ble_data.ok_to_send_report_notification))
         {
@@ -444,10 +422,10 @@ void handle_ble_event(sl_bt_msg_t *evt)
             memcpy(input_report_data, report_data, 8);
 
             sc = sl_bt_gatt_server_notify_all(gattdb_report,
-                                              sizeof(input_report_data),
-                                              input_report_data);
+                                          sizeof(input_report_data),
+                                          input_report_data);
             app_assert_status(sc);
-            // PRINT_LOG("[INFO] Key report was sent\r\n");
+            PRINT_LOG("[INFO] Key report was sent\r\n");
         }
 
         if (((evt->data.evt_system_external_signal.extsignals - evtENCODER_SW) == 0x00) || ((evt->data.evt_system_external_signal.extsignals - evtENCODER_ROTATE) == 0x00))
@@ -471,7 +449,6 @@ void handle_ble_event(sl_bt_msg_t *evt)
     // Indicates a user request to display that the new bonding request is received and for the user to confirm the request
     case sl_bt_evt_sm_confirm_bonding_id:
 
-         
         // Print log message indicating a bonding confirmation request is received.
         PRINT_LOG("[INFO] Bonding confirm\r\n");
         // Confirm bonding without user interaction, automatically accepting the bonding request.
@@ -524,9 +501,9 @@ void handle_ble_event(sl_bt_msg_t *evt)
         else if (ble_data.discovering_characteristic)
         {
             PRINT_LOG("Got characteristic with char handle %X , uuid %x %x\n\r",
-                  evt->data.evt_gatt_characteristic.characteristic,
-                  evt->data.evt_gatt_characteristic.uuid.data[0],
-                  evt->data.evt_gatt_characteristic.uuid.data[1]);
+                      evt->data.evt_gatt_characteristic.characteristic,
+                      evt->data.evt_gatt_characteristic.uuid.data[0],
+                      evt->data.evt_gatt_characteristic.uuid.data[1]);
 
             PRINT_LOG("[INFO] Found REPORT Characteristics that we want, enabling Indication \n\r");
             ble_data.discovering_characteristic = false;
@@ -752,14 +729,13 @@ void handle_ble_event(sl_bt_msg_t *evt)
      */
     // GATT server characteristic status event: Handles changes in characteristics, enabling notifications
     case sl_bt_evt_gatt_characteristic_id:
-    {  
+    {
         // if (memcmp(evt->data.evt_gatt_service.uuid.data, report_char, sizeof(report_char)) == 0)
         // {
-            PRINT_LOG("Found the Report Char, saving handle\n\r");
-            // save service handle
-            ble_data.reportMapCharacteristicHandle = evt->data.evt_gatt_characteristic.characteristic;
+        PRINT_LOG("Found the Report Char, saving handle\n\r");
+        // save service handle
+        ble_data.reportMapCharacteristicHandle = evt->data.evt_gatt_characteristic.characteristic;
         // }
-        
     }
     break;
 
@@ -779,21 +755,14 @@ void handle_ble_event(sl_bt_msg_t *evt)
         PRINT_LOG("heahahah 1\n");
         if (evt->data.evt_gatt_characteristic_value.att_opcode == sl_bt_gatt_handle_value_notification)
         {
-        PRINT_LOG("heahahah 2\n");
+            PRINT_LOG("heahahah 2\n");
             if (evt->data.evt_gatt_characteristic_value.characteristic == ble_data.reportMapCharacteristicHandle)
             {
-        PRINT_LOG("heahahah 3\n");  
-                switch (evt->data.evt_gatt_characteristic_value.connection - 1)
-                {
-                case 0:
-                    break;
-                case 1:
-                    break;
-                }
+                PRINT_LOG("heahahah 3\n");
+
                 // extract value sent by server from evt_gatt_characteristic_value data structure
                 uint8_t *char_value = &(evt->data.evt_gatt_characteristic_value.value.data[0]);
                 PRINT_LOG("Temperature Data from Server: %s\n\r", char_value);
-                
             }
         }
 
