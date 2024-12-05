@@ -107,30 +107,12 @@ void print_bd_addr(bd_addr bd_address)
   }
 }
 
-void sl_app_log_stats(ble_data_struct_t * ble_data)
-{
-  app_log("\r\n--------------- LIST of CONNECTED DEVICES ----------------\r\n");
-  app_log("==========================================================\r\n");
-  static bool print_header = true;
 
-  // print header
-  if (print_header == true) {
-    app_log("ADDRESS            ROLE          HANDLE        STATE\r\n");
-  }
-  app_log("==========================================================\r\n");
-
-  printf("ble_Data.number_of_connection %d\n", ble_data->number_of_connection);
-  for (int i = 0; i < ble_data->number_of_connection; i++) {
-    print_bd_addr(ble_data->connections[i].device_address);
-    printf("\n");
-  }
-  app_log("\r\n");
-}
 
 
 void get_stack_version(sl_bt_msg_t *evt)
 {
-  app_log("Stack version: v%d.%d.%d-b%d\r\n",
+  PRINT_LOG("Stack version: v%d.%d.%d-b%d\r\n",
           evt->data.evt_system_boot.major,
           evt->data.evt_system_boot.minor,
           evt->data.evt_system_boot.patch,
@@ -165,7 +147,7 @@ void get_system_id(void)
                                                system_id);
   app_assert_status(sc);
 
-  app_log("Local BT %s address: %02X:%02X:%02X:%02X:%02X:%02X\r\n",
+  PRINT_LOG("Local BT %s address: %02X:%02X:%02X:%02X:%02X:%02X\r\n",
           address_type ? "static random" : "public device",
           address.addr[5],
           address.addr[4],

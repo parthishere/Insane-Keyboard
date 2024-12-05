@@ -138,6 +138,29 @@ ble_data_struct_t *getBleDataPtr()
     return (&ble_data);
 } // getBleDataPtr()
 
+
+void sl_app_log_stats()
+{
+  app_log("\r\n--------------- LIST of CONNECTED DEVICES ----------------\r\n");
+  app_log("==========================================================\r\n");
+  static bool print_header = true;
+
+  // print header
+  if (print_header == true) {
+    app_log("ADDRESS            ROLE          HANDLE        STATE\r\n");
+  }
+  app_log("==========================================================\r\n");
+
+  for (int i = 0; i < (ble_data.number_of_connection); i++) {
+    print_bd_addr(ble_data.connections[i].device_address);
+    app_log("  %-14s%-14d%-10s\r\n",
+            (ble_data.connections[i].conn_role == 0) ? "PERIPHARAL" : "CENTRAL",
+            ble_data.connections[i].connectionHandle,
+            get_conn_state(ble_data.connections[i].conn_state));
+  }
+  app_log("\r\n");
+}
+
 /**
  * @brief Handles incoming BLE events and dispatches actions based on the event type.
  *
@@ -303,6 +326,8 @@ void handle_ble_event(sl_bt_msg_t *evt)
             // sc = sl_bt_legacy_advertiser_start(ble_data.advertisingSetHandle,
             //                                    sl_bt_legacy_advertiser_non_connectable);
             // app_assert_status(sc);
+            // Safety check - force connection count to MAX
+            ble_data.number_of_connection = MAX_CONNECTIONS;
         }
         else
         {
@@ -323,6 +348,10 @@ void handle_ble_event(sl_bt_msg_t *evt)
 
         ble_data.closedHandle = evt->data.evt_connection_closed.connection;
         dev_index = get_dev_index(ble_data.closedHandle, ble_data);
+        if (dev_index >= MAX_CONNECTIONS) {
+            PRINT_LOG("[ERROR] Invalid device index\n\r");
+            // ble_data.number_of_connection = 0;  // Reset to safe state
+        }
         app_log("Device ");
         print_bd_addr(ble_data.connections[dev_index].device_address);
         app_log(" left the connection::0x%04X\r\n",
@@ -340,7 +369,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
         }
 
         // print list of remaining connections
-         sl_app_log_stats(&ble_data);
+         sl_app_log_stats();
 
         app_log("Number of active connections ...: %d\r\n", ble_data.number_of_connection);
         app_log("Available connections ..........: %d\r\n",
@@ -402,7 +431,9 @@ void handle_ble_event(sl_bt_msg_t *evt)
                     MAX_CONNECTIONS - ble_data.number_of_connection);
 
             /* Print connection summary*/
-            sl_app_log_stats(&ble_data);
+            // if(ble_data.number_of_connection > MAX_CONNECTIONS) ble_data.number_of_connection = MAX_CONNECTIONS;
+            PRINT_LOG("ble_data.connection %d \n\r", ble_data.number_of_connection);
+            sl_app_log_stats();
         }
 
 #if (PRINT_LOG_STATEMENTS == 1)
@@ -435,14 +466,14 @@ void handle_ble_event(sl_bt_msg_t *evt)
             memset(input_report_data, 0, sizeof(input_report_data));
             memcpy(input_report_data, report_data, 8);
 
-            PRINT_LOG("[INFO] Key report %d %d %d %d %d %d %d %d\r\n", input_report_data[0],
-                        input_report_data[1],
-                        input_report_data[2],
-                        input_report_data[3],
-                        input_report_data[4],
-                        input_report_data[5],
-                        input_report_data[6],
-                        input_report_data[7]);
+            // PRINT_LOG("[INFO] Key report %d %d %d %d %d %d %d %d\r\n", input_report_data[0],
+            //             input_report_data[1],
+            //             input_report_data[2],
+            //             input_report_data[3],
+            //             input_report_data[4],
+            //             input_report_data[5],
+            //             input_report_data[6],
+            //             input_report_data[7]);
 
             sc = sl_bt_gatt_server_notify_all(gattdb_report,
                                               sizeof(input_report_data),
@@ -772,13 +803,13 @@ void handle_ble_event(sl_bt_msg_t *evt)
     // This event is generated when a characteristic value was received , an indication, a notification
     case sl_bt_evt_gatt_characteristic_value_id:
         // print what we got
-        PRINT_LOG("heahahah 1\n");
+        // PRINT_LOG("heahahah 1\n");
         if (evt->data.evt_gatt_characteristic_value.att_opcode == sl_bt_gatt_handle_value_notification)
         {
-            PRINT_LOG("heahahah 2\n");
+            // PRINT_LOG("heahahah 2\n");
             if (evt->data.evt_gatt_characteristic_value.characteristic == ble_data.reportMapCharacteristicHandle)
             {
-                PRINT_LOG("heahahah 3\n");
+                // PRINT_LOG("heahahah 3\n");
 
                 // extract value sent by server from evt_gatt_characteristic_value data structure
                 uint8_t *char_value = evt->data.evt_gatt_characteristic_value.value.data;
@@ -790,14 +821,14 @@ void handle_ble_event(sl_bt_msg_t *evt)
                                                   input_report_data);
                 app_assert_status(sc);
 
-                PRINT_LOG("[INFO] Key report %d %d %d %d %d %d %d %d\r\n", input_report_data[0],
-                          input_report_data[1],
-                          input_report_data[2],
-                          input_report_data[3],
-                          input_report_data[4],
-                          input_report_data[5],
-                          input_report_data[6],
-                          input_report_data[7]);
+                // PRINT_LOG("[INFO] Key report %d %d %d %d %d %d %d %d\r\n", input_report_data[0],
+                //           input_report_data[1],
+                //           input_report_data[2],
+                //           input_report_data[3],
+                //           input_report_data[4],
+                //           input_report_data[5],
+                //           input_report_data[6],
+                //           input_report_data[7]);
                 // PRINT_LOG("[INFO] Key report was sent\r\n");
             }
         }

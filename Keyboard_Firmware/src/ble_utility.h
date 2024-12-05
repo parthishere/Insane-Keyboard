@@ -117,7 +117,6 @@ typedef struct
 
 void get_system_id(void);
 void get_stack_version(sl_bt_msg_t *evt);
-void sl_app_log_stats(ble_data_struct_t * ble_data);
 void print_bd_addr(bd_addr bd_address);
 uint8_t get_dev_index(uint8_t handle, ble_data_struct_t ble_data);
 bool hid_service_found(struct sl_bt_evt_scanner_legacy_advertisement_report_s *pResp);
