@@ -87,6 +87,7 @@ typedef struct
   conn_role_t conn_role;
   conn_state_t conn_state;
   uint8_t connectionHandle;
+  // bool bonded;
 } connections_t;
 
 // Structure definition for BLE data management.

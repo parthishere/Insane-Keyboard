@@ -166,6 +166,12 @@ void handle_ble_event(sl_bt_msg_t *evt)
         PRINT_LOG("Bluetooth stack booted ! \n\r");
         get_stack_version(evt);
         get_system_id();
+        if(DEVICE_IS_BLE_MASTER == 1){
+            PRINT_LOG(" MASTERRRR \n\r");
+        }else{
+
+            PRINT_LOG(" ....slave.... \n\r");
+        }
 
 #if (DEVICE_IS_BLE_MASTER == 1)
         sc = sl_bt_scanner_set_parameters(sl_bt_scanner_scan_mode_passive,
@@ -243,11 +249,12 @@ void handle_ble_event(sl_bt_msg_t *evt)
             /* connection process completed. */
             ble_data.connecting = false;
 
-            if (!ble_data.bonded)
-            {
-                sc = sl_bt_sm_increase_security(ble_data.connectionHandle);
-                app_assert_status(sc);
-            }
+
+            // if (!ble_data.bonded)
+            // {
+            sc = sl_bt_sm_increase_security(ble_data.connectionHandle);
+            app_assert_status(sc);
+            // }
 
             // we dont want to increament the count as we already did in connection open call
         }
@@ -279,29 +286,33 @@ void handle_ble_event(sl_bt_msg_t *evt)
         // Update device connection state. common for both master and slave roles
         ble_data.connections[ble_data.number_of_connection - 1].conn_state = CS_CONNECTING;
 
-#if (DEVICE_IS_BLE_MASTER == 1)
         // /* Advertising stops when connection is opened. Re-start advertising */
         if (ble_data.number_of_connection == MAX_CONNECTIONS)
         {
             PRINT_LOG("[ERROR] Maximum number of allowed connections reached.\r\n");
-            PRINT_LOG("[INFO] Stop scanning but continue advertising in non-connectable mode.\r\n");
 
+#if (DEVICE_IS_BLE_MASTER == 1)
+            PRINT_LOG("[INFO] Stop scanning but and stop advertising.\r\n");
             sc = sl_bt_scanner_stop();
             app_assert_status(sc);
-
+#endif
+            // sc = sl_bt_legacy_advertiser_start(ble_data.advertisingSetHandle,
+            //                                    sl_bt_legacy_advertiser_connectable);
+            sc = sl_bt_advertiser_stop(ble_data.advertisingSetHandle);
+            app_assert_status(sc);
             // sc = sl_bt_legacy_advertiser_start(ble_data.advertisingSetHandle,
             //                                    sl_bt_legacy_advertiser_non_connectable);
             // app_assert_status(sc);
         }
         else
         {
+            PRINT_LOG("[INFO]  Max connection not reached. Re-start advertising in connectable mode.\r\n");
             // Max connection not reached. Re-start advertising in connectable mode
             sc = sl_bt_legacy_advertiser_start(ble_data.advertisingSetHandle,
                                                sl_bt_legacy_advertiser_connectable);
             app_assert_status(sc);
         }
 
-#endif
 
         break;
 
@@ -327,6 +338,9 @@ void handle_ble_event(sl_bt_msg_t *evt)
         {
             ble_data.number_of_connection--;
         }
+
+        // print list of remaining connections
+         sl_app_log_stats(&ble_data);
 
         app_log("Number of active connections ...: %d\r\n", ble_data.number_of_connection);
         app_log("Available connections ..........: %d\r\n",
@@ -435,7 +449,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
                                               input_report_data);
             app_assert_status(sc);
 
-            PRINT_LOG("[INFO] Key report was sent\r\n");
+            // PRINT_LOG("[INFO] Key report was sent\r\n");
         }
 
         if (((evt->data.evt_system_external_signal.extsignals - evtENCODER_SW) == 0x00) || ((evt->data.evt_system_external_signal.extsignals - evtENCODER_ROTATE) == 0x00))
@@ -451,7 +465,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
         if (((evt->data.evt_system_external_signal.extsignals - evtLETIMER0_UF) == 0x00))
         {
 #if DEVICE_IS_BLE_MASTER == 1
-            read_SI7021();
+            // read_SI7021();
 #endif
         }
         break;
@@ -510,12 +524,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
         /* if characteristic discovery completed */
         else if (ble_data.discovering_characteristic)
         {
-            PRINT_LOG("Got characteristic with char handle %X , uuid %x %x\n\r",
-                      evt->data.evt_gatt_characteristic.characteristic,
-                      evt->data.evt_gatt_characteristic.uuid.data[0],
-                      evt->data.evt_gatt_characteristic.uuid.data[1]);
-
-            PRINT_LOG("[INFO] Found REPORT Characteristics that we want, enabling Indication \n\r");
+            PRINT_LOG("[INFO] Found REPORT Characteristics that we want, enabling Notification \n\r");
             ble_data.discovering_characteristic = false;
 
             /* enable indications on the HID report characteristic */
@@ -529,6 +538,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
 
         else if (ble_data.enabling_notification)
         {
+            PRINT_LOG("[INFO] Notification enabled ! \n\r");
             ble_data.enabling_notification = false;
         }
         break;
@@ -788,7 +798,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
                           input_report_data[5],
                           input_report_data[6],
                           input_report_data[7]);
-                PRINT_LOG("[INFO] Key report was sent\r\n");
+                // PRINT_LOG("[INFO] Key report was sent\r\n");
             }
         }
 
