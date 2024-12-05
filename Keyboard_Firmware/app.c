@@ -149,6 +149,8 @@ SL_WEAK void app_init(void)
   // Initializing I2C
   init_I2C();
 
+  EPD_test();
+
   __init_IO_expander(IO_EXPANDER_COL, 0b00000000);
   io_expander_writeByte(IO_EXPANDER_COL, 0xFF);
 
@@ -166,7 +168,7 @@ SL_WEAK void app_init(void)
  */
 void app_process_action(void)
 { 
-//  EPD_test();
+//  
 // uint8_t *data = scan_io_expander();
 // printf("data : %X %X %X %X %X %X %X %X  \n", data[0], data[1], data[2], data[3], data[4], data[5], data[6] ,data[7] );;
 

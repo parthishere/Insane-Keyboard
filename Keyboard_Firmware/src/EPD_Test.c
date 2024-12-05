@@ -134,7 +134,7 @@ int EPD_test(void)
             break;
         }
         EPD_1IN54_V2_DisplayPart(BlackImage);
-        timerWaitUs_polled(1000*500);//Analog clock 1s
+        // timerWaitUs_polled(1000*500);//Analog clock 1s
     }
 
 #endif
