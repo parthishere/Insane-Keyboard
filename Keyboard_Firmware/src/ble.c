@@ -421,10 +421,20 @@ void handle_ble_event(sl_bt_msg_t *evt)
             memset(input_report_data, 0, sizeof(input_report_data));
             memcpy(input_report_data, report_data, 8);
 
+            PRINT_LOG("[INFO] Key report %d %d %d %d %d %d %d %d\r\n", input_report_data[0],
+                        input_report_data[1],
+                        input_report_data[2],
+                        input_report_data[3],
+                        input_report_data[4],
+                        input_report_data[5],
+                        input_report_data[6],
+                        input_report_data[7]);
+
             sc = sl_bt_gatt_server_notify_all(gattdb_report,
-                                          sizeof(input_report_data),
-                                          input_report_data);
+                                              sizeof(input_report_data),
+                                              input_report_data);
             app_assert_status(sc);
+
             PRINT_LOG("[INFO] Key report was sent\r\n");
         }
 
@@ -761,8 +771,24 @@ void handle_ble_event(sl_bt_msg_t *evt)
                 PRINT_LOG("heahahah 3\n");
 
                 // extract value sent by server from evt_gatt_characteristic_value data structure
-                uint8_t *char_value = &(evt->data.evt_gatt_characteristic_value.value.data[0]);
-                PRINT_LOG("Temperature Data from Server: %s\n\r", char_value);
+                uint8_t *char_value = evt->data.evt_gatt_characteristic_value.value.data;
+                memset(input_report_data, 0, sizeof(input_report_data));
+                memcpy(input_report_data, char_value, 8);
+
+                sc = sl_bt_gatt_server_notify_all(gattdb_report,
+                                                  sizeof(input_report_data),
+                                                  input_report_data);
+                app_assert_status(sc);
+
+                PRINT_LOG("[INFO] Key report %d %d %d %d %d %d %d %d\r\n", input_report_data[0],
+                          input_report_data[1],
+                          input_report_data[2],
+                          input_report_data[3],
+                          input_report_data[4],
+                          input_report_data[5],
+                          input_report_data[6],
+                          input_report_data[7]);
+                PRINT_LOG("[INFO] Key report was sent\r\n");
             }
         }
 
