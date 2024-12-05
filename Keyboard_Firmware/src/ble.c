@@ -373,7 +373,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
 
         app_log("Number of active connections ...: %d\r\n", ble_data.number_of_connection);
         app_log("Available connections ..........: %d\r\n",
-                MAX_CONNECTIONS - ble_data.number_of_connection);
+                MAX_CONNECTIONS - ble_data.number_of_connection);   
 
         /* If we have one less available connection than the maximum allowed...*/
         if (ble_data.number_of_connection == MAX_CONNECTIONS - 1)
@@ -381,7 +381,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
 
 #if (DEVICE_IS_BLE_MASTER == 1)
             sc = sl_bt_scanner_start(sl_bt_gap_1m_phy,
-                                     sl_bt_scanner_discover_generic);
+                                     sl_bt_scanner_discover_generic);       
             app_assert_status_f(sc, "Failed to start discovery #1\n");
             app_log("Scanning restarted.\r\n");
 #else
