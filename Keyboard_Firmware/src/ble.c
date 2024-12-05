@@ -413,6 +413,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
     case sl_bt_evt_connection_parameters_id:
         dev_index = get_dev_index(evt->data.evt_connection_parameters.connection, ble_data);
         ble_data.connections[dev_index].conn_state = CS_CONNECTED;
+        
         if (memcmp(&new_device_id, &ble_data.connections[dev_index].device_address,
                    sizeof(bd_addr)) != 0)
         {
