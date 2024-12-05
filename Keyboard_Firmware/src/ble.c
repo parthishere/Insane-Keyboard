@@ -340,12 +340,18 @@ void handle_ble_event(sl_bt_msg_t *evt)
                                  sl_bt_scanner_discover_generic);
         app_assert_status_f(sc, "Failed to start discovery #1\n");
         app_log("Scanning restarted.\r\n");
+#else 
+        // sc = sl_bt_gap_enable_whitelisting(1);
+        // sl_bt_sm_add_to_whitelist(server_address, uint8_t address_type)
+
 #endif
         sc = sl_bt_legacy_advertiser_start(
           ble_data.advertisingSetHandle,
           sl_bt_legacy_advertiser_connectable);
         app_assert_status(sc);
         app_log("Advertising restarted in CONNECTABLE mode.\r\n");
+
+
 
         }
 
@@ -770,11 +776,13 @@ void handle_ble_event(sl_bt_msg_t *evt)
     // This event is generated when a characteristic value was received , an indication, a notification
     case sl_bt_evt_gatt_characteristic_value_id:
         // print what we got
-        PRINT_LOG("heahahah\n");
-        if (evt->data.evt_gatt_characteristic_value.att_opcode == sl_bt_gatt_handle_value_indication)
+        PRINT_LOG("heahahah 1\n");
+        if (evt->data.evt_gatt_characteristic_value.att_opcode == sl_bt_gatt_handle_value_notification)
         {
+        PRINT_LOG("heahahah 2\n");
             if (evt->data.evt_gatt_characteristic_value.characteristic == ble_data.reportMapCharacteristicHandle)
             {
+        PRINT_LOG("heahahah 3\n");  
                 switch (evt->data.evt_gatt_characteristic_value.connection - 1)
                 {
                 case 0:
@@ -785,6 +793,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
                 // extract value sent by server from evt_gatt_characteristic_value data structure
                 uint8_t *char_value = &(evt->data.evt_gatt_characteristic_value.value.data[0]);
                 PRINT_LOG("Temperature Data from Server: %s\n\r", char_value);
+                
             }
         }
 
