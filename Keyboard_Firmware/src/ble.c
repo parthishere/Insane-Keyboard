@@ -24,6 +24,9 @@
 #define INCLUDE_LOG_DEBUG 1
 #include "src/log.h"
 
+
+static bd_addr new_device_id = { { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 } };
+
 /*
 Report format
 This report must be requested by the software using interrupt transfers once every interval milliseconds, and the interval is defined in the interrupt IN descriptor of the USB keyboard. The USB keyboard report may be up to 8 bytes in size, although not all these bytes are used and it's OK to implement a proper implementation using only the first three or four bytes (and this is how I do it.) Just for completion's sake, however, I will describe the full report mechanism of the keyboard. Notice that the report structure defined below applies to the boot protocol only.
@@ -100,7 +103,7 @@ uint8_t dev_index;
 #define FLAGS (0b00000000)
 
 // Global structure to store BLE data
-ble_data_struct_t ble_data;
+ble_data_struct_t ble_data = {0};
 
 #define SERVER_PASSIVE_SCANNING 0
 
@@ -159,8 +162,9 @@ void handle_ble_event(sl_bt_msg_t *evt)
     // --------------------------------------------------------
     // System boot event: Initialize BLE settings on device boot-up
     case sl_bt_evt_system_boot_id:
-
+        ble_data.number_of_connection = 0;
         // Log the version of the Bluetooth stack
+        PRINT_LOG("Bluetooth stack booted ! \n\r");
         get_stack_version(evt);
         get_system_id();
 
@@ -240,6 +244,11 @@ void handle_ble_event(sl_bt_msg_t *evt)
             /* connection process completed. */
             ble_data.connecting = false;
 
+            if(!ble_data.bonded){
+                    sc = sl_bt_sm_increase_security(ble_data.connectionHandle);
+            app_assert_status(sc);
+            }
+            
             // we dont want to increament the count as we already did in connection open call
         }
 
@@ -264,8 +273,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
             /* Increment ble_data.number_of_connection. */
             ble_data.number_of_connection++;
 
-            // sc = sl_bt_sm_increase_security(ble_data.connectionHandle);
-            // app_assert_status(sc);
+            // 
         }
 
         // Update device connection state. common for both master and slave roles
@@ -281,9 +289,9 @@ void handle_ble_event(sl_bt_msg_t *evt)
             sc = sl_bt_scanner_stop();
             app_assert_status(sc);
 
-            sc = sl_bt_legacy_advertiser_start(ble_data.advertisingSetHandle,
-                                               sl_bt_legacy_advertiser_non_connectable);
-            app_assert_status(sc);
+            // sc = sl_bt_legacy_advertiser_start(ble_data.advertisingSetHandle,
+            //                                    sl_bt_legacy_advertiser_non_connectable);
+            // app_assert_status(sc);
         }
         else
         {
@@ -356,6 +364,29 @@ void handle_ble_event(sl_bt_msg_t *evt)
      */
     // Handle the event when connection parameters are updated
     case sl_bt_evt_connection_parameters_id:
+        dev_index = get_dev_index(evt->data.evt_connection_parameters.connection, ble_data);
+        ble_data.connections[dev_index].conn_state = CS_CONNECTED;
+        if (memcmp(&new_device_id, &ble_data.connections[dev_index].device_address,
+                 sizeof(bd_addr)) != 0) {
+        memcpy(&new_device_id, &ble_data.connections[dev_index].device_address,
+               sizeof(bd_addr));
+        app_log("\r\nNEW CONNECTION ESTABLISHED \r\n");
+        app_log("Device ID .................: ");
+        print_bd_addr(ble_data.connections[ble_data.number_of_connection - 1].device_address);
+        app_log("\r\n");
+        app_log("Role ......................: %s\r\n",
+                (ble_data.connections[dev_index].conn_role
+                 == CR_PERIPHERAL) ? "peripharal" : "central");
+        app_log("Handle ....................: %d\r\n",
+                ble_data.connections[dev_index].connectionHandle);
+        app_log("Number of connected devices: %d\r\n", ble_data.number_of_connection);
+        app_log("Available connections .....: %d\r\n",
+                MAX_CONNECTIONS - ble_data.number_of_connection);
+
+        /* Print connection summary*/
+        sl_app_log_stats(&ble_data);
+      }
+
 #if (PRINT_LOG_STATEMENTS == 1)
         // Extract the updated connection parameters from the event
         interval = evt->data.evt_connection_parameters.interval;
@@ -372,7 +403,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
         PRINT_LOG("Latency: %u (number of connection events)", latency); // Log the connection latency
         PRINT_LOG("Timeout: %f ms\n", timeout_ms);                       // Log the supervision timeout in milliseconds
 #endif
-        sl_app_log_stats(ble_data);
+        
 
         break;
 
@@ -425,13 +456,16 @@ void handle_ble_event(sl_bt_msg_t *evt)
 
         if (((evt->data.evt_system_external_signal.extsignals - evtLETIMER0_UF) == 0x00))
         {
+#if DEVICE_IS_BLE_MASTER == 1
             read_SI7021();
+#endif
         }
         break;
 
     // Indicates a user request to display that the new bonding request is received and for the user to confirm the request
     case sl_bt_evt_sm_confirm_bonding_id:
 
+         
         // Print log message indicating a bonding confirmation request is received.
         PRINT_LOG("[INFO] Bonding confirm\r\n");
         // Confirm bonding without user interaction, automatically accepting the bonding request.
@@ -445,7 +479,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
         // Update the application state to indicate bonding is not in progress but bonded.
         // ble_data.connections.bonding = false;
         // ble_data.connections.bonded = true;
-
+        ble_data.bonded = true;
         // Log a message indicating successful bonding.
         PRINT_LOG("[INFO] Bonded\r\n\n");
         break;
@@ -483,6 +517,12 @@ void handle_ble_event(sl_bt_msg_t *evt)
         /* if characteristic discovery completed */
         else if (ble_data.discovering_characteristic)
         {
+            PRINT_LOG("Got characteristic with char handle %X , uuid %x %x\n\r",
+                  evt->data.evt_gatt_characteristic.characteristic,
+                  evt->data.evt_gatt_characteristic.uuid.data[0],
+                  evt->data.evt_gatt_characteristic.uuid.data[1]);
+
+            PRINT_LOG("[INFO] Found REPORT Characteristics that we want, enabling Indication \n\r");
             ble_data.discovering_characteristic = false;
 
             /* enable indications on the HID report characteristic */
@@ -611,14 +651,14 @@ void handle_ble_event(sl_bt_msg_t *evt)
         // if address matcches and address type also matches
         bd_addr device_addr = SERVER_BT_ADDRESS;
 
-        PRINT_LOG("memcpy %d ", memcmp(evt->data.evt_scanner_scan_report.address.addr, device_addr.addr, sizeof(device_addr.addr)));
-        PRINT_LOG("Found Address :%02X %02X %02X %02X %02X %02X\n\r",
-                  evt->data.evt_scanner_scan_report.address.addr[0],
-                  evt->data.evt_scanner_scan_report.address.addr[1],
-                  evt->data.evt_scanner_scan_report.address.addr[2],
-                  evt->data.evt_scanner_scan_report.address.addr[3],
-                  evt->data.evt_scanner_scan_report.address.addr[4],
-                  evt->data.evt_scanner_scan_report.address.addr[5]);
+        // PRINT_LOG("memcpy %d ", memcmp(evt->data.evt_scanner_scan_report.address.addr, device_addr.addr, sizeof(device_addr.addr)));
+        // PRINT_LOG("Found Address :%02X %02X %02X %02X %02X %02X\n\r",
+        //           evt->data.evt_scanner_scan_report.address.addr[0],
+        //           evt->data.evt_scanner_scan_report.address.addr[1],
+        //           evt->data.evt_scanner_scan_report.address.addr[2],
+        //           evt->data.evt_scanner_scan_report.address.addr[3],
+        //           evt->data.evt_scanner_scan_report.address.addr[4],
+        //           evt->data.evt_scanner_scan_report.address.addr[5]);
         if (memcmp(evt->data.evt_scanner_scan_report.address.addr, device_addr.addr, sizeof(device_addr.addr)) == 0)
         {
 
@@ -706,22 +746,14 @@ void handle_ble_event(sl_bt_msg_t *evt)
      */
     // GATT server characteristic status event: Handles changes in characteristics, enabling notifications
     case sl_bt_evt_gatt_characteristic_id:
-    {
-
-        PRINT_LOG("Got characteristic with char handle %X , uuid %x %x\n\r",
-                  evt->data.evt_gatt_characteristic.characteristic,
-                  evt->data.evt_gatt_characteristic.uuid.data[0],
-                  evt->data.evt_gatt_characteristic.uuid.data[1]);
-
-        // Check for the characteristic uuid
-        if (memcmp(evt->data.evt_gatt_characteristic.uuid.data, report_char, sizeof(report_char)) == 0)
-        {
-            PRINT_LOG("[INFO] Found REPORT Characteristics that we want, enabling Indication \n\r");
-            // we found the service we want
-
-            // save handle
+    {  
+        // if (memcmp(evt->data.evt_gatt_service.uuid.data, report_char, sizeof(report_char)) == 0)
+        // {
+            PRINT_LOG("Found the Report Char, saving handle\n\r");
+            // save service handle
             ble_data.reportMapCharacteristicHandle = evt->data.evt_gatt_characteristic.characteristic;
-        }
+        // }
+        
     }
     break;
 
@@ -738,6 +770,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
     // This event is generated when a characteristic value was received , an indication, a notification
     case sl_bt_evt_gatt_characteristic_value_id:
         // print what we got
+        PRINT_LOG("heahahah\n");
         if (evt->data.evt_gatt_characteristic_value.att_opcode == sl_bt_gatt_handle_value_indication)
         {
             if (evt->data.evt_gatt_characteristic_value.characteristic == ble_data.reportMapCharacteristicHandle)

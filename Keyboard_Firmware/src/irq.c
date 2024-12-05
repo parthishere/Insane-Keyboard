@@ -132,7 +132,7 @@ void GPIO_ODD_IRQHandler(void)
     if (flags & (1 << EXPANDER_INT_COL_pin))
     {
         
-        // PRINT_LOG("IRQ ODD scan\n");
+        PRINT_LOG("IRQ ODD scan\n");
         schedulerSetEventIOEXPANDER_ROW();
     }
 
@@ -197,10 +197,10 @@ void GPIO_EVEN_IRQHandler(void)
         
     }
 
-    //    if (flags & (1 << EXPANDER_INT_ROW_pin)){
-    //        PRINT_LOG("[INFO] IO Expander Interrupt even\n\r");
-    //        scan_io_expander();
-    //    }
+        if (flags & (1 << EXPANDER_INT_ROW_pin)){
+            PRINT_LOG("[INFO] IO Expander Interrupt even\n\r");
+            // scan_io_expander();
+        }
 }
 
 /**************************************************************************/ /**

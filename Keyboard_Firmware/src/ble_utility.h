@@ -33,7 +33,7 @@
 #endif
 
 #define __HID_SERVICE_UUID {0x12, 0x18};
-#define __HID_REPORT_CHARACTERISTIC_UUID {0x4b, 0x2a};
+#define __HID_REPORT_CHARACTERISTIC_UUID {0x4d, 0x2a};
 
 // Connection interval for BLE in units of 1.25ms.
 // CON_INTERVAL of 60 translates to 75ms (60 * 1.25ms = 75ms).
@@ -111,11 +111,12 @@ typedef struct
 
   bool ok_to_send_report_notification;
   bool indication_in_flight;
+  bool bonded;
 } ble_data_struct_t;
 
 void get_system_id(void);
 void get_stack_version(sl_bt_msg_t *evt);
-void sl_app_log_stats(ble_data_struct_t ble_data);
+void sl_app_log_stats(ble_data_struct_t * ble_data);
 void print_bd_addr(bd_addr bd_address);
 uint8_t get_dev_index(uint8_t handle, ble_data_struct_t ble_data);
 bool hid_service_found(struct sl_bt_evt_scanner_legacy_advertisement_report_s *pResp);

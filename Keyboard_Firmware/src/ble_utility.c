@@ -107,7 +107,7 @@ void print_bd_addr(bd_addr bd_address)
   }
 }
 
-void sl_app_log_stats(ble_data_struct_t ble_data)
+void sl_app_log_stats(ble_data_struct_t * ble_data)
 {
   app_log("\r\n--------------- LIST of CONNECTED DEVICES ----------------\r\n");
   app_log("==========================================================\r\n");
@@ -119,9 +119,10 @@ void sl_app_log_stats(ble_data_struct_t ble_data)
   }
   app_log("==========================================================\r\n");
 
-  int i;
-  for (i = 0; i < ble_data.number_of_connection; i++) {
-    print_bd_addr(ble_data.connections[i].device_address);
+  printf("ble_Data.number_of_connection %d\n", ble_data->number_of_connection);
+  for (int i = 0; i < ble_data->number_of_connection; i++) {
+    print_bd_addr(ble_data->connections[i].device_address);
+    printf("\n");
   }
   app_log("\r\n");
 }
