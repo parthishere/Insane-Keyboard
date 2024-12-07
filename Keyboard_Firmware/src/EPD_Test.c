@@ -161,28 +161,18 @@ int EPD_test(void)
     // // close 5V
     // LOG_INFO("close 5V, Module enters 0 power consumption ...\r\n");
     // DEV_Module_Exit();
-    display_string("T(C):",2,50);
+    display_string("INSANE PARTH",2,150);
+    display_string("T(C):",2,100);
+    display_string("Devices:",2,50);
+    display_string("0",110,50);
     
     return 0;
 }
 
 void display_string(char *str, uint16_t Xstart, uint16_t Ystart)
 {
-//     Paint_DrawString_EN(5, 85, str, &Font20, BLACK, WHITE);
-//     EPD_1IN54_V2_Display(BlackImage);
-        
-    // EPD_1IN54_V2_DisplayPartBaseImage(BlackImage);
-
-    // // enter partial mode
-	// EPD_1IN54_V2_Init_Partial();
-    // LOG_INFO("Partial refresh\r\n");
-    // Paint_SelectImage(BlackImage);
-    
-        //Paint_ClearWindows(15, 65, 15 + Font20.Width * 7, 65 + Font20.Height, WHITE);
-        Paint_ClearWindows(Xstart, Ystart, Xstart + Font20.Width * 7, Ystart + Font20.Height, WHITE);
-        Paint_DrawString_EN(Xstart, Ystart, str, &Font20, WHITE, BLACK);
-        
-        EPD_1IN54_V2_DisplayPart(BlackImage);
-        // timerWaitUs_polled(1000*500);//Analog clock 1s
-    
+    //Paint_ClearWindows(Xstart, Ystart, Xstart + Font20.Width * 7, Ystart + Font20.Height, WHITE);
+    Paint_ClearWindows(Xstart, Ystart, Xstart + Font20.Width * 7, Ystart + Font20.Height, WHITE);
+    Paint_DrawString_EN(Xstart, Ystart, str, &Font20, WHITE, BLACK);
+    EPD_1IN54_V2_DisplayPart(BlackImage);  
 }

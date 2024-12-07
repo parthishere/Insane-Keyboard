@@ -43,7 +43,7 @@
 743	1054	1732856137291101311	CMakeFiles/slc_Keyboard_Firmware.dir/default_config/home/parth/SimplicityStudio/SDKs/gecko_sdk/platform/emlib/src/em_timer.c.obj	620642d2e77ec3cc
 2760	2845	1732856139082089352	CMakeFiles/Keyboard_Firmware.dir/default_config/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/Fonts/font24CN.c.obj	92a7fe027d907194
 856	1112	1732856137349100924	CMakeFiles/slc_Keyboard_Firmware.dir/default_config/home/parth/SimplicityStudio/SDKs/gecko_sdk/platform/radio/rail_lib/plugin/rail_util_sequencer/sl_rail_util_sequencer.c.obj	ed277d420a76e162
-170	400	1733610207098057516	default_config/Keyboard_Firmware.out	5923883cd17554d0
+150	404	1733614480921949898	default_config/Keyboard_Firmware.out	5923883cd17554d0
 20	207	1732856136438107002	CMakeFiles/slc_Keyboard_Firmware.dir/default_config/home/parth/SimplicityStudio/SDKs/gecko_sdk/app/common/util/app_log/app_log.c.obj	e9d31193e2f67674
 25	150	1732856136387107342	CMakeFiles/slc_Keyboard_Firmware.dir/default_config/home/parth/SimplicityStudio/SDKs/gecko_sdk/platform/common/src/sl_slist.c.obj	52443543fa0685c1
 2753	2814	1732856139051089559	CMakeFiles/Keyboard_Firmware.dir/default_config/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/Fonts/font20.c.obj	84291a6a39674ff3
@@ -119,7 +119,7 @@
 887	1286	1732856137523099763	CMakeFiles/slc_Keyboard_Firmware.dir/default_config/home/parth/SimplicityStudio/SDKs/gecko_sdk/platform/security/sl_component/sl_mbedtls_support/src/mbedtls_cmac.c.obj	645ec0467e3dbfc3
 640	835	1732856137070102786	CMakeFiles/slc_Keyboard_Firmware.dir/default_config/home/parth/SimplicityStudio/SDKs/gecko_sdk/platform/emlib/src/em_rmu.c.obj	27b5251380b3255c
 58	219	1732856136455106889	CMakeFiles/slc_Keyboard_Firmware.dir/default_config/home/parth/SimplicityStudio/SDKs/gecko_sdk/platform/common/toolchain/src/sl_memory.c.obj	61fab1b5359f8ebd
-10	185	1733608937443400813	CMakeFiles/Keyboard_Firmware.dir/default_config/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/i2c.c.obj	8461eeb95eddcbe5
+11	185	1733614359939926902	CMakeFiles/Keyboard_Firmware.dir/default_config/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/i2c.c.obj	8461eeb95eddcbe5
 1952	2157	1732856138392093961	CMakeFiles/slc_Keyboard_Firmware.dir/default_config/home/parth/SimplicityStudio/SDKs/gecko_sdk/util/third_party/mbedtls/library/platform.c.obj	17062d7a7fe32d96
 1695	1796	1732856138034096352	CMakeFiles/slc_Keyboard_Firmware.dir/default_config/home/parth/SimplicityStudio/SDKs/gecko_sdk/protocol/bluetooth/src/sli_bt_periodic_adv_config.c.obj	db287ac3078d474c
 1902	2076	1732856138306094535	CMakeFiles/slc_Keyboard_Firmware.dir/default_config/home/parth/SimplicityStudio/SDKs/gecko_sdk/util/third_party/mbedtls/library/hmac_drbg.c.obj	e4950460f4fe864d
@@ -161,11 +161,11 @@
 1413	1730	1732856137961096839	CMakeFiles/slc_Keyboard_Firmware.dir/default_config/home/parth/SimplicityStudio/SDKs/gecko_sdk/platform/service/iostream/src/sl_iostream_uart.c.obj	e7788c2b8b02790f
 578	856	1732856137093102633	CMakeFiles/slc_Keyboard_Firmware.dir/default_config/home/parth/SimplicityStudio/SDKs/gecko_sdk/platform/emlib/src/em_pcnt.c.obj	346d6af9d47b7956
 24	210	1733606310600540580	CMakeFiles/Keyboard_Firmware.dir/default_config/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/scheduler.c.obj	919baae26c063117
-14	170	1733610206899059278	CMakeFiles/Keyboard_Firmware.dir/default_config/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/EPD_Test.c.obj	5f0b203b3bc16e61
+10	150	1733614480712951604	CMakeFiles/Keyboard_Firmware.dir/default_config/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/EPD_Test.c.obj	5f0b203b3bc16e61
 1055	1354	1732856137588099329	CMakeFiles/slc_Keyboard_Firmware.dir/default_config/home/parth/SimplicityStudio/SDKs/gecko_sdk/platform/security/sl_component/sl_psa_driver/src/sli_crypto_driver_trng.c.obj	c17239b75cdb1abb
-11	352	1733608626458367498	CMakeFiles/Keyboard_Firmware.dir/default_config/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/ble.c.obj	d5924399e8725906
+10	364	1733614360117925481	CMakeFiles/Keyboard_Firmware.dir/default_config/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/ble.c.obj	d5924399e8725906
 2069	2293	1732856138530093039	CMakeFiles/slc_Keyboard_Firmware.dir/default_config/home/parth/SimplicityStudio/SDKs/gecko_sdk/util/third_party/mbedtls/library/sha256.c.obj	f8bd4f966e98f8c5
 16	376	1733606310770539140	CMakeFiles/Keyboard_Firmware.dir/default_config/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/ble_utility.c.obj	d2c232cd229b2cb2
 2064	2241	1732856138478093386	CMakeFiles/slc_Keyboard_Firmware.dir/default_config/home/parth/SimplicityStudio/SDKs/gecko_sdk/util/third_party/mbedtls/library/psa_util.c.obj	3d97f7f665431fef
-11	176	1733610241511752887	CMakeFiles/Keyboard_Firmware.dir/default_config/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/EPD_Test.c.obj	5f0b203b3bc16e61
-177	418	1733610241732750930	default_config/Keyboard_Firmware.out	5923883cd17554d0
+11	148	1733614516372659731	CMakeFiles/Keyboard_Firmware.dir/default_config/home/parth/Work/All_data/university/Low_Power/Insane-Keyboard/Keyboard_Firmware/src/EPD_Test.c.obj	5f0b203b3bc16e61
+148	377	1733614516581658016	default_config/Keyboard_Firmware.out	5923883cd17554d0

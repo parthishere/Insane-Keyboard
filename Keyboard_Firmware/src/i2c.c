@@ -206,8 +206,19 @@ uint16_t read_SI7021()
   LOG_INFO("Got the temprature from Si7021 sensor => %ld Celsius\n", temprature); // Log the temperature data
   char buf[100];
   snprintf(buf, sizeof(buf), "%d", temprature);
-  display_string(buf,70,50);
-
+  display_string(buf,70,100);
+  static int cnt = 0;
+  if(cnt%3==0)
+  {
+    display_string("CONN",2,10);
+    display_string("0",110,50);
+  }
+  else
+  {
+    display_string("DISCONN",2,10);
+    display_string("1",110,50);
+  }
+    cnt++;
   enable_Temperature_Sensor(false);    // Disable the sensor
   return (temprature); // Return the calculated temperature
 }
