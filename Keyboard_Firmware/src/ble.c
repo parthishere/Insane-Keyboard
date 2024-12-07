@@ -207,7 +207,62 @@ void handle_ble_event(sl_bt_msg_t *evt)
                                  sl_bt_scanner_discover_generic);
         app_assert_status_f(sc, "Failed to start discovery #1\n");
 #endif
-        // Create an advertising set for BLE advertising
+        
+
+        break;
+
+    /*
+    * typedef struct sl_bt_evt_connection_opened_t
+    * {
+    * bd_addr address;
+    * uint8_t address_type;
+    * uint8_t master; The role this  device operates in the connection.
+    * uint8_t connection;
+    * uint8_t bonding;
+    * uint8_t advertiser;
+    }evt_connection_opened;
+    */
+    // Connection opened event: Manage the new connection
+    case sl_bt_evt_connection_opened_id:
+        // Log that a new connection has been opened
+        PRINT_LOG("[INFO] Connection opened\n\r");
+        // our master device is gatt client for that is CR_CENTRAL
+        if (evt->data.evt_connection_opened.master == CR_CENTRAL)
+        {
+            // Device role: GATT Data base client
+            /* Start discovering the remote GATT database */
+            PRINT_LOG("CR_CENTRAL\n\r");
+            // Request to update the connection parameters
+            sc = sl_bt_connection_set_parameters(ble_data.connectionHandle,
+                                                CON_INTERVAL,
+                                                CON_INTERVAL,
+                                                CON_LATENCY,
+                                                CON_TIMEOUT,
+                                                0,
+                                                MAX_CE_LEN);
+            app_assert_status(sc);
+
+            sc = sl_bt_gatt_discover_primary_services_by_uuid(
+                evt->data.evt_connection_opened.connection,
+                sizeof(service_uuid),
+                service_uuid);
+            app_assert_status(sc);
+
+            ble_data.discovering_service = true;
+
+            /* connection process completed. */
+            ble_data.connecting = false;
+
+        
+            // if (!ble_data.bonded)
+            // {
+            sc = sl_bt_sm_increase_security(ble_data.connectionHandle);
+            app_assert_status(sc);
+            // }
+
+
+// added from boot
+            // Create an advertising set for BLE advertising
         sc = sl_bt_advertiser_create_set(&ble_data.advertisingSetHandle);
         app_assert_status(sc);
 
@@ -237,47 +292,12 @@ void handle_ble_event(sl_bt_msg_t *evt)
             sl_bt_advertiser_connectable_scannable); // Connectable and scannable advertising
         app_assert_status(sc);
 
-        break;
 
-    /*
-    * typedef struct sl_bt_evt_connection_opened_t
-    * {
-    * bd_addr address;
-    * uint8_t address_type;
-    * uint8_t master; The role this  device operates in the connection.
-    * uint8_t connection;
-    * uint8_t bonding;
-    * uint8_t advertiser;
-    }evt_connection_opened;
-    */
-    // Connection opened event: Manage the new connection
-    case sl_bt_evt_connection_opened_id:
-        // Log that a new connection has been opened
-        PRINT_LOG("[INFO] Connection opened\n\r");
-        // our master device is gatt client for that is CR_CENTRAL
-        if (evt->data.evt_connection_opened.master == CR_CENTRAL)
-        {
-            // Device role: GATT Data base client
-            /* Start discovering the remote GATT database */
-            PRINT_LOG("CR_CENTRAL\n\r");
-
-            sc = sl_bt_gatt_discover_primary_services_by_uuid(
-                evt->data.evt_connection_opened.connection,
-                sizeof(service_uuid),
-                service_uuid);
-            app_assert_status(sc);
-
-            ble_data.discovering_service = true;
-
-            /* connection process completed. */
-            ble_data.connecting = false;
-
-
-            // if (!ble_data.bonded)
-            // {
-            sc = sl_bt_sm_increase_security(ble_data.connectionHandle);
-            app_assert_status(sc);
-            // }
+        sc = sl_bt_legacy_advertiser_start(
+            ble_data.advertisingSetHandle,           // The advertising set handle
+            sl_bt_advertiser_connectable_scannable); // Connectable and scannable advertising
+        app_assert_status(sc);
+            
 
             // we dont want to increament the count as we already did in connection open call
         }
@@ -302,6 +322,8 @@ void handle_ble_event(sl_bt_msg_t *evt)
 
             /* Increment ble_data.number_of_connection. */
             ble_data.number_of_connection++;
+
+            
 
             //
         }
@@ -578,6 +600,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
                 sl_bt_gatt_notification);
             app_assert_status(sc);
             ble_data.enabling_notification = true;
+
         }
 
         else if (ble_data.enabling_notification)
