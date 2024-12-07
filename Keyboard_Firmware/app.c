@@ -149,7 +149,7 @@ SL_WEAK void app_init(void)
   // Initializing I2C
   init_I2C();
 
-  // EPD_test();
+  EPD_test();
 
   __init_IO_expander(IO_EXPANDER_COL, 0b00000000);
   io_expander_writeByte(IO_EXPANDER_COL, 0xFF);

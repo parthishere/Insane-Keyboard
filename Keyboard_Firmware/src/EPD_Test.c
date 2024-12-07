@@ -33,6 +33,8 @@
 #define INCLUDE_LOG_DEBUG 1
 #include "src/log.h"
 
+ uint8_t *BlackImage;
+
 int EPD_test(void)
 {
     LOG_INFO("EPD_1in54_V2_test Demo\r\n");
@@ -44,7 +46,7 @@ int EPD_test(void)
     timerWaitUs_polled(1000*500);
 
     //Create a new image cache
-    uint8_t *BlackImage;
+   
     /* you have to edit the startup_stm32fxxx.s file and set a big enough heap size */
     uint16_t Imagesize = ((EPD_1IN54_V2_WIDTH % 8 == 0)? (EPD_1IN54_V2_WIDTH / 8 ): (EPD_1IN54_V2_WIDTH / 8 + 1)) * EPD_1IN54_V2_HEIGHT;
     if((BlackImage = (uint8_t *)malloc(Imagesize)) == NULL) {
@@ -54,15 +56,15 @@ int EPD_test(void)
     LOG_INFO("Paint_NewImage\r\n");
     Paint_NewImage(BlackImage, EPD_1IN54_V2_WIDTH, EPD_1IN54_V2_HEIGHT, 270, WHITE);
 
-#if 1   //show image for array    
-    LOG_INFO("show image for array\r\n");
-    Paint_SelectImage(BlackImage);
-    Paint_Clear(WHITE);
-    Paint_DrawBitMap(gImage_1in54);
+// #if 1   //show image for array    
+//     LOG_INFO("show image for array\r\n");
+     Paint_SelectImage(BlackImage);
+     Paint_Clear(WHITE);
+//     Paint_DrawBitMap(gImage_1in54);
 
-    EPD_1IN54_V2_Display(BlackImage);
-    timerWaitUs_polled(1000*2000);
-#endif
+//     EPD_1IN54_V2_Display(BlackImage);
+//     timerWaitUs_polled(1000*2000);
+// #endif
 
 // #if 1   // Drawing on the image
 //     LOG_INFO("Drawing\r\n");
@@ -136,7 +138,7 @@ int EPD_test(void)
 //         EPD_1IN54_V2_DisplayPart(BlackImage);
 //         // timerWaitUs_polled(1000*500);//Analog clock 1s
 //     }
-// 
+
 // #endif
 
     // LOG_INFO("Clear...\r\n");
@@ -145,13 +147,40 @@ int EPD_test(void)
 
     // LOG_INFO("Goto Sleep...\r\n");
     // EPD_1IN54_V2_Sleep();
-    free(BlackImage);
-    BlackImage = NULL;
 
-    // close 5V
-    LOG_INFO("close 5V, Module enters 0 power consumption ...\r\n");
-    DEV_Module_Exit();
+        EPD_1IN54_V2_DisplayPartBaseImage(BlackImage);
+
+    // enter partial mode
+	EPD_1IN54_V2_Init_Partial();
+    LOG_INFO("Partial refresh\r\n");
+    Paint_SelectImage(BlackImage);
+    //display_string("PARTH");
+    // free(BlackImage);
+    // BlackImage = NULL;
+
+    // // close 5V
+    // LOG_INFO("close 5V, Module enters 0 power consumption ...\r\n");
+    // DEV_Module_Exit();
+    display_string("T(C):",2,50);
     
     return 0;
 }
 
+void display_string(char *str, uint16_t Xstart, uint16_t Ystart)
+{
+//     Paint_DrawString_EN(5, 85, str, &Font20, BLACK, WHITE);
+//     EPD_1IN54_V2_Display(BlackImage);
+        
+    // EPD_1IN54_V2_DisplayPartBaseImage(BlackImage);
+
+    // // enter partial mode
+	// EPD_1IN54_V2_Init_Partial();
+    // LOG_INFO("Partial refresh\r\n");
+    // Paint_SelectImage(BlackImage);
+    
+        //Paint_ClearWindows(15, 65, 15 + Font20.Width * 7, 65 + Font20.Height, WHITE);
+        Paint_DrawString_EN(Xstart, Ystart, str, &Font20, BLACK, WHITE);
+        EPD_1IN54_V2_DisplayPart(BlackImage);
+        // timerWaitUs_polled(1000*500);//Analog clock 1s
+    
+}

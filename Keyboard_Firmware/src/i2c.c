@@ -204,6 +204,9 @@ uint16_t read_SI7021()
   temprature = CONVERT_TEMP_TO_C(temprature);
 
   LOG_INFO("Got the temprature from Si7021 sensor => %ld Celsius\n", temprature); // Log the temperature data
+  char buf[100];
+  snprintf(buf, sizeof(buf), "%d", temprature);
+  display_string(buf,70,50);
 
   enable_Temperature_Sensor(false);    // Disable the sensor
   return (temprature); // Return the calculated temperature

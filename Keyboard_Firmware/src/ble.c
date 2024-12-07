@@ -226,6 +226,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
     case sl_bt_evt_connection_opened_id:
         // Log that a new connection has been opened
         PRINT_LOG("[INFO] Connection opened\n\r");
+      //  display_string("opened");
         // our master device is gatt client for that is CR_CENTRAL
         if (evt->data.evt_connection_opened.master == CR_CENTRAL)
         {
@@ -367,7 +368,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
     case sl_bt_evt_connection_closed_id:
         // Log the closure of the connection
         PRINT_LOG("[INFO] Connection Closed\n\r");
-
+         //display_string("cLOSED");
         ble_data.closedHandle = evt->data.evt_connection_closed.connection;
         dev_index = get_dev_index(ble_data.closedHandle, ble_data);
         if (dev_index > MAX_CONNECTIONS) {
