@@ -134,37 +134,40 @@ uint8_t* modifypressedkeys_left(uint8_t *keys)
     return keymap_report; 
 }
 
-// uint8_t* modifypressedkeys_right(pressedkeys *keys, int totalkeys)
-// {
-//     static uint8_t return_array[8] = {0}; 
-//     uint8_t layer = current_layer;  
-//     uint8_t cnt = 0;
 
-//     //have to check if CAPS is on 
 
-//     for (int i = 0; i < totalkeys; i++)
-//     {
-//         keys[i].row = decode_row(keys[i].row);
 
-//         // Check for Shift and FN key for the right hand
-//         if ((keys[i].row == 2) && (keys[i].column == 1)) //R L1
-//         {
-//             layer = (layer == BASE) ? MDIA : BASE; 
-//             continue;
-//         }
-//         else if ((keys[i].row == 4) && (keys[i].column == 7)) //Rshift
-//         {
-//             layer = (layer == BASE) ? SYMB : BASE; 
-//             continue; 
-//         }
-       
-//         uint8_t key_value = keymaps[RIGHT][layer][keys[i].row][keys[i].column];
-//         return_array[cnt] = key_value; 
-//         cnt++;
-//     }
+uint8_t* modifypressedkeys_right(uint8_t *keys)
+{
+//    uint8_t layer = current_layer;
 
-//     return return_array; 
-// }
+
+    memset(keymap_report, 0x00 ,sizeof(keymap_report));
+
+    uint8_t total_keypresses = 0;
+    for (int col = PINKY_OUTER; col <= THUMB_OUTER; col++)
+    {   
+        
+        while(keys[col] != 0){
+            keys[col] = decode_row(&keys[col]);
+        
+            if (keys[col] != (uint8_t)-1 && total_keypresses < MAX_KEYPRESS_HID_REPORT){
+                if(is_modifier(keys[col], col))
+                    keymap_report[0] = keymaps[1][0][keys[col]][MATRIX_COLS-col-1];
+                else
+                    keymap_report[total_keypresses+2] = keymaps[1][0][keys[col]][MATRIX_COLS-col-1];
+
+                
+
+                total_keypresses++;
+            }       
+            col++;
+        }
+        
+    }
+
+    return keymap_report; 
+}
 
 
 

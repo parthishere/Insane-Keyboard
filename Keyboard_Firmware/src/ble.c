@@ -220,7 +220,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
             ble_data.advertisingSetHandle, // The advertising set handle
             ADV_INTERVAL,                  // Minimum advertising interval (in units of 0.625 ms, i.e 400*0.625 = 250)
             ADV_INTERVAL,                  // Maximum advertising interval (in units of 0.625 ms, i.e 400*0.625 = 250)
-            0,                             // Advertising duration (0 means continue until stopped)
+            0,                        // Advertising duration (0 means continue until stopped)
             0);                            // Maximum number of advertising events (0 means no limit)
         app_assert_status(sc);
 
@@ -348,7 +348,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
 
         ble_data.closedHandle = evt->data.evt_connection_closed.connection;
         dev_index = get_dev_index(ble_data.closedHandle, ble_data);
-        if (dev_index >= MAX_CONNECTIONS) {
+        if (dev_index > MAX_CONNECTIONS) {
             PRINT_LOG("[ERROR] Invalid device index\n\r");
             // ble_data.number_of_connection = 0;  // Reset to safe state
         }
@@ -461,20 +461,31 @@ void handle_ble_event(sl_bt_msg_t *evt)
         if (((evt->data.evt_system_external_signal.extsignals - evtIOEXPANDER_ROW) == 0x00) && (ble_data.ok_to_send_report_notification))
         {
             uint8_t *data = scan_io_expander();
+            PRINT_LOG("[INFO] scan Key report %X %X %X %X %X %X %X %X\r\n", data[0],
+                        data[1],
+                        data[2],
+                        data[3],
+                        data[4],
+                        data[5],
+                        data[6],
+                        data[7]);
+#if DEVICE_IS_BLE_MASTER == 1
             uint8_t *report_data = modifypressedkeys_left(data);
-
+#else 
+            uint8_t *report_data = modifypressedkeys_right(data);
+#endif
             // start scanning, send signal to main
             memset(input_report_data, 0, sizeof(input_report_data));
             memcpy(input_report_data, report_data, 8);
 
-            // PRINT_LOG("[INFO] Key report %d %d %d %d %d %d %d %d\r\n", input_report_data[0],
-            //             input_report_data[1],
-            //             input_report_data[2],
-            //             input_report_data[3],
-            //             input_report_data[4],
-            //             input_report_data[5],
-            //             input_report_data[6],
-            //             input_report_data[7]);
+            PRINT_LOG("[INFO] Key report %X %X %X %X %X %X %X %X\r\n", input_report_data[0],
+                        input_report_data[1],
+                        input_report_data[2],
+                        input_report_data[3],
+                        input_report_data[4],
+                        input_report_data[5],
+                        input_report_data[6],
+                        input_report_data[7]);
 
             sc = sl_bt_gatt_server_notify_all(gattdb_report,
                                               sizeof(input_report_data),
@@ -823,14 +834,14 @@ void handle_ble_event(sl_bt_msg_t *evt)
                                                   input_report_data);
                 app_assert_status(sc);
 
-                // PRINT_LOG("[INFO] Key report %d %d %d %d %d %d %d %d\r\n", input_report_data[0],
-                //           input_report_data[1],
-                //           input_report_data[2],
-                //           input_report_data[3],
-                //           input_report_data[4],
-                //           input_report_data[5],
-                //           input_report_data[6],
-                //           input_report_data[7]);
+                PRINT_LOG("[INFO] got Key report %d %d %d %d %d %d %d %d\r\n", input_report_data[0],
+                          input_report_data[1],
+                          input_report_data[2],
+                          input_report_data[3],
+                          input_report_data[4],
+                          input_report_data[5],
+                          input_report_data[6],
+                          input_report_data[7]);
                 // PRINT_LOG("[INFO] Key report was sent\r\n");
             }
         }
@@ -842,3 +853,127 @@ void handle_ble_event(sl_bt_msg_t *evt)
 
     } // end - switch
 } // handle_ble_event()
+
+// // after boot
+
+// �    0:Info :handle_ble_event: Bluetooth stack booted ! 
+
+//     0:Info :get_stack_version: Stack version: v7.1.2-b1685
+
+//     0:Info :get_system_id: Local BT public device address: E8:E0:7E:62:CD:CB
+
+//     0:Info :handle_ble_event:  MASTERRRR 
+
+// founded device
+//     0:Info :handle_ble_event: [INFO] founded device
+
+//     0:Info :handle_ble_event: [INFO] Connection opened
+
+//     0:Info :handle_ble_event: CR_CENTRAL
+
+//     0:Info :handle_ble_event: [INFO]  Max connection not reached. Re-start advertising in connectable mode.
+
+//     0:Info :handle_ble_event: Connection parameters updated:
+//     0:Info :handle_ble_event: Interval:  ms
+//     0:Info :handle_ble_event: Latency: 0 (number of connection events)
+//     0:Info :handle_ble_event: Timeout:  ms
+
+//     0:Info :handle_ble_event: Connection parameters updated:
+//     0:Info :handle_ble_event: Interval:  ms
+//     0:Info :handle_ble_event: Latency: 0 (number of connection events)
+//     0:Info :handle_ble_event: Timeout:  ms
+
+//     0:Info :handle_ble_event: Got service with service handle 230030 , uuid 12 18
+
+//     0:Info :handle_ble_event: Found the HID service, saving handle
+
+//     0:Info :handle_ble_event: [INFO] discovering service success
+
+//     0:Info :handle_ble_event: Found the Report Char, saving handle
+
+//     0:Info :handle_ble_event: [INFO] Found REPORT Characteristics that we want, enabling Notification 
+
+//     0:Info :handle_ble_event: [INFO] Notification enabled ! 
+
+//     0:Info :handle_ble_event: [INFO] Connection opened
+
+//     0:Info :handle_ble_event: CR_PERIPHERAL
+
+//     0:Info :handle_ble_event: [ERROR] Maximum number of allowed connections reached.
+
+//     0:Info :handle_ble_event: [INFO] Stop scanning but and stop advertising.
+
+
+// NEW CONNECTION ESTABLISHED 
+// Device ID .................: 6B:08:DD:4E:2C:EA
+// Role ......................: central
+// Handle ....................: 1
+// Number of connected devices: 2
+// Available connections .....: 0
+//     0:Info :handle_ble_event: ble_data.connection 2 
+
+
+// --------------- LIST of CONNECTED DEVICES ----------------
+// ==========================================================
+// ADDRESS            ROLE          HANDLE        STATE
+// ==========================================================
+// E8:E0:7E:62:DC:FC  PERIPHARAL    2             CONNECTING
+// 6B:08:DD:4E:2C:EA  CENTRAL       1             CONNECTED 
+
+//     0:Info :handle_ble_event: Connection parameters updated:
+//     0:Info :handle_ble_event: Interval:  ms
+//     0:Info :handle_ble_event: Latency: 0 (number of connection events)
+//     0:Info :handle_ble_event: Timeout:  ms
+
+//     0:Info :handle_ble_event: Something came 
+
+//     0:Info :handle_ble_event: Something came 
+
+//     0:Info :handle_ble_event: Notification for Report has been enabled by Client
+
+//     0:Info :handle_ble_event: Connection parameters updated:
+//     0:Info :handle_ble_event: Interval:  ms
+//     0:Info :handle_ble_event: Latency: 0 (number of connection events)
+//     0:Info :handle_ble_event: Timeout:  ms
+
+
+// // after connect and disconnet phone 
+// 360000:Info :handle_ble_event: [INFO] Connection Closed
+
+// Device 64:F3:63:78:4B:BB left the connection::0x1013
+
+// --------------- LIST of CONNECTED DEVICES ----------------
+// ==========================================================
+// ADDRESS            ROLE          HANDLE        STATE
+// ==========================================================
+// E8:E0:7E:62:DC:FC  PERIPHARAL    2             CONNECTING
+
+// Number of active connections ...: 1
+// Available connections ..........: 1
+// Scanning restarted.
+// Advertising restarted in CONNECTABLE mode.
+// 420000:Info :read_SI7021: Got the temprature from Si7021 sensor => 28 Celsius
+
+// 420000:Info :handle_ble_event: [INFO] Connection opened
+
+// 420000:Info :handle_ble_event: CR_PERIPHERAL
+
+// 420000:Info :handle_ble_event: [ERROR] Maximum number of allowed connections reached.
+
+// 420000:Info :handle_ble_event: [INFO] Stop scanning but and stop advertising.
+
+// 420000:Info :handle_ble_event: Connection parameters updated:
+// 420000:Info :handle_ble_event: Interval:  ms
+// 420000:Info :handle_ble_event: Latency: 0 (number of connection events)
+// 420000:Info :handle_ble_event: Timeout:  ms
+
+// 420000:Info :handle_ble_event: Something came 
+
+// 420000:Info :handle_ble_event: Something came 
+
+// 420000:Info :handle_ble_event: Notification for Report has been enabled by Client
+
+// 420000:Info :handle_ble_event: Connection parameters updated:
+// 420000:Info :handle_ble_event: Interval:  ms
+// 420000:Info :handle_ble_event: Latency: 0 (number of connection events)
+// 420000:Info :handle_ble_event: Timeout:  ms
