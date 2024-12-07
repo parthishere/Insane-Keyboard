@@ -54,7 +54,7 @@ int EPD_test(void)
         return -1;
     }
     LOG_INFO("Paint_NewImage\r\n");
-    Paint_NewImage(BlackImage, EPD_1IN54_V2_WIDTH, EPD_1IN54_V2_HEIGHT, 270, WHITE);
+    Paint_NewImage(BlackImage, EPD_1IN54_V2_WIDTH, EPD_1IN54_V2_HEIGHT, ROTATE_180, WHITE);
 
 // #if 1   //show image for array    
 //     LOG_INFO("show image for array\r\n");
@@ -179,7 +179,9 @@ void display_string(char *str, uint16_t Xstart, uint16_t Ystart)
     // Paint_SelectImage(BlackImage);
     
         //Paint_ClearWindows(15, 65, 15 + Font20.Width * 7, 65 + Font20.Height, WHITE);
-        Paint_DrawString_EN(Xstart, Ystart, str, &Font20, BLACK, WHITE);
+        Paint_ClearWindows(Xstart, Ystart, Xstart + Font20.Width * 7, Ystart + Font20.Height, WHITE);
+        Paint_DrawString_EN(Xstart, Ystart, str, &Font20, WHITE, BLACK);
+        
         EPD_1IN54_V2_DisplayPart(BlackImage);
         // timerWaitUs_polled(1000*500);//Analog clock 1s
     
