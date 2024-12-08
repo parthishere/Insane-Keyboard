@@ -296,7 +296,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
 
 
 #if DEVICE_IS_BLE_MASTER == 1
-//            display_string("CONN", 2, 10);
+            display_string("CONN", 2, 10);
             // added from boot
             // Create an advertising set for BLE advertising
             sc = sl_bt_advertiser_create_set(&ble_data.advertisingSetHandle);
@@ -351,7 +351,9 @@ void handle_ble_event(sl_bt_msg_t *evt)
 
             /* Increment ble_data.number_of_connection. */
             ble_data.number_of_connection++;
-
+            char buf[100];
+            snprintf(buf, sizeof(buf), "%d", ble_data.number_of_connection);
+            display_string(buf, 110, 50);
             //
         }
 
