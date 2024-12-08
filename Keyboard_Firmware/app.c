@@ -149,7 +149,9 @@ SL_WEAK void app_init(void)
   // Initializing I2C
   init_I2C();
 
+#if DEVICE_IS_BLE_MASTER == 1
   EPD_test();
+#endif
 
   __init_IO_expander(IO_EXPANDER_COL, 0b00000000);
   io_expander_writeByte(IO_EXPANDER_COL, 0xFF);
@@ -188,11 +190,6 @@ void app_process_action(void)
  *****************************************************************************/
 void sl_bt_on_event(sl_bt_msg_t *evt)
 {
-
-  // Just a trick to hide a compiler warning about unused input parameter evt.
-  (void)evt;
-
   handle_ble_event(evt); // bluetooth event actions
-
 } // sl_bt_on_event()
 

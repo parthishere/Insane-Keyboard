@@ -186,7 +186,7 @@ parameter:
 void Paint_SetPixel(uint16_t Xpoint, uint16_t Ypoint, uint16_t Color)
 {
     if(Xpoint > Paint.Width || Ypoint > Paint.Height){
-        LOG_INFO("Exceeding display boundaries\r\n");
+        //LOG_INFO("Exceeding display boundaries\r\n");
         return;
     }      
     uint16_t X, Y;
@@ -230,7 +230,7 @@ void Paint_SetPixel(uint16_t Xpoint, uint16_t Ypoint, uint16_t Color)
     }
 
     if(X > Paint.WidthMemory || Y > Paint.HeightMemory){
-        LOG_INFO("Exceeding display boundaries\r\n");
+        //LOG_INFO("Exceeding display boundaries\r\n");
         return;
     }
     

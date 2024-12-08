@@ -31,8 +31,7 @@
 
 // This also can work:
 //#define SERVER_BT_ADDRESS (bd_addr) { .addr = { 0x85, 0x61, 0x17, 0x57, 0x0b, 0x00 } }
-
-#define DEVICE_IS_BLE_MASTER 1
+#define DEVICE_IS_BLE_MASTER 0
 #define BLE_PAIR 1
 #define EM3_MODE 3
 #define EM2_MODE 2

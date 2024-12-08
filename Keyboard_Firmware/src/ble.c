@@ -138,27 +138,28 @@ ble_data_struct_t *getBleDataPtr()
     return (&ble_data);
 } // getBleDataPtr()
 
-
 void sl_app_log_stats()
 {
-  app_log("\r\n--------------- LIST of CONNECTED DEVICES ----------------\r\n");
-  app_log("==========================================================\r\n");
-  static bool print_header = true;
+    app_log("\r\n--------------- LIST of CONNECTED DEVICES ----------------\r\n");
+    app_log("==========================================================\r\n");
+    static bool print_header = true;
 
-  // print header
-  if (print_header == true) {
-    app_log("ADDRESS            ROLE          HANDLE        STATE\r\n");
-  }
-  app_log("==========================================================\r\n");
+    // print header
+    if (print_header == true)
+    {
+        app_log("ADDRESS            ROLE          HANDLE        STATE\r\n");
+    }
+    app_log("==========================================================\r\n");
 
-  for (int i = 0; i < (ble_data.number_of_connection); i++) {
-    print_bd_addr(ble_data.connections[i].device_address);
-    app_log("  %-14s%-14d%-10s\r\n",
-            (ble_data.connections[i].conn_role == 0) ? "PERIPHARAL" : "CENTRAL",
-            ble_data.connections[i].connectionHandle,
-            get_conn_state(ble_data.connections[i].conn_state));
-  }
-  app_log("\r\n");
+    for (int i = 0; i < (ble_data.number_of_connection); i++)
+    {
+        print_bd_addr(ble_data.connections[i].device_address);
+        app_log("  %-14s%-14d%-10s\r\n",
+                (ble_data.connections[i].conn_role == 0) ? "PERIPHARAL" : "CENTRAL",
+                ble_data.connections[i].connectionHandle,
+                get_conn_state(ble_data.connections[i].conn_state));
+    }
+    app_log("\r\n");
 }
 
 /**
@@ -189,9 +190,12 @@ void handle_ble_event(sl_bt_msg_t *evt)
         PRINT_LOG("Bluetooth stack booted ! \n\r");
         get_stack_version(evt);
         get_system_id();
-        if(DEVICE_IS_BLE_MASTER == 1){
+        if (DEVICE_IS_BLE_MASTER == 1)
+        {
             PRINT_LOG(" MASTERRRR \n\r");
-        }else{
+        }
+        else
+        {
 
             PRINT_LOG(" ....slave.... \n\r");
         }
@@ -206,8 +210,38 @@ void handle_ble_event(sl_bt_msg_t *evt)
         sc = sl_bt_scanner_start(sl_bt_gap_1m_phy,
                                  sl_bt_scanner_discover_generic);
         app_assert_status_f(sc, "Failed to start discovery #1\n");
+#else
+// #endif
+        sc = sl_bt_advertiser_create_set(&ble_data.advertisingSetHandle);
+        app_assert_status(sc);
+
+        sc = sl_bt_legacy_advertiser_generate_data(ble_data.advertisingSetHandle,
+                                                   sl_bt_advertiser_general_discoverable);
+        app_assert_status(sc);
+
+        // Configure advertising timing parameters
+        sc = sl_bt_advertiser_set_timing(
+            ble_data.advertisingSetHandle, // The advertising set handle
+            ADV_INTERVAL,                  // Minimum advertising interval (in units of 0.625 ms, i.e 400*0.625 = 250)
+            ADV_INTERVAL,                  // Maximum advertising interval (in units of 0.625 ms, i.e 400*0.625 = 250)
+            0,                             // Advertising duration (0 means continue until stopped)
+            0);                            // Maximum number of advertising events (0 means no limit)
+        app_assert_status(sc);
+
+        // Bondings
+
+        sc = sl_bt_sm_configure(0, sl_bt_sm_io_capability_noinputnooutput);
+        app_assert_status(sc);
+
+        sc = sl_bt_sm_set_bondable_mode(1);
+        app_assert_status(sc);
+
+        sc = sl_bt_legacy_advertiser_start(
+            ble_data.advertisingSetHandle,           // The advertising set handle
+            sl_bt_advertiser_connectable_scannable); // Connectable and scannable advertising
+        app_assert_status(sc);
+
 #endif
-        
 
         break;
 
@@ -226,21 +260,22 @@ void handle_ble_event(sl_bt_msg_t *evt)
     case sl_bt_evt_connection_opened_id:
         // Log that a new connection has been opened
         PRINT_LOG("[INFO] Connection opened\n\r");
-        display_string("CONN",2,10);
+        
         // our master device is gatt client for that is CR_CENTRAL
         if (evt->data.evt_connection_opened.master == CR_CENTRAL)
         {
+            // }
             // Device role: GATT Data base client
             /* Start discovering the remote GATT database */
             PRINT_LOG("CR_CENTRAL\n\r");
             // Request to update the connection parameters
             sc = sl_bt_connection_set_parameters(ble_data.connectionHandle,
-                                                CON_INTERVAL,
-                                                CON_INTERVAL,
-                                                CON_LATENCY,
-                                                CON_TIMEOUT,
-                                                0,
-                                                MAX_CE_LEN);
+                                                 CON_INTERVAL,
+                                                 CON_INTERVAL,
+                                                 CON_LATENCY,
+                                                 CON_TIMEOUT,
+                                                 0,
+                                                 MAX_CE_LEN);
             app_assert_status(sc);
 
             sc = sl_bt_gatt_discover_primary_services_by_uuid(
@@ -254,52 +289,45 @@ void handle_ble_event(sl_bt_msg_t *evt)
             /* connection process completed. */
             ble_data.connecting = false;
 
-        
             // if (!ble_data.bonded)
             // {
             sc = sl_bt_sm_increase_security(ble_data.connectionHandle);
             app_assert_status(sc);
-            // }
 
 
-// added from boot
+#if DEVICE_IS_BLE_MASTER == 1
+//            display_string("CONN", 2, 10);
+            // added from boot
             // Create an advertising set for BLE advertising
-        sc = sl_bt_advertiser_create_set(&ble_data.advertisingSetHandle);
-        app_assert_status(sc);
+            sc = sl_bt_advertiser_create_set(&ble_data.advertisingSetHandle);
+            app_assert_status(sc);
 
-        sc = sl_bt_legacy_advertiser_generate_data(ble_data.advertisingSetHandle,
-                                                   sl_bt_advertiser_general_discoverable);
-        app_assert_status(sc);
+            sc = sl_bt_legacy_advertiser_generate_data(ble_data.advertisingSetHandle,
+                                                    sl_bt_advertiser_general_discoverable);
+            app_assert_status(sc);
 
-        // Configure advertising timing parameters
-        sc = sl_bt_advertiser_set_timing(
-            ble_data.advertisingSetHandle, // The advertising set handle
-            ADV_INTERVAL,                  // Minimum advertising interval (in units of 0.625 ms, i.e 400*0.625 = 250)
-            ADV_INTERVAL,                  // Maximum advertising interval (in units of 0.625 ms, i.e 400*0.625 = 250)
-            0,                        // Advertising duration (0 means continue until stopped)
-            0);                            // Maximum number of advertising events (0 means no limit)
-        app_assert_status(sc);
+            // Configure advertising timing parameters
+            sc = sl_bt_advertiser_set_timing(
+                ble_data.advertisingSetHandle, // The advertising set handle
+                ADV_INTERVAL,                  // Minimum advertising interval (in units of 0.625 ms, i.e 400*0.625 = 250)
+                ADV_INTERVAL,                  // Maximum advertising interval (in units of 0.625 ms, i.e 400*0.625 = 250)
+                0,                             // Advertising duration (0 means continue until stopped)
+                0);                            // Maximum number of advertising events (0 means no limit)
+            app_assert_status(sc);
 
-        // Bondings
+            // Bondings
 
-        sc = sl_bt_sm_configure(0, sl_bt_sm_io_capability_noinputnooutput);
-        app_assert_status(sc);
+            sc = sl_bt_sm_configure(0, sl_bt_sm_io_capability_noinputnooutput);
+            app_assert_status(sc);
 
-        sc = sl_bt_sm_set_bondable_mode(1);
-        app_assert_status(sc);
+            sc = sl_bt_sm_set_bondable_mode(1);
+            app_assert_status(sc);
 
-        sc = sl_bt_legacy_advertiser_start(
-            ble_data.advertisingSetHandle,           // The advertising set handle
-            sl_bt_advertiser_connectable_scannable); // Connectable and scannable advertising
-        app_assert_status(sc);
-
-
-        sc = sl_bt_legacy_advertiser_start(
-            ble_data.advertisingSetHandle,           // The advertising set handle
-            sl_bt_advertiser_connectable_scannable); // Connectable and scannable advertising
-        app_assert_status(sc);
-            
-
+            sc = sl_bt_legacy_advertiser_start(
+                ble_data.advertisingSetHandle,           // The advertising set handle
+                sl_bt_advertiser_connectable_scannable); // Connectable and scannable advertising
+            app_assert_status(sc);
+#endif
             // we dont want to increament the count as we already did in connection open call
         }
 
@@ -323,8 +351,6 @@ void handle_ble_event(sl_bt_msg_t *evt)
 
             /* Increment ble_data.number_of_connection. */
             ble_data.number_of_connection++;
-
-            
 
             //
         }
@@ -355,12 +381,11 @@ void handle_ble_event(sl_bt_msg_t *evt)
         else
         {
             PRINT_LOG("[INFO]  Max connection not reached. Re-start advertising in connectable mode.\r\n");
-            // Max connection not reached. Re-start advertising in connectable mode
-            sc = sl_bt_legacy_advertiser_start(ble_data.advertisingSetHandle,
-                                               sl_bt_legacy_advertiser_connectable);
-            app_assert_status(sc);
+            // // Max connection not reached. Re-start advertising in connectable mode
+            // sc = sl_bt_legacy_advertiser_start(ble_data.advertisingSetHandle,
+            //                                    sl_bt_legacy_advertiser_connectable);
+            // app_assert_status(sc);
         }
-
 
         break;
 
@@ -368,10 +393,11 @@ void handle_ble_event(sl_bt_msg_t *evt)
     case sl_bt_evt_connection_closed_id:
         // Log the closure of the connection
         PRINT_LOG("[INFO] Connection Closed\n\r");
-        display_string("DISCONN",2,10);
+
         ble_data.closedHandle = evt->data.evt_connection_closed.connection;
         dev_index = get_dev_index(ble_data.closedHandle, ble_data);
-        if (dev_index > MAX_CONNECTIONS) {
+        if (dev_index > MAX_CONNECTIONS)
+        {
             PRINT_LOG("[ERROR] Invalid device index\n\r");
             // ble_data.number_of_connection = 0;  // Reset to safe state
         }
@@ -391,15 +417,19 @@ void handle_ble_event(sl_bt_msg_t *evt)
             ble_data.number_of_connection--;
             char buf[100];
             snprintf(buf, sizeof(buf), "%d", ble_data.number_of_connection);
-            display_string(buf,110,50);
+#if DEVICE_IS_BLE_MASTER == 1
+            display_string("DISCONN", 2, 10);
+            display_string(buf, 110, 50);
+#else
+#endif
         }
 
         // print list of remaining connections
-         sl_app_log_stats();
+        sl_app_log_stats();
 
         app_log("Number of active connections ...: %d\r\n", ble_data.number_of_connection);
         app_log("Available connections ..........: %d\r\n",
-                MAX_CONNECTIONS - ble_data.number_of_connection);   
+                MAX_CONNECTIONS - ble_data.number_of_connection);
 
         /* If we have one less available connection than the maximum allowed...*/
         if (ble_data.number_of_connection == MAX_CONNECTIONS - 1)
@@ -407,7 +437,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
 
 #if (DEVICE_IS_BLE_MASTER == 1)
             sc = sl_bt_scanner_start(sl_bt_gap_1m_phy,
-                                     sl_bt_scanner_discover_generic);       
+                                     sl_bt_scanner_discover_generic);
             app_assert_status_f(sc, "Failed to start discovery #1\n");
             app_log("Scanning restarted.\r\n");
 #else
@@ -488,16 +518,16 @@ void handle_ble_event(sl_bt_msg_t *evt)
         {
             uint8_t *data = scan_io_expander();
             PRINT_LOG("[INFO] scan Key report %X %X %X %X %X %X %X %X\r\n", data[0],
-                        data[1],
-                        data[2],
-                        data[3],
-                        data[4],
-                        data[5],
-                        data[6],
-                        data[7]);
+                      data[1],
+                      data[2],
+                      data[3],
+                      data[4],
+                      data[5],
+                      data[6],
+                      data[7]);
 #if DEVICE_IS_BLE_MASTER == 1
             uint8_t *report_data = modifypressedkeys_left(data);
-#else 
+#else
             uint8_t *report_data = modifypressedkeys_right(data);
 #endif
             // start scanning, send signal to main
@@ -505,13 +535,13 @@ void handle_ble_event(sl_bt_msg_t *evt)
             memcpy(input_report_data, report_data, 8);
 
             PRINT_LOG("[INFO] Key report %X %X %X %X %X %X %X %X\r\n", input_report_data[0],
-                        input_report_data[1],
-                        input_report_data[2],
-                        input_report_data[3],
-                        input_report_data[4],
-                        input_report_data[5],
-                        input_report_data[6],
-                        input_report_data[7]);
+                      input_report_data[1],
+                      input_report_data[2],
+                      input_report_data[3],
+                      input_report_data[4],
+                      input_report_data[5],
+                      input_report_data[6],
+                      input_report_data[7]);
 
             sc = sl_bt_gatt_server_notify_all(gattdb_report,
                                               sizeof(input_report_data),
@@ -604,7 +634,6 @@ void handle_ble_event(sl_bt_msg_t *evt)
                 sl_bt_gatt_notification);
             app_assert_status(sc);
             ble_data.enabling_notification = true;
-
         }
 
         else if (ble_data.enabling_notification)
@@ -780,7 +809,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
             ble_data.number_of_connection++;
             char buf[100];
             snprintf(buf, sizeof(buf), "%d", ble_data.number_of_connection);
-            display_string(buf,110,50);
+            display_string(buf, 110, 50);
         }
 
         break;
@@ -886,13 +915,13 @@ void handle_ble_event(sl_bt_msg_t *evt)
 
 // // after boot
 
-// �    0:Info :handle_ble_event: Bluetooth stack booted ! 
+// �    0:Info :handle_ble_event: Bluetooth stack booted !
 
 //     0:Info :get_stack_version: Stack version: v7.1.2-b1685
 
 //     0:Info :get_system_id: Local BT public device address: E8:E0:7E:62:CD:CB
 
-//     0:Info :handle_ble_event:  MASTERRRR 
+//     0:Info :handle_ble_event:  MASTERRRR
 
 // founded device
 //     0:Info :handle_ble_event: [INFO] founded device
@@ -921,9 +950,9 @@ void handle_ble_event(sl_bt_msg_t *evt)
 
 //     0:Info :handle_ble_event: Found the Report Char, saving handle
 
-//     0:Info :handle_ble_event: [INFO] Found REPORT Characteristics that we want, enabling Notification 
+//     0:Info :handle_ble_event: [INFO] Found REPORT Characteristics that we want, enabling Notification
 
-//     0:Info :handle_ble_event: [INFO] Notification enabled ! 
+//     0:Info :handle_ble_event: [INFO] Notification enabled !
 
 //     0:Info :handle_ble_event: [INFO] Connection opened
 
@@ -933,31 +962,29 @@ void handle_ble_event(sl_bt_msg_t *evt)
 
 //     0:Info :handle_ble_event: [INFO] Stop scanning but and stop advertising.
 
-
-// NEW CONNECTION ESTABLISHED 
+// NEW CONNECTION ESTABLISHED
 // Device ID .................: 6B:08:DD:4E:2C:EA
 // Role ......................: central
 // Handle ....................: 1
 // Number of connected devices: 2
 // Available connections .....: 0
-//     0:Info :handle_ble_event: ble_data.connection 2 
-
+//     0:Info :handle_ble_event: ble_data.connection 2
 
 // --------------- LIST of CONNECTED DEVICES ----------------
 // ==========================================================
 // ADDRESS            ROLE          HANDLE        STATE
 // ==========================================================
 // E8:E0:7E:62:DC:FC  PERIPHARAL    2             CONNECTING
-// 6B:08:DD:4E:2C:EA  CENTRAL       1             CONNECTED 
+// 6B:08:DD:4E:2C:EA  CENTRAL       1             CONNECTED
 
 //     0:Info :handle_ble_event: Connection parameters updated:
 //     0:Info :handle_ble_event: Interval:  ms
 //     0:Info :handle_ble_event: Latency: 0 (number of connection events)
 //     0:Info :handle_ble_event: Timeout:  ms
 
-//     0:Info :handle_ble_event: Something came 
+//     0:Info :handle_ble_event: Something came
 
-//     0:Info :handle_ble_event: Something came 
+//     0:Info :handle_ble_event: Something came
 
 //     0:Info :handle_ble_event: Notification for Report has been enabled by Client
 
@@ -966,8 +993,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
 //     0:Info :handle_ble_event: Latency: 0 (number of connection events)
 //     0:Info :handle_ble_event: Timeout:  ms
 
-
-// // after connect and disconnet phone 
+// // after connect and disconnet phone
 // 360000:Info :handle_ble_event: [INFO] Connection Closed
 
 // Device 64:F3:63:78:4B:BB left the connection::0x1013
@@ -997,9 +1023,9 @@ void handle_ble_event(sl_bt_msg_t *evt)
 // 420000:Info :handle_ble_event: Latency: 0 (number of connection events)
 // 420000:Info :handle_ble_event: Timeout:  ms
 
-// 420000:Info :handle_ble_event: Something came 
+// 420000:Info :handle_ble_event: Something came
 
-// 420000:Info :handle_ble_event: Something came 
+// 420000:Info :handle_ble_event: Something came
 
 // 420000:Info :handle_ble_event: Notification for Report has been enabled by Client
 

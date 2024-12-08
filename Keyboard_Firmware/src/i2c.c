@@ -207,18 +207,18 @@ uint16_t read_SI7021()
   char buf[100];
   snprintf(buf, sizeof(buf), "%d", temprature);
   display_string(buf,70,100);
-  static int cnt = 0;
-  if(cnt%3==0)
-  {
-    display_string("CONN",2,10);
-    display_string("0",110,50);
-  }
-  else
-  {
-    display_string("DISCONN",2,10);
-    display_string("1",110,50);
-  }
-    cnt++;
+  // static int cnt = 0;
+  // if(cnt%3==0)
+  // {
+  //   display_string("CONN",2,10);
+  //   display_string("0",110,50);
+  // }
+  // else
+  // {
+  //   display_string("DISCONN",2,10);
+  //   display_string("1",110,50);
+  // }
+  //   cnt++;
   enable_Temperature_Sensor(false);    // Disable the sensor
   return (temprature); // Return the calculated temperature
 }

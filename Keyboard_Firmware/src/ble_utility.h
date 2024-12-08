@@ -47,7 +47,7 @@
 // Supervision timeout for BLE in units of 10ms.
 // CON_TIMEOUT of 400 translates to 4 seconds (76 * 10ms = 760ms > 750ms).
 // #define CON_TIMEOUT ((1 + CON_LATENCY) * CON_INTERVAL * 2) = 750ms
-#define CON_TIMEOUT 76
+#define CON_TIMEOUT 400
 
 // Maximum length of the connection event in BLE.
 // MAX_CE_LEN set to 0xFFFF indicates no specific maximum length,
