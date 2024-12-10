@@ -68,11 +68,8 @@
 //   up the MCU from the call to sl_power_manager_sleep() in the main while (1)
 //   loop.
 //
-#if (LOWEST_ENERGY_MODE == 0) // check if lowest energy mode is EM0
-#define APP_IS_OK_TO_SLEEP (false)
-#else
+
 #define APP_IS_OK_TO_SLEEP (true)
-#endif
 
 // Return values for app_sleep_on_isr_exit():
 //   SL_POWER_MANAGER_IGNORE; // The module did not trigger an ISR and it doesn't want to contribute to the decision
@@ -120,7 +117,6 @@ sl_power_manager_on_isr_exit_t app_sleep_on_isr_exit(void)
 
 #endif // defined(SL_CATALOG_POWER_MANAGER_PRESENT)
 
-
 /**
  * @brief Application initialization function.
  * This function is responsible for setting up the application. It includes initializing
@@ -131,11 +127,10 @@ SL_WEAK void app_init(void)
 {
 
   // Check if the lowest energy mode is 0 or 3 then we don't have to change the manager requirement
-  if (LOWEST_ENERGY_MODE != 0 && LOWEST_ENERGY_MODE != EM3_MODE)
-  {
-    // Setting the lowest_energy_mode that board can go
-    sl_power_manager_add_em_requirement(LOWEST_ENERGY_MODE);
-  }
+
+  sl_power_manager_remove_em_requirement(SL_POWER_MANAGER_EM1);
+//  sl_power_manager_remove_em_requirement(SL_POWER_MANAGER_EM2);
+  sl_power_manager_add_em_requirement(SL_POWER_MANAGER_EM2);
 
   // Initializing Oscillator for LETIMER module
   init_Oscillator();
@@ -153,13 +148,13 @@ SL_WEAK void app_init(void)
   EPD_test();
 #endif
 
-  __init_IO_expander(IO_EXPANDER_COL, 0b00000000);
-  io_expander_writeByte(IO_EXPANDER_COL, 0xFF);
+    __init_IO_expander(IO_EXPANDER_COL, 0b00000000);
+    io_expander_writeByte(IO_EXPANDER_COL, 0xFF);
 
-  Set_LED(0, 255, 0, 0);
-  Set_Brightness(10);
+//  Set_LED(0, 255, 0, 0);
+//  Set_Brightness(10);
+//  WS2812_Send();
 
-  WS2812_Send();
 } // app_init()
 
 /**
@@ -169,13 +164,8 @@ SL_WEAK void app_init(void)
  * a LETIMER0 underflow event.
  */
 void app_process_action(void)
-{ 
-//  
-// uint8_t *data = scan_io_expander();
-// printf("data : %X %X %X %X %X %X %X %X  \n", data[0], data[1], data[2], data[3], data[4], data[5], data[6] ,data[7] );;
+{
 
-// __init_IO_expander(IO_EXPANDER_COL, 0b00000000);
-//   io_expander_writeByte(IO_EXPANDER_COL, 0xFF);
 } // app_process_action()
 
 /**************************************************************************
@@ -192,4 +182,3 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
 {
   handle_ble_event(evt); // bluetooth event actions
 } // sl_bt_on_event()
-

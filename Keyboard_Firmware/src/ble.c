@@ -192,12 +192,12 @@ void handle_ble_event(sl_bt_msg_t *evt)
         get_system_id();
         if (DEVICE_IS_BLE_MASTER == 1)
         {
-            PRINT_LOG(" MASTERRRR \n\r");
+            LOG_INFO(" MASTERRRR \n\r");
         }
         else
         {
 
-            PRINT_LOG(" ....slave.... \n\r");
+            LOG_INFO(" ....slave.... \n\r");
         }
 
 #if (DEVICE_IS_BLE_MASTER == 1)
@@ -211,7 +211,6 @@ void handle_ble_event(sl_bt_msg_t *evt)
                                  sl_bt_scanner_discover_generic);
         app_assert_status_f(sc, "Failed to start discovery #1\n");
 #else
-// #endif
         sc = sl_bt_advertiser_create_set(&ble_data.advertisingSetHandle);
         app_assert_status(sc);
 
@@ -240,7 +239,6 @@ void handle_ble_event(sl_bt_msg_t *evt)
             ble_data.advertisingSetHandle,           // The advertising set handle
             sl_bt_advertiser_connectable_scannable); // Connectable and scannable advertising
         app_assert_status(sc);
-
 #endif
 
         break;
@@ -260,7 +258,17 @@ void handle_ble_event(sl_bt_msg_t *evt)
     case sl_bt_evt_connection_opened_id:
         // Log that a new connection has been opened
         PRINT_LOG("[INFO] Connection opened\n\r");
-        
+
+#if DEVICE_IS_BLE_MASTER == 1
+        sc = sl_bt_connection_set_parameters(evt->data.evt_connection_opened.connection,
+                                        CON_INTERVAL,
+                                        CON_INTERVAL,
+                                        CON_LATENCY,
+                                        CON_TIMEOUT,
+                                        0,
+                                        MAX_CE_LEN);
+#endif
+
         // our master device is gatt client for that is CR_CENTRAL
         if (evt->data.evt_connection_opened.master == CR_CENTRAL)
         {
@@ -269,13 +277,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
             /* Start discovering the remote GATT database */
             PRINT_LOG("CR_CENTRAL\n\r");
             // Request to update the connection parameters
-            sc = sl_bt_connection_set_parameters(ble_data.connectionHandle,
-                                                 CON_INTERVAL,
-                                                 CON_INTERVAL,
-                                                 CON_LATENCY,
-                                                 CON_TIMEOUT,
-                                                 0,
-                                                 MAX_CE_LEN);
+            
             app_assert_status(sc);
 
             sc = sl_bt_gatt_discover_primary_services_by_uuid(
@@ -294,7 +296,6 @@ void handle_ble_event(sl_bt_msg_t *evt)
             sc = sl_bt_sm_increase_security(ble_data.connectionHandle);
             app_assert_status(sc);
 
-
 #if DEVICE_IS_BLE_MASTER == 1
             display_string("CONN", 2, 10);
             // added from boot
@@ -303,7 +304,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
             app_assert_status(sc);
 
             sc = sl_bt_legacy_advertiser_generate_data(ble_data.advertisingSetHandle,
-                                                    sl_bt_advertiser_general_discoverable);
+                                                       sl_bt_advertiser_general_discoverable);
             app_assert_status(sc);
 
             // Configure advertising timing parameters
@@ -334,6 +335,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
         /* else if connection role is PERIPHERAL that is GATT Client ...*/
         else if (evt->data.evt_connection_opened.master == CR_PERIPHERAL)
         {
+
             PRINT_LOG("CR_PERIPHERAL\n\r");
             // Device role: GATT Data base server
             /* update device list */
@@ -351,9 +353,12 @@ void handle_ble_event(sl_bt_msg_t *evt)
 
             /* Increment ble_data.number_of_connection. */
             ble_data.number_of_connection++;
+
+#if DEVICE_IS_BLE_MASTER == 1
             char buf[100];
             snprintf(buf, sizeof(buf), "%d", ble_data.number_of_connection);
             display_string(buf, 110, 50);
+#endif
             //
         }
 
@@ -366,7 +371,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
             PRINT_LOG("[ERROR] Maximum number of allowed connections reached.\r\n");
 
 #if (DEVICE_IS_BLE_MASTER == 1)
-            PRINT_LOG("[INFO] Stop scanning but and stop advertising.\r\n");
+            PRINT_LOG("[INFO] Stop scanning and stop advertising.\r\n");
             sc = sl_bt_scanner_stop();
             app_assert_status(sc);
 #endif
@@ -519,14 +524,6 @@ void handle_ble_event(sl_bt_msg_t *evt)
         if (((evt->data.evt_system_external_signal.extsignals - evtIOEXPANDER_ROW) == 0x00) && (ble_data.ok_to_send_report_notification))
         {
             uint8_t *data = scan_io_expander();
-            PRINT_LOG("[INFO] scan Key report %X %X %X %X %X %X %X %X\r\n", data[0],
-                      data[1],
-                      data[2],
-                      data[3],
-                      data[4],
-                      data[5],
-                      data[6],
-                      data[7]);
 #if DEVICE_IS_BLE_MASTER == 1
             uint8_t *report_data = modifypressedkeys_left(data);
 #else
@@ -536,14 +533,14 @@ void handle_ble_event(sl_bt_msg_t *evt)
             memset(input_report_data, 0, sizeof(input_report_data));
             memcpy(input_report_data, report_data, 8);
 
-            PRINT_LOG("[INFO] Key report %X %X %X %X %X %X %X %X\r\n", input_report_data[0],
-                      input_report_data[1],
-                      input_report_data[2],
-                      input_report_data[3],
-                      input_report_data[4],
-                      input_report_data[5],
-                      input_report_data[6],
-                      input_report_data[7]);
+            // PRINT_LOG("[INFO] Key report %X %X %X %X %X %X %X %X\r\n", input_report_data[0],
+            //           input_report_data[1],
+            //           input_report_data[2],
+            //           input_report_data[3],
+            //           input_report_data[4],
+            //           input_report_data[5],
+            //           input_report_data[6],
+            //           input_report_data[7]);
 
             sc = sl_bt_gatt_server_notify_all(gattdb_report,
                                               sizeof(input_report_data),
@@ -555,12 +552,27 @@ void handle_ble_event(sl_bt_msg_t *evt)
 
         if (((evt->data.evt_system_external_signal.extsignals - evtENCODER_SW) == 0x00) || ((evt->data.evt_system_external_signal.extsignals - evtENCODER_ROTATE) == 0x00))
         {
-            //            LOG_INFO("Temp sensor\r\n");
+
+                        // memset(input_report_data, 0, sizeof(input_report_data));
+                        // input_report_data[2] =  0xA9;
+
+                        // PRINT_LOG("[INFO] Key report %X %X %X %X %X %X %X %X\r\n", input_report_data[0],
+                        //           input_report_data[1],
+                        //           input_report_data[2],
+                        //           input_report_data[3],
+                        //           input_report_data[4],
+                        //           input_report_data[5],
+                        //           input_report_data[6],
+                        //           input_report_data[7]);
+
+                        // sc = sl_bt_gatt_server_notify_all(gattdb_report,
+                        //                                   sizeof(input_report_data),
+                        //                                   input_report_data);
+                        // app_assert_status(sc);
         }
 
         if (((evt->data.evt_system_external_signal.extsignals - evtIOEXPANDER_ROW) == 0x00))
         {
-            //            LOG_INFO("Temp sensor\r\n");
         }
 
         if (((evt->data.evt_system_external_signal.extsignals - evtLETIMER0_UF) == 0x00))
@@ -776,7 +788,7 @@ void handle_ble_event(sl_bt_msg_t *evt)
                 break;
             }
 
-            app_log("founded device\r\n");
+            PRINT_LOG("founded device\r\n");
 
             /* Exit event if the scan response is triggered by a device already in the
              * connection list. */
@@ -895,14 +907,14 @@ void handle_ble_event(sl_bt_msg_t *evt)
                                                   input_report_data);
                 app_assert_status(sc);
 
-                PRINT_LOG("[INFO] got Key report %d %d %d %d %d %d %d %d\r\n", input_report_data[0],
-                          input_report_data[1],
-                          input_report_data[2],
-                          input_report_data[3],
-                          input_report_data[4],
-                          input_report_data[5],
-                          input_report_data[6],
-                          input_report_data[7]);
+                // PRINT_LOG("[INFO] got Key report %d %d %d %d %d %d %d %d\r\n", input_report_data[0],
+                //           input_report_data[1],
+                //           input_report_data[2],
+                //           input_report_data[3],
+                //           input_report_data[4],
+                //           input_report_data[5],
+                //           input_report_data[6],
+                //           input_report_data[7]);
                 // PRINT_LOG("[INFO] Key report was sent\r\n");
             }
         }

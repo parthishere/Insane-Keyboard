@@ -17,7 +17,7 @@ C_DEPS += \
 src/GUI/GUI_Paint.o: ../src/GUI/GUI_Paint.c src/GUI/subdir.mk
 	@echo 'Building file: $<'
 	@echo 'Invoking: GNU ARM C Compiler'
-	arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -std=c99 '-DNDEBUG=1' -Os -Wall -ffunction-sections -fdata-sections -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -MMD -MP -MF"src/GUI/GUI_Paint.d" -MT"$@" -o "$@" "$<"
+	arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -std=c99 '-DNDEBUG=1' -O3 -Wall -ffunction-sections -fdata-sections -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -MMD -MP -MF"src/GUI/GUI_Paint.d" -MT"$@" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

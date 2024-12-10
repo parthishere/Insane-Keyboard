@@ -77,8 +77,6 @@
 void init_Timer(void)
 {
 
-  // Enable clock for TIMER0 module
-  CMU_ClockEnable(cmuClock_TIMER0, true);
 
   LETIMER_Init_TypeDef letimer_init; // Declare a structure for LETIMER initialization.
 
@@ -107,26 +105,27 @@ void init_Timer(void)
   // Final initialization and enabling of LETIMER.
   LETIMER_Init(LETIMER0, &letimer_init); // Initialize LETIMER with specified settings.
 
+  // Enable clock for TIMER0 module
+  // CMU_ClockEnable(cmuClock_TIMER0, true);
+  // // Configure TIMER0 Compare/Capture for output compare
+  // // Use PWM mode, which sets output on overflow and clears on compare events
+  // TIMER_InitCC_TypeDef timerCCInit = TIMER_INITCC_DEFAULT;
+  // timerCCInit.mode = timerCCModePWM;
+  // TIMER_InitCC(TIMER0, 0, &timerCCInit);
 
-  // Configure TIMER0 Compare/Capture for output compare
-  // Use PWM mode, which sets output on overflow and clears on compare events
-  TIMER_InitCC_TypeDef timerCCInit = TIMER_INITCC_DEFAULT;
-  timerCCInit.mode = timerCCModePWM;
-  TIMER_InitCC(TIMER0, 0, &timerCCInit);
+  // // Set route to Location 15 and enable
+  // // TIM0_CC0 #15 is PC10
+  // TIMER0->ROUTELOC0 |=  TIMER_ROUTELOC0_CC0LOC_LOC31;
+  // TIMER0->ROUTEPEN |= TIMER_ROUTEPEN_CC0PEN;
 
-  // Set route to Location 15 and enable
-  // TIM0_CC0 #15 is PC10
-  TIMER0->ROUTELOC0 |=  TIMER_ROUTELOC0_CC0LOC_LOC31;
-  TIMER0->ROUTEPEN |= TIMER_ROUTEPEN_CC0PEN;
+  // // Set top value to overflow at the desired PWM_FREQ frequency
+  // TIMER_TopSet(TIMER0, CMU_ClockFreqGet(cmuClock_TIMER0) / PWM_FREQ);
 
-  // Set top value to overflow at the desired PWM_FREQ frequency
-  TIMER_TopSet(TIMER0, CMU_ClockFreqGet(cmuClock_TIMER0) / PWM_FREQ);
+  // // Initialize and start timer with no prescaling
+  // TIMER_Init_TypeDef timerInit = TIMER_INIT_DEFAULT;
+  // timerInit.dmaClrAct = true;
 
-  // Initialize and start timer with no prescaling
-  TIMER_Init_TypeDef timerInit = TIMER_INIT_DEFAULT;
-  timerInit.dmaClrAct = true;
-
-  TIMER_Init(TIMER0, &timerInit);
+  // TIMER_Init(TIMER0, &timerInit);
 
 
   LETIMER_Enable(LETIMER0, true);      // Enable LETIMER.

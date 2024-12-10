@@ -103,8 +103,6 @@ void Paint_NewImage(uint8_t *image, uint16_t Width, uint16_t Height, uint16_t Ro
 		
     Paint.WidthByte = (Width % 8 == 0)? (Width / 8 ): (Width / 8 + 1);
     Paint.HeightByte = Height;    
-//    LOG_INFO("WidthByte = %d, HeightByte = %d\r\n", Paint.WidthByte, Paint.HeightByte);
-//    LOG_INFO(" EPD_WIDTH / 8 = %d\r\n",  122 / 8);
    
     Paint.Rotate = Rotate;
     Paint.Mirror = MIRROR_NONE;
@@ -136,10 +134,10 @@ parameter:
 void Paint_SetRotate(uint16_t Rotate)
 {
     if(Rotate == ROTATE_0 || Rotate == ROTATE_90 || Rotate == ROTATE_180 || Rotate == ROTATE_270) {
-        LOG_INFO("Set image Rotate %d\r\n", Rotate);
+        PRINT_LOG("Set image Rotate %d\r\n", Rotate);
         Paint.Rotate = Rotate;
     } else {
-        LOG_INFO("rotate = 0, 90, 180, 270\r\n");
+        PRINT_LOG("rotate = 0, 90, 180, 270\r\n");
     }
 }
 
@@ -155,8 +153,8 @@ void Paint_SetScale(uint8_t scale)
 				Paint.Scale = scale;
 				Paint.WidthByte = (Paint.WidthMemory % 2 == 0)? (Paint.WidthMemory / 2 ): (Paint.WidthMemory / 2 + 1);;
 		}else{
-        LOG_INFO("Set Scale Input parameter error\r\n");
-        LOG_INFO("Scale Only support: 2 4 7\r\n");
+        PRINT_LOG("Set Scale Input parameter error\r\n");
+        PRINT_LOG("Scale Only support: 2 4 7\r\n");
     }
 }
 /******************************************************************************
@@ -168,10 +166,10 @@ void Paint_SetMirroring(uint8_t mirror)
 {
     if(mirror == MIRROR_NONE || mirror == MIRROR_HORIZONTAL || 
         mirror == MIRROR_VERTICAL || mirror == MIRROR_ORIGIN) {
-        LOG_INFO("mirror image x:%s, y:%s\r\n",(mirror & 0x01)? "mirror":"none", ((mirror >> 1) & 0x01)? "mirror":"none");
+        PRINT_LOG("mirror image x:%s, y:%s\r\n",(mirror & 0x01)? "mirror":"none", ((mirror >> 1) & 0x01)? "mirror":"none");
         Paint.Mirror = mirror;
     } else {
-        LOG_INFO("mirror should be MIRROR_NONE, MIRROR_HORIZONTAL, \
+        PRINT_LOG("mirror should be MIRROR_NONE, MIRROR_HORIZONTAL, \
         MIRROR_VERTICAL or MIRROR_ORIGIN\r\n");
     }    
 }
@@ -186,7 +184,7 @@ parameter:
 void Paint_SetPixel(uint16_t Xpoint, uint16_t Ypoint, uint16_t Color)
 {
     if(Xpoint > Paint.Width || Ypoint > Paint.Height){
-        //LOG_INFO("Exceeding display boundaries\r\n");
+        //PRINT_LOG("Exceeding display boundaries\r\n");
         return;
     }      
     uint16_t X, Y;
@@ -230,7 +228,7 @@ void Paint_SetPixel(uint16_t Xpoint, uint16_t Ypoint, uint16_t Color)
     }
 
     if(X > Paint.WidthMemory || Y > Paint.HeightMemory){
-        //LOG_INFO("Exceeding display boundaries\r\n");
+        //PRINT_LOG("Exceeding display boundaries\r\n");
         return;
     }
     
@@ -253,7 +251,7 @@ void Paint_SetPixel(uint16_t Xpoint, uint16_t Ypoint, uint16_t Color)
 		uint8_t Rdata = Paint.Image[Addr];
 		Rdata = Rdata & (~(0xF0 >> ((X % 2)*4)));//Clear first, then set value
 		Paint.Image[Addr] = Rdata | ((Color << 4) >> ((X % 2)*4));
-		//LOG_INFO("Add =  %d ,data = %d\r\n",Addr,Rdata);
+		//PRINT_LOG("Add =  %d ,data = %d\r\n",Addr,Rdata);
 		}
 }
 
@@ -320,9 +318,9 @@ void Paint_DrawPoint(uint16_t Xpoint, uint16_t Ypoint, uint16_t Color,
                      DOT_PIXEL Dot_Pixel, DOT_STYLE Dot_Style)
 {
     if (Xpoint > Paint.Width || Ypoint > Paint.Height) {
-        LOG_INFO("Paint_DrawPoint Input exceeds the normal display range\r\n");
-				LOG_INFO("Xpoint = %d , Paint.Width = %d  \r\n ",Xpoint,Paint.Width);
-				LOG_INFO("Ypoint = %d , Paint.Height = %d  \r\n ",Ypoint,Paint.Height);
+        PRINT_LOG("Paint_DrawPoint Input exceeds the normal display range\r\n");
+				PRINT_LOG("Xpoint = %d , Paint.Width = %d  \r\n ",Xpoint,Paint.Width);
+				PRINT_LOG("Ypoint = %d , Paint.Height = %d  \r\n ",Ypoint,Paint.Height);
         return;
     }
 
@@ -332,7 +330,7 @@ void Paint_DrawPoint(uint16_t Xpoint, uint16_t Ypoint, uint16_t Color,
             for (YDir_Num = 0; YDir_Num < 2 * Dot_Pixel - 1; YDir_Num++) {
                 if(Xpoint + XDir_Num - Dot_Pixel < 0 || Ypoint + YDir_Num - Dot_Pixel < 0)
                     break;
-                // LOG_INFO("x = %d, y = %d\r\n", Xpoint + XDir_Num - Dot_Pixel, Ypoint + YDir_Num - Dot_Pixel);
+                // PRINT_LOG("x = %d, y = %d\r\n", Xpoint + XDir_Num - Dot_Pixel, Ypoint + YDir_Num - Dot_Pixel);
                 Paint_SetPixel(Xpoint + XDir_Num - Dot_Pixel, Ypoint + YDir_Num - Dot_Pixel, Color);
             }
         }
@@ -361,7 +359,7 @@ void Paint_DrawLine(uint16_t Xstart, uint16_t Ystart, uint16_t Xend, uint16_t Ye
 {
     if (Xstart > Paint.Width || Ystart > Paint.Height ||
         Xend > Paint.Width || Yend > Paint.Height) {
-        LOG_INFO("Paint_DrawLine Input exceeds the normal display range\r\n");
+        PRINT_LOG("Paint_DrawLine Input exceeds the normal display range\r\n");
         return;
     }
 
@@ -382,7 +380,7 @@ void Paint_DrawLine(uint16_t Xstart, uint16_t Ystart, uint16_t Xend, uint16_t Ye
         Dotted_Len++;
         //Painted dotted line, 2 point is really virtual
         if (Line_Style == LINE_STYLE_DOTTED && Dotted_Len % 3 == 0) {
-            //LOG_INFO("LINE_DOTTED\r\n");
+            //PRINT_LOG("LINE_DOTTED\r\n");
             Paint_DrawPoint(Xpoint, Ypoint, IMAGE_BACKGROUND, Line_width, DOT_STYLE_DFT);
             Dotted_Len = 0;
         } else {
@@ -419,7 +417,7 @@ void Paint_DrawRectangle(uint16_t Xstart, uint16_t Ystart, uint16_t Xend, uint16
 {
     if (Xstart > Paint.Width || Ystart > Paint.Height ||
         Xend > Paint.Width || Yend > Paint.Height) {
-        LOG_INFO("Input exceeds the normal display range\r\n");
+        PRINT_LOG("Input exceeds the normal display range\r\n");
         return;
     }
 
@@ -451,7 +449,7 @@ void Paint_DrawCircle(uint16_t X_Center, uint16_t Y_Center, uint16_t Radius,
                       uint16_t Color, DOT_PIXEL Line_width, DRAW_FILL Draw_Fill)
 {
     if (X_Center > Paint.Width || Y_Center >= Paint.Height) {
-        LOG_INFO("Paint_DrawCircle Input exceeds the normal display range\r\n");
+        PRINT_LOG("Paint_DrawCircle Input exceeds the normal display range\r\n");
         return;
     }
 
@@ -522,7 +520,7 @@ void Paint_DrawChar(uint16_t Xpoint, uint16_t Ypoint, const char Acsii_Char,
     uint16_t Page, Column;
 
     if (Xpoint > Paint.Width || Ypoint > Paint.Height) {
-        LOG_INFO("Paint_DrawChar Input exceeds the normal display range\r\n");
+        PRINT_LOG("Paint_DrawChar Input exceeds the normal display range\r\n");
         return;
     }
 
@@ -572,7 +570,7 @@ void Paint_DrawString_EN(uint16_t Xstart, uint16_t Ystart, const char * pString,
     uint16_t Ypoint = Ystart;
 
     if (Xstart > Paint.Width || Ystart > Paint.Height) {
-        LOG_INFO("Paint_DrawString_EN Input exceeds the normal display range\r\n");
+        PRINT_LOG("Paint_DrawString_EN Input exceeds the normal display range\r\n");
         return;
     }
 
@@ -715,7 +713,7 @@ void Paint_DrawNum(uint16_t Xpoint, uint16_t Ypoint, int32_t Nummber,
     uint8_t *pStr = Str_Array;
 
     if (Xpoint > Paint.Width || Ypoint > Paint.Height) {
-        LOG_INFO("Paint_DisNum Input exceeds the normal display range\r\n");
+        PRINT_LOG("Paint_DisNum Input exceeds the normal display range\r\n");
         return;
     }
 
@@ -759,7 +757,7 @@ void Paint_DrawNumDecimals(uint16_t Xpoint, uint16_t Ypoint, double Nummber,
 	float decimals;
 	uint8_t i;
     if (Xpoint > Paint.Width || Ypoint > Paint.Height) {
-        LOG_INFO("Paint_DisNum Input exceeds the normal display range\r\n");
+        PRINT_LOG("Paint_DisNum Input exceeds the normal display range\r\n");
         return;
     }
 

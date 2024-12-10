@@ -34,7 +34,7 @@
 #include <stdint.h>
 
 
-#define LETIMER_PERIOD_MS (60000) // Period in milliseconds for the Low Energy Timer // 60s
+#define LETIMER_PERIOD_MS (4000) // Period in milliseconds for the Low Energy Timer // 60s
 
 /**
  * @brief Initializes the Low Energy Timer (LETIMER).

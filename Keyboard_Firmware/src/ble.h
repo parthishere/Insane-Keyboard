@@ -17,7 +17,7 @@
  */
 
 // Include guard to prevent double inclusion of this header file
-#ifndef __BLE_H__
+    #ifndef __BLE_H__
 #define __BLE_H__
 
 // Including necessary headers for BLE functionality
@@ -28,9 +28,9 @@
 #include "math.h"
 #include "app_assert.h"
 #include "stdbool.h"
+#include "src/EPD_Test.h"
 
 #include "src/ble_utility.h"
-
 
 /**
  * @brief Handles incoming BLE events and dispatches actions based on the event type.
@@ -52,5 +52,7 @@ void handle_ble_event(sl_bt_msg_t *evt); // Handles incoming BLE events
  * @return ble_data_struct_t* Pointer to the global BLE data structure.
  */
 ble_data_struct_t *getBleDataPtr(void); // Returns a pointer to the BLE data structure
+
+
 
 #endif // End of include guard __BLE_H__

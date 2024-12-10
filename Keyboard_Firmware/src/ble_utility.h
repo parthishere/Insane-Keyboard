@@ -37,7 +37,7 @@
 
 // Connection interval for BLE in units of 1.25ms.
 // CON_INTERVAL of 60 translates to 75ms (60 * 1.25ms = 75ms).
-#define CON_INTERVAL 60
+#define CON_INTERVAL 10
 
 // Connection latency for BLE.
 // Defines the number of connection events the slave can skip.
@@ -52,7 +52,7 @@
 // Maximum length of the connection event in BLE.
 // MAX_CE_LEN set to 0xFFFF indicates no specific maximum length,
 // allowing for the longest possible connection events.
-#define MAX_CE_LEN 4
+#define MAX_CE_LEN 0xFFFF
 
 
 typedef enum

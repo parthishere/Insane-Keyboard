@@ -124,7 +124,6 @@ static void EPD_1IN54_V2_ReadBusy(void)
 {
     // LOG_INFO("e-Paper busy\r\n");
     while(gpio_Read_Busy() == 1) {      //LOW: idle, HIGH: busy
-        //timerWaitUs_polled(1000*10);
     }
     // LOG_INFO("e-Paper busy release\r\n");
 }
@@ -375,5 +374,4 @@ void EPD_1IN54_V2_Sleep(void)
 {
     EPD_1IN54_V2_SendCommand(0x10); //enter deep sleep
     EPD_1IN54_V2_SendData(0x01);
-    timerWaitUs_polled(1000*100);
 }

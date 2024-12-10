@@ -33,32 +33,35 @@
 #define INCLUDE_LOG_DEBUG 1
 #include "src/log.h"
 
- uint8_t *BlackImage;
+uint8_t *BlackImage;
 
- void display_string(char *str, uint16_t Xstart, uint16_t Ystart)
+void display_string(char *str, uint16_t Xstart, uint16_t Ystart)
 {
-    //Paint_ClearWindows(Xstart, Ystart, Xstart + Font20.Width * 7, Ystart + Font20.Height, WHITE);
+    // Paint_ClearWindows(Xstart, Ystart, Xstart + Font20.Width * 7, Ystart + Font20.Height, WHITE);
+    DEV_Module_Init();
     Paint_ClearWindows(Xstart, Ystart, Xstart + Font20.Width * 7, Ystart + Font20.Height, WHITE);
     Paint_DrawString_EN(Xstart, Ystart, str, &Font20, WHITE, BLACK);
-    EPD_1IN54_V2_DisplayPart(BlackImage);  
+    EPD_1IN54_V2_DisplayPart(BlackImage);
+    DEV_Module_Exit();
 }
 
 int EPD_test(void)
 {
-    //LOG_INFO("EPD_1in54_V2_test Demo\r\n");
+    // LOG_INFO("EPD_1in54_V2_test Demo\r\n");
     DEV_Module_Init();
 
-    //LOG_INFO("e-Paper Init and Clear...\r\n");
+    // LOG_INFO("e-Paper Init and Clear...\r\n");
     EPD_1IN54_V2_Init();
-    //Create a new image cache
-   
+    // Create a new image cache
+
     /* you have to edit the startup_stm32fxxx.s file and set a big enough heap size */
-    uint16_t Imagesize = ((EPD_1IN54_V2_WIDTH % 8 == 0)? (EPD_1IN54_V2_WIDTH / 8 ): (EPD_1IN54_V2_WIDTH / 8 + 1)) * EPD_1IN54_V2_HEIGHT;
-    if((BlackImage = (uint8_t *)malloc(Imagesize)) == NULL) {
-        //LOG_INFO("Failed to apply for black memory...\r\n");
+    uint16_t Imagesize = ((EPD_1IN54_V2_WIDTH % 8 == 0) ? (EPD_1IN54_V2_WIDTH / 8) : (EPD_1IN54_V2_WIDTH / 8 + 1)) * EPD_1IN54_V2_HEIGHT;
+    if ((BlackImage = (uint8_t *)malloc(Imagesize)) == NULL)
+    {
+        // LOG_INFO("Failed to apply for black memory...\r\n");
         return -1;
     }
-    //LOG_INFO("Paint_NewImage\r\n");
+    // LOG_INFO("Paint_NewImage\r\n");
     Paint_NewImage(BlackImage, EPD_1IN54_V2_WIDTH, EPD_1IN54_V2_HEIGHT, ROTATE_180, WHITE);
 
     Paint_SelectImage(BlackImage);
@@ -67,16 +70,14 @@ int EPD_test(void)
     EPD_1IN54_V2_DisplayPartBaseImage(BlackImage);
 
     // enter partial mode
-	EPD_1IN54_V2_Init_Partial();
-    //LOG_INFO("Partial refresh\r\n");
+    EPD_1IN54_V2_Init_Partial();
+    // LOG_INFO("Partial refresh\r\n");
     Paint_SelectImage(BlackImage);
-    
+
     // DEV_Module_Exit();
-    display_string("INSANE PARTH",2,150);
-    display_string("T(C):",2,100);
-    display_string("Devices:",2,50);
-    display_string("0",110,50);
-    
+    display_string("SKO BUFFS!", 2, 150); 
+    display_string("T(C):", 2, 100);
+    display_string("Devices:", 2, 50);
+    display_string("0", 110, 50);
     return 0;
 }
-

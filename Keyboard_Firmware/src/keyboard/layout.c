@@ -132,14 +132,13 @@ layers_t __is_change_layer(uint8_t row_value, uint8_t col_value)
         if (col_value == THUMB_INNER)
         {
             __toggle_current_layer(SYMB);
-            // timerWaitUs_polled(10000);
+            // timerWai tUs_polled(1000);
             break;
         }
 #else
         if (col_value == PINKY_COLUMN)
         {
             __toggle_current_layer(MDIA);
-            // timerWaitUs_polled(10000);
             break;
         }
 #endif

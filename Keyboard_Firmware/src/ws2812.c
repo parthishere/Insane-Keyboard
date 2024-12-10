@@ -113,7 +113,7 @@ void initLdma(uint16_t *buffer, int buffer_size)
   descriptor.xfer.doneIfs  = 0;                // Don't trigger interrupt when done
 
   // // Transfer configuration and trigger selection
-  LDMA_TransferCfg_t transferConfig = LDMA_TRANSFER_CFG_PERIPHERAL(LDMA_CH_REQSEL_SOURCESEL_NONE);
+  LDMA_TransferCfg_t transferConfig = LDMA_TRANSFER_CFG_PERIPHERAL(ldmaPeripheralSignal_TIMER0_UFOF);
 
   // LDMA initialization
   LDMA_Init_t init = LDMA_INIT_DEFAULT;

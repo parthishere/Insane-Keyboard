@@ -203,7 +203,7 @@ uint16_t read_SI7021()
   temprature = SHIFT_DATA_EIGHT_BIT(readData[0]) + MASK_TEMPRATURE_DATA_BITS(readData[1]);
   temprature = CONVERT_TEMP_TO_C(temprature);
 
-  LOG_INFO("Got the temprature from Si7021 sensor => %ld Celsius\n", temprature); // Log the temperature data
+  PRINT_LOG("Got the temprature from Si7021 sensor => %ld Celsius\n", temprature); // Log the temperature data
   char buf[100];
   snprintf(buf, sizeof(buf), "%d", temprature);
   display_string(buf,70,100);
@@ -287,8 +287,6 @@ int io_expander_writeByte(uint8_t which_io_expander, uint8_t what_data)
     LOG_ERROR("Failed to write %u bytes when writing to Register, return value was %d", sizeof(cmd_data), I2C_TransferStatus);
     return 0; // Return 0 if the operation failed
   }
-
-  // LOG_INFO("!! IO expander write sucessfull, data wrote: %d \n\r", writeData[0]);
   return writeData[0];
 }
 

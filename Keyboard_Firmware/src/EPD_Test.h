@@ -37,5 +37,6 @@
 #include <stdlib.h> // malloc() free()
 
 int EPD_test(void);
+void display_string(char *str, uint16_t Xstart, uint16_t Ystart);
 
 #endif
