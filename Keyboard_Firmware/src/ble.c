@@ -553,22 +553,22 @@ void handle_ble_event(sl_bt_msg_t *evt)
         if (((evt->data.evt_system_external_signal.extsignals - evtENCODER_SW) == 0x00) || ((evt->data.evt_system_external_signal.extsignals - evtENCODER_ROTATE) == 0x00))
         {
 
-                        // memset(input_report_data, 0, sizeof(input_report_data));
-                        // input_report_data[2] =  0xA9;
+            memset(input_report_data, 0, sizeof(input_report_data));
+            input_report_data[2] =  0xA9;
 
-                        // PRINT_LOG("[INFO] Key report %X %X %X %X %X %X %X %X\r\n", input_report_data[0],
-                        //           input_report_data[1],
-                        //           input_report_data[2],
-                        //           input_report_data[3],
-                        //           input_report_data[4],
-                        //           input_report_data[5],
-                        //           input_report_data[6],
-                        //           input_report_data[7]);
+            // PRINT_LOG("[INFO] Key report %X %X %X %X %X %X %X %X\r\n", input_report_data[0],
+            //           input_report_data[1],
+            //           input_report_data[2],
+            //           input_report_data[3],
+            //           input_report_data[4],
+            //           input_report_data[5],
+            //           input_report_data[6],
+            //           input_report_data[7]);
 
-                        // sc = sl_bt_gatt_server_notify_all(gattdb_report,
-                        //                                   sizeof(input_report_data),
-                        //                                   input_report_data);
-                        // app_assert_status(sc);
+            sc = sl_bt_gatt_server_notify_all(gattdb_report,
+                                              sizeof(input_report_data),
+                                              input_report_data);
+            app_assert_status(sc);
         }
 
         if (((evt->data.evt_system_external_signal.extsignals - evtIOEXPANDER_ROW) == 0x00))
